@@ -112,6 +112,7 @@ function initMap() {
     map.addLayer({ id: "race-line", type: "line", source: "states", filter: ["in", ["get", "fips"], ["literal", Object.keys(S.raceBy)]], paint: { "line-color": "#1d1f24", "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.9, 8, 2] } });
     map.addLayer({ id: "sel-line", type: "line", source: "states", filter: ["==", ["get", "fips"], ""], paint: { "line-color": "#0f7b6c", "line-width": 3 } });
     recolor();
+    map.once("idle", initMap24);
     map.on("click", "states-fill", (e) => { const f = e.features[0]; if (map.getZoom() < 5.2 && S.raceBy[f.properties.fips]) openRace(S.raceBy[f.properties.fips][0].id, true); });
     map.on("click", "counties-fill", (e) => { if (map.getZoom() >= 5.2) { const fp = e.features[0].properties.fips.slice(0, 2); if (S.raceBy[fp] && S.sel?.stfips !== fp) openRace(S.raceBy[fp][0].id, false); } });
     for (const l of ["states-fill", "counties-fill", "cells-fill", "live-fill"]) { map.on("mousemove", l, (e) => hover(e, l)); map.on("mouseleave", l, () => ($("#tip").hidden = true)); }
@@ -389,39 +390,43 @@ function setSwipe(x) {
   l.classList.toggle("off", S.swipeX < l.offsetWidth + 40);
   r.classList.toggle("off", w - S.swipeX < r.offsetWidth + 40);
 }
-function toggleCompare(kind) {
+function initMap24() { // built once, right after the main map loads, so showing a comparison never waits on it
+  if (map24) return;
+  map24 = new maplibregl.Map({ container: "map24", style: "https://tiles.openfreemap.org/styles/positron", interactive: false, attributionControl: false,
+                               center: map.getCenter(), zoom: map.getZoom() });
+  map24.on("load", () => {
+    const before = map24.getStyle().layers.find((l) => l.type === "symbol")?.id, d = data24();
+    map24.addSource("states", { type: "geojson", data: d.st }); map24.addSource("counties", { type: "geojson", data: d.co });
+    map24.addLayer({ id: "c", type: "fill", source: "counties", paint: { "fill-color": expr(RAMP), "fill-opacity": ["interpolate", ["linear"], ["zoom"], 4.2, 0, 5.2, 0.85, 10, 0.3] } }, before);
+    map24.addLayer({ id: "s", type: "fill", source: "states", paint: { "fill-color": expr(RAMP), "fill-opacity": ["interpolate", ["linear"], ["zoom"], 4.2, 0.92, 5.2, 0] } }, before);
+    map24.addLayer({ id: "cl", type: "line", source: "counties", minzoom: 5, paint: { "line-color": "#fff", "line-width": 0.4 } }, before);
+    map24.addLayer({ id: "sl", type: "line", source: "states", paint: { "line-color": "#fff", "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.8, 8, 2.5] } });
+    syncSwipe(); paint24();
+  });
+  map.on("move", syncSwipe);
+}
+function toggleCompare(kind, startFrac) {
   S.cmp = S.cmpKind === kind ? !S.cmp : true; S.cmpKind = kind;
   document.querySelectorAll(".cmp").forEach((b) => b.setAttribute("aria-pressed", S.cmp && b.dataset.cmp === kind));
-  $("#map24").hidden = !S.cmp; $("#swipe").hidden = !S.cmp;
-  if (!S.cmp) { if (S.mode === "q24") document.querySelector('.seg [data-mode="forecast"]').click(); return; }
+  const m24 = $("#map24"), sw = $("#swipe");
+  if (!S.cmp) { m24.hidden = true; sw.hidden = true; if (S.mode === "q24") document.querySelector('.seg [data-mode="forecast"]').click(); return; }
   if (kind !== "q24" && S.mode === "q24") document.querySelector('.seg [data-mode="forecast"]').click();
-  paint24();
+  initMap24(); paint24();
   if (kind === "q24") { S.mode = "q24"; document.querySelectorAll(".mapbar .seg button").forEach((x) => x.setAttribute("aria-checked", "false")); recolor(); }
   else if (S.mode !== "forecast") document.querySelector('.seg [data-mode="forecast"]').click();
-  if (!map24) {
-    map24 = new maplibregl.Map({ container: "map24", style: "https://tiles.openfreemap.org/styles/positron", interactive: false, attributionControl: false,
-                                 center: map.getCenter(), zoom: map.getZoom() });
-    map24.on("load", () => {
-      const before = map24.getStyle().layers.find((l) => l.type === "symbol")?.id, d = data24();
-      map24.addSource("states", { type: "geojson", data: d.st }); map24.addSource("counties", { type: "geojson", data: d.co });
-      map24.addLayer({ id: "c", type: "fill", source: "counties", paint: { "fill-color": expr(RAMP), "fill-opacity": ["interpolate", ["linear"], ["zoom"], 4.2, 0, 5.2, 0.85, 10, 0.3] } }, before);
-      map24.addLayer({ id: "s", type: "fill", source: "states", paint: { "fill-color": expr(RAMP), "fill-opacity": ["interpolate", ["linear"], ["zoom"], 4.2, 0.92, 5.2, 0] } }, before);
-      map24.addLayer({ id: "cl", type: "line", source: "counties", minzoom: 5, paint: { "line-color": "#fff", "line-width": 0.4 } }, before);
-      map24.addLayer({ id: "sl", type: "line", source: "states", paint: { "line-color": "#fff", "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.8, 8, 2.5] } });
-      syncSwipe(); paint24();
-    });
-    map.on("move", syncSwipe);
-  }
-  map24.resize(); syncSwipe(); setSwipe($("#map").clientWidth / 2);
+  // place the handle first, then fade the comparison in: no jump, no pop
+  m24.style.opacity = 0; sw.style.opacity = 0; m24.hidden = false; sw.hidden = false;
+  map24.resize(); syncSwipe(); setSwipe($("#map").clientWidth * (startFrac ?? 0.5));
+  requestAnimationFrame(() => { m24.style.opacity = 1; sw.style.opacity = 1; });
 }
 function initSwipeDrag() {
   const sw = $("#swipe"), grip = $("#swipe .grip"); let drag = false;
   const at = (e) => setSwipe(e.clientX - $("#map").getBoundingClientRect().left);
-  sw.addEventListener("pointerdown", (e) => { drag = true; sw.classList.add("drag"); sw.setPointerCapture(e.pointerId); at(e); e.preventDefault(); });
+  sw.addEventListener("pointerdown", (e) => { if (typeof stopSweep === "function") stopSweep(); drag = true; sw.classList.add("drag"); sw.setPointerCapture(e.pointerId); at(e); e.preventDefault(); });
   sw.addEventListener("pointermove", (e) => { if (drag) { at(e); e.preventDefault(); } });
   const end = () => { drag = false; sw.classList.remove("drag"); };
   sw.addEventListener("pointerup", end); sw.addEventListener("pointercancel", end);
-  grip.addEventListener("keydown", (e) => {
+  grip.addEventListener("keydown", (e) => { if (typeof stopSweep === "function") stopSweep();
     const step = e.shiftKey ? 120 : 30;
     if (e.key === "ArrowLeft" || e.key === "ArrowRight") { setSwipe(S.swipeX + (e.key === "ArrowLeft" ? -step : step)); e.preventDefault(); }
     if (e.key === "Home" || e.key === "End") { setSwipe(e.key === "Home" ? 0 : 1e6); e.preventDefault(); }

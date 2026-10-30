@@ -3,8 +3,10 @@
    layers cross-fade, callouts draw in, and comparison sliders sweep on their own. Uses app.js state. */
 const reduceMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+const gtag = (v) => `<span class="pty ${v > 0 ? "d" : "r"}">${Math.abs(v).toFixed(0)} pts ${v > 0 ? "bluer" : "redder"}</span>`; // taste-vs-vote gap
 const ptag = (m) => `<span class="pty ${m > 0 ? "d" : "r"}">${fmtM(m)}</span>`;
-const ST = { on: false, active: -1, callouts: [], sweep: null, io: null };
+const ST = { on: false, active: -1, callouts: [], sweep: null, sweepT: null, io: null };
+function stopSweep() { cancelAnimationFrame(ST.sweep); clearTimeout(ST.sweepT); }
 
 function fly(opts) { // cinematic camera move
   if (reduceMotion()) map.jumpTo(opts);
@@ -24,7 +26,7 @@ function crossfade(fn) { // fade the data layers out, change them, fade back in
   if (reduceMotion()) return fn();
   const saved = L.map((l) => map.getPaintProperty(l, "fill-opacity"));
   for (const l of L) map.setPaintProperty(l, "fill-opacity", 0);
-  setTimeout(() => { fn(); recolor(); L.slice(2).forEach((l, i) => map.setPaintProperty(l, "fill-opacity", saved[i + 2])); }, 420);
+  setTimeout(() => { fn(); recolor(); L.forEach((l, i) => map.setPaintProperty(l, "fill-opacity", saved[i])); }, 420);
 }
 function clearCallouts() { ST.callouts.forEach((m) => m.remove()); ST.callouts = []; }
 function callout(lngLat, html, side = "right", delay = 0) {
@@ -34,19 +36,23 @@ function callout(lngLat, html, side = "right", delay = 0) {
 }
 function centroid(feat) { const b = bbox(feat.geometry); return [(b[0][0] + b[1][0]) / 2, (b[0][1] + b[1][1]) / 2]; }
 const stateFeat = (name) => S.geo.st.features.find((f) => f.properties.name === name);
-function sweep(from, to, ms = 2600) { // auto-move the comparison handle
-  cancelAnimationFrame(ST.sweep);
+function sweep(from, to, ms = 2600, delay = 0) { // auto-move the comparison handle (any touch on the handle stops it)
+  stopSweep();
+  if (delay) { ST.sweepT = setTimeout(() => sweep(from, to, ms), delay); return; }
   const w = document.getElementById("map").clientWidth;
   if (reduceMotion()) { setSwipe(w * to); return; }
   const t0 = performance.now();
   const step = (t) => { const k = Math.min(1, (t - t0) / ms); setSwipe(w * (from + (to - from) * ease(k))); if (k < 1) ST.sweep = requestAnimationFrame(step); };
   ST.sweep = requestAnimationFrame(step);
 }
-function scene(mode, cmp) { // put the map in a given layer + comparison state
+// where an automatic sweep starts and stops: clear of the text card on wide screens
+const sweepRange = () => (window.innerWidth > 900 ? [0.93, 0.56] : [0.9, 0.3]);
+function scene(mode, cmp) { // put the map in a given layer + comparison state, with a cross-fade
   const want = cmp || null;
   if (S.cmp && S.cmpKind !== want) toggleCompare(S.cmpKind);
-  if (mode !== S.mode && mode !== "q24") crossfade(() => setMode(mode));
-  if (want && !S.cmp) toggleCompare(want);
+  if (want === "q24") { if (!S.cmp) crossfade(() => toggleCompare("q24", sweepRange()[0])); return; }
+  if (mode !== S.mode) crossfade(() => { setMode(mode); if (want && !S.cmp) toggleCompare(want, sweepRange()[0]); });
+  else if (want && !S.cmp) toggleCompare(want, sweepRange()[0]);
 }
 
 function storySteps() {
@@ -66,9 +72,9 @@ function storySteps() {
       go: () => { scene("forecast"); home(); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, padding: storyPad() }); } },
     { k: "Taste as a map of politics", h: "What people watch, read and buy nearly redraws the 2024 map",
       p: `Using nothing but Qloo's data on the tastes of each place, from <i>Duck Dynasty</i> and Dan Bongino to Beyoncé and <i>Succession</i>, a model that never saw a state's results picked the right 2024 winner in <b>${right} of ${q24.length} states</b>. Left of the line: the map tastes predict. Right: the real result.`,
-      go: () => { S.mode = "q24"; if (S.cmp && S.cmpKind !== "q24") toggleCompare(S.cmpKind); if (!S.cmp) toggleCompare("q24"); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, padding: storyPad() }); setTimeout(() => sweep(0.15, 0.8, 3200), 900); } },
+      go: () => { scene("q24", "q24"); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, padding: storyPad() }); const [a, b] = sweepRange(); sweep(a, b, 3400, 2200); } },
     { k: "The undertow", h: "Where the culture and the vote part ways",
-      p: `Some states' tastes look bluer than they voted in 2024, led by ${us.slice(0, 2).map(([s_, v]) => `${s_} ${ptag(v)}`).join(" and ")}. Others look redder, led by ${us.slice(-2).reverse().map(([s_, v]) => `${s_} ${ptag(v)}`).join(" and ")}. We call that gap the undertow. It is a clue, not a verdict: tested on 2020 to 2024, the statewide gap did not predict which way states moved.`,
+      p: `Some states' tastes look bluer than they voted in 2024, led by ${us.slice(0, 2).map(([s_, v]) => `${s_} (${gtag(v)})`).join(" and ")}. Others look redder, led by ${us.slice(-2).reverse().map(([s_, v]) => `${s_} (${gtag(v)})`).join(" and ")}. We call that gap the undertow. It is a clue, not a verdict: tested on 2020 to 2024, the statewide gap did not predict which way states moved.`,
       go: () => { scene("undertow"); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, padding: storyPad() });
         setTimeout(() => { [...us.slice(0, 1), ...us.slice(-1)].forEach(([s_, v], i) => { const f = stateFeat(s_); if (f) callout(centroid(f), `<b>${esc(s_)}</b><span>Tastes ${v > 0 ? "bluer" : "redder"} than the vote by ${Math.abs(v).toFixed(0)} pts</span>`, i ? "left" : "right", i * 350); }); }, 1800); } },
     md ? { k: "Miami-Dade", h: "The vote moved right. The tastes did not.",
@@ -77,7 +83,7 @@ function storySteps() {
         setTimeout(() => callout([-80.21, 25.77], `<b>Miami-Dade</b><span>Voted ${fmtM(md.m24)} · Tastes ${fmtM(md.pred)}</span>`, "right"), 2400); } } : null,
     dis ? { k: dis.r.state, h: `In ${dis.r.state}, the polls and the culture disagree`,
       p: `The polls put the race at ${ptag(dis.f)}${dis.r.main ? `, ${esc(dis.r.main.d.name)} against ${esc(dis.r.main.r.name)}` : ""}. The state's tastes, adjusted for the national mood, point to ${ptag(dis.q)}${(dis.q > 0) !== (dis.f > 0) ? ", a different winner" : ""}. We keep the polls' call. Left of the line is the polling forecast, right is the forecast from tastes alone.`,
-      go: () => { scene("forecast", "qloo"); openRace(dis.r.id, false); const f = stateFeat(dis.r.state); if (f) fitTo(f, storyPad(), 6.6); setTimeout(() => sweep(0.85, 0.35, 2800), 1600);
+      go: () => { scene("forecast", "qloo"); openRace(dis.r.id, false); const f = stateFeat(dis.r.state); if (f) fitTo(f, storyPad(), 6.6); { const [a, b] = sweepRange(); sweep(a, b, 3000, 2800); }
         setTimeout(() => { if (f) callout(centroid(f), `<b>${esc(dis.r.state)}</b><span>Polls ${fmtM(dis.f)} · Tastes ${fmtM(dis.q)}</span>`, "right"); }, 2600); } } : null,
     { k: "Down to the block", h: "A forecast you can walk through",
       p: "Zoom into a neighborhood, or search a ZIP code, and Undertow queries Qloo live for cells about 150 meters across. Each block is shaded by whether its tastes run bluer or redder than the rest of its county. This is downtown Detroit, in Michigan's Senate race.",
@@ -91,7 +97,7 @@ function storySteps() {
 
 function activate(i, steps) {
   if (i === ST.active) return; ST.active = i;
-  cancelAnimationFrame(ST.sweep); clearCallouts();
+  stopSweep(); clearCallouts();
   document.querySelectorAll(".story-step").forEach((s, k) => s.classList.toggle("on", k === i));
   if (i >= 0 && steps[i]) steps[i].go();
 }
@@ -113,6 +119,7 @@ function story() {
     <footer class="story-end"><div class="story-card"><h2>Now explore it yourself</h2><p>Every race, every county, and a live block-level scan anywhere in the country.</p>
       <div class="story-cta"><button class="go" id="story-map">Explore the map</button><button class="ghost" id="story-charts">See the charts</button></div></div></footer>`;
   document.body.classList.add("story-on"); ov.hidden = false; ST.on = true; ST.active = -1;
+  ov.appendChild($("#swipe"));
   setTimeout(() => map.resize(), 50);
   for (const l of ["states-fill", "counties-fill", "cells-fill", "live-fill"]) map.setPaintProperty(l, "fill-opacity-transition", { duration: 700, delay: 0 });
   // the hero shows the national forecast
@@ -134,8 +141,9 @@ function story() {
 function storyKeys(e) { if (e.key === "Escape" && ST.on) endStory(); }
 function endStory() {
   if (!ST.on) return; ST.on = false;
-  ST.io?.disconnect(); cancelAnimationFrame(ST.sweep); clearCallouts();
+  ST.io?.disconnect(); stopSweep(); clearCallouts();
   document.removeEventListener("keydown", storyKeys);
+  $(".mapwrap").insertBefore($("#swipe"), $("#map24").nextSibling);
   $("#story").hidden = true; document.body.classList.remove("story-on");
   if (S.cmp) toggleCompare(S.cmpKind);
   setMode("forecast"); recolor(); home();

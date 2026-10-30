@@ -110,8 +110,9 @@ dialog td, dialog th { border-top: 1px solid var(--line); padding: 4px 6px 4px 0
 .polls a { color: var(--accent); }
 
 /* 2026 vs 2024 / polls vs Qloo swipe: always above every map overlay */
-#map24 { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
-#swipe { position: absolute; top: 0; bottom: 0; width: 28px; margin-left: -14px; z-index: 7; cursor: ew-resize; touch-action: none; }
+#map24 { position: absolute; inset: 0; pointer-events: none; z-index: 1; transition: opacity .5s ease; }
+#swipe { position: absolute; top: 0; bottom: 0; width: 28px; margin-left: -14px; z-index: 7; cursor: ew-resize; touch-action: none; transition: opacity .5s ease; }
+.story #swipe { z-index: 4; pointer-events: auto; } /* above the scrolling text while the story is open */
 #swipe .bar { position: absolute; top: 0; bottom: 0; left: 12px; width: 4px; background: #fff; box-shadow: 0 0 0 1px rgba(29,31,36,.55), 0 0 8px rgba(0,0,0,.25); }
 #swipe .grip { position: absolute; top: 50%; left: 50%; width: 46px; height: 46px; transform: translate(-50%, -50%); border-radius: 50%;
   border: 2px solid var(--ink); background: #fff; color: var(--ink); display: grid; place-items: center; padding: 0; cursor: ew-resize;
@@ -189,7 +190,7 @@ dialog.welcome { max-width: 640px; }
 body.story-on { overflow: hidden; }
 body.story-on .mapwrap { position: fixed; inset: 0; z-index: 50; height: auto !important; }
 body.story-on .mapbar, body.story-on .legend, body.story-on .scan, body.story-on .tip, body.story-on #map .maplibregl-ctrl-top-right { display: none; }
-body.story-on #swipe { z-index: 52; }
+
 .story { position: fixed; inset: 0; z-index: 60; pointer-events: none; }
 .story-progress { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: rgba(0,0,0,.06); z-index: 3; }
 .story-progress i { display: block; height: 100%; background: var(--ink); transform-origin: 0 50%; transform: scaleX(0); }

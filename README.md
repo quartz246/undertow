@@ -11,7 +11,7 @@ Polls tell you who is ahead. Undertow adds the *where*: Qloo knows what people i
 
 - **Forecasts all 35 Senate races and 36 governor races of Nov 3, 2026.** Recent general-election polls make each call, weighted by recency and sample size, with one poll per pollster and partisan-sponsored polls counted at 60%. Races with no polls start from the 2024 result plus the typical shift seen in polled races.
 - **Looks for skew in the polls.** A script checks two things: whether Democratic- or Republican-sponsored polls differ from independent ones by 4+ points, and whether a race's shift since 2024 is far (9+ points) from the typical race.
-- **Uses an LLM for the final judgement only.** DeepSeek (`deepseek-v4.1-flash`) reads the script's numbers and published race ratings, then makes the call with a short reason. It has no tools. Its answer is validated (party, probability range, at most 8 points from the script's call), and the script's call stands in if it fails.
+- **Uses an LLM for the final judgement only.** Undertow AI (an LLM) reads the script's numbers and published race ratings, then makes the call with a short reason. It has no tools. Its answer is validated (party, probability range, at most 8 points from the script's call), and the script's call stands in if it fails.
 - **Maps it all on four levels.** States, then counties, then Qloo's ~5 km heat cells, then a **live block-level scan (~150 m)** that calls Qloo for whatever neighbourhood you zoom into.
 - **Two comparison sliders.** Drag a line across the map to compare the **2026 forecast with the 2024 presidential result**, or the **polls forecast with a Qloo-only forecast**. The Qloo-only map is what each place's tastes alone predict, from the nationwide taste model, plus the national shift the polls show. On 2024 that model missed states by 6.6 pts on average and picked the right winner in 94% of them.
 - **A Tools panel, "Where we disagree."** It lists races where our call differs from the poll average, the Qloo-only forecast or Polymarket's odds (shown for comparison only and never used in the forecast). It also checks our county estimates against Polymarket's county markets and lists the counties most out of step with their 2024 vote.
@@ -50,7 +50,7 @@ scripts/get_data.sh                                   # public county results + 
 .venv/bin/python pipeline/national.py                 # nationwide features + statewide backtest
 .venv/bin/python pipeline/polls.py --office senate    # Wikipedia general-election polls -> data/polls/
 .venv/bin/python pipeline/forecast.py                 # script calls + skew checks -> data/forecast/script.json
-.venv/bin/python pipeline/synth.py --lock             # DeepSeek final judgement -> data/forecast/senate.json
+.venv/bin/python pipeline/synth.py --lock             # Undertow AI final judgement -> data/forecast/senate.json
 QLOO_API_KEY=... .venv/bin/uvicorn app.server:app --port 3090   # QLOO_API_KEY enables live block scans
 ```
 

@@ -71,7 +71,7 @@ def main():
             n += 1
             r["verdict"] = {"winner_party": v["winner_party"], "margin_d": round(float(v["margin_d"]), 1), "p_win": round(float(v["p_win"]), 3),
                             "confidence": v["confidence"], "headline": v["headline"].strip()[:120], "reasoning": v["reasoning"].strip()[:600],
-                            "model": MODEL, "at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+                            "model": "Undertow AI", "at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
         else:
             r.pop("verdict", None)
     if "--lock" in sys.argv: fc["locked_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")

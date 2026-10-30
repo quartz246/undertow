@@ -175,7 +175,7 @@
     "confidence": "medium",
     "headline": "Kreiss-Tomkins leads strongly; ratings favor Democratic flip",
     "reasoning": "Six recent polls average D+19.9, independent polls D+20.0, including NYT/Siena D+20. Ratings are mostly Lean/Solid D. Despite Alaska's R+13.8 2024 baseline and a large 33.7-point poll swing flag, consistent polling and ratings make Kreiss-Tomkins the clear favorite; I shade margin to D+18 for polling uncertainty.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -379,7 +379,7 @@
     "confidence": "medium",
     "headline": "Tuberville favored; Jones overperforms but Alabama remains Republican",
     "reasoning": "Polls average R+9.1, with independent polls R+12.0; ratings are Solid/Likely R. The 2024 baseline is R+30.6, and the poll shift toward Jones is flagged, so he may outrun the state, but not enough. I set the Republican margin near the poll average, slightly wider.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -555,7 +555,7 @@
     "confidence": "high",
     "headline": "Sanders favored as safe Republican in Arkansas",
     "reasoning": "The latest independent Hendrix poll has Sanders ahead by 19 points, and every rating is Solid/Safe R. Arkansas's 2024 Republican baseline (-30.6 Democratic margin) plus incumbency reinforce this. An earlier August poll was closer (-5), so the race is not risk-free, but the recent evidence and ratings strongly favor Sanders.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -773,7 +773,7 @@
     "confidence": "high",
     "headline": "Hobbs favored by polling average and ratings",
     "reasoning": "Seven recent polls average Hobbs +7.5, with independent polls +11.6. The 2024 baseline was R+5.5, but the +13 poll swing is close to typical and unflagged. Cook/Sabato rate Lean/Likely D, and the script gives D 93%. Incumbent advantage supports the call.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -996,7 +996,7 @@
     "confidence": "high",
     "headline": "Becerra favored by large California margin",
     "reasoning": "Polls average Becerra +21.6, with independents +22.2 across 10 recent surveys. California's 2024 presidential baseline was D+20.1, and all ratings are Solid or Safe D. No house-skew flag was raised, so the polls and baseline point to a comfortable Democratic win.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -1157,7 +1157,7 @@
     "confidence": "high",
     "headline": "Colorado stays safely Democratic with no polls",
     "reasoning": "No recent polls. Colorado's 2024 presidential margin was D+11.0 and every published rating is Solid/Safe D. The deterministic script applies the typical +8.5 shift, giving D+19.5. With no contrary evidence, I keep that margin and high confidence.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -1299,7 +1299,7 @@
     "confidence": "high",
     "headline": "Lamont leads strongly in Connecticut governor race",
     "reasoning": "Six recent polls average Lamont +18.0, with independent polls at +18.7. The latest Quinnipiac, Wesleyan/YouGov, and GreatBlue show +20 to +22; Emerson is a lower +13 outlier. Connecticut\u2019s 2024 presidential baseline is D+14.5, and all ratings are Solid/Safe/Likely D. Incumbent Lamont is a clear favorite.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -1522,7 +1522,7 @@
     "confidence": "medium",
     "headline": "Donalds favored as polls show consistent Republican lead",
     "reasoning": "15 recent polls average Jolly -4.6, with independent polls at -4.4; latest NYT/Siena -4.0 and RedBox -5.0 confirm the Republican lead. Ratings are mostly Lean R, with Silver Likely R. Polls show Democrats swinging +8.5 from 2024\u2019s -13.1 baseline but still trailing. Script gives R 82% at -4.6.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -1745,7 +1745,7 @@
     "confidence": "low",
     "headline": "Tossup polls, GOP baseline point to narrow Jackson win",
     "reasoning": "Nine recent polls average R+0.3 (independent avg 0.0), leaving a tied race. Georgia\u2019s 2024 baseline is R+2.2, and the script\u2019s poll-only model gives Jackson 52.4%. Ratings are mostly tossup despite two D leans; no house-skew flag. That supports a low-confidence R edge.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -1888,7 +1888,7 @@
     "confidence": "high",
     "headline": "Green favored by wide margin in safe-blue Hawaii",
     "reasoning": "No recent polls; 2024 baseline is D+23.1 and every rater (Cook, Sabato, DDHQ, Silver) calls it Solid/Safe D. Script's polls-free estimate is D+31.6; incumbent Green should hold near that, so I set D+30 with high confidence, trimming slightly for the no-poll uncertainty (sigma 9).",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -2111,7 +2111,7 @@
     "confidence": "medium",
     "headline": "Sand favored; polls and ratings point to Democratic flip",
     "reasoning": "Rob Sand leads by 7.0 pts in the polling average, with independent polls at +7.2 and 12 recent surveys. Every rating is Lean/Likely D. However, the 11.8-pt pro-D skew versus 2024 and Iowa's R+13.3 baseline warn of a polling miss, so confidence is medium.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -2301,7 +2301,7 @@
     "confidence": "high",
     "headline": "Little holds double-digit lead in solidly Republican Idaho",
     "reasoning": "Polls average R+17.2, with independent polls also R+17.2, and the latest shows R+19. Idaho\u2019s 2024 presidential baseline was R+36.5, and all ratings are Solid/Safe R. The poll swing toward Pickens is notable, but incumbent Little remains a clear favorite.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -2484,7 +2484,7 @@
     "confidence": "high",
     "headline": "Pritzker leads by 18.5; Illinois solidly Democratic",
     "reasoning": "Independent ActiVote polling shows Pritzker +18, and the recent average is D+18.5, well above the D+11 2024 baseline. No house skew is flagged. Cook, Sabato, and other ratings are Solid/Safe D. Incumbent Pritzker is well known. The script also gives D+18.5, so I cap win probability at 0.99.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -2695,7 +2695,7 @@
     "confidence": "medium",
     "headline": "Masterson favored as GOP polling lead holds",
     "reasoning": "Six recent polls average R+4.1; independent polls average R+4.6, including SSRS R+5 and NYT/Siena R+5. Ratings mostly Lean R, though Cook and RCP call it Tossup. The 2024 R+16 baseline and script's 79% Republican win chance support Masterson despite Democratic overperformance.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -2913,7 +2913,7 @@
     "confidence": "high",
     "headline": "Healey holds double-digit lead in safely Democratic Massachusetts",
     "reasoning": "Four recent independent polls average Healey +22.1, with the latest at +23 and no partisan house offset. Massachusetts voted D+25.3 for president in 2024, and every rating is Solid/Safe D. The shift flag notes some Republican movement, but incumbent Healey remains a heavy favorite.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -3089,7 +3089,7 @@
     "confidence": "high",
     "headline": "Moore cruising to reelection in deep-blue Maryland",
     "reasoning": "Two independent polls both show Moore up 27, matching his 2024 presidential baseline of D+28.8 and unanimous Safe/Solid D ratings. Slight tightening (-1.8 since 2024) and typical incumbent drift warrant a modest trim to D+25, but the outcome is not in doubt.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -3312,7 +3312,7 @@
     "confidence": "high",
     "headline": "Pingree leads strongly in Maine governor race",
     "reasoning": "Polls average D+10.1 over 13 recent surveys; independent polls average D+9.8, with latest SSRS at D+14. Ratings are Solid/Likely D, and 2024 baseline was D+6.9. One Marist zero outlier is outweighed by consistent leads and no house-skew flag.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -3535,7 +3535,7 @@
     "confidence": "high",
     "headline": "Benson holds clear lead in Michigan governor race",
     "reasoning": "Benson leads by 7.6 points across 16 recent polls; independent polls average D+7.8 and there is no house skew. Michigan's 2024 baseline was R+1.4, but the +9.0 poll swing is near the typical +8.5. Ratings are Lean/Likely D. This supports a Democratic win, though margin uncertainty remains.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -3758,7 +3758,7 @@
     "confidence": "high",
     "headline": "Klobuchar leads comfortably; Minnesota stays Democratic",
     "reasoning": "Poll average is D+10.4 across 8 recent polls; independent polls alone show D+11.7, including NYT/Siena at D+18. Republican-sponsored polls are 4.7 points friendlier but already discounted. All ratings are Solid/Likely/Safe D, and the 2024 baseline is D+4.3. Klobuchar's profile supports a high-confidence Democratic win.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -3976,7 +3976,7 @@
     "confidence": "medium",
     "headline": "Pillen holds narrow lead despite Democratic polling shift",
     "reasoning": "Nine recent polls average R+2.8, with independents at R+2.5. Ratings are mostly Likely R, and Pillen is the incumbent. Polls imply a 9.3-point shift toward Walz versus the typical race, and Nebraska's 2024 baseline is R+20.6, but the current average still narrowly favors Pillen.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -4199,7 +4199,7 @@
     "confidence": "high",
     "headline": "Ayotte holds clear lead in New Hampshire",
     "reasoning": "Eight recent polls average R+9.0; independent polls alone show R+7.5. Ratings are Likely or Solid R. Incumbent Ayotte leads Warmington despite New Hampshire's 2024 D+2.8 baseline. Republican-sponsored polls are more favorable, but the independent evidence still points to a solid Republican win.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -4396,7 +4396,7 @@
     "confidence": "high",
     "headline": "Haaland favored as polls and ratings point Democratic",
     "reasoning": "Polls average Haaland +6.7, and independent polls also average +6.7; latest Research & Polling shows +7 and SurveyUSA +6. Ratings are Solid/Likely D, and the 2024 baseline was D+6.0. The script gives D+6.7 and 84.9% win probability; I round to 86%.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -4614,7 +4614,7 @@
     "confidence": "low",
     "headline": "Lombardo edges tossup as independent polls tied",
     "reasoning": "Polls average D+1.7, but that includes several Democratic-sponsored surveys; independent_avg is only D+0.2. Nevada\u2019s 2024 baseline is R+3.1, all ratings are Tossup, and incumbent Lombardo can outrun the typical shift. I treat this as a near-tie leaning narrowly Republican.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -4837,7 +4837,7 @@
     "confidence": "high",
     "headline": "Hochul favored by double digits in New York",
     "reasoning": "Nine recent polls average D+12.9, and independent polls alone are D+13.7. Ratings are Solid/Likely/Safe D, and the 2024 baseline was D+12.7. Republican-sponsored polls are 8.8 points friendlier but already discounted; Hochul remains strongly favored.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -5064,7 +5064,7 @@
     "confidence": "medium",
     "headline": "Acton favored; independent polls show small Democratic lead",
     "reasoning": "Averaged polls put Acton ahead by 3.5 points; independent polls alone show D+4.1, and most ratings Lean D. Republican-sponsored polls shift 4.1 points toward Ramaswamy, so I shade the margin down slightly. Ohio\u2019s R+11.2 2024 baseline adds uncertainty, keeping confidence medium.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -5240,7 +5240,7 @@
     "confidence": "medium",
     "headline": "Mazzei favored; polls show surprisingly close Oklahoma race",
     "reasoning": "Oklahoma's 2024 baseline is R+34.3 and all ratings are Likely/Solid R. Two recent polls show Munson only 3.6 points behind, but one is Democratic-sponsored and the other has just 91 LV; the independent average is R+3.0. I expect a Republican win by about 4-5 points.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -5437,7 +5437,7 @@
     "confidence": "medium",
     "headline": "Kotek holds narrow lead in tightened Oregon race",
     "reasoning": "Polls average Kotek +2.9, with independent polls +2.0, and most ratings are Lean/Likely D. The 2024 baseline was D+14.4, but the script flags a large shift toward Drazan. With only two recent polls and RCP calling it Tossup, I keep a modest Democratic edge.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -5655,7 +5655,7 @@
     "confidence": "high",
     "headline": "Shapiro holds large bipartisan polling lead in Pennsylvania",
     "reasoning": "Shapiro leads by 23.4 points in recent polls, with independent polls averaging 24.1 and 7 recent surveys. All ratings are Solid/Safe D. The 16.6-point skew flag suggests a strong incumbent effect; even a sizeable polling miss leaves him comfortably ahead.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -5869,7 +5869,7 @@
     "confidence": "high",
     "headline": "Foulkes favored; polls show double-digit Democratic lead",
     "reasoning": "Four recent independent polls average D+26.8, with the latest Emerson poll at D+34. All ratings are Solid/Safe D, the 2024 baseline is D+13.9, and there is no house-skew flag. Foulkes is heavily favored.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -6087,7 +6087,7 @@
     "confidence": "high",
     "headline": "Wilson favored by double digits in South Carolina",
     "reasoning": "Six recent polls average R+10.3, with independents at R+9.5 and latest NYT/Siena R+7. Ratings are Solid/Safe R except DDHQ Lean R. 2024 was R+17.9; polls show a typical +7.6 swing, not enough to close the gap. Script gives R 98%.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -6263,7 +6263,7 @@
     "confidence": "high",
     "headline": "Rhoden favored; polls and ratings show solid Republican lead",
     "reasoning": "Incumbent Rhoden leads by 16.9 pts in the poll average and 20 pts among independents. All ratings are Solid/Safe R, and the 2024 baseline is R+29.2. Even the Democratic-sponsored poll shows him down 10, so there is no evidence of vulnerability.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -6474,7 +6474,7 @@
     "confidence": "high",
     "headline": "Blackburn holds Republican lead despite closer polls",
     "reasoning": "Recent polls average Green -7.2, with independents at -5.7, so Blackburn still leads. Tennessee's 2024 baseline is R+29.7 and all ratings are Solid/Likely/Safe R. The large pro-Green skew flag adds uncertainty, but the consistent Republican lead and ratings support a high-confidence R call.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -6701,7 +6701,7 @@
     "confidence": "medium",
     "headline": "Abbott holds narrow lead as independent polls point Republican",
     "reasoning": "Independent polls average R+2.5, and the overall average is R+2.2 with 26 recent polls. Ratings are mostly Lean/Tilt R, and Abbott is an incumbent. The 2024 baseline is R+13.7, while polls swung 11.5 points toward Democrats, close to typical; no house-skew flag. That leaves a narrow but consistent Abbott edge.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -6898,7 +6898,7 @@
     "confidence": "medium",
     "headline": "Incumbent Scott leads polls and ratings in Vermont",
     "reasoning": "Phil Scott (R) leads the weighted poll average by 2.5 points across three recent independent polls, and all ratings are Lean or Likely R. The 2024 D+31.8 baseline and -42.8 relative poll swing flag a strong incumbent/candidate effect. I set R by about 3 points, with medium confidence given poll scatter.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -7116,7 +7116,7 @@
     "confidence": "medium",
     "headline": "Crowley favored as Wisconsin polls lean Democratic",
     "reasoning": "Polls average D+5.0, with independent polls at D+7.0 and Marquette at D+7.0. Ratings are mostly Lean D, though Cook and Fox call it Tossup. The 2024 baseline was only R+0.9, so a Democratic win is likely but not certain.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   },
@@ -7277,7 +7277,7 @@
     "confidence": "high",
     "headline": "Wyoming remains safely Republican with no recent polls",
     "reasoning": "No recent polls. The 2024 presidential margin was R+46.2 and all ratings are Solid/Safe R. Applying the typical +8.5 shift gives R+37.7, a large Republican advantage for Barlow.",
-    "model": "deepseek-v4.1-flash",
+    "model": "Undertow AI",
     "at": "2026-10-30T04:34:22+00:00"
    }
   }

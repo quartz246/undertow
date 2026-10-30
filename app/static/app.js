@@ -414,6 +414,48 @@ function initSwipeDrag() {
   window.addEventListener("resize", () => S.cmp && setSwipe(Math.min(S.swipeX, $("#map").clientWidth)));
 }
 
+/* ---------------- place search (ZIP / city / state) ---------------- */
+function initSearch() {
+  const q = $("#q"), ul = $("#sugg"); let items = [], sel = -1, timer, ctl;
+  const close = () => { ul.hidden = true; sel = -1; q.setAttribute("aria-expanded", "false"); };
+  const draw = () => {
+    ul.innerHTML = items.map((r, i) => `<li role="option" id="sg${i}" aria-selected="${i === sel}" data-i="${i}">${esc(r.label)}<small>${r.type === "zip" ? "ZIP" : r.type === "state" ? "state" : "city"}</small></li>`).join("");
+    ul.hidden = !items.length; q.setAttribute("aria-expanded", String(!!items.length));
+    if (sel >= 0) q.setAttribute("aria-activedescendant", `sg${sel}`); else q.removeAttribute("aria-activedescendant");
+    ul.querySelectorAll("li").forEach((li) => li.addEventListener("mousedown", (e) => { e.preventDefault(); go(items[+li.dataset.i]); }));
+  };
+  q.addEventListener("input", () => {
+    clearTimeout(timer); const v = q.value.trim(); if (v.length < 2) { items = []; close(); return; }
+    timer = setTimeout(async () => {
+      ctl?.abort(); ctl = new AbortController();
+      try { items = (await fetch(`/api/search?q=${encodeURIComponent(v)}`, { signal: ctl.signal }).then((r) => r.json())).results || []; sel = items.length ? 0 : -1; draw(); } catch {}
+    }, 160);
+  });
+  q.addEventListener("keydown", (e) => {
+    if (ul.hidden) return;
+    if (e.key === "ArrowDown") { sel = Math.min(items.length - 1, sel + 1); draw(); e.preventDefault(); }
+    else if (e.key === "ArrowUp") { sel = Math.max(0, sel - 1); draw(); e.preventDefault(); }
+    else if (e.key === "Escape") close();
+  });
+  q.addEventListener("blur", () => setTimeout(close, 120));
+  $("#search").addEventListener("submit", (e) => { e.preventDefault(); if (items[sel >= 0 ? sel : 0]) go(items[sel >= 0 ? sel : 0]); });
+  function go(r) {
+    close(); q.value = r.label; q.blur();
+    const fp = S.nameToFips[r.state];
+    if (fp && S.raceBy[fp]) openRace(S.raceBy[fp][0].id, false);
+    if (!map) return;
+    if (r.type === "state") {
+      const f = S.geo.st.features.find((x) => x.properties.fips === fp);
+      if (f) map.fitBounds(bbox(f.geometry), { padding: 40, duration: 1200, maxZoom: 7.2 });
+      return;
+    }
+    S.pin?.remove();
+    const el = document.createElement("div"); el.className = "pin"; el.setAttribute("aria-hidden", "true");
+    S.pin = new maplibregl.Marker({ element: el }).setLngLat([r.lon, r.lat]).addTo(map);
+    map.flyTo({ center: [r.lon, r.lat], zoom: r.type === "zip" ? 12.8 : 11.6, duration: 1600 }); // lands in live block-scan range
+  }
+}
+
 /* ---------------- welcome ---------------- */
 function welcome(force) {
   let hide = false; try { hide = localStorage.getItem("undertow-welcome") === "hide"; } catch {}
@@ -432,7 +474,7 @@ function welcome(force) {
     <h3>What we found, honestly</h3>
     <p>On 2020→2024, out-of-step counties tended to move the way Qloo flagged <i>inside</i> a state (${m.backtest.states_positive} of ${Object.keys(m.backtest.states).length} states). Statewide, the signal predicted nothing${N ? ` (r = ${N.state_r_controlled})` : ""}. So <b>polls decide who wins</b>. Scripts check the polls for skew and DeepSeek makes each final call. Qloo shows <i>where</i> the vote is moving.</p>
     <h3>Try it</h3>
-    <ul class="try"><li>Click a state, or switch <b>Senate / Governor</b></li><li><b>2026 ↔ 2024</b> and <b>Polls ↔ Qloo</b>: drag the line across the map to compare</li><li><b>Undertow</b> layer: places out of step with their vote</li><li><b>Tools</b>: where our calls, the polls and the betting markets disagree</li><li>Zoom into a city for a live block scan</li></ul>
+    <ul class="try"><li>Click a state, or switch <b>Senate / Governor</b></li><li><b>2026 ↔ 2024</b> and <b>Polls ↔ Qloo</b>: drag the line across the map to compare</li><li><b>Undertow</b> layer: places out of step with their vote</li><li><b>Tools</b>: where our calls, the polls and the betting markets disagree</li><li>Search a <b>ZIP code or city</b>, or zoom in anywhere, for a live block scan</li></ul>
     <div class="wfoot"><label><input type="checkbox" id="welcome-hide"${hide ? " checked" : ""}> Don't show this again</label><button class="go" id="welcome-go">Explore the map</button></div>`;
   $("#welcome-go").onclick = () => { try { localStorage.setItem("undertow-welcome", $("#welcome-hide").checked ? "hide" : "show"); } catch {} $("#welcome").close(); };
   $("#welcome").showModal();
@@ -463,7 +505,7 @@ function how() {
     <p>States → counties → Qloo's ~5 km cells → a live scan at ~150 m when you zoom into a neighbourhood. Below the county, a cell shows its county's result shifted by how its tastes differ from its neighbours'. That is relative, not a separate poll.</p>
     <h3>The tastes</h3>
     <table><tr><th>Taste</th><th>Pulls</th><th>Strength</th><th>Same direction in</th></tr>${ents.map(([n, e]) => `<tr><td>${esc(n)}</td><td class="${e.lean}">${e.lean}</td><td>${Math.abs(e.partial_r).toFixed(2)}</td><td>${pct(e.states_consistent)} of states</td></tr>`).join("")}</table>
-    <h3>Data</h3><p class="note">Qloo Insights API (hackathon endpoint: heatmaps, search). 2020 and 2024 county presidential results: github.com/tonmcg/US_County_Level_Election_Results_08-24. Polls: Wikipedia general-election polling tables. County shapes: us-atlas. Basemap: OpenFreeMap / OpenStreetMap.</p>`;
+    <h3>Data</h3><p class="note">Qloo Insights API (hackathon endpoint: heatmaps, search). 2020 and 2024 county presidential results: github.com/tonmcg/US_County_Level_Election_Results_08-24. Polls: Wikipedia general-election polling tables. County shapes: us-atlas. ZIP and city search: GeoNames US postal codes (CC BY 4.0). Market odds in Tools (comparison only): Polymarket. Basemap: OpenFreeMap / OpenStreetMap.</p>`;
   $("#how").showModal();
 }
 
@@ -477,6 +519,7 @@ $("#tools-btn").onclick = () => tools();
 $("#about-btn").onclick = () => welcome(true);
 document.querySelectorAll(".cmp").forEach((b) => (b.onclick = () => map && toggleCompare(b.dataset.cmp)));
 initSwipeDrag();
+initSearch();
 
 load().then(() => {
   tally(); home(); welcome(false);

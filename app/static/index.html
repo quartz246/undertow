@@ -36,6 +36,10 @@
         <button role="radio" aria-checked="false" data-mode="undertow">Undertow</button>
         <button role="radio" aria-checked="false" data-mode="r24">2024 result</button>
       </div>
+      <form class="search" id="search" role="search" autocomplete="off">
+        <input id="q" type="search" placeholder="ZIP code or city" aria-label="Search a ZIP code, city or state" aria-controls="sugg" aria-autocomplete="list">
+        <ul id="sugg" class="sugg" role="listbox" hidden></ul>
+      </form>
       <button class="cmp" data-cmp="r24" aria-pressed="false">2026 ↔ 2024</button>
       <button class="cmp" data-cmp="qloo" aria-pressed="false">Polls ↔ Qloo</button>
       <div class="zoomhint" id="zoomhint">States → zoom for counties → ~5 km Qloo cells → live block scan (~150 m)</div>

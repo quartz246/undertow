@@ -15,6 +15,7 @@ Polls tell you who is ahead. Undertow adds the *where*: Qloo knows what people i
 - **Maps it all on four levels.** States, then counties, then Qloo's ~5 km heat cells, then a **live block-level scan (~150 m)** that calls Qloo for whatever neighbourhood you zoom into.
 - **Two comparison sliders.** Drag a line across the map to compare the **2026 forecast with the 2024 presidential result**, or the **polls forecast with a Qloo-only forecast**. The Qloo-only map is what each place's tastes alone predict, from the nationwide taste model, plus the national shift the polls show. On 2024 that model missed states by 6.6 pts on average and picked the right winner in 94% of them.
 - **A Tools panel, "Where we disagree."** It lists races where our call differs from the poll average, the Qloo-only forecast or Polymarket's odds (shown for comparison only and never used in the forecast). It also checks our county estimates against Polymarket's county markets and lists the counties most out of step with their 2024 vote.
+- **ZIP code and city search.** Jump to any place; the map flies there, opens the state's race and runs a live block scan.
 - **Covers governor races too.** All 36, through the same pipeline.
 - **Shows where the "undertow" is.** These are counties whose tastes say they should vote differently from how they did in 2024, measured relative to their state.
 
@@ -58,6 +59,7 @@ The repo includes the processed model outputs (`data/model/`) and the forecast (
 - **Polls:** Wikipedia general-election polling tables for each 2026 Senate race.
 - **2020/2024 county presidential results:** [tonmcg/US_County_Level_Election_Results_08-24](https://github.com/tonmcg/US_County_Level_Election_Results_08-24).
 - **County shapes:** [us-atlas](https://github.com/topojson/us-atlas).
+- **ZIP and city search:** [GeoNames](https://www.geonames.org/) US postal codes (CC BY 4.0), bundled in `data/geo/`.
 - **Basemap:** OpenFreeMap / OpenStreetMap.
 - **Polymarket** (public gamma API) odds appear in the Tools panel for comparison only. They never feed the forecast.
 

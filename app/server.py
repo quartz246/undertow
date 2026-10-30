@@ -89,6 +89,60 @@ async def live(lat: float = Query(..., ge=18, le=72), lon: float = Query(..., ge
     _cache[key] = {"t": time.time(), "v": v}
     return v
 
+# ---- place search: ZIP codes and cities (GeoNames US postal codes, CC BY 4.0), all local ----
+ABBR = {"AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California", "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware",
+        "DC": "District of Columbia", "FL": "Florida", "GA": "Georgia", "HI": "Hawaii", "ID": "Idaho", "IL": "Illinois", "IN": "Indiana", "IA": "Iowa",
+        "KS": "Kansas", "KY": "Kentucky", "LA": "Louisiana", "ME": "Maine", "MD": "Maryland", "MA": "Massachusetts", "MI": "Michigan", "MN": "Minnesota",
+        "MS": "Mississippi", "MO": "Missouri", "MT": "Montana", "NE": "Nebraska", "NV": "Nevada", "NH": "New Hampshire", "NJ": "New Jersey",
+        "NM": "New Mexico", "NY": "New York", "NC": "North Carolina", "ND": "North Dakota", "OH": "Ohio", "OK": "Oklahoma", "OR": "Oregon",
+        "PA": "Pennsylvania", "RI": "Rhode Island", "SC": "South Carolina", "SD": "South Dakota", "TN": "Tennessee", "TX": "Texas", "UT": "Utah",
+        "VT": "Vermont", "VA": "Virginia", "WA": "Washington", "WV": "West Virginia", "WI": "Wisconsin", "WY": "Wyoming"}
+NAME2ABBR = {v.lower(): k for k, v in ABBR.items()}
+ZIPS, CITIES = [], {}
+for line in (DATA / "geo/us_zips.tsv").read_text().splitlines()[1:]:
+    z, place, st, lat, lon = line.split("\t")
+    if st not in ABBR: continue
+    ZIPS.append((z, place, st, float(lat), float(lon)))
+    c = CITIES.setdefault((place.lower(), st), [place, st, 0.0, 0.0, 0])
+    c[2] += float(lat); c[3] += float(lon); c[4] += 1
+CITY_LIST = sorted(((k[0], v[0], v[1], v[2] / v[4], v[3] / v[4], v[4]) for k, v in CITIES.items()), key=lambda t: -t[5])
+
+@app.get("/api/search")
+def search(q: str = Query("", max_length=60)):
+    q = " ".join(q.strip().split())
+    if not q: return {"results": []}
+    out = []
+    if q.isdigit():
+        for z, place, st, lat, lon in ZIPS:
+            if z.startswith(q):
+                out.append({"type": "zip", "label": f"{z} · {place}, {st}", "state": ABBR[st], "lat": lat, "lon": lon})
+                if len(out) >= 8: break
+        return {"results": out}
+    ql = q.lower().rstrip(",")
+    for name, ab in NAME2ABBR.items():                      # whole states
+        if name.startswith(ql) and len(ql) >= 3:
+            out.append({"type": "state", "label": ABBR[ab], "state": ABBR[ab]})
+    want_st = None                                           # "columbus oh", "columbus, ohio"
+    parts = [p.strip() for p in ql.replace(",", " , ").split(",")] if "," in ql else [ql]
+    city = parts[0].strip()
+    tail = parts[1].strip() if len(parts) > 1 else ""
+    if not tail:
+        toks = city.split()
+        if len(toks) > 1 and toks[-1].upper() in ABBR: city, tail = " ".join(toks[:-1]), toks[-1]
+    if tail:
+        want_st = tail.upper() if tail.upper() in ABBR else NAME2ABBR.get(tail)
+        if not want_st:
+            want_st = next((ab for n, ab in NAME2ABBR.items() if n.startswith(tail)), None)
+    exact, pre = [], []
+    for key, place, st, lat, lon, n in CITY_LIST:
+        if want_st and st != want_st: continue
+        if key == city: exact.append((place, st, lat, lon, n))
+        elif key.startswith(city): pre.append((place, st, lat, lon, n))
+        if len(exact) + len(pre) >= 40: break
+    for place, st, lat, lon, n in (exact + pre)[: 8 - len(out)]:
+        out.append({"type": "city", "label": f"{place}, {st}", "state": ABBR[st], "lat": round(lat, 4), "lon": round(lon, 4), "zips": n})
+    return {"results": out[:8]}
+
 @app.get("/api/health")
 def health():
     return {"ok": True, "live": bool(KEY)}

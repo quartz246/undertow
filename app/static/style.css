@@ -130,3 +130,13 @@ dialog.welcome { max-width: 640px; }
 
 /* keep the main map controls above the compare map */
 #map .maplibregl-ctrl-top-right, #map .maplibregl-ctrl-bottom-right { z-index: 5; }
+
+/* place search */
+.search { position: relative; pointer-events: auto; }
+.search input { width: 220px; max-width: 60vw; border: 1px solid var(--line); background: var(--card); border-radius: 8px; padding: 8px 12px; font: inherit; font-size: 13px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.search input:focus { outline: 2px solid var(--accent); outline-offset: 0; }
+.sugg { position: absolute; top: calc(100% + 4px); left: 0; min-width: 260px; margin: 0; padding: 4px; list-style: none; background: var(--card); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,.12); z-index: 6; }
+.sugg li { padding: 7px 10px; border-radius: 6px; font-size: 13px; cursor: pointer; display: flex; justify-content: space-between; gap: 12px; }
+.sugg li small { color: var(--muted); }
+.sugg li[aria-selected="true"], .sugg li:hover { background: var(--mid); }
+.pin { width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 3px solid #fff; box-shadow: 0 1px 6px rgba(0,0,0,.4); }

@@ -373,6 +373,8 @@ function openRace(id, fly) {
       ${r.polls.list.map((p) => `<tr><td>${esc(p.pollster)}</td><td>${esc(p.end_date)}</td><td>${p.sample ? esc(p.sample) + (p.population ? " " + esc(p.population) : "") : "—"}</td><td>${fmtM(p.margin_d)}</td></tr>`).join("")}</table>
       <p class="note">Source: Wikipedia polling tables, ${esc(r.wiki_url ? new URL(r.wiki_url).pathname.split("/").pop().replaceAll("_", " ") : "")}.</p></div>` : `<div class="card"><h3>Polls</h3><p class="note">No public general-election polls found, so this call starts from the 2024 result plus the typical shift in polled races.</p></div>`}`;
   $("#back").onclick = () => { home(); map?.flyTo({ center: [-96.5, 38.6], zoom: 3.6 }); };
+  const sb = document.createElement("button"); sb.className = "go stratlink"; sb.textContent = `Plan ad spend for this race →`;
+  sb.onclick = () => strategist({ race: r.id }); $("#panel-body").querySelector(".verdict")?.after(sb);
   bindCountyLinks();
 }
 function bindCountyLinks() {
@@ -380,6 +382,99 @@ function bindCountyLinks() {
     const cf = S.geo.co.features.find((x) => x.properties.fips === b.dataset.fips);
     if (cf && map) map.fitBounds(bbox(cf.geometry), { padding: 60, duration: 900, maxZoom: 10.6 });
   }));
+}
+
+/* ---------------- campaign strategist (agent) ---------------- */
+const fmtUSD = (n) => "$" + Math.round(n).toLocaleString();
+function stratLayers() {
+  if (!map || map.getSource("strat")) return;
+  map.addSource("strat", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
+  map.addLayer({ id: "strat-county", type: "line", source: "counties", filter: ["in", ["get", "fips"], ["literal", []]], paint: { "line-color": "#0f7b6c", "line-width": 2.5 } });
+  map.addLayer({ id: "strat-pts", type: "circle", source: "strat", paint: {
+    "circle-radius": ["case", [">", ["get", "budget"], 0], ["interpolate", ["linear"], ["sqrt", ["get", "budget"]], 0, 5, 400, 22], 5],
+    "circle-color": ["case", [">", ["get", "budget"], 0], ["match", ["get", "goal"], "turnout", "#2160b8", "#0f7b6c"], "#9aa0ab"],
+    "circle-opacity": 0.85, "circle-stroke-color": "#fff", "circle-stroke-width": 2 } });
+  map.on("mousemove", "strat-pts", (e) => { const p = e.features[0].properties, tip = $("#tip");
+    tip.innerHTML = `<b>${esc(p.zip)} · ${esc(p.place)}</b><br><span class="k">${esc(p.county)}</span>${+p.budget ? `<br><b>${fmtUSD(+p.budget)}</b> · ${esc(p.segment)} (${esc(p.goal)})` : `<br><span class="k">candidate ZIP · lean ${(+p.lean).toFixed(2)}</span>`}`;
+    tip.hidden = false; const r = $("#map").getBoundingClientRect(); tip.style.left = Math.min(e.point.x + 14, r.width - 270) + "px"; tip.style.top = e.point.y + 14 + "px"; });
+  map.on("mouseleave", "strat-pts", () => ($("#tip").hidden = true));
+}
+function stratDraw(pts, counties) {
+  stratLayers(); if (!map) return;
+  map.getSource("strat").setData({ type: "FeatureCollection", features: pts.map((z) => ({ type: "Feature", properties: { zip: z.zip, place: z.place, county: z.county, budget: z.budget || 0, goal: z.goal || "", segment: z.segment || "", lean: z.lean_toward_you ?? 0 }, geometry: { type: "Point", coordinates: [z.lon, z.lat] } })) });
+  if (counties) map.setFilter("strat-county", ["in", ["get", "fips"], ["literal", counties]]);
+  if (pts.length) { const xs = pts.map((z) => z.lon), ys = pts.map((z) => z.lat);
+    map.fitBounds([[Math.min(...xs) - 0.25, Math.min(...ys) - 0.2], [Math.max(...xs) + 0.25, Math.max(...ys) + 0.2]], { padding: panelPad(), duration: 1400, maxZoom: 9.5 }); }
+}
+function strategist(pre = {}) {
+  openPanel();
+  const races = [...S.fcs.senate.races, ...S.fcs.governor.races].sort((a, b) => Math.abs(final(a).margin_d) - Math.abs(final(b).margin_d));
+  const rid = pre.race || (S.sel?.id) || races[0].id;
+  const ex = [["IA-S", "D", 500000, "Iowa Senate · Turek · $500k"], ["ME-S", "R", 1000000, "Maine Senate · Collins · $1M"], ["GA-G", "D", 750000, "Georgia governor · Democrat · $750k"]];
+  $("#panel-body").innerHTML = `<button class="back" id="back">← All races</button>
+    <h2>Campaign Strategist</h2>
+    <p class="sub">An Undertow AI agent plans where a campaign's last ad dollars should go, ZIP code by ZIP code. It reads the race, ranks counties, runs live Qloo scans, finds what each target area watches, listens to and buys, and splits the budget. No personal data: Qloo works on aggregate tastes.</p>
+    <form class="sform" id="sform">
+      <label>Race<select id="s-race">${races.map((r) => `<option value="${r.id}"${r.id === rid ? " selected" : ""}>${esc(r.state)} ${r.id.endsWith("-G") ? "governor" : "Senate"} (${fmtM(final(r).margin_d)})</option>`).join("")}</select></label>
+      <label>Candidate<select id="s-side"></select></label>
+      <label>Budget (USD)<input id="s-budget" type="number" min="1000" max="50000000" step="1000" value="${pre.budget || 500000}"></label>
+      <label>Note to the agent <small>(optional)</small><input id="s-note" maxlength="200" placeholder="e.g. focus on persuasion, skip the metro"></label>
+      <button class="go" id="s-run" type="submit">Plan my spend</button>
+    </form>
+    <div class="sex">Try: ${ex.map(([r, sd, b, t]) => `<button data-ex="${r}|${sd}|${b}">${esc(t)}</button>`).join("")}</div>
+    <ol class="ssteps" id="ssteps"></ol><div id="splan"></div>`;
+  const fillSide = () => { const r = races.find((x) => x.id === $("#s-race").value); $("#s-side").innerHTML = [r.main.d, r.main.r].map((c) => `<option value="${c.party === "R" ? "R" : c.party === "D" ? "D" : "I"}">${esc(c.name)} (${esc(c.party)})</option>`).join(""); if (pre.side) $("#s-side").value = pre.side; };
+  fillSide(); $("#s-race").onchange = () => { pre.side = null; fillSide(); };
+  $("#back").onclick = home;
+  $("#sform").onsubmit = (e) => { e.preventDefault(); runStrategist({ race_id: $("#s-race").value, side: $("#s-side").value, budget: +$("#s-budget").value, note: $("#s-note").value }); };
+  document.querySelectorAll("[data-ex]").forEach((b) => (b.onclick = () => { const [r, sd, bg] = b.dataset.ex.split("|"); strategist({ race: r, side: sd, budget: +bg }); runStrategist({ race_id: r, side: sd, budget: +bg, note: "" }); }));
+}
+async function runStrategist(body) {
+  const ol = $("#ssteps"), out = $("#splan"); ol.innerHTML = ""; out.innerHTML = ""; $("#s-run").disabled = true;
+  const r = S.fcs.senate.races.concat(S.fcs.governor.races).find((x) => x.id === body.race_id);
+  const f = S.geo.st.features.find((x) => x.properties.name === r?.state); if (map && f) map.fitBounds(bbox(f.geometry), { padding: panelPad(), duration: 1200, maxZoom: 7 });
+  stratDraw([], []);
+  const think = document.createElement("li"); think.className = "think"; ol.appendChild(think);
+  const label = { get_race: "Race", rank_counties: "Counties", scan_zips: "Live Qloo scan", find_channels: "Qloo channels", allocate_budget: "Budget" };
+  let candidates = [], counties = [];
+  try {
+    const res = await fetch("/api/strategist", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
+    if (!res.ok) { const t = await res.json().catch(() => ({})); throw new Error(t.detail || `HTTP ${res.status}`); }
+    const rd = res.body.getReader(), dec = new TextDecoder(); let buf = "";
+    for (;;) {
+      const { value, done } = await rd.read(); if (done) break;
+      buf += dec.decode(value, { stream: true }); let i;
+      while ((i = buf.indexOf("\n")) >= 0) {
+        const line = buf.slice(0, i); buf = buf.slice(i + 1); if (!line.trim()) continue;
+        const e = JSON.parse(line);
+        if (e.type === "think") think.textContent = e.text;
+        else if (e.type === "tool") {
+          if (e.pending) { think.textContent = e.text; continue; }
+          const li = document.createElement("li"); li.innerHTML = `<b>${esc(label[e.name] || e.name)}</b> ${esc(e.text)}${e.ms >= 300 ? ` <small>${(e.ms / 1000).toFixed(1)} s</small>` : ""}`; ol.insertBefore(li, think);
+          if (e.result?.counties) { counties = e.result.counties; stratDraw(candidates, counties); }
+          if (e.result?.zips) { candidates = e.result.zips; stratDraw(candidates, counties); }
+        } else if (e.type === "plan") { think.remove(); renderPlan(e.plan); }
+        else if (e.type === "error") { think.textContent = e.text; }
+      }
+    }
+  } catch (err) { think.textContent = `The strategist could not run: ${err.message}`; }
+  $("#s-run").disabled = false;
+}
+function renderPlan(p) {
+  const total = p.rows.reduce((a, r) => a + r.budget, 0);
+  $("#splan").innerHTML = `<div class="card plan"><div class="pk">Plan · ${esc(p.candidate)} · ${fmtUSD(p.budget)}</div><h3>${esc(p.headline)}</h3><p>${esc(p.summary)}</p>
+    ${p.segments.map((sg) => { const rows = p.rows.filter((r) => r.segment === sg.name); return `<div class="seg-card ${sg.goal}"><div class="sh"><b>${esc(sg.name)}</b><span class="goal">${sg.goal === "turnout" ? "Turnout" : "Persuasion"}</span><span>${fmtUSD(rows.reduce((a, r) => a + r.budget, 0))}</span></div>
+      <div class="zl">${rows.map((r) => `<span title="${esc(r.county)}">${esc(r.zip)} ${esc(r.place)} · ${fmtUSD(r.budget)}</span>`).join("")}</div>
+      ${sg.channels.length ? `<div class="ch"><span class="k">Where they are</span> ${sg.channels.map(esc).join(" · ")}</div>` : ""}<div class="msg">${esc(sg.message)}</div></div>`; }).join("")}
+    <p class="note">${esc(p.caveat)}</p>
+    <div class="pbtns"><button class="go" id="csv">Download CSV (${p.rows.length} ZIPs, ${fmtUSD(total)})</button></div>
+    <p class="note">Planned by Undertow AI with live Qloo data: ZIPs and channels are checked against the agent's own tool results. Ad platforms such as Meta and Google accept ZIP-code targeting.</p></div>`;
+  stratDraw(p.rows, Object.keys(p.counties || {}));
+  $("#csv").onclick = () => {
+    const q = (v) => `"${String(v).replace(/"/g, '""')}"`;
+    const csv = ["zip,place,county,segment,goal,budget_usd,channels", ...p.rows.map((r) => [r.zip, r.place, r.county, r.segment, r.goal, r.budget, r.channels.join("; ")].map(q).join(","))].join("\n");
+    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" })); a.download = `undertow-plan-${p.candidate.replace(/\W+/g, "-").toLowerCase()}.csv`; a.click();
+  };
 }
 
 /* ---------------- predictions table (below the map) ---------------- */
@@ -679,6 +774,7 @@ document.addEventListener("click", (e) => { if (!e.target.closest(".pop")) close
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") closePops(); });
 $("#menu-pop").addEventListener("click", (e) => { if (e.target.closest("button")) closePops(); });
 $("#races-btn").onclick = () => { home(); openPanel(); };
+$("#strat-btn").onclick = () => strategist(); $("#strat-menu").onclick = () => strategist();
 $("#charts-btn").onclick = () => $("#predictions").scrollIntoView({ behavior: "smooth" });
 $("#pclose").onclick = closePanel;
 initSwipeDrag();

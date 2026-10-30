@@ -22,9 +22,11 @@
     <button role="radio" aria-checked="false" data-office="governor">Governor</button>
   </div>
   <div class="tally" id="tally" aria-live="polite"></div>
+  <button class="tbtn strat" id="strat-btn">Campaign Strategist</button>
   <div class="menu" id="menu">
     <button class="tbtn" id="menu-btn" aria-haspopup="true" aria-expanded="false" aria-controls="menu-pop"><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Menu</button>
     <div class="pop" id="menu-pop" role="menu" hidden>
+      <button role="menuitem" id="strat-menu">Campaign Strategist <small>an AI agent that plans ad spend by ZIP code</small></button>
       <button role="menuitem" id="races-btn">Races <small>every call, sorted by how close</small></button>
       <button role="menuitem" id="tools-btn">Where we disagree <small>polls, Qloo and the markets</small></button>
       <button role="menuitem" id="story-btn">Read the story <small>the one-minute walkthrough</small></button>

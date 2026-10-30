@@ -1,5 +1,5 @@
 """Undertow web app: serves the locked forecast, the county/cell layers and live block-level Qloo scans."""
-import asyncio, json, math, os, time
+import asyncio, json, math, os, re, time
 from pathlib import Path
 import httpx, numpy as np
 from fastapi import FastAPI, HTTPException, Query
@@ -142,6 +142,52 @@ def search(q: str = Query("", max_length=60)):
     for place, st, lat, lon, n in (exact + pre)[: 8 - len(out)]:
         out.append({"type": "city", "label": f"{place}, {st}", "state": ABBR[st], "lat": round(lat, 4), "lon": round(lon, 4), "zips": n})
     return {"results": out[:8]}
+
+# ---- campaign strategist agent (streams its steps as NDJSON) ----
+from fastapi import Request
+from fastapi.responses import StreamingResponse
+from app import strategist
+_strat_hits: dict = {}
+_strat_sem = asyncio.Semaphore(2)
+_strat_cache: dict = {}
+
+@app.post("/api/strategist")
+async def strategist_run(req: Request):
+    try: body = await req.json()
+    except Exception: raise HTTPException(400, "bad json")
+    rid, side = str(body.get("race_id", ""))[:10], str(body.get("side", ""))[:1]
+    try: budget = int(body.get("budget", 0))
+    except Exception: budget = 0
+    note = str(body.get("note", ""))[:200]
+    if side not in ("D", "R", "I") or not (1000 <= budget <= 50_000_000) or not re.fullmatch(r"[A-Z]{2}-[A-Z0-9]{1,2}", rid):
+        raise HTTPException(400, "race_id, side (D/R/I) and a budget between $1,000 and $50M are required")
+    if not KEY or not strategist.LLM_KEY: raise HTTPException(503, "the strategist is off on this server")
+    key = (rid, side, budget, note.strip().lower())
+    if key in _strat_cache:   # replay a finished run (its steps paced so the panel still reads as a run)
+        async def replay():
+            for e in _strat_cache[key]:
+                yield json.dumps(e) + "\n"; await asyncio.sleep(0.25 if e["type"] != "plan" else 0)
+        return StreamingResponse(replay(), media_type="application/x-ndjson", headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
+    ip = req.headers.get("cf-connecting-ip") or (req.client.host if req.client else "?")
+    now = time.time(); hits = [t for t in _strat_hits.get(ip, []) if now - t < 3600]
+    if len(hits) >= 8: raise HTTPException(429, "8 strategist runs per hour per visitor; try one of the cached examples")
+    _strat_hits[ip] = hits + [now]
+    q: asyncio.Queue = asyncio.Queue()
+    async def emit(e): await q.put(e)
+    async def runner():
+        async with _strat_sem:
+            try: await strategist.run({"race_id": rid, "side": side, "budget": budget, "note": note}, KEY, LIVE, emit)
+            except Exception as e: await q.put({"type": "error", "text": f"The agent stopped: {str(e)[:160]}"})
+            finally: await q.put(None)
+    asyncio.create_task(runner())
+    async def stream():
+        events = []
+        while True:
+            e = await q.get()
+            if e is None: break
+            events.append(e); yield json.dumps(e) + "\n"
+        if any(x["type"] == "plan" for x in events): _strat_cache[key] = events
+    return StreamingResponse(stream(), media_type="application/x-ndjson", headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
 
 @app.get("/api/health")
 def health():

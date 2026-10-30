@@ -12,3 +12,4 @@ data/polls/cache/
 *.log
 secrets.env
 tools/shots/
+tools/video/

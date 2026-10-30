@@ -1,0 +1,637 @@
+{
+ "office": "senate",
+ "by": "Undertow AI",
+ "source": "Qloo taste data",
+ "reads": {
+  "AK-S": {
+   "headline": "Culture gives Peltola no lift and flags red drift",
+   "read": "Qloo gives no statewide undertow or forecast, so culture neither confirms nor rejects our Peltola call. Alaska is below the nation on both Republican and Democratic taste markers\u2014Duck Dynasty, Trump Jr., NPR, Whole Foods, Lizzo\u2014mostly older-skewing, a mixed, low-intensity signal. Three D-voting districts Qloo expects far redder are the cultural counterweight.",
+   "watch": [
+    {
+     "place": "State House District 13",
+     "why": "Qloo expects R+28.7 vs D+1.3 vote; younger, female-leaning."
+    },
+    {
+     "place": "State House District 20",
+     "why": "Qloo expects R+55.1 vs D+12.7; older, male-leaning."
+    },
+    {
+     "place": "State House District 16",
+     "why": "Qloo expects R+67.3 vs D+15.3; average age, male-leaning."
+    }
+   ]
+  },
+  "AL-S": {
+   "headline": "Alabama's taste stack is Republican; the call barely needs help",
+   "read": "The culture here runs deep red: Duck Dynasty, Sean Hannity, Trump Jr., Shapiro and Bongino all sit above national levels, while AOC, Sanders, Oliver and NPR sit below. That profile matches the Moore call almost exactly \u2014 the Qloo-only forecast lands within a fifth of a point. Two cautions: a slight -0.8 statewide undertow against the call, and a 54% in-state hit rate from 2020 to 2024, which is close to a coin flip. The culture agrees with the call, but it doesn't promise a blowout.",
+   "watch": [
+    {
+     "place": "Baldwin County",
+     "why": "Voted R+58.2, but its tastes price at only R+25.6 \u2014 the widest habits-versus-vote gap here, and older."
+    },
+    {
+     "place": "Tuscaloosa County",
+     "why": "Voted R+20.4; tastes look Democratic-leaning, D+1.4. A soft spot worth watching on election night."
+    },
+    {
+     "place": "Chilton County",
+     "why": "Voted R+72.1, but its tastes suggest R+24.9 \u2014 older residents whose habits look milder than their ballots."
+    }
+   ]
+  },
+  "AR-S": {
+   "headline": "Culture backs Cotton bigger than our call",
+   "read": "Arkansas loves Duck Dynasty, Ben Shapiro and Sean Hannity more than the nation, and Democratic tastes less. That points to a redder runway than our Cotton R+9.6 call; Qloo-only says R+20.1, a 10.5-point gap. Winner agrees, margin doesn't. The 2020-24 local signal moved flagged counties the flagged way 57% of the time.",
+   "watch": [
+    {
+     "place": "Union County",
+     "why": "Voted R+33.5 but Qloo expects R+17.2; older residents and softer red taste make it a margin watch."
+    },
+    {
+     "place": "Jefferson County",
+     "why": "Voted D+20.1 but Qloo expects R+7.0; younger, female-leaning tastes test the Democratic floor."
+    },
+    {
+     "place": "Craighead County",
+     "why": "Voted R+37.4 but Qloo expects R+14.1; younger residents make this red county less safe than it looks."
+    }
+   ]
+  },
+  "CO-S": {
+   "headline": "Colorado culture leans blue, but less than the call",
+   "read": "The state\u2019s taste profile is Democratic: Last Week Tonight, AOC, Sanders, Maddow and Succession all outrun the nation, while Duck Dynasty and two right-wing shows lag. That agrees with Hickenlooper\u2019s win but not the D+18.0 size. Qloo\u2019s taste-only read is D+8.5, 9.5 points short of our call, with a -13.0 statewide undertow. County signals moved as flagged only 38% from 2020 to 2024.",
+   "watch": [
+    {
+     "place": "Boulder County",
+     "why": "Qloo expects D+31.4, far below its D+55.8 vote; younger, female-leaning tastes."
+    },
+    {
+     "place": "Douglas County",
+     "why": "Qloo expects R+19.2 against an R+7.0 vote; average-age, female-leaning."
+    },
+    {
+     "place": "La Plata County",
+     "why": "Qloo expects R+30.8 versus a D+18.6 vote, the starkest county taste-vote gap."
+    }
+   ]
+  },
+  "DE-S": {
+   "headline": "Delaware culture backs Coons, but not our landslide",
+   "read": "The call is Coons by 28, and the state's tastes lean Democratic: MSNBC, Moonlight, Beyonc\u00e9, The Atlantic, The New Yorker are all above nation, while Ben Shapiro and Duck Dynasty lag. But Qloo's own forecast is D+13.9, 14.1 points shy of our call, with a -10.9 undertow. So the culture agrees on the winner, disagrees on the blowout.",
+   "watch": [
+    {
+     "place": "New Castle County",
+     "why": "Voted D+32.6 but Qloo expects D+8.2; younger, female-leaning tastes could undercut the call's margin."
+    },
+    {
+     "place": "Kent County",
+     "why": "Voted D+2.0; Qloo expects R+18.9, the sharpest county-level red flag in the data."
+    },
+    {
+     "place": "Sussex County",
+     "why": "Voted R+11.0; Qloo expects R+15.4. Older, male-leaning tastes make it redder than its vote."
+    }
+   ]
+  },
+  "FL-S2": {
+   "headline": "Moody call agrees with culture; counties complicate the map",
+   "read": "Our call is Moody R+6.5; Qloo-only is R+5.2, agreeing but 1.3 points softer. The state's standout tastes are Republican and older\u2014Bongino, Trump Jr., Carlson, Hannity are +1.5 to +1.7 sd over nation\u2014while Pod Save America is -0.1 sd. The statewide undertow is -5.0. County flags are mixed: Miami-Dade, Leon and Broward look much bluer than 2024; Sumter, Highlands and Clay less red. Track record here is weak: 39% moved as flagged.",
+   "watch": [
+    {
+     "place": "Miami-Dade County",
+     "why": "Qloo expects D+53.4 though it voted R+11.4; younger than the state."
+    },
+    {
+     "place": "Leon County",
+     "why": "Voted D+21.8, Qloo expects D+30.1; younger than the state, leans female."
+    },
+    {
+     "place": "Broward County",
+     "why": "Voted D+17.0, Qloo expects D+45.7; about average age, leans female."
+    }
+   ]
+  },
+  "GA-S": {
+   "headline": "Culture agrees on Ossoff but is less Democratic",
+   "read": "The call is Ossoff D+8.5; Qloo's taste-only read is D+6.1, so culture agrees on the winner but is 2.4 pts less Democratic. Statewide undertow is -3.5. Georgia loves Moonlight, MSNBC, Kendrick Lamar and Beyonc\u00e9 more than the nation, plus Sean Hannity; Bernie Sanders less. Flagged counties moved the flagged way 70% from 2020 to 2024.",
+   "watch": [
+    {
+     "place": "Laurens County",
+     "why": "Flagged bluer than its R+32.7 vote; Qloo expects R+10.2, average age, male-leaning."
+    },
+    {
+     "place": "Madison County",
+     "why": "Flagged bluer than its R+54.8 vote; Qloo expects R+18.9, younger, female-leaning."
+    },
+    {
+     "place": "Liberty County",
+     "why": "Flagged redder than its D+17.4 vote; Qloo expects R+33.0, average age."
+    }
+   ]
+  },
+  "IA-S": {
+   "headline": "Culture leans Democratic, but the call is a narrow GOP hold",
+   "read": "Qloo's Iowa tastes skew Democratic: Pod Save America (+0.9 sd, older), Bernie Sanders +0.6, Rachel Maddow +0.5, AOC +0.5, Lizzo (+0.4, younger); Republican-coded Bongino and Trump Jr. run below the nation. That yields a Qloo-only D+2.1 with a 2.4-point undertow, so the culture disagrees with our R+0.5 call.",
+   "watch": [
+    {
+     "place": "Johnson County",
+     "why": "Qloo expects D+10.1, far below its D+38.1 2024 vote, so its huge Democratic margin may be overstated."
+    },
+    {
+     "place": "Marion County",
+     "why": "Qloo expects R+45.3 vs its R+37.8 vote; older, male-leaning county should pad the GOP margin."
+    },
+    {
+     "place": "Pottawattamie County",
+     "why": "Voted R+20.0 but Qloo expects R+11.5; a less Republican read that could narrow Hinson's margin."
+    }
+   ]
+  },
+  "ID-S": {
+   "headline": "Idaho's red-media tastes meet a narrower call",
+   "read": "Idaho\u2019s taste profile is red-media: Ben Shapiro, Tucker Carlson, Dan Bongino and Trump Jr. beat the nation; Beyonc\u00e9, MSNBC and Kendrick Lamar trail. That agrees with a Risch win but not our R+4.0 margin\u2014Qloo-only sees R+24.6. The -3.4 statewide undertow and flagged counties suggest less red than 2024; here flagged counties moved that way 78% from 2020 to 2024.",
+   "watch": [
+    {
+     "place": "Latah County",
+     "why": "Voted R+8.0 but Qloo expects R+0.5; a near-even cultural read in a Republican county."
+    },
+    {
+     "place": "Ada County",
+     "why": "Voted R+10.3 but Qloo expects D+1.2; if that pull shows up, our R+4.0 call tightens."
+    },
+    {
+     "place": "Kootenai County",
+     "why": "Voted R+51.8; Qloo expects R+16.2, a big red-vote vs culture gap."
+    }
+   ]
+  },
+  "IL-S": {
+   "headline": "Illinois culture leans Democratic, but county flags split",
+   "read": "Qloo\u2019s tastes agree with our Stratton call but point much harder: D+33.4 vs D+15.9, with a D+12.0 statewide undertow. The state overindexes Succession, Moonlight, Rachel Maddow, Kendrick Lamar, Last Week Tonight with John Oliver; underindexes The Ben Shapiro Show, The Dan Bongino Show, Duck Dynasty, Donald Trump Jr. County signals are mixed; flagged counties moved the flagged way only 48% here from 2020 to 2024, so the undertow is the stronger cultural read.",
+   "watch": [
+    {
+     "place": "Cook County",
+     "why": "Bluer than its 2024 vote: Qloo expects D+44.8 vs D+42.0; it anchors the Democratic taste read."
+    },
+    {
+     "place": "Kendall County",
+     "why": "Younger, female-leaning county voted D+1.5 but Qloo expects R+25.8\u2014the sharpest red flag against the call."
+    },
+    {
+     "place": "Livingston County",
+     "why": "Older, male-leaning county voted R+46.3 but Qloo expects R+18.9, a big blue-tilted gap in a red place."
+    }
+   ]
+  },
+  "KS-S": {
+   "headline": "Kansas tastes split; Qloo sees a tighter Democratic win",
+   "read": "Kansas\u2019s taste diet is cross-partisan: Ben Shapiro and Sean Hannity on the right, Pod Save America, Rachel Maddow and John Oliver on the left, mostly older. That mixed culture fits Qloo-only D+0.4, 3.1 points below our D+3.5 call. The culture disagrees on margin, not winner. Shawnee\u2019s taste is bluer than its vote; Douglas and Wyandotte stay blue but narrower. Track record here is 48%, so county flags are weak.",
+   "watch": [
+    {
+     "place": "Shawnee County",
+     "why": "Voted D+0.5; Qloo expects D+5.1, a bluer taste signal in an average-age county."
+    },
+    {
+     "place": "Harvey County",
+     "why": "Voted R+21.1; Qloo expects R+42.9, a redder taste signal in an older, male-leaning county."
+    },
+    {
+     "place": "Douglas County",
+     "why": "Voted D+38.0; Qloo expects D+8.0, still blue but much narrower, with older female skew."
+    }
+   ]
+  },
+  "KY-S": {
+   "headline": "Kentucky taste backs Barr, but call is stronger",
+   "read": "The culture agrees with the call: Kentucky over-indexes on older Republican-coded tastes\u2014Duck Dynasty, Hannity, Shapiro, Trump Jr.\u2014with Succession the lone Democratic counterweight. Qloo's own forecast is R+11.9, 1.3 points shy of our R+13.2 call; the +4.0 statewide undertow leans Republican. The 2020-24 track record here is only 50%, so county flags are weak evidence.",
+   "watch": [
+    {
+     "place": "Campbell County",
+     "why": "Tastes point R+3.2 while it voted R+19.7; bluer-than-vote, female-leaning average-age county."
+    },
+    {
+     "place": "Graves County",
+     "why": "Voted R+61.6, but Qloo expects R+16.3; older, male-leaning tastes suggest a softer GOP edge."
+    },
+    {
+     "place": "McCracken County",
+     "why": "Voted R+34.9, but Qloo expects R+43.8; older tastes look redder than its 2024 result."
+    }
+   ]
+  },
+  "LA-S": {
+   "headline": "Culture leans left of call; winner stays Letlow",
+   "read": "Culture and call split on size, not winner. Louisiana over-indexes Democratic-coded tastes\u2014Moonlight, Whole Foods, Beyonc\u00e9, Kendrick Lamar, MSNBC\u2014yet under-indexes Bernie Sanders and AOC, and also Ben Shapiro, Tucker Carlson and Trump Jr. Qloo\u2019s R+1.6 forecast sits 6.4 pts left of our Letlow R+8.0 call; the 6.6-pt statewide undertow accompanies that gap. Flagged counties moved the flagged way 73% from 2020 to 2024.",
+   "watch": [
+    {
+     "place": "Jefferson Parish",
+     "why": "Biggest taste-vote gap: Qloo expects D+18.9 vs R+13.0; older female skew."
+    },
+    {
+     "place": "Caddo Parish",
+     "why": "Taste says R+21.4 where it voted D+4.6; older skew could move it redder."
+    },
+    {
+     "place": "St. Landry Parish",
+     "why": "Younger parish; Qloo expects R+1.1 vs R+18.8 vote, a blue-leaning gap."
+    }
+   ]
+  },
+  "MA-S": {
+   "headline": "Massachusetts culture leans blue; Qloo sees an even bigger Markey win",
+   "read": "The culture agrees with the call but wants it bluer. Massachusetts loves Democratic-leaning Succession, Last Week Tonight, Rachel Maddow, Pod Save America and Moonlight more than the nation, and loves Ben Shapiro, Duck Dynasty and Dan Bongino less. Qloo-only is D+41.4, 14.9 points left of our D+26.5; statewide undertow is 7.0. County tastes are mixed: Plymouth, Bristol and Worcester look redder than their 2024 votes.",
+   "watch": [
+    {
+     "place": "Plymouth County",
+     "why": "Qloo expects R+22.6 after a D+8.8 2024 vote; a redder taste signal than the call suggests."
+    },
+    {
+     "place": "Bristol County",
+     "why": "Voted D+1.3 but Qloo expects R+24.9; about average age, leans male."
+    },
+    {
+     "place": "Worcester County",
+     "why": "Voted D+10.0 but Qloo expects R+17.3; flagged counties moved as signaled 67% of the time."
+    }
+   ]
+  },
+  "ME-S": {
+   "headline": "Culture points to a blowout; our call says bare win",
+   "read": "The culture and the call disagree sharply. Maine's taste stack is uniformly Democratic \u2014 Pod Save America, Bernie Sanders, Rachel Maddow run well above the nation; Shapiro, Bongino, Duck Dynasty sit below it. That's a D+18.6 Qloo forecast against our D+1.6 call, 17 points apart, with a statewide undertow of just 0.8. The flagged counties cut both ways; here they moved as flagged 62% of the time.",
+   "watch": [
+    {
+     "place": "Sagadahoc County",
+     "why": "Voted D+16.6 but its tastes read R+2.0 \u2014 the clearest place culture and ballot split."
+    },
+    {
+     "place": "Franklin County",
+     "why": "Voted R+8.2; tastes expect R+49.3, a 41-point gap in a younger, male-leaning county."
+    },
+    {
+     "place": "Somerset County",
+     "why": "R+27.0 at the ballot, R+46.6 in taste \u2014 red ground the culture says is redder still."
+    }
+   ]
+  },
+  "MI-S": {
+   "headline": "Culture backs Michigan call, hints at wider Democratic win",
+   "read": "Michigan's taste map leans Democratic: Lizzo, Beyonc\u00e9, Kendrick Lamar, Bernie Sanders and Whole Foods Market run above national levels, while The Ben Shapiro Show and The Dan Bongino Show run below. That agrees with our El-Sayed call but says it could be wider: Qloo-only D+8.8 vs our D+4.8, with a -1.5 statewide undertow. County signals moved the flagged way 59% from 2020 to 2024.",
+   "watch": [
+    {
+     "place": "Berrien County",
+     "why": "Qloo sees D+11.5 despite R+7.9 in 2024; biggest blue mismatch to watch."
+    },
+    {
+     "place": "Lapeer County",
+     "why": "Qloo expects R+61.7, far redder than its R+39.8 vote; red undertow check."
+    },
+    {
+     "place": "Clinton County",
+     "why": "Younger, female-leaning and Qloo-bluer than its R+8.6 vote; test of cultural edge."
+    }
+   ]
+  },
+  "MN-S": {
+   "headline": "Minnesota's culture leans blue; call agrees, less so",
+   "read": "Minnesota's taste profile runs Democratic: Lizzo, Pod Save America, Last Week Tonight, Rachel Maddow and The Atlantic all beat national. Republican tastes\u2014Bongino, Shapiro, Duck Dynasty, Trump Jr.\u2014run below. Qloo-only sees D+11.9, 6.6 points left of our D+5.3 call, while the statewide undertow is -3.5. Culture and call agree on Flanagan, but culture is more bullish. The flagged-county track record here is 53%.",
+   "watch": [
+    {
+     "place": "Anoka County",
+     "why": "Qloo expects R+16.5 versus R+4.4 vote; older, female-leaning suburb is a red-taste check on the blue signal."
+    },
+    {
+     "place": "Otter Tail County",
+     "why": "Qloo expects R+15.8, far less red than its R+34.2 vote; a red county where taste is out of step."
+    },
+    {
+     "place": "Douglas County",
+     "why": "Qloo expects R+43.5 versus R+35.1 vote; its taste is redder than 2024, a countercurrent to the blue statewide profile."
+    }
+   ]
+  },
+  "MS-S": {
+   "headline": "Culture says redder; our call says R+6",
+   "read": "Mississippi's tastes run older and Republican \u2014 Duck Dynasty and Bongino up, AOC, Sanders and Pod Save America down hard. Qloo's county map wants R+18.1, well past our R+6.0, and the statewide undertow leans the same way. But flagged counties here matched their flag just 47% of the time, so the culture exaggerates a race the polls have closer. Younger Beyonc\u00e9 and Kendrick fans are the only blue counterweight.",
+   "watch": [
+    {
+     "place": "Warren County",
+     "why": "Voted R+4.0; Qloo reads R+39.6 in an older, male-leaning county \u2014 the biggest cultural gap on the board."
+    },
+    {
+     "place": "Lauderdale County",
+     "why": "R+21.2 in 2024, Qloo expects R+43.8; older and male-leaning, the kind of place that pads a Hyde-Smith margin."
+    },
+    {
+     "place": "Lowndes County",
+     "why": "Smallest gap, R+8.2 to R+10.2, older and female-leaning \u2014 the test of whether the red undertow is real."
+    }
+   ]
+  },
+  "MT-S": {
+   "headline": "Montana's taste map runs redder than the call",
+   "read": "Montana's taste profile is populist, not progressive-establishment: it loves Bernie Sanders and AOC more than the nation does, yet shrugs at MSNBC and Whole Foods. That appetite for outsiders doesn't turn into Democratic votes. The statewide undertow (-13.5) and the Qloo-only forecast (R+19.8) both run redder than our R+13.0 call \u2014 same winner, bigger margin. Culture agrees on the winner, disagrees on the size; the local 2020-to-2024 record is a 50% coin flip.",
+   "watch": [
+    {
+     "place": "Missoula County",
+     "why": "Voted D+21.4, but Qloo expects R+2.5 \u2014 the sharpest red flag in a state our call already gives to Alme."
+    },
+    {
+     "place": "Flathead County",
+     "why": "Voted R+33.8; Qloo expects R+13.6 in an about-average-age county. A 20-point pullback that still leaves it red."
+    },
+    {
+     "place": "Lewis and Clark County",
+     "why": "Voted R+5.7; Qloo expects R+24.0 in an older-than-state county \u2014 culture sees a redder capital than 2024 did."
+    }
+   ]
+  },
+  "NC-S": {
+   "headline": "Blue culture, smaller than our Cooper call",
+   "read": "Cooper\u2019s D+10.9 call is Democratic; the culture agrees on direction, not size. Qloo-only is D+4.0 with a -4.7 statewide undertow, so the signal undershoots our call. Statewide tastes lean Democratic\u2014Moonlight, MSNBC, Kendrick Lamar, Whole Foods\u2014but Sean Hannity matches at +1.4 sd. Flagged counties moved the flagged way 70% from 2020 to 2024, though statewide gaps did not predict swings.",
+   "watch": [
+    {
+     "place": "Durham County",
+     "why": "Qloo expects D+38.2 after D+61.9; younger, female-leaning tastes are flagged, so watch a softer Democratic base."
+    },
+    {
+     "place": "Orange County",
+     "why": "Voted D+51.1 but Qloo expects D+25.4; younger, female-leaning county is flagged as out of step with our call."
+    },
+    {
+     "place": "Alamance County",
+     "why": "Voted R+8.2; Qloo expects D+11.0 with younger, female-leaning tastes\u2014the clearest blue-tilt exception to watch."
+    }
+   ]
+  },
+  "NE-S": {
+   "headline": "Nebraska culture is mixed; Qloo sees a redder race",
+   "read": "Our call is Ricketts R+1.0; Qloo-only is R+4.4, so the culture signal is redder and disagrees. Yet tastes are mixed: Nebraska loves Ben Shapiro more than the nation, but also Succession, John Oliver, AOC and Rachel Maddow; it loves Dan Bongino and Duck Dynasty less. Statewide undertow is 2.5 pts. The 2020-2024 track record is weak at 45%.",
+   "watch": [
+    {
+     "place": "Madison County",
+     "why": "Voted R+56.0; Qloo expects R+24.7. Older-than-state tastes look far bluer than the 2024 vote."
+    },
+    {
+     "place": "Cass County",
+     "why": "Voted R+37.2; Qloo expects R+23.9. Older-than-state tastes point bluer than the county's 2024 result."
+    },
+    {
+     "place": "Lancaster County",
+     "why": "Voted D+4.3; Qloo expects D+6.6. Average age, female-leaning; a blue county the culture says could go further."
+    }
+   ]
+  },
+  "NH-S": {
+   "headline": "New Hampshire culture says blue; call says blue by less",
+   "read": "New Hampshire\u2019s taste map is firmly Democratic: it loves Last Week Tonight with John Oliver, Pod Save America, Rachel Maddow, Bernie Sanders and The Atlantic, and rejects The Ben Shapiro Show, Duck Dynasty, The Dan Bongino Show and Donald Trump Jr. That agrees with our Chris Pappas call but not its size: Qloo-only is D+23.2, 16.7 points left of our D+6.5, with a 9.1-point Democratic undertow. Flagged counties moved the flagged way 75% from 2020 to 2024.",
+   "watch": [
+    {
+     "place": "Sullivan County",
+     "why": "Voted R+0.7 but Qloo expects D+14.1; a blue-taste outlier worth watching."
+    },
+    {
+     "place": "Belknap County",
+     "why": "Voted R+13.1 but Qloo expects R+48.1; tastes are far redder than its vote."
+    },
+    {
+     "place": "Hillsborough County",
+     "why": "Voted D+2.9 but Qloo expects R+23.0; biggest red-taste gap in a Democratic-voting county."
+    }
+   ]
+  },
+  "NJ-S": {
+   "headline": "Culture backs Booker, but Qloo sees a bigger Democratic edge",
+   "read": "New Jersey's taste profile is distinctly Democratic: Succession, Moonlight, Rachel Maddow, MSNBC and The New Yorker run above national levels, while Duck Dynasty and The Ben Shapiro Show run below. That matches our Booker call but points to a larger edge: Qloo-only D+24.8 versus our D+16.0, with a 7.9-point statewide undertow. The 2020->2024 track record here is only 50%, so the culture is a mood, not a margin guarantee.",
+   "watch": [
+    {
+     "place": "Hudson County",
+     "why": "Qloo expects D+37.3 here versus D+28.1 voted; younger, female-leaning tastes make it bluer."
+    },
+    {
+     "place": "Gloucester County",
+     "why": "Voted R+2.8 but Qloo expects R+29.6; younger tastes suggest a sharper Republican lean than 2024."
+    },
+    {
+     "place": "Warren County",
+     "why": "Qloo expects R+38.3 versus R+20.7 voted; older, male-leaning profile fits the redder read."
+    }
+   ]
+  },
+  "NM-S": {
+   "headline": "Tastes say blue state, lean-sized; call says blowout",
+   "read": "The tastes here are unmistakably Democratic \u2014 AOC, Bernie, Maddow and John Oliver all run above the national rate, while Duck Dynasty and the Shapiros run below. That fits a blue state, not a 17-point one: the Qloo-only read is D+1.3, a lean where the polls see a rout. New Mexico's taste signal has been a coin flip (50%) across 2020-24, so trust the call but expect a closer floor than the margin implies.",
+   "watch": [
+    {
+     "place": "Santa Fe County",
+     "why": "Voted D+48.9, but tastes alone put it near D+16 \u2014 the bluest county runs on habit more than enthusiasm."
+    },
+    {
+     "place": "Taos County",
+     "why": "A D+47.5 vote against a Qloo read of R+8.8 \u2014 the widest gap in the state, and younger than New Mexico."
+    },
+    {
+     "place": "Curry County",
+     "why": "Tastes expect R+58.4 against a 2024 vote of R+42.6; the reddest corner is redder than it voted."
+    }
+   ]
+  },
+  "OH-S2": {
+   "headline": "Ohio's taste map says blue, but the track record says caution",
+   "read": "Our call is Brown D+3.3; the Qloo-only forecast is D+7.7, 4.4 points bluer, with a 6.2-point statewide undertow. The culture agrees: Democratic-leaning tastes \u2014 Kendrick Lamar, Beyonc\u00e9, Lizzo, MSNBC, Whole Foods \u2014 run above national. Locally, Seneca and Putnam look far bluer than 2024; Athens a bit bluer. But flagged counties moved the flagged way only 44% here, so culture and call agree in direction, not certainty.",
+   "watch": [
+    {
+     "place": "Seneca County",
+     "why": "Voted R+37.5 but Qloo expects D+5.5; younger-than-state tastes could test the call."
+    },
+    {
+     "place": "Athens County",
+     "why": "Already D+10.7; Qloo expects D+13.8, so it should pad Brown's margin if the signal holds."
+    },
+    {
+     "place": "Putnam County",
+     "why": "Voted R+68.7, but Qloo expects only R+8.3; younger, female-leaning tastes make it the biggest local stretch."
+    }
+   ]
+  },
+  "OK-S": {
+   "headline": "Oklahoma culture is red; Qloo sees a softer GOP edge",
+   "read": "Oklahoma's taste profile is Republican: it loves Ben Shapiro, Dan Bongino, Sean Hannity, Donald Trump Jr. and Duck Dynasty more than the nation; several are older-skewing. That matches our Hern call at R+22.5, though Qloo-only is R+17.9\u2014same winner, 4.6 pts softer. The statewide undertow is +1.3, and flagged counties moved as flagged 62% of the time in 2020->2024.",
+   "watch": [
+    {
+     "place": "Kay County",
+     "why": "Qloo expects R+14.4 vs its R+49.4 vote; older than the state, so it is a soft spot."
+    },
+    {
+     "place": "Washington County",
+     "why": "Qloo expects R+15.0 vs R+47.7; older and male-leaning, a place where taste undercuts the GOP vote."
+    },
+    {
+     "place": "Grady County",
+     "why": "Qloo expects R+19.6 vs R+62.7; older and female-leaning, the widest gap among the flagged blue-taste counties."
+    }
+   ]
+  },
+  "OR-S": {
+   "headline": "Oregon tastes lean blue; county signals are mixed",
+   "read": "Oregon's taste map agrees with the call: it loves progressive political media - AOC, Sanders, Oliver, Pod Save America, Maddow - more than the nation, and conservative talk less. Qloo-only reads D+30.7, 3.0 pts left of our D+27.7 Merkley call, with a 6.2-pt statewide undertow. But county tastes are not uniform, and flagged counties here moved the flagged way only 50% from 2020 to 2024.",
+   "watch": [
+    {
+     "place": "Multnomah County",
+     "why": "Tastes read D+40.4 vs D+62.1 in 2024 - less blue than vote; younger than state, leans female."
+    },
+    {
+     "place": "Coos County",
+     "why": "Tastes read R+43.3 vs R+19.9 in 2024 - much redder than vote; older than state, leans male."
+    },
+    {
+     "place": "Douglas County",
+     "why": "Tastes read R+37.6, almost exactly its R+37.7 vote; average age, so little out-of-step signal."
+    }
+   ]
+  },
+  "RI-S": {
+   "headline": "Rhode Island tastes run blue, deeper than the call",
+   "read": "Our call is Jack Reed by D+27.1; Qloo's taste-only read goes 5.8 points further, D+32.9, with an 8.9-point statewide undertow. The state loves Democratic-leaning Succession, Moonlight, Last Week Tonight with John Oliver, Rachel Maddow, and Pod Save America more than the nation, while Republican-leaning The Ben Shapiro Show, Duck Dynasty, and The Dan Bongino Show trail. Culture and call agree on blue direction; county taste flags mostly conflict with 2024 votes.",
+   "watch": [
+    {
+     "place": "Bristol County",
+     "why": "Voted D+26.4 but Qloo expects R+46.2; older, male-skewing tastes are the sharpest local counter-signal."
+    },
+    {
+     "place": "Newport County",
+     "why": "Voted D+25.5 but Qloo expects R+9.1; average-age, female-leaning county is another taste mismatch to watch."
+    },
+    {
+     "place": "Providence County",
+     "why": "Qloo expects D+10.0 after a D+14.4 vote; younger residents keep it blue but softer than 2024."
+    }
+   ]
+  },
+  "SC-S": {
+   "headline": "Culture leans red; Graham call stays narrow in South Carolina",
+   "read": "South Carolina's taste profile runs red: it over-indexes on The Dan Bongino Show, Sean Hannity, Duck Dynasty, Donald Trump Jr. and Tucker Carlson, all Republican and mostly older, while under-indexing on Alexandria Ocasio-Cortez and Bernie Sanders. The Qloo-only forecast is R+9.7, far redder than our R+2.1 call, so culture disagrees with the close call. Statewide undertow: -5.2. Flagged counties are where taste and vote diverge.",
+   "watch": [
+    {
+     "place": "Jasper County",
+     "why": "Qloo expects R+44.3, far redder than its R+9.6 2024 vote; older, male-skewing taste."
+    },
+    {
+     "place": "Clarendon County",
+     "why": "Qloo expects R+45.6 against a R+12.3 2024 vote; an older, male-skewing county."
+    },
+    {
+     "place": "Charleston County",
+     "why": "Qloo expects D+14.1, bluer than its D+5.7 2024 vote; older and female-skewing."
+    }
+   ]
+  },
+  "SD-S": {
+   "headline": "Culture points redder than the call, but weakly",
+   "read": "Taste leans older and Republican: Ben Shapiro +0.3 sd, John Oliver +0.2 sd, while Whole Foods is -0.6 sd and Beyonc\u00e9 -0.5 sd. Qloo-only R+19.5 is redder than our R+12.0 call; statewide undertow is -4.8. But the track record is weak: flagged counties moved the flagged way only 39% in 2020->2024.",
+   "watch": [
+    {
+     "place": "Aurora County",
+     "why": "Qloo expects R+85.8 vs R+54.1 vote; about average age, male lean."
+    },
+    {
+     "place": "Campbell County",
+     "why": "Qloo expects R+49.3 vs R+70.1 vote; younger male lean, a blue thumb."
+    },
+    {
+     "place": "Fall River County",
+     "why": "Qloo expects R+70.2 vs R+49.3 vote; older male lean."
+    }
+   ]
+  },
+  "TN-S": {
+   "headline": "Conservative tastes agree with the Republican call.",
+   "read": "Tennessee's taste profile is firmly Republican: Sean Hannity, Tucker Carlson, Dan Bongino, Donald Trump Jr. and Duck Dynasty all run well above the nation, and the older skew fits the base. Qloo's own forecast, R+17.6, lands 0.9 points from our R+18.5 call, so culture and call agree. The -2.4 statewide undertow and a 50% county track record keep this from being a clean sweep.",
+   "watch": [
+    {
+     "place": "Lauderdale County",
+     "why": "Voted R+51.5, Qloo expects D+1.2; younger, female-leaning tastes are the sharpest blue outlier."
+    },
+    {
+     "place": "Blount County",
+     "why": "Voted R+47.7, Qloo expects R+27.0; older tastes look less Republican than the 2024 result."
+    },
+    {
+     "place": "Shelby County",
+     "why": "Voted D+25.4, Qloo expects D+35.7; average-age, female-leaning tastes make it bluer than its vote."
+    }
+   ]
+  },
+  "TX-S": {
+   "headline": "Texas culture tilts Talarico, but signal is mixed",
+   "read": "Qloo agrees with our D+2.4 call in direction but puts Talarico at D+3.5, 1.1 points further left, with a 4.2-point statewide undertow. Tastes are split: Dan Bongino and Sean Hannity love Texas more, as do Whole Foods Market and Succession; Bernie Sanders and Pod Save America are not extra-loved. Hidalgo, Cameron and Maverick look much bluer than 2024; Midland, Montgomery and Hood look softer red. The 49% track record is caution.",
+   "watch": [
+    {
+     "place": "Hidalgo County",
+     "why": "Qloo expects D+30.1 after R+2.9 in 2024; younger, female-leaning tastes could stretch Talarico."
+    },
+    {
+     "place": "Maverick County",
+     "why": "Voted R+18.5 but Qloo expects D+1.2; young, female-leaning place is the clearest blue-tilt test."
+    },
+    {
+     "place": "Montgomery County",
+     "why": "Voted R+45.5; Qloo sees R+10.5, so red base may be softer than 2024."
+    }
+   ]
+  },
+  "VA-S": {
+   "headline": "Culture backs Warner, but less emphatically than call",
+   "read": "Virginia\u2019s taste profile is Democratic and older: Moonlight (+2.2 sd), Succession (+1.7), The Atlantic (+1.6), MSNBC (+1.5) and NPR (+1.5) all run above national. That agrees with a Warner win, but Qloo\u2019s D+13.4 forecast and a -3.4 undertow sit left of our D+19.1 call. The 42% 2020->2024 track record tempers county flags.",
+   "watch": [
+    {
+     "place": "Fairfax County",
+     "why": "Qloo expects D+30.2 against a D+35.0 vote, so its taste edge is softer than the raw result."
+    },
+    {
+     "place": "Rockingham County",
+     "why": "Voted R+37.0 but Qloo expects only R+11.9, a much bluer cultural read than its 2024 result."
+    },
+    {
+     "place": "Manassas city",
+     "why": "Voted D+14.8 yet Qloo expects R+44.7, the sharpest red flag in the state data."
+    }
+   ]
+  },
+  "WV-S": {
+   "headline": "GOP-leaning culture backs a big Capito call",
+   "read": "Our call is Capito at R+30.5. The culture agrees: West Virginia loves more than the nation Donald Trump Jr., Ben Shapiro, Duck Dynasty\u2014Republican and older\u2014while Democratic-coded Moonlight and Succession are less loved. Qloo-only sees R+25.9, 4.6 points shy of our call. Statewide undertow is 0.2; flagged counties moved the flagged way 55% from 2020 to 2024.",
+   "watch": [
+    {
+     "place": "Harrison County",
+     "why": "Qloo expects R+24.5 versus its 2024 R+40.9: much narrower Republican edge."
+    },
+    {
+     "place": "Ohio County",
+     "why": "Qloo expects R+41.5 versus its 2024 R+26.0, a redder read than the vote."
+    },
+    {
+     "place": "Monongalia County",
+     "why": "Qloo expects R+11.3 versus its 2024 R+4.4; younger and female-leaning."
+    }
+   ]
+  },
+  "WY-S": {
+   "headline": "Culture backs the call, disputes the margin",
+   "read": "Our call is Hageman by 32.9 and the culture points the same way, just softer: Qloo's taste-only read is R+26.8, 6.1 points closer, with a 3.2-point undertow. Wyoming loves less \u2014 Beyonc\u00e9, Whole Foods, Kendrick Lamar, even Duck Dynasty and MSNBC trail the nation. Disengagement, not a Democratic turn. But flagged counties here moved as flagged only 40% of the time since 2020.",
+   "watch": [
+    {
+     "place": "Park County",
+     "why": "Voted R+59.3, but its younger, female-leaning tastes read R+20.6 \u2014 the state's widest culture-vote gap."
+    },
+    {
+     "place": "Albany County",
+     "why": "The one place tastes run redder than the vote: R+3.2 cast, R+18.9 expected, average age, leans female."
+    },
+    {
+     "place": "Campbell County",
+     "why": "Older, male-leaning and still deep red \u2014 Qloo expects R+41.7 against a 2024 R+76.8."
+    }
+   ]
+  }
+ }
+}

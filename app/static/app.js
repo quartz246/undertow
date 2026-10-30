@@ -37,6 +37,8 @@ async function load() {
     ["/api/forecast", "/api/forecast?office=governor", "/api/model", "/api/counties", "/api/states", "/geo/counties-10m.json"].map((u) => fetch(u).then((r) => r.json())));
   Object.assign(S, { fcs: { senate, governor }, fc: senate, model, counties, states });
   S.trendAudit = await fetch("/api/trends-audit").then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  S.culture = {};
+  for (const o of ["senate", "governor"]) S.culture[o] = await fetch(`/api/culture?office=${o}`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.p24 = await fetch("/api/polls2024").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.demo = await fetch("/api/demographics").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.qn = await fetch("/api/qloo").then((r) => (r.ok ? r.json() : null)).catch(() => null);
@@ -57,6 +59,8 @@ function setOffice(o) {
   tally(); home(); renderPredictions(); if (typeof renderCharts === "function") renderCharts();
 }
 const final = (r) => r.verdict || r.script;
+const cread = (r) => S.culture?.[r.id.endsWith("-G") ? "governor" : "senate"]?.reads?.[r.id];
+const blend = (r) => { const q = qlooState(r.state); return q == null ? null : (final(r).margin_d + q) / 2; }; // half polls (our call), half Qloo
 // "who lives here", read from the audiences of a county's tastes (Qloo urn:demographics), relative to its state
 function profile(fips, st) {
   const d = S.demo?.counties?.[fips]; if (!d) return null;
@@ -350,6 +354,9 @@ function openRace(id, fly) {
       ${v ? `<p><b>${esc(v.headline)}</b></p><p>${esc(v.reasoning)}</p><div class="by">Final judgement: Undertow AI (confidence ${esc(v.confidence)}), from the numbers below. The script's own call: ${fmtM(r.script.margin_d)}, ${pct(r.script.p_win)} ${esc(r.script.winner_party)}.</div>`
           : `<p class="note">Script call (the final-judgement step has not run for this race).</p>`}
       ${meter(r)}${S.mkt?.races?.[r.id] ? `<p class="note">For comparison only (not used in the call): Polymarket gives ${esc(r.main.d.name.split(" ").slice(-1)[0])} ${pct(S.mkt.races[r.id].p_d)}, we give ${pct(pD(f))}. <a href="${esc(S.mkt.races[r.id].url)}" target="_blank" rel="noopener">Market</a></p>` : ""}</div>
+    ${cread(r) ? `<div class="card culture"><h3>Cultural read <span class="by">Undertow AI × Qloo</span></h3><p class="ch">${esc(cread(r).headline)}</p><p>${esc(cread(r).read)}</p>
+      <div class="watch"><b>Watch on Nov 3</b>${cread(r).watch.map((w) => { const cf = Object.entries(S.counties).find(([f, c]) => c.state === r.state && c.name === w.place); return `<div>${cf ? `<button data-fips="${cf[0]}">${esc(w.place)}</button>` : `<b>${esc(w.place)}</b>`} · ${esc(w.why)}</div>`; }).join("")}</div>
+      <p class="note">Written by Undertow AI from Qloo's taste data only. It explains the culture; it does not change the call.</p></div>` : ""}
     <div class="card"><h3>Where the polls may be skewed</h3><div class="kv">
       <span class="k">Poll average (${r.polls.n_recent} recent of ${r.polls.n})</span><b>${fmtM(r.polls.avg_margin_d)}</b>
       <span class="k">Independent polls only</span><b>${fmtM(r.polls.independent_avg)}</b>
@@ -388,16 +395,17 @@ function renderPredictions() {
     if (poll != null && (poll > 0) !== (f.margin_d > 0) && Math.abs(poll) >= 0.05) dis.push("polls");
     if (mk != null && mk < 0.5) dis.push("markets");
     if (q != null && (q > 0) !== (f.margin_d > 0)) dis.push("Qloo");
-    return { r, f, win, nonR, mk, murl: m?.url, q, poll, dis };
+    return { r, f, win, nonR, mk, murl: m?.url, q, poll, dis, b: blend(r) };
   });
-  const key = { agree: (x) => -x.dis.length * 1000 + Math.abs(x.f.margin_d), close: (x) => Math.abs(x.f.margin_d), state: (x) => x.r.state, ours: (x) => -x.f.p_win, poll: (x) => -(x.poll ?? -99), mkt: (x) => -(x.mk ?? -1), qloo: (x) => -(x.q ?? -99) }[predSort.k];
+  const key = { agree: (x) => -x.dis.length * 1000 + Math.abs(x.f.margin_d), close: (x) => Math.abs(x.f.margin_d), state: (x) => x.r.state, ours: (x) => -x.f.p_win, poll: (x) => -(x.poll ?? -99), mkt: (x) => -(x.mk ?? -1), qloo: (x) => -(x.q ?? -99), blend: (x) => -(x.b ?? -99) }[predSort.k];
   rows.sort((a, b) => { const A = key(a), B = key(b); return (A < B ? -1 : A > B ? 1 : 0) * predSort.dir; });
   const agree = rows.filter((x) => !x.dis.length).length, mrows = rows.filter((x) => x.mk != null);
   const mAgree = mrows.filter((x) => x.mk >= 0.5).length;
-  $("#preds-sub").innerHTML = `${rows.length} ${OFF[S.office]} races. Polls, betting markets and Qloo all point the same way in <b>${agree}</b>; the markets back our pick in <b>${mAgree} of ${mrows.length}</b> races they cover.`;
+  const C24 = S.p24?.calls;
+  $("#preds-sub").innerHTML = `${rows.length} ${OFF[S.office]} races. Polls, betting markets and Qloo all point the same way in <b>${agree}</b>; the markets back our pick in <b>${mAgree} of ${mrows.length}</b> races they cover.${C24 ? ` The blend column is half our poll-based call, half Qloo: in 2024 that mix called <b>${C24.blend.close_right} of ${C24.n_close}</b> close states, against ${C24.polls.close_right} for the polls alone.` : ""}`;
   const th = (k, t) => `<th scope="col"><button data-sort="${k}" aria-sort="${predSort.k === k ? (predSort.dir > 0 ? "ascending" : "descending") : "none"}">${t}${predSort.k === k ? (predSort.dir > 0 ? " ▲" : " ▼") : ""}</button></th>`;
   const chance = (p) => `<span class="pbar"><i style="width:${Math.round(p * 100)}%"></i></span>`;
-  $("#ptable").innerHTML = `<thead><tr>${th("state", "Race")}<th scope="col">Matchup</th>${th("ours", "Our prediction")}${th("poll", "Poll average")}${th("mkt", "Betting markets")}${th("qloo", "Qloo-only")}${th("agree", "Agreement")}</tr></thead>
+  $("#ptable").innerHTML = `<thead><tr>${th("state", "Race")}<th scope="col">Matchup</th>${th("ours", "Our prediction")}${th("poll", "Poll average")}${th("mkt", "Betting markets")}${th("qloo", "Qloo-only")}${th("blend", "Polls + Qloo blend")}${th("agree", "Agreement")}</tr></thead>
     <tbody>${rows.map((x) => `<tr data-race="${x.r.id}" tabindex="0">
       <th scope="row">${esc(x.r.state)}${x.r.special ? " <small>special</small>" : ""}</th>
       <td class="mu"><span class="${x.r.main.d.party}">${esc(last(x.r.main.d.name))}</span> <span class="vs">v</span> <span class="R">${esc(last(x.r.main.r.name))}</span></td>
@@ -405,6 +413,7 @@ function renderPredictions() {
       <td>${x.poll == null ? '<span class="muted">no recent polls</span>' : `${fmtM(x.poll)} <small class="muted">${x.r.polls.n_recent} poll${x.r.polls.n_recent === 1 ? "" : "s"}</small>`}</td>
       <td>${x.mk == null ? '<span class="muted">no market</span>' : `<a href="${esc(x.murl)}" target="_blank" rel="noopener">${esc(last(x.win.name))} ${pct(x.mk)}</a>${x.mk < 0.5 ? ' <span class="flag">favors the other side</span>' : ""}`}</td>
       <td>${x.q == null ? '<span class="muted">—</span>' : `${fmtM(x.q)}${(x.q > 0) !== (x.f.margin_d > 0) ? ' <span class="flag">different winner</span>' : ""}`}</td>
+      <td>${x.b == null ? '<span class="muted">—</span>' : `${fmtM(x.b)}${(x.b > 0) !== (x.f.margin_d > 0) ? ' <span class="flag">different winner</span>' : ""}`}</td>
       <td>${x.dis.length ? `<span class="dis">${x.dis.map((d) => esc(d)).join(", ")} disagree${x.dis.length === 1 ? "s" : ""}</span>` : '<span class="ok">all agree</span>'}</td>
     </tr>`).join("")}</tbody>`;
   $("#ptable").querySelectorAll("[data-sort]").forEach((b) => (b.onclick = () => { predSort = { k: b.dataset.sort, dir: predSort.k === b.dataset.sort ? -predSort.dir : 1 }; renderPredictions(); }));

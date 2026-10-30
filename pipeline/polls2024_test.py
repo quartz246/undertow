@@ -50,5 +50,15 @@ out = {"n_states": int(len(D)), "avg_poll_error": round(float(D.err.mean()), 2),
        "qloo_r": round(float(np.corrcoef(rel(D.qgap), rel(D.err))[0, 1]), 2), "history_r": round(float(np.corrcoef(rel(D.hgap), rel(D.err))[0, 1]), 2),
        "history_k": round(float(np.polyfit(rel(D.hgap), rel(D.err), 1)[0]), 2),
        "rows": {s: {k: round(float(v), 1) for k, v in row.items()} for s, row in D[["poll", "actual", "err", "qgap", "hgap"]].iterrows()}}
+# winner calls: polls vs Qloo (2020-trained) vs a plain half-and-half blend (chosen after seeing the data; small sample)
+D["qloo"] = D.poll + D.qgap; D["blend"] = (D.poll + D.qloo) / 2; close = D.actual.abs() < 5
+def score(col):
+    right = np.sign(D[col]) == np.sign(D.actual)
+    return {"winners": int(right.sum()), "wrong": list(D.index[~right]), "close_right": int((np.sign(D[col][close]) == np.sign(D.actual[close])).sum()),
+            "avg_miss": round(float((D[col] - D.actual).abs().mean()), 1)}
+out["calls"] = {"polls": score("poll"), "qloo": score("qloo"), "blend": score("blend"), "n_close": int(close.sum()),
+                "close_states": list(D.index[close]), "qloo_caught": [s for s in D.index if np.sign(D.qloo[s]) == np.sign(D.actual[s]) and np.sign(D.poll[s]) != np.sign(D.actual[s])]}
+json.dump(out, open("data/model/polls2024_test.json", "w"), indent=1)
+print({k: v for k, v in out.items() if k != "rows"})
 json.dump(out, open("data/model/polls2024_test.json", "w"), indent=1)
 print({k: v for k, v in out.items() if k != "rows"})

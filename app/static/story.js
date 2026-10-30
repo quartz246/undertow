@@ -48,8 +48,8 @@ function clearCallouts() { // fade out, then remove
   const gone = ST.callouts; ST.callouts = [];
   gone.forEach((m) => m.getElement().classList.add("out")); setTimeout(() => gone.forEach((m) => m.remove()), 320);
 }
-function callout(lngLat, html, side = "right", delay = 0) {
-  const el = document.createElement("div"); el.className = `callout ${side}`; el.style.animationDelay = `${delay}ms`;
+function callout(lngLat, html, side = "right", delay = 0, down = false) {
+  const el = document.createElement("div"); el.className = `callout ${side}${down ? " down" : ""}`; el.style.animationDelay = `${delay}ms`;
   el.innerHTML = `<i class="cdot"></i><i class="cline"></i><div class="clab">${html}</div>`;
   ST.callouts.push(new maplibregl.Marker({ element: el, anchor: "bottom" }).setLngLat(lngLat).addTo(map));
 }
@@ -99,11 +99,19 @@ function storySteps() {
   // the state where the 2020-trained taste model best foresaw which counties would move in 2024 (and that has a race)
   const showcase = Object.entries(bt.states || {}).filter(([s_, v]) => v.n >= 40 && S.raceBy[S.nameToFips[s_]] && S.states[s_]?.out_of_step_d?.length).sort((a, b) => b[1].r - a[1].r)[0];
   const flagged = fc.races.filter((r) => { const q = qlooState(r.state), f = final(r).margin_d; return q != null && (q > 0) !== (f > 0); });
+  const C24 = P24?.calls, R24 = P24?.rows || {};
+  const caught = (C24?.qloo_caught || []).filter((s_) => R24[s_]);
+  const gapRaces = fc.races.map((r) => ({ r, f: final(r).margin_d, q: qlooState(r.state) })).filter((x) => x.q != null && (x.q > 0) === (x.f > 0))
+    .sort((a, b) => Math.abs(b.q - b.f) - Math.abs(a.q - a.f)).slice(0, 2);
   const usView = () => fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, pitch: 0, bearing: 0, padding: storyPad() });
   return [
     { k: "Taste as a map of politics", h: "What people watch, read and buy nearly redraws the 2024 map",
       p: `Qloo tracks the tastes of every corner of America: the shows, podcasts, music, brands and films people love. Feed a model nothing but those tastes, from <i>Duck Dynasty</i> and Dan Bongino to Beyoncé and <i>Succession</i>, and it redraws the 2024 electoral map: the right winner in <b>${right} of ${q24.length} states</b>, each one predicted by a model that never saw that state's results. Left of the line: the map tastes predict. Right: the real result.`,
       go: () => { scene("q24", "q24", 3.4); usView(); const [a, b] = sweepRange(); sweep(a, b, 3400, 2200); } },
+    caught.length ? { k: "Where the tastes beat the polls", h: `The polls missed ${caught.join(" and ")}. The tastes did not.`,
+      p: `In 2024 the final polls had Harris ahead in ${caught.map((s_) => `${s_} (${ptag(R24[s_].poll)})`).join(" and ")}. Trump won both. A taste model trained only on <b>2020</b>, and nudged by the polls' national mood, called both for Trump. It wasn't perfect: it missed ${C24.qloo.wrong.filter((s_) => !caught.includes(s_)).slice(0, 2).join(" and ")}. But the two read the close states differently, and <b>half polls, half tastes would have called ${C24.blend.close_right} of ${C24.n_close}</b> of 2024's closest states, one more than the polls alone.`,
+      go: () => { scene("r24", null, 5); fly({ center: [-86.6, 44.2], zoom: window.innerWidth > 900 ? 5.1 : 4.3, padding: storyPad() });
+        setTimeout(() => caught.forEach((s_, i) => { const f = stateFeat(s_), row = R24[s_]; if (f) callout(centroid(f), `<b>${esc(s_)} 2024</b><span>Polls ${fmtM(row.poll)} · Tastes ${fmtM(row.poll + row.qgap)}</span><span>Result ${fmtM(row.actual)}</span>`, i ? "left" : "right", i * 450); }), 2400); } } : null,
     showcase ? { k: "It saw the swing coming", h: `Inside ${showcase[0]}, the tastes knew which way places would move`,
       p: `We trained the taste model on the <b>2020</b> vote, then flagged counties whose tastes didn't match it. In 2024 those counties really did move the way their tastes pointed, in <b>${N ? N.within_state_positive : bt.states_positive} of ${N ? N.within_state_n : Object.keys(bt.states).length} states</b>. ${esc(showcase[0])} was one of the clearest: the flagged counties moved the flagged way ${pct(showcase[1].hit)} of the time. Blue counties here have tastes bluer than their vote; red, redder.`,
       go: () => { scene("undertow", null, 6); const f = stateFeat(showcase[0]); if (f) fitTo(f, storyPad(), 6.6);
@@ -117,10 +125,14 @@ function storySteps() {
       go: () => { scene("undertow", null, 3.4); usView();
         setTimeout(() => { [...us.slice(0, 1), ...us.slice(-1)].forEach(([s_, v], i) => { const f = stateFeat(s_); if (f) callout(centroid(f), `<b>${esc(s_)}</b><span>Tastes ${v > 0 ? "bluer" : "redder"} than the vote by ${Math.abs(v).toFixed(0)} pts</span>`, i ? "left" : "right", i * 350); }); }, 1800); } },
     { k: "2026", h: "The polls missed in 2024. Here is every race through both lenses.",
-      p: `${P24 ? `In 2024 the polls leaned too Democratic in <b>${P24.states_polls_too_democratic} of ${P24.n_states}</b> states, by ${Math.abs(P24.avg_poll_error).toFixed(1)} points on average. ` : ""}So Undertow sets every 2026 race beside what its tastes say. Undertow AI's projection: <b>${dSeats} Democratic seats to ${rSeats} Republican</b>${n.I ? ` and ${n.I} independent` : ""}. In ${flagged.length ? flagged.map((r) => r.state).join(" and ") : "no race"}, the culture points to a different winner than the polls.`,
-      go: () => { scene("forecast", null, 3.4); home(); usView(); setTimeout(() => flagged.forEach((r, i) => { const f = stateFeat(r.state); if (f) callout(centroid(f), `<b>${esc(r.state)}</b><span>Polls ${fmtM(final(r).margin_d)} · Tastes ${fmtM(qlooState(r.state))}</span>`, i % 2 ? "left" : "right", i * 400); }), 1800); } },
+      p: `${P24 ? `In 2024 the polls leaned too Democratic in <b>${P24.states_polls_too_democratic} of ${P24.n_states}</b> states, by ${Math.abs(P24.avg_poll_error).toFixed(1)} points on average. ` : ""}So every 2026 race is set beside what its tastes say. This map shows only where they disagree: strong colour where the culture picks a different winner, light where the two are far apart. ${flagged.length ? `In ${flagged.map((r) => r.state).join(" and ")}, the tastes pick a different winner.` : ""} Undertow AI's projection: <b>${dSeats} Democratic seats to ${rSeats} Republican</b>${n.I ? ` and ${n.I} independent` : ""}.`,
+      go: () => { scene("disagree", null, 3.4); home(); usView();
+        setTimeout(() => [...flagged.map((r) => ({ r, tag: "Different winner" })), ...gapRaces.map((x) => ({ r: x.r, tag: `${Math.abs(x.q - x.f).toFixed(0)} pts apart` }))].slice(0, 3).forEach(({ r, tag }, i) => {
+          const f = stateFeat(r.state), cr = cread(r);
+          if (f) callout(centroid(f), `<b>${esc(r.state)} · ${tag}</b><span>Polls ${fmtM(final(r).margin_d)} · Tastes ${fmtM(qlooState(r.state))}</span>${cr ? `<span class="cr">${esc(cr.headline)}</span>` : ""}`, i % 2 ? "left" : "right", i * 450, i === 2);
+        }), 1800); } },
     dis ? { k: dis.r.state, h: `In ${dis.r.state}, the polls and the culture disagree`,
-      p: `The polls put the race at ${ptag(dis.f)}${dis.r.main ? `, ${esc(dis.r.main.d.name)} against ${esc(dis.r.main.r.name)}` : ""}. The state's tastes, adjusted for the national mood, point to ${ptag(dis.q)}${(dis.q > 0) !== (dis.f > 0) ? ", a different winner" : ""}. Left of the line is the polling forecast, right is the forecast from tastes alone.`,
+      p: `The polls put the race at ${ptag(dis.f)}${dis.r.main ? `, ${esc(dis.r.main.d.name)} against ${esc(dis.r.main.r.name)}` : ""}. The state's tastes, adjusted for the national mood, point to ${ptag(dis.q)}${(dis.q > 0) !== (dis.f > 0) ? ", a different winner" : ""}.${cread(dis.r) ? ` Undertow AI's cultural read: <i>"${esc(cread(dis.r).headline)}."</i> Watch ${cread(dis.r).watch.map((w) => esc(w.place)).join(", ")}.` : ""} Left of the line is the polling forecast, right is the forecast from tastes alone.`,
       go: () => { scene("forecast", "qloo", 4.4); openRace(dis.r.id, false); closePanel(); const f = stateFeat(dis.r.state); if (f) fitTo(f, storyPad(), 4.4); { const [a, b] = sweepRange(); sweep(a, b, 3000, 2800); }
         setTimeout(() => { if (f) callout(centroid(f), `<b>${esc(dis.r.state)}</b><span>Polls ${fmtM(dis.f)} · Tastes ${fmtM(dis.q)}</span>`, "left"); }, 2600); } } : null,
     drill ? { k: `Inside ${drill.r.state}`, h: `${drill.c.name}: one county in the closest race`,
@@ -132,7 +144,7 @@ function storySteps() {
       go: () => { scene("forecast", null, 13); fly({ center: [-83.0458, 42.3314], zoom: 13, pitch: reduceMotion() ? 0 : 40, bearing: reduceMotion() ? 0 : -18, padding: storyPad(), duration: 3200 });
         setTimeout(() => callout([-83.0458, 42.3314], `<b>Downtown Detroit</b><span>Live Qloo scan · ~150 m cells</span>`, "right"), 3400); } },
     { k: "The scorecard", h: "What the tastes got right, and what to watch on Nov. 3",
-      p: `Tastes alone drew the 2024 map (${right} of ${q24.length} states) and, inside states, foresaw which counties would move (${N ? `${N.within_state_positive} of ${N.within_state_n}` : "most"} states). They did not foresee whole-state swings or the polls' 2024 miss${P24 ? ` (r = ${P24.qloo_r})` : ""}, so the statewide calls still rest on the polls. Watch ${flagged.length ? flagged.map((r) => r.state).join(", ") : "the closest races"}, and counties like Miami-Dade: if they break the way their tastes point, the undertow was real.`,
+      p: `Tastes alone drew the 2024 map (${right} of ${q24.length} states), foresaw which counties would move inside ${N ? `${N.within_state_positive} of ${N.within_state_n}` : "most"} states, and caught ${caught.length ? caught.join(" and ") : "swing states"} where the polls failed. Blended half and half with the polls, they called ${C24 ? `${C24.blend.close_right} of ${C24.n_close}` : "more"} of 2024's close states. Their weak spot: on margins the polls were closer (${C24 ? `${C24.polls.avg_miss} vs ${C24.qloo.avg_miss} pts` : "smaller misses"}), so our headline call keeps the polls and shows the blend beside it. Watch ${flagged.length ? flagged.map((r) => r.state).join(", ") : "the closest races"} and counties like Miami-Dade: if they break the way their tastes point, the undertow was real.`,
       go: () => { scene("forecast", null, 3.4); usView(); } },
   ].filter(Boolean);
 }

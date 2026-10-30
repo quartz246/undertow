@@ -323,3 +323,13 @@ body.story-on .panel { display: none; }
 .ptable .dis { color: var(--warn); font-weight: 600; font-size: 13px; }
 .charts { padding-top: 16px; }
 .counties .prof { display: block; font-size: 11px; }
+.card.culture { border-color: #b9dcd5; background: #f7fbfa; }
+.card.culture h3 .by { font: 600 11px Inter, system-ui, sans-serif; color: var(--accent); margin-left: 6px; letter-spacing: .04em; text-transform: uppercase; }
+.card.culture .ch { font-family: "Source Serif 4", Georgia, serif; font-size: 16px; font-weight: 600; margin: 2px 0 6px; }
+.card.culture p { font-size: 13.5px; line-height: 1.5; margin: 0 0 8px; }
+.card.culture .watch { font-size: 13px; border-top: 1px solid var(--line); padding-top: 8px; display: grid; gap: 5px; }
+.card.culture .watch button { background: none; border: 0; padding: 0; font-weight: 700; text-decoration: underline; color: var(--ink); font-size: 13px; }
+.ptable { min-width: 980px; }
+.callout .clab span.cr { font-family: "Source Serif 4", Georgia, serif; font-style: italic; color: var(--ink); max-width: 260px; white-space: normal; margin-top: 2px; }
+.callout.down .cline { bottom: auto; top: 4px; transform-origin: top; }
+.callout.down .clab { bottom: auto; top: 58px; }

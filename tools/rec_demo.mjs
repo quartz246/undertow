@@ -1,0 +1,56 @@
+// Records the Undertow demo video (no audio) from the live site, with captions drawn into the page.
+// Usage: node rec_demo.mjs <base url> <ffmpeg path>
+import { createRequire } from "module"; const require = createRequire("/tmp/adflank-ui/tools/package.json"); const puppeteer = require("puppeteer-core");
+const [base, FF] = process.argv.slice(2);
+const W = (ms) => new Promise((r) => setTimeout(r, ms));
+const b = await puppeteer.launch({ executablePath: "/usr/bin/google-chrome", headless: "new", args: ["--no-sandbox", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist", "--window-size=1280,800"] });
+const p = await b.newPage(); await p.setViewport({ width: 1280, height: 800 });
+const errs = []; p.on("pageerror", (e) => errs.push(e.message));
+await p.goto(base, { waitUntil: "networkidle2", timeout: 90000 });
+await p.waitForSelector(".story-step", { timeout: 60000 }); await W(2500);
+await p.evaluate(() => {
+  const c = document.createElement("div"); c.id = "cap";
+  c.style.cssText = "position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:99999;max-width:880px;background:rgba(20,22,28,.88);color:#fff;font:600 18px/1.35 Inter,system-ui,sans-serif;padding:10px 18px;border-radius:10px;text-align:center;transition:opacity .4s;opacity:0;pointer-events:none";
+  document.body.appendChild(c);
+  window.cap = (t) => { c.style.opacity = t ? 1 : 0; if (t) c.innerHTML = t; };
+});
+const cap = (t) => p.evaluate((t) => window.cap(t), t);
+const step = (i) => p.evaluate((i) => { const sc = document.querySelector(".story-scroll"); const s = document.querySelectorAll(".story-step")[i]; if (s) sc.scrollTo({ top: s.offsetTop - (sc.clientHeight - s.offsetHeight) / 2, behavior: "smooth" }); }, i);
+const titles = await p.evaluate(() => [...document.querySelectorAll(".story-step h2")].map((h) => h.innerText));
+const idx = (re) => titles.findIndex((t) => re.test(t));
+
+const rec = await p.screencast({ path: "video/undertow-demo.webm", ffmpegPath: FF });
+await cap("Undertow · Powered by Qloo: the 2026 midterms, read through what America watches, reads and buys"); await W(6500);
+await cap("");
+const plan = [[/redraws the 2024 map/, 9000], [/polls missed Michigan/, 9500], [/knew which way/, 8000], [/tastes did not\.$/, 7500], [/every race through both lenses/, 9000], [/polls and the culture disagree/, 9000], [/one county in the closest race/, 7500], [/walk through/, 8000], [/got right/, 7000]];
+for (const [re, ms] of plan) { const i = idx(re); if (i >= 0) { await step(i); await W(ms); } }
+await p.evaluate(() => document.querySelector(".story-close").click()); await W(2200);
+await cap("Explore it yourself: every Senate and governor race, every county"); await W(3500);
+await p.click("#layers-btn"); await W(900);
+await p.evaluate(() => document.querySelector('[data-mode="disagree"]').click()); await W(1500);
+await cap("Layers → Qloo vs polls: only the places where the culture and the polls disagree"); await W(2500);
+const iowa = await p.evaluate(() => { const f = S.geo.st.features.find((x) => x.properties.name === "Iowa"); const b = bbox(f.geometry); const pt = __map.project([(b[0][0] + b[1][0]) / 2, (b[0][1] + b[1][1]) / 2]); const r = document.querySelector("#map").getBoundingClientRect(); return { x: r.left + pt.x, y: r.top + pt.y }; });
+await p.mouse.move(iowa.x - 60, iowa.y, { steps: 10 }); await p.mouse.move(iowa.x, iowa.y, { steps: 12 }); await W(2500);
+await p.mouse.click(iowa.x, iowa.y); await W(2500);
+await cap("Undertow AI makes the call, then writes a cultural read from Qloo's taste data"); await W(3500);
+await p.evaluate(() => { const c = document.querySelector(".card.culture"); if (c) c.scrollIntoView({ behavior: "smooth", block: "start" }); }); await W(5000);
+await p.evaluate(() => closePanel()); await cap(""); await W(800);
+await p.click("#q"); await p.keyboard.type("48201", { delay: 90 }); await W(1200); await p.keyboard.press("Enter");
+await cap("Search any ZIP code: Qloo is queried live for ~150 m blocks"); await W(9500);
+await p.evaluate(() => { closePanel(); __map.flyTo({ center: [-96.5, 38.6], zoom: 3.7, duration: 2200 }); }); await W(2600);
+await p.click("#layers-btn"); await W(700);
+await p.evaluate(() => document.querySelector('.cmp[data-cmp="qloo"]').click()); await W(1800);
+await cap("Polls ↔ Qloo: drag to compare the polling forecast with the forecast from tastes alone");
+const g = await p.$("#swipe .grip"); const gb = await g.boundingBox();
+await p.mouse.move(gb.x + gb.width / 2, gb.y + gb.height / 2); await p.mouse.down();
+await p.mouse.move(gb.x + 300, gb.y + gb.height / 2, { steps: 25 }); await W(600); await p.mouse.move(gb.x - 260, gb.y + gb.height / 2, { steps: 35 }); await p.mouse.up(); await W(2500);
+await p.evaluate(() => toggleCompare("qloo")); await cap(""); await W(500);
+await p.evaluate(() => window.scrollTo({ top: document.querySelector("#predictions").offsetTop - 10, behavior: "smooth" })); await W(1500);
+await cap("Every prediction side by side: our call, the polls, betting markets, Qloo, and the blend"); await W(5000);
+await p.evaluate(() => window.scrollTo({ top: document.querySelector("#charts").offsetTop - 10, behavior: "smooth" })); await W(1500);
+await cap("And the track record: how the tastes did against real results"); await W(3500);
+await p.evaluate(() => window.scrollTo({ top: document.querySelector("#ch-24").getBoundingClientRect().top + window.scrollY - 120, behavior: "smooth" })); await W(4500);
+await p.evaluate(() => window.scrollTo({ top: 0, behavior: "smooth" })); await W(1500);
+await cap("Undertow · Powered by Qloo · github.com/quartz246/undertow"); await W(4000);
+await rec.stop(); await b.close();
+console.log("errors:", JSON.stringify(errs.slice(0, 5)));

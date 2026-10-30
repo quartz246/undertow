@@ -1,0 +1,799 @@
+{
+ "months": [
+  "2023-08",
+  "2023-09",
+  "2023-10",
+  "2023-11",
+  "2023-12",
+  "2024-01",
+  "2024-02",
+  "2024-03",
+  "2024-04",
+  "2024-05",
+  "2024-06",
+  "2024-07",
+  "2024-08",
+  "2024-09",
+  "2024-10",
+  "2024-11",
+  "2024-12",
+  "2025-01",
+  "2025-02",
+  "2025-03",
+  "2025-04",
+  "2025-05",
+  "2025-06",
+  "2025-07",
+  "2025-08",
+  "2025-09",
+  "2025-10",
+  "2025-11",
+  "2025-12",
+  "2026-01",
+  "2026-02",
+  "2026-03",
+  "2026-04",
+  "2026-05",
+  "2026-06",
+  "2026-07",
+  "2026-08",
+  "2026-09",
+  "2026-10"
+ ],
+ "coverage": {
+  "entities_total": 95,
+  "with_any_data": 85,
+  "with_4plus_months": 63,
+  "with_recent_data": 58,
+  "gender_split": true
+ },
+ "barometer": [
+  {
+   "month": "2023-08",
+   "R": null,
+   "nR": 0,
+   "D": null,
+   "nD": 0
+  },
+  {
+   "month": "2023-09",
+   "R": null,
+   "nR": 1,
+   "D": 1.208,
+   "nD": 6
+  },
+  {
+   "month": "2023-10",
+   "R": null,
+   "nR": 1,
+   "D": 0.305,
+   "nD": 6
+  },
+  {
+   "month": "2023-11",
+   "R": null,
+   "nR": 2,
+   "D": 0.134,
+   "nD": 5
+  },
+  {
+   "month": "2023-12",
+   "R": null,
+   "nR": 0,
+   "D": 0.617,
+   "nD": 3
+  },
+  {
+   "month": "2024-01",
+   "R": null,
+   "nR": 0,
+   "D": 0.474,
+   "nD": 3
+  },
+  {
+   "month": "2024-02",
+   "R": null,
+   "nR": 0,
+   "D": 0.239,
+   "nD": 4
+  },
+  {
+   "month": "2024-03",
+   "R": null,
+   "nR": 1,
+   "D": 0.146,
+   "nD": 4
+  },
+  {
+   "month": "2024-04",
+   "R": null,
+   "nR": 1,
+   "D": -0.274,
+   "nD": 5
+  },
+  {
+   "month": "2024-05",
+   "R": null,
+   "nR": 1,
+   "D": -0.324,
+   "nD": 5
+  },
+  {
+   "month": "2024-06",
+   "R": null,
+   "nR": 1,
+   "D": 0.406,
+   "nD": 7
+  },
+  {
+   "month": "2024-07",
+   "R": 0.22,
+   "nR": 3,
+   "D": 0.959,
+   "nD": 6
+  },
+  {
+   "month": "2024-08",
+   "R": 0.157,
+   "nR": 3,
+   "D": 0.156,
+   "nD": 5
+  },
+  {
+   "month": "2024-09",
+   "R": null,
+   "nR": 1,
+   "D": 1.342,
+   "nD": 4
+  },
+  {
+   "month": "2024-10",
+   "R": null,
+   "nR": 0,
+   "D": null,
+   "nD": 0
+  },
+  {
+   "month": "2024-11",
+   "R": null,
+   "nR": 0,
+   "D": null,
+   "nD": 0
+  },
+  {
+   "month": "2024-12",
+   "R": null,
+   "nR": 0,
+   "D": null,
+   "nD": 1
+  },
+  {
+   "month": "2025-01",
+   "R": null,
+   "nR": 0,
+   "D": null,
+   "nD": 0
+  },
+  {
+   "month": "2025-02",
+   "R": null,
+   "nR": 0,
+   "D": null,
+   "nD": 0
+  },
+  {
+   "month": "2025-03",
+   "R": null,
+   "nR": 0,
+   "D": null,
+   "nD": 0
+  },
+  {
+   "month": "2025-04",
+   "R": null,
+   "nR": 1,
+   "D": -1.069,
+   "nD": 6
+  },
+  {
+   "month": "2025-05",
+   "R": null,
+   "nR": 1,
+   "D": -0.965,
+   "nD": 7
+  },
+  {
+   "month": "2025-06",
+   "R": null,
+   "nR": 1,
+   "D": -0.638,
+   "nD": 6
+  },
+  {
+   "month": "2025-07",
+   "R": null,
+   "nR": 0,
+   "D": -0.688,
+   "nD": 4
+  },
+  {
+   "month": "2025-08",
+   "R": null,
+   "nR": 0,
+   "D": -0.659,
+   "nD": 4
+  },
+  {
+   "month": "2025-09",
+   "R": null,
+   "nR": 0,
+   "D": -0.655,
+   "nD": 4
+  },
+  {
+   "month": "2025-10",
+   "R": null,
+   "nR": 0,
+   "D": -0.498,
+   "nD": 5
+  },
+  {
+   "month": "2025-11",
+   "R": null,
+   "nR": 0,
+   "D": -0.134,
+   "nD": 5
+  },
+  {
+   "month": "2025-12",
+   "R": null,
+   "nR": 0,
+   "D": -0.739,
+   "nD": 4
+  },
+  {
+   "month": "2026-01",
+   "R": null,
+   "nR": 1,
+   "D": -0.412,
+   "nD": 4
+  },
+  {
+   "month": "2026-02",
+   "R": null,
+   "nR": 1,
+   "D": -0.188,
+   "nD": 5
+  },
+  {
+   "month": "2026-03",
+   "R": null,
+   "nR": 1,
+   "D": 0.623,
+   "nD": 5
+  },
+  {
+   "month": "2026-04",
+   "R": null,
+   "nR": 1,
+   "D": 0.686,
+   "nD": 4
+  },
+  {
+   "month": "2026-05",
+   "R": null,
+   "nR": 1,
+   "D": null,
+   "nD": 1
+  },
+  {
+   "month": "2026-06",
+   "R": null,
+   "nR": 0,
+   "D": null,
+   "nD": 0
+  },
+  {
+   "month": "2026-07",
+   "R": null,
+   "nR": 0,
+   "D": null,
+   "nD": 0
+  },
+  {
+   "month": "2026-08",
+   "R": null,
+   "nR": 0,
+   "D": null,
+   "nD": 0
+  },
+  {
+   "month": "2026-09",
+   "R": null,
+   "nR": 0,
+   "D": null,
+   "nD": 0
+  },
+  {
+   "month": "2026-10",
+   "R": null,
+   "nR": 0,
+   "D": null,
+   "nD": 0
+  }
+ ],
+ "movers": [
+  {
+   "name": "Kendrick Lamar",
+   "lean": "D",
+   "type": "artist",
+   "pct_2024": 0.9999,
+   "pct_recent": 0.113,
+   "change": -0.8869
+  },
+  {
+   "name": "Taylor Swift",
+   "lean": null,
+   "type": "artist",
+   "pct_2024": 1.0,
+   "pct_recent": 0.1131,
+   "change": -0.8869
+  },
+  {
+   "name": "Luke Bryan",
+   "lean": null,
+   "type": "artist",
+   "pct_2024": 0.9868,
+   "pct_recent": 0.1095,
+   "change": -0.8773
+  },
+  {
+   "name": "Jason Aldean",
+   "lean": null,
+   "type": "artist",
+   "pct_2024": 0.9852,
+   "pct_recent": 0.1093,
+   "change": -0.8759
+  },
+  {
+   "name": "Kid Rock",
+   "lean": null,
+   "type": "artist",
+   "pct_2024": 0.9802,
+   "pct_recent": 0.1086,
+   "change": -0.8716
+  },
+  {
+   "name": "Brantley Gilbert",
+   "lean": null,
+   "type": "artist",
+   "pct_2024": 0.9494,
+   "pct_recent": 0.1062,
+   "change": -0.8432
+  },
+  {
+   "name": "Ram Trucks",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.9759,
+   "pct_recent": 0.1603,
+   "change": -0.8157
+  },
+  {
+   "name": "Telemundo",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.9988,
+   "pct_recent": 0.1925,
+   "change": -0.8063
+  },
+  {
+   "name": "Chick-fil-A",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.9835,
+   "pct_recent": 0.3456,
+   "change": -0.6379
+  },
+  {
+   "name": "CNN",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.9992,
+   "pct_recent": 0.3635,
+   "change": -0.6358
+  },
+  {
+   "name": "Recreational Equipment Inc",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.9866,
+   "pct_recent": 0.3756,
+   "change": -0.6111
+  },
+  {
+   "name": "Anti Social Social Club",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.9884,
+   "pct_recent": 0.4187,
+   "change": -0.5697
+  },
+  {
+   "name": "Sound of Freedom",
+   "lean": null,
+   "type": "movie",
+   "pct_2024": 0.989,
+   "pct_recent": 0.473,
+   "change": -0.5161
+  },
+  {
+   "name": "Whole Foods Market",
+   "lean": "D",
+   "type": "brand",
+   "pct_2024": 0.9906,
+   "pct_recent": 0.5169,
+   "change": -0.4737
+  },
+  {
+   "name": "Bet Networks",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.9906,
+   "pct_recent": 0.5903,
+   "change": -0.4004
+  },
+  {
+   "name": "Dollar General",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.8763,
+   "pct_recent": 0.5206,
+   "change": -0.3556
+  },
+  {
+   "name": "Cracker Barrel",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.8774,
+   "pct_recent": 0.5366,
+   "change": -0.3408
+  },
+  {
+   "name": "Moonlight",
+   "lean": "D",
+   "type": "movie",
+   "pct_2024": 0.9971,
+   "pct_recent": 0.7131,
+   "change": -0.284
+  },
+  {
+   "name": "Sweetgreen",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.9226,
+   "pct_recent": 0.6436,
+   "change": -0.279
+  },
+  {
+   "name": "Lululemon",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.9947,
+   "pct_recent": 0.7318,
+   "change": -0.2629
+  },
+  {
+   "name": "Patagonia",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.9956,
+   "pct_recent": 0.7414,
+   "change": -0.2542
+  },
+  {
+   "name": "Target",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.9957,
+   "pct_recent": 0.7903,
+   "change": -0.2054
+  },
+  {
+   "name": "Blue Bloods",
+   "lean": null,
+   "type": "tv_show",
+   "pct_2024": 0.9893,
+   "pct_recent": 0.7879,
+   "change": -0.2014
+  },
+  {
+   "name": "Succession",
+   "lean": "D",
+   "type": "tv_show",
+   "pct_2024": 0.9985,
+   "pct_recent": 0.8061,
+   "change": -0.1924
+  },
+  {
+   "name": "God's Not Dead",
+   "lean": null,
+   "type": "movie",
+   "pct_2024": 0.9781,
+   "pct_recent": 0.8055,
+   "change": -0.1726
+  },
+  {
+   "name": "American Sniper",
+   "lean": null,
+   "type": "movie",
+   "pct_2024": 0.9986,
+   "pct_recent": 0.8316,
+   "change": -0.167
+  },
+  {
+   "name": "Barbie",
+   "lean": null,
+   "type": "movie",
+   "pct_2024": 0.9986,
+   "pct_recent": 0.8548,
+   "change": -0.1438
+  },
+  {
+   "name": "Everything Everywhere All at Once",
+   "lean": null,
+   "type": "movie",
+   "pct_2024": 0.9986,
+   "pct_recent": 0.8694,
+   "change": -0.1292
+  },
+  {
+   "name": "Univision",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.9963,
+   "pct_recent": 0.8673,
+   "change": -0.129
+  },
+  {
+   "name": "The Chosen",
+   "lean": null,
+   "type": "tv_show",
+   "pct_2024": 0.9891,
+   "pct_recent": 0.8612,
+   "change": -0.128
+  },
+  {
+   "name": "Abbott Elementary",
+   "lean": null,
+   "type": "tv_show",
+   "pct_2024": 0.9854,
+   "pct_recent": 0.8649,
+   "change": -0.1205
+  },
+  {
+   "name": "Sonic Drive-In",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.9458,
+   "pct_recent": 0.8435,
+   "change": -0.1023
+  },
+  {
+   "name": "Saturday Night Live",
+   "lean": null,
+   "type": "tv_show",
+   "pct_2024": 0.9902,
+   "pct_recent": 0.9183,
+   "change": -0.0719
+  },
+  {
+   "name": "Duck Dynasty",
+   "lean": "R",
+   "type": "tv_show",
+   "pct_2024": 0.9626,
+   "pct_recent": 0.9034,
+   "change": -0.0592
+  },
+  {
+   "name": "The New Yorker",
+   "lean": "D",
+   "type": "brand",
+   "pct_2024": 0.9975,
+   "pct_recent": 0.9387,
+   "change": -0.0588
+  },
+  {
+   "name": "Top Gun: Maverick",
+   "lean": null,
+   "type": "movie",
+   "pct_2024": 0.9992,
+   "pct_recent": 0.9416,
+   "change": -0.0575
+  },
+  {
+   "name": "The View",
+   "lean": "D",
+   "type": "tv_show",
+   "pct_2024": 0.9568,
+   "pct_recent": 0.9039,
+   "change": -0.053
+  },
+  {
+   "name": "RuPaul's Drag Race",
+   "lean": null,
+   "type": "tv_show",
+   "pct_2024": 0.9794,
+   "pct_recent": 0.9407,
+   "change": -0.0388
+  },
+  {
+   "name": "Subaru",
+   "lean": null,
+   "type": "brand",
+   "pct_2024": 0.9556,
+   "pct_recent": 0.9257,
+   "change": -0.0299
+  },
+  {
+   "name": "The Daily Show",
+   "lean": null,
+   "type": "tv_show",
+   "pct_2024": 0.9894,
+   "pct_recent": 0.963,
+   "change": -0.0264
+  },
+  {
+   "name": "Last Week Tonight with John Oliver",
+   "lean": "D",
+   "type": "tv_show",
+   "pct_2024": 0.9946,
+   "pct_recent": 0.9943,
+   "change": -0.0002
+  },
+  {
+   "name": "Swamp People",
+   "lean": null,
+   "type": "tv_show",
+   "pct_2024": 0.8931,
+   "pct_recent": 0.912,
+   "change": 0.0189
+  },
+  {
+   "name": "American Pickers",
+   "lean": null,
+   "type": "tv_show",
+   "pct_2024": 0.9536,
+   "pct_recent": 0.9873,
+   "change": 0.0337
+  },
+  {
+   "name": "Gunsmoke",
+   "lean": null,
+   "type": "tv_show",
+   "pct_2024": 0.9545,
+   "pct_recent": 0.9951,
+   "change": 0.0406
+  }
+ ],
+ "political": {
+  "Donald Trump": [
+   {
+    "month": "2023-12",
+    "pct": 0.99088,
+    "rank": 426
+   },
+   {
+    "month": "2024-01",
+    "pct": 0.99072,
+    "rank": 441
+   },
+   {
+    "month": "2024-10",
+    "pct": 0.99542,
+    "rank": 119
+   }
+  ],
+  "The View": [
+   {
+    "month": "2023-10",
+    "pct": 0.95751,
+    "rank": 2344
+   },
+   {
+    "month": "2024-07",
+    "pct": 0.95686,
+    "rank": 2445
+   },
+   {
+    "month": "2024-08",
+    "pct": 0.95684,
+    "rank": 2455
+   },
+   {
+    "month": "2025-05",
+    "pct": 0.08572,
+    "rank": 126048
+   },
+   {
+    "month": "2025-06",
+    "pct": 0.08746,
+    "rank": 126107
+   },
+   {
+    "month": "2026-03",
+    "pct": 0.90386,
+    "rank": 2432
+   },
+   {
+    "month": "2026-04",
+    "pct": 0.90386,
+    "rank": 2432
+   }
+  ],
+  "Kamala Harris": [
+   {
+    "month": "2023-10",
+    "pct": 0.74695,
+    "rank": 11836
+   },
+   {
+    "month": "2023-11",
+    "pct": 0.74687,
+    "rank": 11852
+   },
+   {
+    "month": "2024-08",
+    "pct": 0.74457,
+    "rank": 11117
+   },
+   {
+    "month": "2024-09",
+    "pct": 0.75586,
+    "rank": 9493
+   }
+  ],
+  "Joe Biden": [
+   {
+    "month": "2024-01",
+    "pct": 0.99072,
+    "rank": 441
+   },
+   {
+    "month": "2024-02",
+    "pct": 0.9904,
+    "rank": 449
+   }
+  ],
+  "Gavin Newsom": [
+   {
+    "month": "2024-02",
+    "pct": 0.80097,
+    "rank": 9253
+   },
+   {
+    "month": "2024-03",
+    "pct": 0.80002,
+    "rank": 9249
+   }
+  ],
+  "Josh Shapiro": [
+   {
+    "month": "2024-05",
+    "pct": 0.17106,
+    "rank": 38198
+   },
+   {
+    "month": "2024-06",
+    "pct": 0.17172,
+    "rank": 36596
+   }
+  ]
+ },
+ "summary": {
+  "headline": "D barometer swings negative, then recovers; R coverage thin",
+  "summary": "Democratic-leaning taste barometer was positive in late 2023 and peaked at 1.342 in 2024-09, fell to -1.069 by 2025-04, stayed negative through 2026-02, then turned positive in 2026-03/04 (0.623, 0.686). Republican-leaning readings are mostly null; only 2024-07 (0.22) and 2024-08 (0.157) appear. Coverage: 95 entities, 85 with any data, 63 with 4+ months, 58 recent. Listed fallers show large declines; three risers rise.",
+  "caveat": "R barometer has 0\u20133 monthly tastes and only two non-null months; D has 3\u20137. Treat trends as indicative, especially large faller drops and mixed risers."
+ },
+ "by": "Undertow AI"
+}

@@ -36,6 +36,7 @@ async function load() {
   const [senate, governor, model, counties, states, topo] = await Promise.all(
     ["/api/forecast", "/api/forecast?office=governor", "/api/model", "/api/counties", "/api/states", "/geo/counties-10m.json"].map((u) => fetch(u).then((r) => r.json())));
   Object.assign(S, { fcs: { senate, governor }, fc: senate, model, counties, states });
+  S.trendAudit = await fetch("/api/trends-audit").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.p24 = await fetch("/api/polls2024").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.demo = await fetch("/api/demographics").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.qn = await fetch("/api/qloo").then((r) => (r.ok ? r.json() : null)).catch(() => null);
@@ -601,6 +602,12 @@ function how() {
     <p>For each race the script averages recent general-election polls (weighted by recency and sample size, one poll per pollster, partisan-sponsored polls at 60%). It then checks two kinds of skew: whether Democratic- or Republican-sponsored polls differ from independent ones by 4+ points, and whether the race's shift since 2024 is far (9+ points) from the typical polled race (${fmtS(S.fc.national.median_poll_swing_since_2024)}). With no polls, the call is the 2024 result plus the typical shift. Undertow AI then reads only those numbers plus published ratings and makes the final judgement with a short reason. It cannot fetch anything or change the data, and an answer more than 8 points from the script's call is rejected.</p>
     <h3>4. Down to the block</h3>
     <p>States → counties → Qloo's ~5 km cells → a live scan at ~150 m when you zoom into a neighbourhood. Below the county, a cell shows its county's result shifted by how its tastes differ from its neighbours'. That is relative, not a separate poll.</p>
+    <h3>What we tested and dropped</h3>
+    <ul>
+      <li><b>Qloo trend data</b> (monthly popularity, Aug 2023 to Oct 2026, ${S.trendAudit ? `${S.trendAudit.entities_scanned} tastes and names scanned` : "95 tastes and names scanned"}). Political names stop by late 2024 (none at all for JD Vance or Elon Musk), whole categories are rescaled over time (every artist "fell" by the same amount), and gender and age filters are ignored. It can't track 2025–26 shifts honestly, so it isn't used.</li>
+      <li><b>Qloo age-group heatmaps</b> as a demographic stand-in: The Villages, Florida read as average age. Replaced by the age of each taste's audience, which reads 8 of 9 known places right, and is shown as context only.</li>
+      <li><b>A statewide Qloo correction to the polls</b>: in 2024, where Qloo disagreed with a state's polls did not predict where the polls missed${S.p24 ? ` (r = ${S.p24.qloo_r}; the polls leaned too Democratic in ${S.p24.states_polls_too_democratic} of ${S.p24.n_states} states)` : ""}.</li>
+    </ul>
     <h3>The tastes</h3>
     <table><tr><th>Taste</th><th>Pulls</th><th>Strength</th><th>Same direction in</th></tr>${ents.map(([n, e]) => `<tr><td>${esc(n)}</td><td class="${e.lean}">${e.lean}</td><td>${Math.abs(e.partial_r).toFixed(2)}</td><td>${pct(e.states_consistent)} of states</td></tr>`).join("")}</table>
     <h3>Data</h3><p class="note">Qloo Insights API (hackathon endpoint: heatmaps, search). 2020 and 2024 county presidential results: github.com/tonmcg/US_County_Level_Election_Results_08-24. Polls: Wikipedia general-election polling tables. County shapes: us-atlas. ZIP and city search: GeoNames US postal codes (CC BY 4.0). Market odds in Tools (comparison only): Polymarket. Basemap: OpenFreeMap / OpenStreetMap.</p>`;

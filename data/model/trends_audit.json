@@ -1,0 +1,36 @@
+{
+ "entities_scanned": 95,
+ "with_any_data": 85,
+ "category_shift": {
+  "artist": {
+   "n": 6,
+   "mean_change": -0.874,
+   "spread": 0.015
+  },
+  "brand": {
+   "n": 18,
+   "mean_change": -0.387,
+   "spread": 0.24
+  },
+  "movie": {
+   "n": 7,
+   "mean_change": -0.21,
+   "spread": 0.14
+  },
+  "tv_show": {
+   "n": 13,
+   "mean_change": -0.061,
+   "spread": 0.077
+  }
+ },
+ "political_last_month": {
+  "Donald Trump": "2024-10",
+  "The View": "2026-04",
+  "Kamala Harris": "2024-09",
+  "Joe Biden": "2024-02",
+  "Gavin Newsom": "2024-03",
+  "Josh Shapiro": "2024-06"
+ },
+ "gender_age_filters": "ignored by /v2/trending (identical results with and without them)",
+ "verdict": "Not used: coverage is patchy, political names stop in mid-2024, whole categories are rescaled over time, and demographic filters are ignored."
+}

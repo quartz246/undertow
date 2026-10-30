@@ -157,6 +157,9 @@ def forecast(office: str = "senate"):
     if office not in ("senate", "governor"): raise HTTPException(400)
     return _json(f"forecast/{office}.json")
 
+@app.get("/api/polls2024")
+def polls2024(): return _json("model/polls2024_test.json")
+
 @app.get("/api/demographics")
 def demographics(): return _json("model/demographics.json")
 

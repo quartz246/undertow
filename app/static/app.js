@@ -36,6 +36,7 @@ async function load() {
   const [senate, governor, model, counties, states, topo] = await Promise.all(
     ["/api/forecast", "/api/forecast?office=governor", "/api/model", "/api/counties", "/api/states", "/geo/counties-10m.json"].map((u) => fetch(u).then((r) => r.json())));
   Object.assign(S, { fcs: { senate, governor }, fc: senate, model, counties, states });
+  S.p24 = await fetch("/api/polls2024").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.demo = await fetch("/api/demographics").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.qn = await fetch("/api/qloo").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.mkt = await fetch("/api/markets").then((r) => (r.ok ? r.json() : null)).catch(() => null);
@@ -274,7 +275,7 @@ function home() {
   const g = [["Toss-ups and leans", grp(0, 0.75)], ["Likely", grp(0.75, 0.92)], ["Safe", grp(0.92, 1.01)]];
   const skewN = S.fc.races.filter((r) => r.skew?.flag).length;
   $("#panel-body").innerHTML = `<h2>${S.fc.races.length} ${OFF[S.office]} races</h2>
-    <p class="sub">Polls decide each call. Scripts check where the polls look skewed (${skewN} races flagged) and Undertow AI makes the final judgement. Qloo's taste data maps each state down to the block and shows which places no longer match their 2024 vote.</p>
+    <p class="sub">The polls missed in 2024. Undertow reads every race through Qloo's taste data too: what each state, county and block actually watches, reads and buys, and where that no longer matches how it voted. ${skewN} races carry a warning about their polls; Undertow AI weighs it all into the call.</p>
     <div class="lock">Forecast locked ${esc(new Date(S.fc.locked_at || S.fc.generated_at).toLocaleString([], { dateStyle: "medium", timeStyle: "short" }))} · polls through ${esc(S.fc.polls_through || "—")} · election Nov 3, 2026. <button class="howlink" id="how-open">How it works</button> · <button class="howlink" id="tools-open2">Where we disagree</button></div>
     ${g.filter(([, l]) => l.length).map(([t, l]) => `<div class="grouphead">${t}</div><div class="races">${l.map(raceLine).join("")}</div>`).join("")}`;
   $("#how-open").onclick = how; $("#tools-open2").onclick = tools;
@@ -353,14 +354,14 @@ function renderPredictions() {
     if (q != null && (q > 0) !== (f.margin_d > 0)) dis.push("Qloo");
     return { r, f, win, nonR, mk, murl: m?.url, q, poll, dis };
   });
-  const key = { close: (x) => Math.abs(x.f.margin_d), state: (x) => x.r.state, ours: (x) => -x.f.p_win, poll: (x) => -(x.poll ?? -99), mkt: (x) => -(x.mk ?? -1), qloo: (x) => -(x.q ?? -99) }[predSort.k];
+  const key = { agree: (x) => -x.dis.length * 1000 + Math.abs(x.f.margin_d), close: (x) => Math.abs(x.f.margin_d), state: (x) => x.r.state, ours: (x) => -x.f.p_win, poll: (x) => -(x.poll ?? -99), mkt: (x) => -(x.mk ?? -1), qloo: (x) => -(x.q ?? -99) }[predSort.k];
   rows.sort((a, b) => { const A = key(a), B = key(b); return (A < B ? -1 : A > B ? 1 : 0) * predSort.dir; });
   const agree = rows.filter((x) => !x.dis.length).length, mrows = rows.filter((x) => x.mk != null);
   const mAgree = mrows.filter((x) => x.mk >= 0.5).length;
   $("#preds-sub").innerHTML = `${rows.length} ${OFF[S.office]} races. Polls, betting markets and Qloo all point the same way in <b>${agree}</b>; the markets back our pick in <b>${mAgree} of ${mrows.length}</b> races they cover.`;
   const th = (k, t) => `<th scope="col"><button data-sort="${k}" aria-sort="${predSort.k === k ? (predSort.dir > 0 ? "ascending" : "descending") : "none"}">${t}${predSort.k === k ? (predSort.dir > 0 ? " ▲" : " ▼") : ""}</button></th>`;
   const chance = (p) => `<span class="pbar"><i style="width:${Math.round(p * 100)}%"></i></span>`;
-  $("#ptable").innerHTML = `<thead><tr>${th("state", "Race")}<th scope="col">Matchup</th>${th("ours", "Our prediction")}${th("poll", "Poll average")}${th("mkt", "Betting markets")}${th("qloo", "Qloo-only")}${th("close", "Agreement")}</tr></thead>
+  $("#ptable").innerHTML = `<thead><tr>${th("state", "Race")}<th scope="col">Matchup</th>${th("ours", "Our prediction")}${th("poll", "Poll average")}${th("mkt", "Betting markets")}${th("qloo", "Qloo-only")}${th("agree", "Agreement")}</tr></thead>
     <tbody>${rows.map((x) => `<tr data-race="${x.r.id}" tabindex="0">
       <th scope="row">${esc(x.r.state)}${x.r.special ? " <small>special</small>" : ""}</th>
       <td class="mu"><span class="${x.r.main.d.party}">${esc(last(x.r.main.d.name))}</span> <span class="vs">v</span> <span class="R">${esc(last(x.r.main.r.name))}</span></td>

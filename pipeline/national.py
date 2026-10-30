@@ -124,6 +124,8 @@ if __name__ == "__main__":
     gap = S24n.pred - S24n.m24; A = np.c_[np.ones(len(S24n)), S24n.m24]
     res = gap - A @ np.linalg.lstsq(A, gap, rcond=None)[0]
     q["state_undertow"] = {s: round(float(v), 1) for s, v in res.items()}
+    q["states_2020model"] = {s_: round(float(v), 2) for s_, v in S.pred20.items()}   # expected margin from a model trained on 2020 only
+    q["states_m20"] = {s_: round(float(v), 2) for s_, v in S.m20.items()}
     q["state_undertow_note"] = ("Statewide undertow: Qloo-only expected 2024 margin minus actual 2024, minus what the 2024 margin alone explains "
                                 "(regression to the mean). DC excluded. Backtest on 2020->2024: did not predict statewide swing.")
     json.dump(q, open("data/model/qloo_national.json", "w"))

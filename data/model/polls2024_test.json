@@ -1,0 +1,221 @@
+{
+ "n_states": 30,
+ "avg_poll_error": -3.18,
+ "poll_mae": 3.46,
+ "states_polls_too_democratic": 28,
+ "qloo_r": -0.14,
+ "history_r": 0.47,
+ "history_k": 0.5,
+ "rows": {
+  "South Carolina": {
+   "poll": -16.5,
+   "actual": -17.9,
+   "err": -1.4,
+   "qgap": -3.7,
+   "hgap": 3.3
+  },
+  "Colorado": {
+   "poll": 14.5,
+   "actual": 11.0,
+   "err": -3.5,
+   "qgap": -16.6,
+   "hgap": -2.5
+  },
+  "Texas": {
+   "poll": -7.5,
+   "actual": -13.7,
+   "err": -6.2,
+   "qgap": 2.5,
+   "hgap": 0.4
+  },
+  "Ohio": {
+   "poll": -8.1,
+   "actual": -11.2,
+   "err": -3.1,
+   "qgap": 6.5,
+   "hgap": -1.4
+  },
+  "Wisconsin": {
+   "poll": 0.7,
+   "actual": -0.9,
+   "err": -1.6,
+   "qgap": -1.9,
+   "hgap": -1.6
+  },
+  "Florida": {
+   "poll": -6.6,
+   "actual": -13.1,
+   "err": -6.5,
+   "qgap": -6.9,
+   "hgap": 1.7
+  },
+  "Montana": {
+   "poll": -19.0,
+   "actual": -19.9,
+   "err": -0.9,
+   "qgap": -10.8,
+   "hgap": 1.2
+  },
+  "Minnesota": {
+   "poll": 5.7,
+   "actual": 4.3,
+   "err": -1.4,
+   "qgap": -8.6,
+   "hgap": -0.1
+  },
+  "Virginia": {
+   "poll": 6.5,
+   "actual": 5.8,
+   "err": -0.7,
+   "qgap": -2.4,
+   "hgap": 2.1
+  },
+  "Oklahoma": {
+   "poll": -33.0,
+   "actual": -34.3,
+   "err": -1.3,
+   "qgap": 5.0,
+   "hgap": -1.6
+  },
+  "Utah": {
+   "poll": -16.5,
+   "actual": -21.6,
+   "err": -5.1,
+   "qgap": 5.8,
+   "hgap": -5.5
+  },
+  "Tennessee": {
+   "poll": -24.0,
+   "actual": -29.7,
+   "err": -5.7,
+   "qgap": -0.2,
+   "hgap": -0.7
+  },
+  "Iowa": {
+   "poll": -4.5,
+   "actual": -13.3,
+   "err": -8.8,
+   "qgap": -7.2,
+   "hgap": -5.2
+  },
+  "North Carolina": {
+   "poll": -1.2,
+   "actual": -3.2,
+   "err": -2.0,
+   "qgap": -7.1,
+   "hgap": -1.6
+  },
+  "Illinois": {
+   "poll": 17.0,
+   "actual": 11.0,
+   "err": -6.0,
+   "qgap": 6.8,
+   "hgap": -1.5
+  },
+  "Arizona": {
+   "poll": -2.1,
+   "actual": -5.5,
+   "err": -3.4,
+   "qgap": 0.3,
+   "hgap": 0.9
+  },
+  "New Hampshire": {
+   "poll": 6.4,
+   "actual": 2.8,
+   "err": -3.6,
+   "qgap": 4.7,
+   "hgap": -0.5
+  },
+  "New York": {
+   "poll": 17.7,
+   "actual": 12.7,
+   "err": -5.0,
+   "qgap": 11.6,
+   "hgap": 4.0
+  },
+  "Georgia": {
+   "poll": -1.2,
+   "actual": -2.2,
+   "err": -1.0,
+   "qgap": 0.8,
+   "hgap": -0.1
+  },
+  "Washington": {
+   "poll": 18.7,
+   "actual": 18.3,
+   "err": -0.4,
+   "qgap": 4.0,
+   "hgap": -1.0
+  },
+  "Nevada": {
+   "poll": -0.7,
+   "actual": -3.1,
+   "err": -2.4,
+   "qgap": -1.8,
+   "hgap": 1.6
+  },
+  "Massachusetts": {
+   "poll": 29.7,
+   "actual": 25.3,
+   "err": -4.3,
+   "qgap": 2.3,
+   "hgap": 2.3
+  },
+  "California": {
+   "poll": 24.7,
+   "actual": 20.1,
+   "err": -4.6,
+   "qgap": 1.6,
+   "hgap": 3.0
+  },
+  "Pennsylvania": {
+   "poll": -0.2,
+   "actual": -1.7,
+   "err": -1.5,
+   "qgap": 2.8,
+   "hgap": -0.1
+  },
+  "New Jersey": {
+   "poll": 15.0,
+   "actual": 5.9,
+   "err": -9.1,
+   "qgap": 4.2,
+   "hgap": -0.6
+  },
+  "Maryland": {
+   "poll": 29.5,
+   "actual": 28.8,
+   "err": -0.7,
+   "qgap": 1.8,
+   "hgap": 2.2
+  },
+  "Michigan": {
+   "poll": 1.1,
+   "actual": -1.4,
+   "err": -2.5,
+   "qgap": -4.7,
+   "hgap": 0.2
+  },
+  "Nebraska": {
+   "poll": -13.7,
+   "actual": -20.6,
+   "err": -6.9,
+   "qgap": -2.2,
+   "hgap": -6.9
+  },
+  "Maine": {
+   "poll": 3.3,
+   "actual": 6.9,
+   "err": 3.6,
+   "qgap": 4.1,
+   "hgap": 3.8
+  },
+  "New Mexico": {
+   "poll": 5.3,
+   "actual": 6.0,
+   "err": 0.7,
+   "qgap": -13.9,
+   "hgap": 4.0
+  }
+ }
+}

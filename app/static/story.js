@@ -95,37 +95,45 @@ function storySteps() {
     if (!best) return null;
     return { r, f: best[0], c: best[1], top: (best[1].drivers || []).slice(0, 3).map(([n]) => n) };
   })();
-  const dSeats = n.D + HOLD.D, rSeats = n.R + HOLD.R;
+  const dSeats = n.D + HOLD.D, rSeats = n.R + HOLD.R, P24 = S.p24;
+  // the state where the 2020-trained taste model best foresaw which counties would move in 2024 (and that has a race)
+  const showcase = Object.entries(bt.states || {}).filter(([s_, v]) => v.n >= 40 && S.raceBy[S.nameToFips[s_]] && S.states[s_]?.out_of_step_d?.length).sort((a, b) => b[1].r - a[1].r)[0];
+  const flagged = fc.races.filter((r) => { const q = qlooState(r.state), f = final(r).margin_d; return q != null && (q > 0) !== (f > 0); });
+  const usView = () => fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, pitch: 0, bearing: 0, padding: storyPad() });
   return [
-    { k: "The forecast", h: `${dSeats >= 51 ? "Democrats are on course to take the Senate" : "Republicans are on course to hold the Senate"}`,
-      p: `Our model reads every public general-election poll for the ${fc.races.length} Senate races on Nov. 3 and projects <b>${dSeats} Democratic seats to ${rSeats} Republican</b>${n.I ? ` and ${n.I} independent` : ""}. The closest contests: ${close.map((r) => `${r.state} (${fmtM(final(r).margin_d)})`).join(", ")}.`,
-      go: () => { scene("forecast", null, 3.4); home(); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, padding: storyPad() }); } },
     { k: "Taste as a map of politics", h: "What people watch, read and buy nearly redraws the 2024 map",
-      p: `Using nothing but Qloo's data on the tastes of each place, from <i>Duck Dynasty</i> and Dan Bongino to Beyoncé and <i>Succession</i>, a model that never saw a state's results picked the right 2024 winner in <b>${right} of ${q24.length} states</b>. Left of the line: the map tastes predict. Right: the real result.`,
-      go: () => { scene("q24", "q24", 3.4); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, padding: storyPad() }); const [a, b] = sweepRange(); sweep(a, b, 3400, 2200); } },
-    { k: "The undertow", h: "Where the culture and the vote part ways",
-      p: `Some states' tastes look bluer than they voted in 2024, led by ${us.slice(0, 2).map(([s_, v]) => `${s_} (${gtag(v)})`).join(" and ")}. Others look redder, led by ${us.slice(-2).reverse().map(([s_, v]) => `${s_} (${gtag(v)})`).join(" and ")}. We call that gap the undertow. It is a clue, not a verdict: tested on 2020 to 2024, the statewide gap did not predict which way states moved.`,
-      go: () => { scene("undertow", null, 3.4); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, padding: storyPad() });
-        setTimeout(() => { [...us.slice(0, 1), ...us.slice(-1)].forEach(([s_, v], i) => { const f = stateFeat(s_); if (f) callout(centroid(f), `<b>${esc(s_)}</b><span>Tastes ${v > 0 ? "bluer" : "redder"} than the vote by ${Math.abs(v).toFixed(0)} pts</span>`, i ? "left" : "right", i * 350); }); }, 1800); } },
+      p: `Qloo tracks the tastes of every corner of America: the shows, podcasts, music, brands and films people love. Feed a model nothing but those tastes, from <i>Duck Dynasty</i> and Dan Bongino to Beyoncé and <i>Succession</i>, and it redraws the 2024 electoral map: the right winner in <b>${right} of ${q24.length} states</b>, each one predicted by a model that never saw that state's results. Left of the line: the map tastes predict. Right: the real result.`,
+      go: () => { scene("q24", "q24", 3.4); usView(); const [a, b] = sweepRange(); sweep(a, b, 3400, 2200); } },
+    showcase ? { k: "It saw the swing coming", h: `Inside ${showcase[0]}, the tastes knew which way places would move`,
+      p: `We trained the taste model on the <b>2020</b> vote, then flagged counties whose tastes didn't match it. In 2024 those counties really did move the way their tastes pointed, in <b>${N ? N.within_state_positive : bt.states_positive} of ${N ? N.within_state_n : Object.keys(bt.states).length} states</b>. ${esc(showcase[0])} was one of the clearest: the flagged counties moved the flagged way ${pct(showcase[1].hit)} of the time. Blue counties here have tastes bluer than their vote; red, redder.`,
+      go: () => { scene("undertow", null, 6); const f = stateFeat(showcase[0]); if (f) fitTo(f, storyPad(), 6.6);
+        setTimeout(() => { const st = S.states[showcase[0]]; [[st.out_of_step_d[0], "right"], [st.out_of_step_r[0], "left"]].forEach(([c, side], i) => { if (!c) return; const cf = S.geo.co.features.find((x) => x.properties.fips === c[0]); if (cf) callout(centroid(cf), `<b>${esc(c[1])}</b><span>Voted ${fmtM(c[4])} · Tastes ${fmtM(c[3])}</span>`, side, i * 400); }); }, 2600); } } : null,
     md ? { k: "Miami-Dade", h: "The vote moved right. The tastes did not.",
-      p: `Miami-Dade County voted ${ptag(md.m24)} for president in 2024, a historic swing. Its tastes still look like a place that votes ${ptag(md.pred)}. Heavily Hispanic counties in Texas's Rio Grande Valley show the same gap. Either the 2024 shift is fragile, or culture lags behind the ballot box.`,
+      p: `Miami-Dade County voted ${ptag(md.m24)} for president in 2024, a historic swing. Its tastes still look like a place that votes ${ptag(md.pred)}. Heavily Hispanic counties in Texas's Rio Grande Valley show the same gap. Either the 2024 shift is fragile, or culture lags behind the ballot box. Nov. 3 is the first test.`,
       go: () => { scene("undertow", null, 8.6); const cf = S.geo.co.features.find((x) => x.properties.fips === "12086"); if (cf) fitTo(cf, storyPad(), 8.6);
         setTimeout(() => callout([-80.21, 25.77], `<b>Miami-Dade</b><span>Voted ${fmtM(md.m24)} · Tastes ${fmtM(md.pred)}</span>`, "right"), 2400); } } : null,
+    { k: "The undertow", h: "Whole states whose culture and vote part ways",
+      p: `Add up the counties and some states' tastes look bluer than they voted in 2024, led by ${us.slice(0, 2).map(([s_, v]) => `${s_} (${gtag(v)})`).join(" and ")}. Others look redder, led by ${us.slice(-2).reverse().map(([s_, v]) => `${s_} (${gtag(v)})`).join(" and ")}. At this scale the undertow is a clue, not a verdict: statewide, it did not foretell 2024's moves.`,
+      go: () => { scene("undertow", null, 3.4); usView();
+        setTimeout(() => { [...us.slice(0, 1), ...us.slice(-1)].forEach(([s_, v], i) => { const f = stateFeat(s_); if (f) callout(centroid(f), `<b>${esc(s_)}</b><span>Tastes ${v > 0 ? "bluer" : "redder"} than the vote by ${Math.abs(v).toFixed(0)} pts</span>`, i ? "left" : "right", i * 350); }); }, 1800); } },
+    { k: "2026", h: "The polls missed in 2024. Here is every race through both lenses.",
+      p: `${P24 ? `In 2024 the polls leaned too Democratic in <b>${P24.states_polls_too_democratic} of ${P24.n_states}</b> states, by ${Math.abs(P24.avg_poll_error).toFixed(1)} points on average. ` : ""}So Undertow sets every 2026 race beside what its tastes say. Undertow AI's projection: <b>${dSeats} Democratic seats to ${rSeats} Republican</b>${n.I ? ` and ${n.I} independent` : ""}. In ${flagged.length ? flagged.map((r) => r.state).join(" and ") : "no race"}, the culture points to a different winner than the polls.`,
+      go: () => { scene("forecast", null, 3.4); home(); usView(); setTimeout(() => flagged.forEach((r, i) => { const f = stateFeat(r.state); if (f) callout(centroid(f), `<b>${esc(r.state)}</b><span>Polls ${fmtM(final(r).margin_d)} · Tastes ${fmtM(qlooState(r.state))}</span>`, i % 2 ? "left" : "right", i * 400); }), 1800); } },
     dis ? { k: dis.r.state, h: `In ${dis.r.state}, the polls and the culture disagree`,
-      p: `The polls put the race at ${ptag(dis.f)}${dis.r.main ? `, ${esc(dis.r.main.d.name)} against ${esc(dis.r.main.r.name)}` : ""}. The state's tastes, adjusted for the national mood, point to ${ptag(dis.q)}${(dis.q > 0) !== (dis.f > 0) ? ", a different winner" : ""}. We keep the polls' call. Left of the line is the polling forecast, right is the forecast from tastes alone.`,
+      p: `The polls put the race at ${ptag(dis.f)}${dis.r.main ? `, ${esc(dis.r.main.d.name)} against ${esc(dis.r.main.r.name)}` : ""}. The state's tastes, adjusted for the national mood, point to ${ptag(dis.q)}${(dis.q > 0) !== (dis.f > 0) ? ", a different winner" : ""}. Left of the line is the polling forecast, right is the forecast from tastes alone.`,
       go: () => { scene("forecast", "qloo", 4.4); openRace(dis.r.id, false); closePanel(); const f = stateFeat(dis.r.state); if (f) fitTo(f, storyPad(), 4.4); { const [a, b] = sweepRange(); sweep(a, b, 3000, 2800); }
         setTimeout(() => { if (f) callout(centroid(f), `<b>${esc(dis.r.state)}</b><span>Polls ${fmtM(dis.f)} · Tastes ${fmtM(dis.q)}</span>`, "left"); }, 2600); } } : null,
     drill ? { k: `Inside ${drill.r.state}`, h: `${drill.c.name}: one county in the closest race`,
-      p: `${esc(drill.r.state)} is the tightest race on the board (${ptag(final(drill.r).margin_d)}). Its biggest county, ${esc(drill.c.name)}, voted ${ptag(drill.c.m24)} in 2024; our 2026 estimate is ${ptag(countyEst(drill.f))}. Qloo reads who lives here from the audiences of the local tastes: ${esc(profile(drill.f, drill.r.state) || "about average")}, with ${drill.top.map((t) => `<i>${esc(t)}</i>`).join(", ")} pulling hardest. That profile is context, not a predictor: tested on 2020 to 2024, it did not foretell the swing.`,
+      p: `${esc(drill.r.state)} is the tightest race on the board (${ptag(final(drill.r).margin_d)}). Its biggest county, ${esc(drill.c.name)}, voted ${ptag(drill.c.m24)} in 2024; our 2026 estimate is ${ptag(countyEst(drill.f))}. Qloo reads who lives here from the audiences of the local tastes: ${esc(profile(drill.f, drill.r.state) || "about average")}, with ${drill.top.map((t) => `<i>${esc(t)}</i>`).join(", ")} pulling hardest.`,
       go: () => { scene("forecast", null, 9); openRace(drill.r.id, false); closePanel(); const cf = S.geo.co.features.find((x) => x.properties.fips === drill.f); if (cf) fitTo(cf, storyPad(), 9.4);
         setTimeout(() => callout(centroid(cf), `<b>${esc(drill.c.name)}</b><span>2024 ${fmtM(drill.c.m24)} · 2026 est. ${fmtM(countyEst(drill.f))}</span><span>${esc(profile(drill.f, drill.r.state) || "")}</span>`, "right"), 2600); } } : null,
     { k: "Down to the block", h: "A forecast you can walk through",
       p: "Zoom into a neighborhood, or search a ZIP code, and Undertow queries Qloo live for cells about 150 meters across. Each block is shaded by whether its tastes run bluer or redder than the rest of its county. This is downtown Detroit, in Michigan's Senate race.",
       go: () => { scene("forecast", null, 13); fly({ center: [-83.0458, 42.3314], zoom: 13, pitch: reduceMotion() ? 0 : 40, bearing: reduceMotion() ? 0 : -18, padding: storyPad(), duration: 3200 });
         setTimeout(() => callout([-83.0458, 42.3314], `<b>Downtown Detroit</b><span>Live Qloo scan · ~150 m cells</span>`, "right"), 3400); } },
-    { k: "What history says", h: "How far to trust the undertow",
-      p: `We fit the taste model to 2020 and checked it against 2024. Inside states it helped: counties whose tastes ran bluer than their vote moved toward Democrats in ${N ? N.within_state_positive : bt.states_positive} of ${N ? N.within_state_n : Object.keys(bt.states).length} states, by fractions of a point. Statewide it did not (r = ${N ? N.state_r_controlled : "—"}). That is why polls make every call here, and Qloo shows where the vote is moving.`,
-      go: () => { scene("forecast", null, 3.4); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, pitch: 0, bearing: 0, padding: storyPad() }); } },
+    { k: "The scorecard", h: "What the tastes got right, and what to watch on Nov. 3",
+      p: `Tastes alone drew the 2024 map (${right} of ${q24.length} states) and, inside states, foresaw which counties would move (${N ? `${N.within_state_positive} of ${N.within_state_n}` : "most"} states). They did not foresee whole-state swings or the polls' 2024 miss${P24 ? ` (r = ${P24.qloo_r})` : ""}, so the statewide calls still rest on the polls. Watch ${flagged.length ? flagged.map((r) => r.state).join(", ") : "the closest races"}, and counties like Miami-Dade: if they break the way their tastes point, the undertow was real.`,
+      go: () => { scene("forecast", null, 3.4); usView(); } },
   ].filter(Boolean);
 }
 
@@ -144,8 +152,8 @@ function story() {
   ov.querySelector(".story-scroll").innerHTML = `
     <header class="story-hero"><div class="story-card hero">
       <div class="kicker">Election 2026 · Data</div>
-      <h1>The Polls Say One Thing. America's Tastes Say Another.</h1>
-      <p class="dek">We compared every 2026 Senate poll with what ${S.model.n_counties.toLocaleString()} counties watch, read and buy. Here is where the two part ways, and what history says about trusting either.</p>
+      <h1>The Polls Missed in 2024. Here Is What America's Tastes Say About 2026.</h1>
+      <p class="dek">Qloo knows what ${S.model.n_counties.toLocaleString()} counties watch, read and buy. We used it to redraw the electoral map from culture alone, find the places quietly drifting from their vote, and hold every 2026 race up against it, down to the block.</p>
       <p class="byline">By <b>Undertow AI</b> · Powered by <b>Qloo</b> · Data: Qloo, public polls · ${esc(d.toLocaleDateString([], { month: "long", day: "numeric", year: "numeric" }))}</p>
       <div class="scrollcue" aria-hidden="true">Scroll<i></i></div>
     </div></header>

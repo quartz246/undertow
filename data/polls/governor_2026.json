@@ -1,0 +1,8556 @@
+{
+ "fetched_at": "2026-10-30T03:23:30+00:00",
+ "source_note": "English Wikipedia ('2026 United States gubernatorial elections' for races/nominees/ratings; per-state pages' General election > Polling tables for polls), via the MediaWiki parse API. Only polls whose candidate columns are all general-election nominees are kept; hypothetical/generic/primary tables are dropped. Ids: <PO>-S regular, <PO>-S2 special (senate); <PO>-G (governor). 'pct' keys equal candidate names. 'party' is a 1-letter code for D/R/I/L/G/C (DFL->D), else the party name; 'party_full' is as printed. Rows with '<1%' or unparsable values omit that entry; LV and RV versions of one poll are separate entries. No betting/prediction markets.",
+ "office": "governor",
+ "races": [
+  {
+   "id": "AK-G",
+   "state": "Alaska",
+   "state_po": "AK",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Alaska_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Dave Bronson",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Jonathan Kreiss-Tomkins",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Treg Taylor",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Bernadette Wilson",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "ratings": {
+    "Cook": "Lean D (flip)",
+    "DDHQ": "Lean D (flip)",
+    "Fox": "Tossup",
+    "IE": "Tilt D (flip)",
+    "NBC": "Lean D (flip)",
+    "RCP": "Lean D (flip)",
+    "Sabato": "Lean D (flip)",
+    "Silver": "Solid D (flip)"
+   },
+   "polls": [
+    {
+     "pollster": "Alaska Survey Research",
+     "end_date": "2026-10-18",
+     "start_date": "2026-10-15",
+     "sample": 1568,
+     "population": "LV",
+     "pct": {
+      "Bernadette Wilson": 30.0,
+      "Jonathan Kreiss-Tomkins": 50.0,
+      "Dave Bronson": 12.0,
+      "Treg Taylor": 8.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Data for Progress (D)",
+     "end_date": "2026-10-16",
+     "start_date": "2026-10-08",
+     "sample": 694,
+     "population": "LV",
+     "pct": {
+      "Bernadette Wilson": 28.0,
+      "Jonathan Kreiss-Tomkins": 46.0,
+      "Dave Bronson": 12.0,
+      "Treg Taylor": 9.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Alaska Survey Research",
+     "end_date": "2026-10-03",
+     "start_date": "2026-10-01",
+     "sample": 1512,
+     "population": "LV",
+     "pct": {
+      "Bernadette Wilson": 27.0,
+      "Jonathan Kreiss-Tomkins": 48.0,
+      "Dave Bronson": 15.0,
+      "Treg Taylor": 10.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "New York Times / Siena University",
+     "end_date": "2026-10-01",
+     "start_date": "2026-09-24",
+     "sample": 504,
+     "population": "LV",
+     "pct": {
+      "Bernadette Wilson": 20.0,
+      "Jonathan Kreiss-Tomkins": 40.0,
+      "Dave Bronson": 14.0,
+      "Treg Taylor": 7.0
+     },
+     "undecided": 18.0
+    },
+    {
+     "pollster": "Cygnal (R)",
+     "end_date": "2026-09-27",
+     "start_date": "2026-09-24",
+     "sample": 502,
+     "population": "LV",
+     "pct": {
+      "Bernadette Wilson": 24.0,
+      "Jonathan Kreiss-Tomkins": 44.0,
+      "Dave Bronson": 8.0,
+      "Treg Taylor": 9.0
+     },
+     "undecided": 15.0
+    },
+    {
+     "pollster": "co/efficient (R)",
+     "end_date": "2026-09-17",
+     "start_date": "2026-09-14",
+     "sample": 799,
+     "population": "LV",
+     "pct": {
+      "Bernadette Wilson": 20.0,
+      "Jonathan Kreiss-Tomkins": 43.0,
+      "Dave Bronson": 17.0,
+      "Treg Taylor": 6.0
+     },
+     "undecided": 14.0
+    },
+    {
+     "pollster": "Fabrizio Ward (R)/ Impact Research (D)",
+     "end_date": "2026-09-11",
+     "start_date": "2026-09-08",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Bernadette Wilson": 20.0,
+      "Jonathan Kreiss-Tomkins": 40.0,
+      "Dave Bronson": 14.0,
+      "Treg Taylor": 7.0
+     },
+     "undecided": 18.0
+    }
+   ],
+   "parse_notes": [
+    "1 other visible nominee-only table(s) ignored (sizes [6])"
+   ]
+  },
+  {
+   "id": "AL-G",
+   "state": "Alabama",
+   "state_po": "AL",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Alabama_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Doug Jones",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Tommy Tuberville",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Likely R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Likely R",
+    "Silver": "Solid R"
+   },
+   "polls": [
+    {
+     "pollster": "Chism Strategies (D)",
+     "end_date": "2026-10-24",
+     "start_date": "2026-10-22",
+     "sample": 695,
+     "population": "LV",
+     "pct": {
+      "Tommy Tuberville": 48.0,
+      "Doug Jones": 45.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Cygnal (R)",
+     "end_date": "2026-10-17",
+     "start_date": "2026-10-16",
+     "sample": 500,
+     "population": "LV",
+     "pct": {
+      "Tommy Tuberville": 51.0,
+      "Doug Jones": 40.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "The Alabama Poll",
+     "end_date": "2026-10-16",
+     "start_date": "2026-10-15",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Tommy Tuberville": 51.0,
+      "Doug Jones": 39.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "RMG Research (R)",
+     "end_date": "2026-09-25",
+     "start_date": "2026-09-21",
+     "sample": 800,
+     "population": "RV",
+     "pct": {
+      "Tommy Tuberville": 50.0,
+      "Doug Jones": 37.0
+     },
+     "undecided": 13.0
+    },
+    {
+     "pollster": "yes. every kid.",
+     "end_date": "2026-07-11",
+     "start_date": "2026-07-08",
+     "sample": 601,
+     "population": "LV",
+     "pct": {
+      "Tommy Tuberville": 49.0,
+      "Doug Jones": 41.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "Cygnal (R)",
+     "end_date": "2025-11-13",
+     "start_date": "2025-11-12",
+     "sample": 605,
+     "population": "LV",
+     "pct": {
+      "Tommy Tuberville": 53.0,
+      "Doug Jones": 34.0
+     },
+     "undecided": 13.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "AR-G",
+   "state": "Arkansas",
+   "state_po": "AR",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Arkansas_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Fredrick Love",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Sarah Huckabee Sanders",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Colt Shelby",
+     "party": "L",
+     "incumbent": false,
+     "party_full": "Libertarian"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Safe R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R"
+   },
+   "polls": [
+    {
+     "pollster": "Hendrix College",
+     "end_date": "2026-10-13",
+     "start_date": "2026-10-08",
+     "sample": 709,
+     "population": "LV",
+     "pct": {
+      "Sarah Huckabee Sanders": 51.0,
+      "Fredrick Love": 32.0,
+      "Colt Shelby": 11.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Hendrix College",
+     "end_date": "2026-08-12",
+     "start_date": "2026-08-11",
+     "sample": 1217,
+     "population": "LV",
+     "pct": {
+      "Sarah Huckabee Sanders": 45.0,
+      "Fredrick Love": 40.0,
+      "Colt Shelby": 7.0
+     },
+     "undecided": 8.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "AZ-G",
+   "state": "Arizona",
+   "state_po": "AZ",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Arizona_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Andy Biggs",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Katie Hobbs",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Teri Hourihan",
+     "party": "No Labels",
+     "incumbent": false,
+     "party_full": "No Labels"
+    },
+    {
+     "name": "Risa Lombardo",
+     "party": "G",
+     "incumbent": false,
+     "party_full": "Green"
+    }
+   ],
+   "ratings": {
+    "Cook": "Lean D",
+    "DDHQ": "Likely D",
+    "Fox": "Lean D",
+    "IE": "Tilt D",
+    "NBC": "Lean D",
+    "RCP": "Lean D",
+    "Sabato": "Likely D",
+    "Silver": "Solid D"
+   },
+   "polls": [
+    {
+     "pollster": "HighGround, Inc.",
+     "end_date": "2026-10-25",
+     "start_date": "2026-10-21",
+     "sample": 400,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 52.0,
+      "Andy Biggs": 39.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "RedBox Research (D)",
+     "end_date": "2026-10-23",
+     "start_date": "2026-10-20",
+     "sample": 2686,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 47.0,
+      "Andy Biggs": 42.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "GrayHouse (R)",
+     "end_date": "2026-10-20",
+     "start_date": "2026-10-18",
+     "sample": 550,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 51.0,
+      "Andy Biggs": 45.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "HighGround, Inc.",
+     "end_date": "2026-10-08",
+     "start_date": "2026-10-06",
+     "sample": 400,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 51.0,
+      "Andy Biggs": 34.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "GrayHouse (R)",
+     "end_date": "2026-10-08",
+     "start_date": "2026-10-06",
+     "sample": 550,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 50.0,
+      "Andy Biggs": 44.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Wick (R)",
+     "end_date": "2026-10-06",
+     "start_date": "2026-10-03",
+     "sample": 1513,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 49.0,
+      "Andy Biggs": 43.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "GQR (D)",
+     "end_date": "2026-10-05",
+     "start_date": "2026-09-30",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 49.0,
+      "Andy Biggs": 45.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Equis Research",
+     "end_date": "2026-09-09",
+     "start_date": "2026-09-01",
+     "sample": 1214,
+     "population": "RV",
+     "pct": {
+      "Katie Hobbs": 49.0,
+      "Andy Biggs": 43.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Arizona State University",
+     "end_date": "2026-09-04",
+     "start_date": "2026-08-18",
+     "sample": 1300,
+     "population": "RV",
+     "pct": {
+      "Katie Hobbs": 47.0,
+      "Andy Biggs": 34.0
+     },
+     "undecided": 16.0
+    },
+    {
+     "pollster": "NextGen Polling (R)",
+     "end_date": "2026-08-19",
+     "start_date": "2026-08-17",
+     "sample": 1627,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 39.0,
+      "Andy Biggs": 38.0
+     },
+     "undecided": 22.0
+    },
+    {
+     "pollster": "Quantus Insights (R)",
+     "end_date": "2026-08-17",
+     "start_date": "2026-08-14",
+     "sample": 780,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 49.0,
+      "Andy Biggs": 43.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Kreate Strategies (R)",
+     "end_date": "2026-08-16",
+     "start_date": "2026-08-13",
+     "sample": 900,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 45.0,
+      "Andy Biggs": 40.0
+     },
+     "undecided": 13.0
+    },
+    {
+     "pollster": "Stealth Analytics",
+     "end_date": "2026-08-13",
+     "start_date": "2026-08-11",
+     "sample": 530,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 43.0,
+      "Andy Biggs": 38.0
+     },
+     "undecided": 18.0
+    },
+    {
+     "pollster": "Noble Predictive Insights",
+     "end_date": "2026-08-13",
+     "start_date": "2026-08-10",
+     "sample": 923,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 48.0,
+      "Andy Biggs": 35.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "Noble Predictive Insights",
+     "end_date": "2026-08-13",
+     "start_date": "2026-08-10",
+     "sample": 1040,
+     "population": "RV",
+     "pct": {
+      "Katie Hobbs": 46.0,
+      "Andy Biggs": 32.0
+     },
+     "undecided": 16.0
+    },
+    {
+     "pollster": "Grayhouse (R)",
+     "end_date": "2026-08-11",
+     "start_date": "2026-08-09",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 49.0,
+      "Andy Biggs": 45.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "The Tarrance Group (R)",
+     "end_date": "2026-07-30",
+     "start_date": "2026-07-27",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 52.0,
+      "Andy Biggs": 48.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Fabrizio Ward (R)/ Impact Research (D)",
+     "end_date": "2026-07-28",
+     "start_date": "2026-07-26",
+     "sample": 913,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 52.0,
+      "Andy Biggs": 44.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Noble Predictive Insights",
+     "end_date": "2026-05-07",
+     "start_date": "2026-05-05",
+     "sample": 996,
+     "population": "RV",
+     "pct": {
+      "Katie Hobbs": 41.0,
+      "Andy Biggs": 37.0
+     },
+     "undecided": 16.0
+    },
+    {
+     "pollster": "TIPP Insights (R)",
+     "end_date": "2026-04-24",
+     "start_date": "2026-04-20",
+     "sample": 1159,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 48.0,
+      "Andy Biggs": 38.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "TIPP Insights (R)",
+     "end_date": "2026-04-24",
+     "start_date": "2026-04-20",
+     "sample": 1501,
+     "population": "RV",
+     "pct": {
+      "Katie Hobbs": 45.0,
+      "Andy Biggs": 35.0
+     },
+     "undecided": 18.0
+    },
+    {
+     "pollster": "Noble Predictive Insights",
+     "end_date": "2026-02-26",
+     "start_date": "2026-02-23",
+     "sample": 1023,
+     "population": "RV",
+     "pct": {
+      "Katie Hobbs": 42.0,
+      "Andy Biggs": 35.0
+     },
+     "undecided": 18.0
+    },
+    {
+     "pollster": "Center for Excellence in Polling",
+     "end_date": "2026-01-24",
+     "start_date": "2026-01-22",
+     "sample": 519,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 50.0,
+      "Andy Biggs": 41.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "NextGen Polling (R)",
+     "end_date": "2025-12-17",
+     "start_date": "2025-12-15",
+     "sample": 2725,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 51.0,
+      "Andy Biggs": 32.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2025-11-10",
+     "start_date": "2025-11-08",
+     "sample": 850,
+     "population": "RV",
+     "pct": {
+      "Katie Hobbs": 44.0,
+      "Andy Biggs": 43.0
+     },
+     "undecided": 13.0
+    },
+    {
+     "pollster": "Noble Predictive Insights",
+     "end_date": "2025-08-18",
+     "start_date": "2025-08-11",
+     "sample": 948,
+     "population": "RV",
+     "pct": {
+      "Katie Hobbs": 39.0,
+      "Andy Biggs": 37.0
+     },
+     "undecided": 20.0
+    },
+    {
+     "pollster": "Noble Predictive Insights",
+     "end_date": "2025-05-16",
+     "start_date": "2025-05-12",
+     "sample": 1026,
+     "population": "RV",
+     "pct": {
+      "Katie Hobbs": 40.0,
+      "Andy Biggs": 38.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "Pulse Decision Science (R)",
+     "end_date": "2025-04-09",
+     "start_date": "2025-04-06",
+     "sample": 501,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 46.0,
+      "Andy Biggs": 42.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "Noble Predictive Insights",
+     "end_date": "2025-02-13",
+     "start_date": "2025-02-11",
+     "sample": 1006,
+     "population": "RV",
+     "pct": {
+      "Katie Hobbs": 40.0,
+      "Andy Biggs": 38.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "Kreate Strategies (R)",
+     "end_date": "2025-02-07",
+     "start_date": "2025-02-05",
+     "sample": 924,
+     "population": "LV",
+     "pct": {
+      "Katie Hobbs": 43.0,
+      "Andy Biggs": 44.0
+     },
+     "undecided": 13.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "CA-G",
+   "state": "California",
+   "state_po": "CA",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_California_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Xavier Becerra",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Steve Hilton",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Safe D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D"
+   },
+   "polls": [
+    {
+     "pollster": "SurveyUSA",
+     "end_date": "2026-10-24",
+     "start_date": "2026-10-19",
+     "sample": 799,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 54.0,
+      "Steve Hilton": 32.0
+     },
+     "undecided": 14.0
+    },
+    {
+     "pollster": "M3 Strategies (R)",
+     "end_date": "2026-10-23",
+     "start_date": "2026-10-21",
+     "sample": 489,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 59.0,
+      "Steve Hilton": 36.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "PPIC",
+     "end_date": "2026-10-22",
+     "start_date": "2026-10-16",
+     "sample": 1086,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 61.0,
+      "Steve Hilton": 37.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "McLaughlin & Associates (R)",
+     "end_date": "2026-10-20",
+     "start_date": "2026-10-17",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 55.0,
+      "Steve Hilton": 39.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-17",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 60.0,
+      "Steve Hilton": 33.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-17",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 64.0,
+      "Steve Hilton": 36.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "ActiVote",
+     "end_date": "2026-10-16",
+     "start_date": "2026-09-24",
+     "sample": 400,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 63.0,
+      "Steve Hilton": 37.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "UC Berkeley Citrin Center/TrueDot/ Politico",
+     "end_date": "2026-10-14",
+     "start_date": "2026-10-09",
+     "sample": 909,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 55.0,
+      "Steve Hilton": 35.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "Manhattan Institute (R)",
+     "end_date": "2026-10-01",
+     "start_date": "2026-09-24",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 57.0,
+      "Steve Hilton": 39.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "Independent Voter Project",
+     "end_date": "2026-09-28",
+     "start_date": "2026-09-23",
+     "sample": 2906,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 48.0,
+      "Steve Hilton": 38.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "Berkeley IGS",
+     "end_date": "2026-09-20",
+     "start_date": "2026-09-15",
+     "sample": 4512,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 58.0,
+      "Steve Hilton": 33.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "SurveyUSA",
+     "end_date": "2026-09-20",
+     "start_date": "2026-09-15",
+     "sample": 742,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 55.0,
+      "Steve Hilton": 33.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "UC Berkeley Citrin Center/TrueDot/ Politico",
+     "end_date": "2026-09-14",
+     "start_date": "2026-09-08",
+     "sample": 2418,
+     "population": "RV",
+     "pct": {
+      "Xavier Becerra": 48.0,
+      "Steve Hilton": 34.0
+     },
+     "undecided": 13.0
+    },
+    {
+     "pollster": "UC Berkeley Citrin Center/TrueDot/ Politico",
+     "end_date": "2026-09-14",
+     "start_date": "2026-09-08",
+     "sample": 1983,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 54.0,
+      "Steve Hilton": 36.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "PPIC",
+     "end_date": "2026-09-10",
+     "start_date": "2026-09-04",
+     "sample": 1103,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 60.0,
+      "Steve Hilton": 38.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Berkeley IGS",
+     "end_date": "2026-08-09",
+     "start_date": "2026-08-03",
+     "sample": 2310,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 55.0,
+      "Steve Hilton": 37.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "PPIC",
+     "end_date": "2026-07-06",
+     "start_date": "2026-06-29",
+     "sample": 1003,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 61.0,
+      "Steve Hilton": 36.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "Kreate Strategies",
+     "end_date": "2026-06-17",
+     "start_date": "2026-06-13",
+     "sample": 900,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 58.0,
+      "Steve Hilton": 33.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "CEPP",
+     "end_date": "2026-05-26",
+     "start_date": "2026-05-23",
+     "sample": 735,
+     "population": "LV",
+     "pct": {
+      "Xavier Becerra": 58.0,
+      "Steve Hilton": 35.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Berkeley IGS",
+     "end_date": "2026-05-24",
+     "start_date": "2026-05-19",
+     "sample": 8578,
+     "population": "RV",
+     "pct": {
+      "Xavier Becerra": 52.0,
+      "Steve Hilton": 31.0
+     },
+     "undecided": 17.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "CO-G",
+   "state": "Colorado",
+   "state_po": "CO",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Colorado_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Stephen Hamilton",
+     "party": "American Constitution",
+     "incumbent": false,
+     "party_full": "American Constitution"
+    },
+    {
+     "name": "Greg Lopez",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Victor Marx",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Eric Mulder",
+     "party": "L",
+     "incumbent": false,
+     "party_full": "Libertarian"
+    },
+    {
+     "name": "Jeff Peckman",
+     "party": "Unity",
+     "incumbent": false,
+     "party_full": "Unity"
+    },
+    {
+     "name": "Erik Underwood",
+     "party": "Approval Voting",
+     "incumbent": false,
+     "party_full": "Approval Voting"
+    },
+    {
+     "name": "Phil Weiser",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Likely D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D"
+   },
+   "polls": [],
+   "parse_notes": []
+  },
+  {
+   "id": "CT-G",
+   "state": "Connecticut",
+   "state_po": "CT",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Connecticut_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Ryan Fazio",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Ned Lamont",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Likely D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D"
+   },
+   "polls": [
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-10-12",
+     "start_date": "2026-10-10",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Ned Lamont": 51.0,
+      "Ryan Fazio": 38.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "Quinnipiac University",
+     "end_date": "2026-10-12",
+     "start_date": "2026-10-08",
+     "sample": 1225,
+     "population": "LV",
+     "pct": {
+      "Ned Lamont": 58.0,
+      "Ryan Fazio": 38.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Wesleyan University / YouGov",
+     "end_date": "2026-10-12",
+     "start_date": "2026-10-08",
+     "sample": 1000,
+     "population": "RV",
+     "pct": {
+      "Ned Lamont": 53.0,
+      "Ryan Fazio": 32.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "Wesleyan University / YouGov",
+     "end_date": "2026-10-12",
+     "start_date": "2026-10-08",
+     "sample": null,
+     "population": "LV",
+     "pct": {
+      "Ned Lamont": 57.0,
+      "Ryan Fazio": 34.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "GreatBlue Research",
+     "end_date": "2026-10-12",
+     "start_date": "2026-10-06",
+     "sample": 1000,
+     "population": "RV",
+     "pct": {
+      "Ned Lamont": 53.0,
+      "Ryan Fazio": 31.0
+     },
+     "undecided": 15.0
+    },
+    {
+     "pollster": "GreatBlue Research",
+     "end_date": "2026-10-12",
+     "start_date": "2026-10-06",
+     "sample": 1000,
+     "population": "RV",
+     "pct": {
+      "Ned Lamont": 56.0,
+      "Ryan Fazio": 33.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-09-21",
+     "start_date": "2026-09-17",
+     "sample": 540,
+     "population": "LV",
+     "pct": {
+      "Ned Lamont": 55.0,
+      "Ryan Fazio": 38.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "co/efficient (R)",
+     "end_date": "2026-09-17",
+     "start_date": "2026-09-16",
+     "sample": 979,
+     "population": "LV",
+     "pct": {
+      "Ned Lamont": 48.0,
+      "Ryan Fazio": 41.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "Quinnipiac University",
+     "end_date": "2026-09-14",
+     "start_date": "2026-09-08",
+     "sample": 1288,
+     "population": "LV",
+     "pct": {
+      "Ned Lamont": 55.0,
+      "Ryan Fazio": 38.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "GreatBlue Research",
+     "end_date": "2026-09-08",
+     "start_date": "2026-09-01",
+     "sample": 1000,
+     "population": "RV",
+     "pct": {
+      "Ned Lamont": 48.0,
+      "Ryan Fazio": 34.0
+     },
+     "undecided": 18.0
+    },
+    {
+     "pollster": "GreatBlue Research",
+     "end_date": "2026-09-08",
+     "start_date": "2026-09-01",
+     "sample": 1000,
+     "population": "RV",
+     "pct": {
+      "Ned Lamont": 52.0,
+      "Ryan Fazio": 37.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-08-24",
+     "start_date": "2026-08-20",
+     "sample": 809,
+     "population": "LV",
+     "pct": {
+      "Ned Lamont": 52.0,
+      "Ryan Fazio": 37.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Sacred Heart University / WFSB / CT Insider",
+     "end_date": "2026-07-26",
+     "start_date": "2026-07-21",
+     "sample": 1000,
+     "population": "RV",
+     "pct": {
+      "Ned Lamont": 50.0,
+      "Ryan Fazio": 30.0
+     },
+     "undecided": 20.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-06-23",
+     "start_date": "2026-06-18",
+     "sample": 828,
+     "population": "LV",
+     "pct": {
+      "Ned Lamont": 49.0,
+      "Ryan Fazio": 36.0
+     },
+     "undecided": 12.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "FL-G",
+   "state": "Florida",
+   "state_po": "FL",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Florida_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Dean Abrams",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Charles Burkett",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Jeffrey Datto",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Moe Dimanche",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Byron Donalds",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Scott Jewett",
+     "party": "L",
+     "incumbent": false,
+     "party_full": "Libertarian"
+    },
+    {
+     "name": "David Jolly",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Frank Russo",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    }
+   ],
+   "ratings": {
+    "Cook": "Lean R",
+    "DDHQ": "Lean R",
+    "Fox": "Lean R",
+    "IE": "Lean R",
+    "NBC": "Lean R",
+    "RCP": "Tossup",
+    "Sabato": "Lean R",
+    "Silver": "Likely R"
+   },
+   "polls": [
+    {
+     "pollster": "St. Pete Polls",
+     "end_date": "2026-10-27",
+     "start_date": "2026-10-25",
+     "sample": 916,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 48.0,
+      "David Jolly": 46.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "New York Times / Siena University",
+     "end_date": "2026-10-25",
+     "start_date": "2026-10-19",
+     "sample": 813,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 48.0,
+      "David Jolly": 44.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "RedBox Research",
+     "end_date": "2026-10-23",
+     "start_date": "2026-10-20",
+     "sample": 4832,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 49.0,
+      "David Jolly": 44.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Echelon Insights (R)",
+     "end_date": "2026-10-23",
+     "start_date": "2026-10-16",
+     "sample": 515,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 50.0,
+      "David Jolly": 44.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "co/efficient (R)",
+     "end_date": "2026-10-20",
+     "start_date": "2026-10-18",
+     "sample": 1014,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 49.0,
+      "David Jolly": 40.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "University of North Florida",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-12",
+     "sample": 1471,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 49.0,
+      "David Jolly": 47.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "ActiVote",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-01",
+     "sample": 400,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 52.0,
+      "David Jolly": 48.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Univision / YouGov",
+     "end_date": "2026-10-15",
+     "start_date": "2026-10-02",
+     "sample": 825,
+     "population": "RV",
+     "pct": {
+      "Byron Donalds": 50.0,
+      "David Jolly": 42.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Fabrizio, Lee & Associates (R)",
+     "end_date": "2026-10-11",
+     "start_date": "2026-10-08",
+     "sample": 1200,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 49.0,
+      "David Jolly": 43.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Change Research (D)",
+     "end_date": "2026-10-10",
+     "start_date": "2026-10-08",
+     "sample": 920,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 47.0,
+      "David Jolly": 47.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "MDW Communications",
+     "end_date": "2026-10-10",
+     "start_date": "2026-10-04",
+     "sample": 2351,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 46.0,
+      "David Jolly": 44.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "Stetson University",
+     "end_date": "2026-10-09",
+     "start_date": "2026-10-01",
+     "sample": 716,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 52.0,
+      "David Jolly": 41.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "St. Pete Polls",
+     "end_date": "2026-10-07",
+     "start_date": "2026-10-05",
+     "sample": 836,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 45.0,
+      "David Jolly": 45.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "YouGov",
+     "end_date": "2026-10-05",
+     "start_date": "2026-09-28",
+     "sample": 3813,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 47.0,
+      "David Jolly": 45.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Targoz Market Research",
+     "end_date": "2026-10-04",
+     "start_date": "2026-09-28",
+     "sample": 849,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 52.0,
+      "David Jolly": 42.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "Targoz Market Research",
+     "end_date": "2026-10-04",
+     "start_date": "2026-09-28",
+     "sample": 1174,
+     "population": "RV",
+     "pct": {
+      "Byron Donalds": 48.0,
+      "David Jolly": 39.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Mason-Dixon",
+     "end_date": "2026-10-01",
+     "start_date": "2026-09-28",
+     "sample": 625,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 48.0,
+      "David Jolly": 41.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "Change Research (D)",
+     "end_date": "2026-09-27",
+     "start_date": "2026-09-25",
+     "sample": 1063,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 46.0,
+      "David Jolly": 48.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Stetson University",
+     "end_date": "2026-09-21",
+     "start_date": "2026-09-14",
+     "sample": 830,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 51.0,
+      "David Jolly": 39.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "St. Pete Polls",
+     "end_date": "2026-09-17",
+     "start_date": "2026-09-15",
+     "sample": 913,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 44.0,
+      "David Jolly": 43.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Change Research (D)",
+     "end_date": "2026-09-09",
+     "start_date": "2026-09-07",
+     "sample": 1107,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 44.0,
+      "David Jolly": 47.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Hart Research Associates (D)",
+     "end_date": "2026-08-13",
+     "start_date": "2026-08-10",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 45.0,
+      "David Jolly": 46.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Targoz Market Research",
+     "end_date": "2026-07-26",
+     "start_date": "2026-07-20",
+     "sample": 1026,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 45.0,
+      "David Jolly": 38.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "Targoz Market Research",
+     "end_date": "2026-07-26",
+     "start_date": "2026-07-20",
+     "sample": 1338,
+     "population": "RV",
+     "pct": {
+      "Byron Donalds": 40.0,
+      "David Jolly": 36.0
+     },
+     "undecided": 24.0
+    },
+    {
+     "pollster": "University of North Florida",
+     "end_date": "2026-07-17",
+     "start_date": "2026-07-08",
+     "sample": 848,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 46.0,
+      "David Jolly": 41.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Change Research (D)",
+     "end_date": "2026-07-11",
+     "start_date": "2026-07-09",
+     "sample": 1348,
+     "population": "RV",
+     "pct": {
+      "Byron Donalds": 37.0,
+      "David Jolly": 37.0
+     },
+     "undecided": 16.0
+    },
+    {
+     "pollster": "Change Research (D)",
+     "end_date": "2026-07-11",
+     "start_date": "2026-07-09",
+     "sample": 1348,
+     "population": "RV",
+     "pct": {
+      "Byron Donalds": 40.0,
+      "David Jolly": 41.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "Change Research (D)",
+     "end_date": "2026-05-16",
+     "start_date": "2026-05-13",
+     "sample": 1593,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 42.0,
+      "David Jolly": 46.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Cherry Communications (R)",
+     "end_date": "2026-05-09",
+     "start_date": "2026-05-01",
+     "sample": 604,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 47.0,
+      "David Jolly": 39.0
+     },
+     "undecided": 14.0
+    },
+    {
+     "pollster": "Stetson University",
+     "end_date": "2026-04-13",
+     "start_date": "2026-03-15",
+     "sample": 848,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 47.0,
+      "David Jolly": 40.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Echelon Insights",
+     "end_date": "2026-04-09",
+     "start_date": "2026-04-03",
+     "sample": 406,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 49.0,
+      "David Jolly": 43.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "MDW Communications (D)",
+     "end_date": "2026-04-03",
+     "start_date": "2026-03-27",
+     "sample": 1834,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 41.0,
+      "David Jolly": 41.0
+     },
+     "undecided": 18.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-03-31",
+     "start_date": "2026-03-29",
+     "sample": 1165,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 44.0,
+      "David Jolly": 39.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "University of North Florida",
+     "end_date": "2026-03-02",
+     "start_date": "2026-02-21",
+     "sample": 786,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 42.0,
+      "David Jolly": 36.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "Targoz Market Research",
+     "end_date": "2026-02-16",
+     "start_date": "2026-02-13",
+     "sample": 1129,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 41.0,
+      "David Jolly": 36.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "University of North Florida",
+     "end_date": "2025-10-25",
+     "start_date": "2025-10-15",
+     "sample": 728,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 45.0,
+      "David Jolly": 34.0
+     },
+     "undecided": 18.0
+    },
+    {
+     "pollster": "Targoz Market Research",
+     "end_date": "2025-09-18",
+     "start_date": "2025-09-16",
+     "sample": 1118,
+     "population": "RV",
+     "pct": {
+      "Byron Donalds": 36.0,
+      "David Jolly": 32.0
+     },
+     "undecided": 28.0
+    },
+    {
+     "pollster": "Bendixen & Amandi International (D)",
+     "end_date": "2025-09-09",
+     "start_date": "2025-09-07",
+     "sample": 631,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 40.0,
+      "David Jolly": 41.0
+     },
+     "undecided": 19.0
+    },
+    {
+     "pollster": "AIF Center (R)",
+     "end_date": "2025-08-27",
+     "start_date": "2025-08-25",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 49.0,
+      "David Jolly": 41.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "Victory Insights (R)",
+     "end_date": "2025-06-10",
+     "start_date": "2025-06-07",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Byron Donalds": 37.0,
+      "David Jolly": 31.0
+     },
+     "undecided": 32.0
+    }
+   ],
+   "parse_notes": [
+    "1 row(s) skipped (unparsable date/values)"
+   ]
+  },
+  {
+   "id": "GA-G",
+   "state": "Georgia",
+   "state_po": "GA",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Georgia_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Keisha Lance Bottoms",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Rick Jackson",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "ratings": {
+    "Cook": "Tossup",
+    "DDHQ": "Tossup",
+    "Fox": "Tossup",
+    "IE": "Tilt D (flip)",
+    "NBC": "Tossup",
+    "RCP": "Tossup",
+    "Sabato": "Tossup",
+    "Silver": "Lean D (flip)"
+   },
+   "polls": [
+    {
+     "pollster": "State Navigate",
+     "end_date": "2026-10-27",
+     "start_date": "2026-10-23",
+     "sample": 679,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 47.0,
+      "Keisha Lance Bottoms": 50.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "Echelon Insights (R)",
+     "end_date": "2026-10-23",
+     "start_date": "2026-10-16",
+     "sample": 508,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 48.0,
+      "Keisha Lance Bottoms": 49.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "ActiVote",
+     "end_date": "2026-10-20",
+     "start_date": "2026-10-06",
+     "sample": 400,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 51.5,
+      "Keisha Lance Bottoms": 48.5
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Quantus Insights (R)",
+     "end_date": "2026-10-17",
+     "start_date": "2026-10-15",
+     "sample": 755,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 48.0,
+      "Keisha Lance Bottoms": 47.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Quantus Insights (R)",
+     "end_date": "2026-10-17",
+     "start_date": "2026-10-15",
+     "sample": 755,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 49.0,
+      "Keisha Lance Bottoms": 48.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Quantus Insights (R)",
+     "end_date": "2026-10-17",
+     "start_date": "2026-10-15",
+     "sample": 755,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 51.0,
+      "Keisha Lance Bottoms": 49.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "University of Georgia",
+     "end_date": "2026-10-15",
+     "start_date": "2026-10-07",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 46.0,
+      "Keisha Lance Bottoms": 45.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "InsiderAdvantage (R)",
+     "end_date": "2026-10-13",
+     "start_date": "2026-10-12",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 49.0,
+      "Keisha Lance Bottoms": 47.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "InsiderAdvantage (R)",
+     "end_date": "2026-09-23",
+     "start_date": "2026-09-22",
+     "sample": 1200,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 48.0,
+      "Keisha Lance Bottoms": 46.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Big Data Poll (R)",
+     "end_date": "2026-09-23",
+     "start_date": "2026-09-21",
+     "sample": 712,
+     "population": "RV",
+     "pct": {
+      "Rick Jackson": 50.0,
+      "Keisha Lance Bottoms": 50.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Big Data Poll (R)",
+     "end_date": "2026-09-23",
+     "start_date": "2026-09-21",
+     "sample": 712,
+     "population": "RV",
+     "pct": {
+      "Rick Jackson": 48.0,
+      "Keisha Lance Bottoms": 46.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Big Data Poll (R)",
+     "end_date": "2026-09-23",
+     "start_date": "2026-09-21",
+     "sample": 678,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 51.0,
+      "Keisha Lance Bottoms": 50.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Big Data Poll (R)",
+     "end_date": "2026-09-23",
+     "start_date": "2026-09-21",
+     "sample": 678,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 49.0,
+      "Keisha Lance Bottoms": 47.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "YouGov",
+     "end_date": "2026-09-18",
+     "start_date": "2026-09-15",
+     "sample": 3414,
+     "population": "RV",
+     "pct": {
+      "Rick Jackson": 45.0,
+      "Keisha Lance Bottoms": 44.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "YouGov",
+     "end_date": "2026-09-18",
+     "start_date": "2026-09-15",
+     "sample": 3299,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 46.0,
+      "Keisha Lance Bottoms": 44.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "YouGov",
+     "end_date": "2026-09-18",
+     "start_date": "2026-09-15",
+     "sample": 3069,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 47.0,
+      "Keisha Lance Bottoms": 44.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Rasmussen Reports (R)",
+     "end_date": "2026-09-14",
+     "start_date": "2026-09-14",
+     "sample": 1019,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 48.0,
+      "Keisha Lance Bottoms": 45.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "InsiderAdvantage (R)",
+     "end_date": "2026-08-17",
+     "start_date": "2026-08-16",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 46.0,
+      "Keisha Lance Bottoms": 46.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Quantus Insights (R)",
+     "end_date": "2026-08-01",
+     "start_date": "2026-07-29",
+     "sample": 815,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 45.0,
+      "Keisha Lance Bottoms": 46.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Fabrizio Ward (R)/Impact Research (D)",
+     "end_date": "2026-07-16",
+     "start_date": "2026-07-13",
+     "sample": 1060,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 46.0,
+      "Keisha Lance Bottoms": 48.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "State Navigate",
+     "end_date": "2026-07-13",
+     "start_date": "2026-07-10",
+     "sample": 448,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 44.0,
+      "Keisha Lance Bottoms": 51.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "State Navigate",
+     "end_date": "2026-07-13",
+     "start_date": "2026-07-10",
+     "sample": 448,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 43.0,
+      "Keisha Lance Bottoms": 50.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Wick",
+     "end_date": "2026-06-30",
+     "start_date": "2026-06-27",
+     "sample": 1175,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 43.0,
+      "Keisha Lance Bottoms": 43.0
+     },
+     "undecided": 14.0
+    },
+    {
+     "pollster": "Beacon Research (D)/Shaw & Co. Research (R)",
+     "end_date": "2026-06-27",
+     "start_date": "2026-06-23",
+     "sample": 1002,
+     "population": "RV",
+     "pct": {
+      "Rick Jackson": 47.0,
+      "Keisha Lance Bottoms": 52.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Concord Public Opinion Partners (D)",
+     "end_date": "2026-06-02",
+     "start_date": "2026-05-30",
+     "sample": 510,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 38.0,
+      "Keisha Lance Bottoms": 53.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Echelon Insights (R)",
+     "end_date": "2026-04-09",
+     "start_date": "2026-04-03",
+     "sample": 407,
+     "population": "LV",
+     "pct": {
+      "Rick Jackson": 43.0,
+      "Keisha Lance Bottoms": 49.0
+     },
+     "undecided": 8.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "HI-G",
+   "state": "Hawaii",
+   "state_po": "HI",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Hawaii_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Gary Cordery",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Josh Green",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Safe D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D"
+   },
+   "polls": [],
+   "parse_notes": []
+  },
+  {
+   "id": "IA-G",
+   "state": "Iowa",
+   "state_po": "IA",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Iowa_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Zach Lahn",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Rob Sand",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Sondra Wilson",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    }
+   ],
+   "ratings": {
+    "Cook": "Lean D (flip)",
+    "DDHQ": "Lean D (flip)",
+    "Fox": "Lean D (flip)",
+    "IE": "Lean D (flip)",
+    "NBC": "Lean D (flip)",
+    "RCP": "Lean D (flip)",
+    "Sabato": "Lean D (flip)",
+    "Silver": "Likely D (flip)"
+   },
+   "polls": [
+    {
+     "pollster": "co/efficient (R)",
+     "end_date": "2026-10-28",
+     "start_date": "2026-10-28",
+     "sample": 1020,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 45.0,
+      "Rob Sand": 50.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Echelon Insights (R)",
+     "end_date": "2026-10-23",
+     "start_date": "2026-10-16",
+     "sample": 403,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 46.0,
+      "Rob Sand": 50.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "co/efficient (R)",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-15",
+     "sample": 678,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 45.0,
+      "Rob Sand": 49.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "GS Strategy Group (R)/ New River Strategies (D)",
+     "end_date": "2026-10-13",
+     "start_date": "2026-10-09",
+     "sample": 602,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 43.0,
+      "Rob Sand": 54.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "NPA Polling",
+     "end_date": "2026-10-12",
+     "start_date": "2026-10-08",
+     "sample": 678,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 45.0,
+      "Rob Sand": 50.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "YouGov",
+     "end_date": "2026-10-12",
+     "start_date": "2026-10-06",
+     "sample": 2245,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 44.0,
+      "Rob Sand": 50.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-10-11",
+     "start_date": "2026-10-08",
+     "sample": null,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 45.0,
+      "Rob Sand": 52.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-10-11",
+     "start_date": "2026-10-08",
+     "sample": 1100,
+     "population": "RV",
+     "pct": {
+      "Zach Lahn": 43.0,
+      "Rob Sand": 54.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-10-06",
+     "start_date": "2026-10-05",
+     "sample": 650,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 45.0,
+      "Rob Sand": 49.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "SSRS",
+     "end_date": "2026-10-05",
+     "start_date": "2026-09-29",
+     "sample": 801,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 42.0,
+      "Rob Sand": 51.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Suffolk University",
+     "end_date": "2026-10-04",
+     "start_date": "2026-10-01",
+     "sample": 500,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 43.0,
+      "Rob Sand": 55.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "New York Times / Siena University",
+     "end_date": "2026-10-01",
+     "start_date": "2026-09-22",
+     "sample": 606,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 41.0,
+      "Rob Sand": 52.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-09-28",
+     "start_date": "2026-09-24",
+     "sample": 1008,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 44.0,
+      "Rob Sand": 53.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-09-28",
+     "start_date": "2026-09-24",
+     "sample": 1204,
+     "population": "RV",
+     "pct": {
+      "Zach Lahn": 43.0,
+      "Rob Sand": 53.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-09-20",
+     "start_date": "2026-09-17",
+     "sample": 1050,
+     "population": "RV",
+     "pct": {
+      "Zach Lahn": 42.0,
+      "Rob Sand": 54.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "co/efficient (R)",
+     "end_date": "2026-09-16",
+     "start_date": "2026-09-14",
+     "sample": 831,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 42.0,
+      "Rob Sand": 46.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "Cygnal (R)",
+     "end_date": "2026-09-11",
+     "start_date": "2026-09-09",
+     "sample": 500,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 44.0,
+      "Rob Sand": 48.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "YouGov",
+     "end_date": "2026-09-08",
+     "start_date": "2026-09-03",
+     "sample": 2169,
+     "population": "RV",
+     "pct": {
+      "Zach Lahn": 39.0,
+      "Rob Sand": 50.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "YouGov",
+     "end_date": "2026-09-08",
+     "start_date": "2026-09-03",
+     "sample": 2041,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 41.0,
+      "Rob Sand": 51.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-09-01",
+     "start_date": "2026-08-31",
+     "sample": 750,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 46.0,
+      "Rob Sand": 49.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Suffolk University",
+     "end_date": "2026-08-23",
+     "start_date": "2026-08-20",
+     "sample": 500,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 44.0,
+      "Rob Sand": 48.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-08-04",
+     "start_date": "2026-08-02",
+     "sample": 712,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 43.0,
+      "Rob Sand": 48.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-06-27",
+     "start_date": "2026-06-23",
+     "sample": 1003,
+     "population": "RV",
+     "pct": {
+      "Zach Lahn": 44.0,
+      "Rob Sand": 53.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "New York Times / Siena University",
+     "end_date": "2026-06-27",
+     "start_date": "2026-06-15",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 47.0,
+      "Rob Sand": 48.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Cygnal (R)",
+     "end_date": "2026-06-19",
+     "start_date": "2026-06-16",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Zach Lahn": 43.0,
+      "Rob Sand": 48.0
+     },
+     "undecided": 9.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "ID-G",
+   "state": "Idaho",
+   "state_po": "ID",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Idaho_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Brad Little",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Terri Pickens",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Pro-Life",
+     "party": "C",
+     "incumbent": false,
+     "party_full": "Constitution"
+    },
+    {
+     "name": "Paul Sand",
+     "party": "L",
+     "incumbent": false,
+     "party_full": "Libertarian"
+    },
+    {
+     "name": "John Stegner",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Safe R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R"
+   },
+   "polls": [
+    {
+     "pollster": "VoteNexus Research",
+     "end_date": "2026-10-22",
+     "start_date": "2026-10-21",
+     "sample": 700,
+     "population": "LV",
+     "pct": {
+      "Brad Little": 49.0,
+      "Terri Pickens": 30.0,
+      "John Stegner": 10.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Advanced Targeting Research",
+     "end_date": "2026-09-16",
+     "start_date": "2026-09-13",
+     "sample": 700,
+     "population": "RV",
+     "pct": {
+      "Brad Little": 37.0,
+      "Terri Pickens": 27.0,
+      "John Stegner": 13.0
+     },
+     "undecided": 20.0
+    },
+    {
+     "pollster": "Change Research (D)",
+     "end_date": "2026-07-30",
+     "start_date": "2026-07-28",
+     "sample": 1213,
+     "population": "LV",
+     "pct": {
+      "Brad Little": 48.0,
+      "Terri Pickens": 27.0,
+      "John Stegner": 11.0
+     },
+     "undecided": 13.0
+    },
+    {
+     "pollster": "Change Research (D)",
+     "end_date": "2026-07-30",
+     "start_date": "2026-07-28",
+     "sample": 1213,
+     "population": "LV",
+     "pct": {
+      "Brad Little": 54.0,
+      "Terri Pickens": 33.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "Change Research (D)",
+     "end_date": "2026-07-30",
+     "start_date": "2026-07-28",
+     "sample": 1213,
+     "population": "LV",
+     "pct": {
+      "Brad Little": 47.0,
+      "John Stegner": 34.0
+     },
+     "undecided": 16.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "IL-G",
+   "state": "Illinois",
+   "state_po": "IL",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Illinois_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Darren Bailey",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Collin Corbett",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "JB Pritzker",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Likely D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D"
+   },
+   "polls": [
+    {
+     "pollster": "ActiVote",
+     "end_date": "2026-10-22",
+     "start_date": "2026-10-02",
+     "sample": 400,
+     "population": "LV",
+     "pct": {
+      "JB Pritzker": 59.0,
+      "Darren Bailey": 41.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Public Policy Polling (D)",
+     "end_date": "2026-10-01",
+     "start_date": "2026-09-30",
+     "sample": 569,
+     "population": "LV",
+     "pct": {
+      "JB Pritzker": 54.0,
+      "Darren Bailey": 34.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Victory Research",
+     "end_date": "2025-11-24",
+     "start_date": "2025-11-20",
+     "sample": 1208,
+     "population": "LV",
+     "pct": {
+      "JB Pritzker": 54.0,
+      "Darren Bailey": 34.0
+     },
+     "undecided": 12.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "KS-G",
+   "state": "Kansas",
+   "state_po": "KS",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Kansas_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Cindy Holscher",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Ty Masterson",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "ratings": {
+    "Cook": "Tossup",
+    "DDHQ": "Lean R (flip)",
+    "Fox": "Lean R (flip)",
+    "IE": "Tilt R (flip)",
+    "NBC": "Lean R (flip)",
+    "RCP": "Tossup",
+    "Sabato": "Lean R (flip)",
+    "Silver": "Lean R (flip)"
+   },
+   "polls": [
+    {
+     "pollster": "SSRS",
+     "end_date": "2026-10-26",
+     "start_date": "2026-10-20",
+     "sample": 838,
+     "population": "LV",
+     "pct": {
+      "Cindy Holscher": 45.0,
+      "Ty Masterson": 50.0
+     },
+     "undecided": 0.0
+    },
+    {
+     "pollster": "Global Strategy Group (D)",
+     "end_date": "2026-10-21",
+     "start_date": "2026-10-18",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Cindy Holscher": 47.0,
+      "Ty Masterson": 47.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "YouGov",
+     "end_date": "2026-10-04",
+     "start_date": "2026-09-24",
+     "sample": 2255,
+     "population": "LV",
+     "pct": {
+      "Cindy Holscher": 44.0,
+      "Ty Masterson": 47.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "New York Times / Siena University",
+     "end_date": "2026-09-30",
+     "start_date": "2026-09-22",
+     "sample": 605,
+     "population": "LV",
+     "pct": {
+      "Cindy Holscher": 44.0,
+      "Ty Masterson": 49.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-09-16",
+     "start_date": "2026-09-15",
+     "sample": 750,
+     "population": "LV",
+     "pct": {
+      "Cindy Holscher": 44.0,
+      "Ty Masterson": 51.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Global Strategy Group (D)",
+     "end_date": "2026-09-16",
+     "start_date": "2026-09-13",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Cindy Holscher": 49.0,
+      "Ty Masterson": 46.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "co/efficient (R)",
+     "end_date": "2026-09-10",
+     "start_date": "2026-09-08",
+     "sample": 915,
+     "population": "LV",
+     "pct": {
+      "Cindy Holscher": 43.0,
+      "Ty Masterson": 51.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Global Strategy Group (D)",
+     "end_date": "2026-08-16",
+     "start_date": "2026-08-13",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Cindy Holscher": 47.0,
+      "Ty Masterson": 46.0
+     },
+     "undecided": 7.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "MA-G",
+   "state": "Massachusetts",
+   "state_po": "MA",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Massachusetts_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Maura Healey",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Andrea James",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Mike Minogue",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Safe D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D"
+   },
+   "polls": [
+    {
+     "pollster": "Suffolk University",
+     "end_date": "2026-10-18",
+     "start_date": "2026-10-14",
+     "sample": 500,
+     "population": "LV",
+     "pct": {
+      "Maura Healey": 59.0,
+      "Mike Minogue": 36.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "UMass Amherst / YouGov",
+     "end_date": "2026-10-12",
+     "start_date": "2026-10-05",
+     "sample": 800,
+     "population": "RV",
+     "pct": {
+      "Maura Healey": 56.0,
+      "Mike Minogue": 31.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "UMass Amherst / YouGov",
+     "end_date": "2026-10-12",
+     "start_date": "2026-10-05",
+     "sample": 800,
+     "population": "RV",
+     "pct": {
+      "Maura Healey": 57.0,
+      "Mike Minogue": 32.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "MassINC Polling Group",
+     "end_date": "2026-09-22",
+     "start_date": "2026-09-14",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Maura Healey": 51.0,
+      "Mike Minogue": 30.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "MassINC Polling Group",
+     "end_date": "2026-09-22",
+     "start_date": "2026-09-14",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Maura Healey": 54.0,
+      "Mike Minogue": 32.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-09-21",
+     "start_date": "2026-09-17",
+     "sample": 564,
+     "population": "LV",
+     "pct": {
+      "Maura Healey": 54.0,
+      "Mike Minogue": 38.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-08-24",
+     "start_date": "2026-08-20",
+     "sample": 881,
+     "population": "LV",
+     "pct": {
+      "Maura Healey": 54.0,
+      "Mike Minogue": 30.0
+     },
+     "undecided": 14.0
+    },
+    {
+     "pollster": "UMass Amherst / YouGov",
+     "end_date": "2026-08-12",
+     "start_date": "2026-08-05",
+     "sample": 800,
+     "population": "RV",
+     "pct": {
+      "Maura Healey": 53.0,
+      "Mike Minogue": 33.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-06-23",
+     "start_date": "2026-06-18",
+     "sample": 623,
+     "population": "LV",
+     "pct": {
+      "Maura Healey": 51.0,
+      "Mike Minogue": 32.0
+     },
+     "undecided": 16.0
+    },
+    {
+     "pollster": "Suffolk University",
+     "end_date": "2026-06-12",
+     "start_date": "2026-06-08",
+     "sample": 500,
+     "population": "LV",
+     "pct": {
+      "Maura Healey": 56.0,
+      "Mike Minogue": 31.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "Polity Research Consulting",
+     "end_date": "2026-05-07",
+     "start_date": "2026-04-19",
+     "sample": 608,
+     "population": "RV",
+     "pct": {
+      "Maura Healey": 58.0,
+      "Mike Minogue": 31.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-04-20",
+     "start_date": "2026-04-16",
+     "sample": 599,
+     "population": "LV",
+     "pct": {
+      "Maura Healey": 52.0,
+      "Mike Minogue": 32.0
+     },
+     "undecided": 15.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-02-16",
+     "start_date": "2026-02-12",
+     "sample": 620,
+     "population": "LV",
+     "pct": {
+      "Maura Healey": 56.0,
+      "Mike Minogue": 27.0
+     },
+     "undecided": 15.0
+    },
+    {
+     "pollster": "UMass Amherst / YouGov",
+     "end_date": "2025-10-29",
+     "start_date": "2025-10-21",
+     "sample": 800,
+     "population": "A",
+     "pct": {
+      "Maura Healey": 51.0,
+      "Mike Minogue": 26.0
+     },
+     "undecided": 16.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "MD-G",
+   "state": "Maryland",
+   "state_po": "MD",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Maryland_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Dan Cox",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Andy Ellis",
+     "party": "G",
+     "incumbent": false,
+     "party_full": "Green"
+    },
+    {
+     "name": "Wes Moore",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Cathy White",
+     "party": "Working Class",
+     "incumbent": false,
+     "party_full": "Working Class"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Safe D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D"
+   },
+   "polls": [
+    {
+     "pollster": "University of Maryland, Baltimore County",
+     "end_date": "2026-09-27",
+     "start_date": "2026-09-22",
+     "sample": 776,
+     "population": "LV",
+     "pct": {
+      "Wes Moore": 51.0,
+      "Dan Cox": 24.0
+     },
+     "undecided": 14.0
+    },
+    {
+     "pollster": "Zenith Research",
+     "end_date": "2026-08-03",
+     "start_date": "2026-07-27",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Wes Moore": 58.0,
+      "Dan Cox": 31.0
+     },
+     "undecided": 9.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "ME-G",
+   "state": "Maine",
+   "state_po": "ME",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Maine_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Rick Bennett",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Robert B. Charles",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Hannah Pingree",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Likely D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Likely D",
+    "Sabato": "Likely D",
+    "Silver": "Solid D"
+   },
+   "polls": [
+    {
+     "pollster": "SSRS",
+     "end_date": "2026-10-26",
+     "start_date": "2026-10-20",
+     "sample": 783,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 53.0,
+      "Robert B. Charles": 39.0
+     },
+     "undecided": 0.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-10-25",
+     "start_date": "2026-10-22",
+     "sample": null,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 44.0,
+      "Robert B. Charles": 44.0,
+      "Rick Bennett": 6.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-10-25",
+     "start_date": "2026-10-22",
+     "sample": 1449,
+     "population": "RV",
+     "pct": {
+      "Hannah Pingree": 51.0,
+      "Robert B. Charles": 40.0,
+      "Rick Bennett": 7.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "Echelon Insights (R)",
+     "end_date": "2026-10-23",
+     "start_date": "2026-10-16",
+     "sample": 413,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 51.0,
+      "Robert B. Charles": 38.0,
+      "Rick Bennett": 7.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "Beacon Research (D)/Shaw & Co. Research (R)",
+     "end_date": "2026-10-20",
+     "start_date": "2026-10-16",
+     "sample": 1514,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 49.0,
+      "Robert B. Charles": 39.0,
+      "Rick Bennett": 9.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "Beacon Research (D)/Shaw & Co. Research (R)",
+     "end_date": "2026-10-20",
+     "start_date": "2026-10-16",
+     "sample": 1689,
+     "population": "RV",
+     "pct": {
+      "Hannah Pingree": 49.0,
+      "Robert B. Charles": 39.0,
+      "Rick Bennett": 9.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "Suffolk University",
+     "end_date": "2026-10-11",
+     "start_date": "2026-10-08",
+     "sample": 500,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 49.0,
+      "Robert B. Charles": 38.0,
+      "Rick Bennett": 8.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "The Washington Post / SSPG",
+     "end_date": "2026-10-05",
+     "start_date": "2026-09-30",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 49.0,
+      "Robert B. Charles": 36.0,
+      "Rick Bennett": 11.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-10-04",
+     "start_date": "2026-10-01",
+     "sample": 1505,
+     "population": "RV",
+     "pct": {
+      "Hannah Pingree": 52.0,
+      "Robert B. Charles": 40.0,
+      "Rick Bennett": 6.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "CBS / YouGov",
+     "end_date": "2026-10-01",
+     "start_date": "2026-09-23",
+     "sample": 1133,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 56.0,
+      "Robert B. Charles": 44.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "co/efficient (R)",
+     "end_date": "2026-09-30",
+     "start_date": "2026-09-28",
+     "sample": 1240,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 47.0,
+      "Robert B. Charles": 38.0,
+      "Rick Bennett": 6.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Fabrizio Ward (R)/ Impact Research (D)",
+     "end_date": "2026-09-22",
+     "start_date": "2026-09-20",
+     "sample": 982,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 52.0,
+      "Robert B. Charles": 39.0,
+      "Rick Bennett": 6.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "New York Times / Portland Press Herald / Siena University",
+     "end_date": "2026-09-22",
+     "start_date": "2026-09-15",
+     "sample": 619,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 47.0,
+      "Robert B. Charles": 34.0,
+      "Rick Bennett": 8.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "New York Times / Portland Press Herald / Siena University",
+     "end_date": "2026-09-22",
+     "start_date": "2026-09-15",
+     "sample": 619,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 53.0,
+      "Robert B. Charles": 39.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-09-21",
+     "start_date": "2026-09-17",
+     "sample": 1312,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 48.0,
+      "Robert B. Charles": 40.0,
+      "Rick Bennett": 5.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "University of Massachusetts / YouGov",
+     "end_date": "2026-09-14",
+     "start_date": "2026-08-28",
+     "sample": 650,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 49.0,
+      "Robert B. Charles": 38.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "YouGov",
+     "end_date": "2026-09-08",
+     "start_date": "2026-09-02",
+     "sample": 1335,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 47.0,
+      "Robert B. Charles": 36.0,
+      "Rick Bennett": 2.0
+     },
+     "undecided": 14.0
+    },
+    {
+     "pollster": "YouGov",
+     "end_date": "2026-09-08",
+     "start_date": "2026-09-02",
+     "sample": 1378,
+     "population": "RV",
+     "pct": {
+      "Hannah Pingree": 44.0,
+      "Robert B. Charles": 35.0,
+      "Rick Bennett": 3.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "SSRS",
+     "end_date": "2026-09-06",
+     "start_date": "2026-08-31",
+     "sample": 880,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 52.0,
+      "Robert B. Charles": 39.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-08-10",
+     "start_date": "2026-08-06",
+     "sample": 1000,
+     "population": "RV",
+     "pct": {
+      "Hannah Pingree": 49.0,
+      "Robert B. Charles": 38.0,
+      "Rick Bennett": 9.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-07-20",
+     "start_date": "2026-07-15",
+     "sample": 1178,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 49.0,
+      "Robert B. Charles": 35.0,
+      "Rick Bennett": 6.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-06-27",
+     "start_date": "2026-06-23",
+     "sample": 1003,
+     "population": "RV",
+     "pct": {
+      "Hannah Pingree": 53.0,
+      "Robert B. Charles": 42.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "New York Times / Portland Press Herald / Siena University",
+     "end_date": "2026-06-26",
+     "start_date": "2026-06-19",
+     "sample": 608,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 50.0,
+      "Robert B. Charles": 36.0,
+      "Rick Bennett": 8.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "New York Times / Portland Press Herald / Siena University",
+     "end_date": "2026-06-26",
+     "start_date": "2026-06-19",
+     "sample": 608,
+     "population": "LV",
+     "pct": {
+      "Hannah Pingree": 55.0,
+      "Robert B. Charles": 40.0
+     },
+     "undecided": 4.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "MI-G",
+   "state": "Michigan",
+   "state_po": "MI",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Michigan_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Jocelyn Benson",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Donna Brandenburg",
+     "party": "U.S. Taxpayers",
+     "incumbent": false,
+     "party_full": "U.S. Taxpayers"
+    },
+    {
+     "name": "Douglas Campbell",
+     "party": "G",
+     "incumbent": false,
+     "party_full": "Green"
+    },
+    {
+     "name": "Anthony Hudson",
+     "party": "L",
+     "incumbent": false,
+     "party_full": "Libertarian"
+    },
+    {
+     "name": "John James",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "ratings": {
+    "Cook": "Lean D",
+    "DDHQ": "Likely D",
+    "Fox": "Lean D",
+    "IE": "Lean D",
+    "NBC": "Lean D",
+    "RCP": "Lean D",
+    "Sabato": "Likely D",
+    "Silver": "Likely D"
+   },
+   "polls": [
+    {
+     "pollster": "Mitchell Research & Communications",
+     "end_date": "2026-10-27",
+     "start_date": "2026-10-26",
+     "sample": 636,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 49.0,
+      "John James": 44.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "SSRS",
+     "end_date": "2026-10-27",
+     "start_date": "2026-10-20",
+     "sample": 768,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 53.0,
+      "John James": 41.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Glengariff Group",
+     "end_date": "2026-10-22",
+     "start_date": "2026-10-19",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 51.0,
+      "John James": 45.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Michigan State University / YouGov",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-02",
+     "sample": 836,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 52.0,
+      "John James": 40.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Michigan State University / YouGov",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-02",
+     "sample": 836,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 53.0,
+      "John James": 41.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Michigan State University / YouGov",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-02",
+     "sample": 1000,
+     "population": "A",
+     "pct": {
+      "Jocelyn Benson": 44.0,
+      "John James": 35.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Michigan State University / YouGov",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-02",
+     "sample": 1000,
+     "population": "A",
+     "pct": {
+      "Jocelyn Benson": 46.0,
+      "John James": 37.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-10-18",
+     "start_date": "2026-10-15",
+     "sample": null,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 51.0,
+      "John James": 45.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-10-18",
+     "start_date": "2026-10-15",
+     "sample": 1185,
+     "population": "RV",
+     "pct": {
+      "Jocelyn Benson": 53.0,
+      "John James": 42.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "YouGov",
+     "end_date": "2026-10-04",
+     "start_date": "2026-09-22",
+     "sample": 3949,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 48.0,
+      "John James": 45.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Mitchell Research & Communications",
+     "end_date": "2026-10-01",
+     "start_date": "2026-10-01",
+     "sample": 682,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 46.0,
+      "John James": 39.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Z to A Research (D)",
+     "end_date": "2026-10-01",
+     "start_date": "2026-09-28",
+     "sample": 483,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 50.0,
+      "John James": 40.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-09-28",
+     "start_date": "2026-09-24",
+     "sample": 1203,
+     "population": "RV",
+     "pct": {
+      "Jocelyn Benson": 54.0,
+      "John James": 45.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-09-27",
+     "start_date": "2026-09-24",
+     "sample": 1235,
+     "population": "RV",
+     "pct": {
+      "Jocelyn Benson": 53.0,
+      "John James": 41.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "Guidant Polling & Strategy",
+     "end_date": "2026-09-27",
+     "start_date": "2026-09-20",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 50.0,
+      "John James": 45.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "co/efficient (R)",
+     "end_date": "2026-09-23",
+     "start_date": "2026-09-21",
+     "sample": 843,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 47.0,
+      "John James": 44.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "New York Times / Siena University",
+     "end_date": "2026-09-22",
+     "start_date": "2026-09-15",
+     "sample": 605,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 48.0,
+      "John James": 43.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Beacon Research (D)/ Cygnal (R)",
+     "end_date": "2026-09-21",
+     "start_date": "2026-09-18",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 45.0,
+      "John James": 38.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "Suffolk University",
+     "end_date": "2026-09-20",
+     "start_date": "2026-09-16",
+     "sample": 500,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 51.0,
+      "John James": 34.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Torchlight Strategies (R)",
+     "end_date": "2026-09-19",
+     "start_date": "2026-09-15",
+     "sample": 643,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 42.0,
+      "John James": 41.0
+     },
+     "undecided": 13.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-09-14",
+     "start_date": "2026-09-12",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 49.0,
+      "John James": 42.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "The Washington Post / SSPG",
+     "end_date": "2026-09-14",
+     "start_date": "2026-09-10",
+     "sample": 803,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 53.0,
+      "John James": 41.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "SSRS",
+     "end_date": "2026-09-06",
+     "start_date": "2026-08-31",
+     "sample": 843,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 50.0,
+      "John James": 41.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Glengariff Group",
+     "end_date": "2026-09-03",
+     "start_date": "2026-08-31",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 47.0,
+      "John James": 43.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "EPIC-MRA",
+     "end_date": "2026-08-28",
+     "start_date": "2026-08-22",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 48.0,
+      "John James": 44.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "EPIC-MRA",
+     "end_date": "2026-08-28",
+     "start_date": "2026-08-22",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 45.0,
+      "John James": 41.0
+     },
+     "undecided": 14.0
+    },
+    {
+     "pollster": "Michigan State University / YouGov",
+     "end_date": "2026-08-20",
+     "start_date": "2026-08-10",
+     "sample": 913,
+     "population": "RV",
+     "pct": {
+      "Jocelyn Benson": 49.0,
+      "John James": 39.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Michigan State University / YouGov",
+     "end_date": "2026-08-20",
+     "start_date": "2026-08-10",
+     "sample": 779,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 52.0,
+      "John James": 43.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Fabrizio Ward (R)/ Impact Research (D)",
+     "end_date": "2026-08-11",
+     "start_date": "2026-08-09",
+     "sample": 877,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 49.0,
+      "John James": 44.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "TIPP Insights (R)",
+     "end_date": "2026-08-10",
+     "start_date": "2026-08-06",
+     "sample": 1528,
+     "population": "RV",
+     "pct": {
+      "Jocelyn Benson": 48.0,
+      "John James": 34.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "TIPP Insights (R)",
+     "end_date": "2026-08-10",
+     "start_date": "2026-08-06",
+     "sample": 1215,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 53.0,
+      "John James": 37.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-08-10",
+     "start_date": "2026-08-06",
+     "sample": 1006,
+     "population": "RV",
+     "pct": {
+      "Jocelyn Benson": 52.0,
+      "John James": 47.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "EPIC-MRA",
+     "end_date": "2026-07-31",
+     "start_date": "2026-07-24",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 47.0,
+      "John James": 38.0
+     },
+     "undecided": 15.0
+    },
+    {
+     "pollster": "Mitchell Research & Communications",
+     "end_date": "2026-07-29",
+     "start_date": "2026-07-28",
+     "sample": 672,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 46.0,
+      "John James": 44.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "Glengariff Group",
+     "end_date": "2026-07-24",
+     "start_date": "2026-07-22",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 44.0,
+      "John James": 39.0
+     },
+     "undecided": 16.0
+    },
+    {
+     "pollster": "Mitchell Research & Communications",
+     "end_date": "2026-06-13",
+     "start_date": "2026-06-11",
+     "sample": 827,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 51.0,
+      "John James": 40.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "TIPP Insights (R)",
+     "end_date": "2026-05-23",
+     "start_date": "2026-05-20",
+     "sample": 1456,
+     "population": "RV",
+     "pct": {
+      "Jocelyn Benson": 46.0,
+      "John James": 35.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "TIPP Insights (R)",
+     "end_date": "2026-05-23",
+     "start_date": "2026-05-20",
+     "sample": 1163,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 49.0,
+      "John James": 38.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Glengariff Group",
+     "end_date": "2026-02-02",
+     "start_date": "2026-01-27",
+     "sample": null,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 45.0,
+      "John James": 41.0
+     },
+     "undecided": 14.0
+    },
+    {
+     "pollster": "Glengariff Group",
+     "end_date": "2026-02-02",
+     "start_date": "2026-01-27",
+     "sample": 600,
+     "population": "RV",
+     "pct": {
+      "Jocelyn Benson": 45.0,
+      "John James": 40.0
+     },
+     "undecided": 15.0
+    },
+    {
+     "pollster": "Glengariff Group",
+     "end_date": "2026-01-06",
+     "start_date": "2026-01-02",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Jocelyn Benson": 47.0,
+      "John James": 45.0
+     },
+     "undecided": 7.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "MN-G",
+   "state": "Minnesota",
+   "state_po": "MN",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Minnesota_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Lisa Demuth",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Amy Klobuchar",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "DFL"
+    },
+    {
+     "name": "Steven Young",
+     "party": "G",
+     "incumbent": false,
+     "party_full": "Green"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Likely D",
+    "Fox": "Likely D",
+    "IE": "Likely D",
+    "NBC": "Solid D",
+    "RCP": "Likely D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D"
+   },
+   "polls": [
+    {
+     "pollster": "State Navigate",
+     "end_date": "2026-10-28",
+     "start_date": "2026-10-26",
+     "sample": 806,
+     "population": "LV",
+     "pct": {
+      "Amy Klobuchar": 52.0,
+      "Lisa Demuth": 42.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "New York Times / Siena University",
+     "end_date": "2026-10-26",
+     "start_date": "2026-10-19",
+     "sample": 752,
+     "population": "LV",
+     "pct": {
+      "Amy Klobuchar": 56.0,
+      "Lisa Demuth": 38.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Victory Insights (R)",
+     "end_date": "2026-10-22",
+     "start_date": "2026-10-21",
+     "sample": 1194,
+     "population": "LV",
+     "pct": {
+      "Amy Klobuchar": 50.0,
+      "Lisa Demuth": 43.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "KSTP / SurveyUSA",
+     "end_date": "2026-10-12",
+     "start_date": "2026-10-08",
+     "sample": 718,
+     "population": "LV",
+     "pct": {
+      "Amy Klobuchar": 48.0,
+      "Lisa Demuth": 41.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Mason-Dixon Polling & Strategy",
+     "end_date": "2026-10-07",
+     "start_date": "2026-10-05",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Amy Klobuchar": 50.0,
+      "Lisa Demuth": 41.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Morning Consult (D)",
+     "end_date": "2026-10-07",
+     "start_date": "2026-10-02",
+     "sample": 1000,
+     "population": "RV",
+     "pct": {
+      "Amy Klobuchar": 48.0,
+      "Lisa Demuth": 39.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "co/efficient (R)",
+     "end_date": "2026-09-15",
+     "start_date": "2026-09-14",
+     "sample": 833,
+     "population": "LV",
+     "pct": {
+      "Amy Klobuchar": 47.0,
+      "Lisa Demuth": 45.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "KSTP / SurveyUSA",
+     "end_date": "2026-09-14",
+     "start_date": "2026-09-09",
+     "sample": 654,
+     "population": "LV",
+     "pct": {
+      "Amy Klobuchar": 47.0,
+      "Lisa Demuth": 40.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "TIPP Insights (R)",
+     "end_date": "2026-09-02",
+     "start_date": "2026-08-31",
+     "sample": 1494,
+     "population": "RV",
+     "pct": {
+      "Amy Klobuchar": 47.0,
+      "Lisa Demuth": 37.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "TIPP Insights (R)",
+     "end_date": "2026-09-02",
+     "start_date": "2026-08-31",
+     "sample": 1201,
+     "population": "LV",
+     "pct": {
+      "Amy Klobuchar": 50.0,
+      "Lisa Demuth": 40.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "KTSP / SurveyUSA",
+     "end_date": "2026-08-17",
+     "start_date": "2026-08-13",
+     "sample": 661,
+     "population": "LV",
+     "pct": {
+      "Amy Klobuchar": 51.0,
+      "Lisa Demuth": 36.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "Mason-Dixon Polling & Strategy",
+     "end_date": "2026-06-10",
+     "start_date": "2026-06-08",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Amy Klobuchar": 48.0,
+      "Lisa Demuth": 40.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-02-08",
+     "start_date": "2026-02-06",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Amy Klobuchar": 51.0,
+      "Lisa Demuth": 38.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "SurveyUSA",
+     "end_date": "2026-01-30",
+     "start_date": "2026-01-27",
+     "sample": 575,
+     "population": "RV",
+     "pct": {
+      "Amy Klobuchar": 49.0,
+      "Lisa Demuth": 34.0
+     },
+     "undecided": 17.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "NE-G",
+   "state": "Nebraska",
+   "state_po": "NE",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Nebraska_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Rick Beard",
+     "party": "Legal Marijuana Now",
+     "incumbent": false,
+     "party_full": "Legal Marijuana Now"
+    },
+    {
+     "name": "Brett Lindstrom",
+     "party": "America First",
+     "incumbent": false,
+     "party_full": "America First"
+    },
+    {
+     "name": "Jim Pillen",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Lynne Walz",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    }
+   ],
+   "ratings": {
+    "Cook": "Lean R",
+    "DDHQ": "Likely R",
+    "Fox": "Likely R",
+    "IE": "Likely R",
+    "NBC": "Likely R",
+    "RCP": "Solid R",
+    "Sabato": "Likely R",
+    "Silver": "Likely R"
+   },
+   "polls": [
+    {
+     "pollster": "Echelon Insights (R)",
+     "end_date": "2026-10-23",
+     "start_date": "2026-10-16",
+     "sample": 407,
+     "population": "LV",
+     "pct": {
+      "Jim Pillen": 47.0,
+      "Lynne Walz": 40.0,
+      "Brett Lindstrom": 4.0,
+      "Rick Beard": 7.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "Concord Public Opinion Partners (D)",
+     "end_date": "2026-10-18",
+     "start_date": "2026-10-15",
+     "sample": 500,
+     "population": "LV",
+     "pct": {
+      "Jim Pillen": 40.0,
+      "Lynne Walz": 43.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "National Public Affairs (R)",
+     "end_date": "2026-10-18",
+     "start_date": "2026-10-15",
+     "sample": 598,
+     "population": "LV",
+     "pct": {
+      "Jim Pillen": 47.0,
+      "Lynne Walz": 41.0,
+      "Brett Lindstrom": 5.0,
+      "Rick Beard": 3.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Global Strategy Group (D)",
+     "end_date": "2026-10-18",
+     "start_date": "2026-10-13",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Jim Pillen": 40.0,
+      "Lynne Walz": 39.0,
+      "Brett Lindstrom": 5.0,
+      "Rick Beard": 5.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "Public Policy Polling (D)",
+     "end_date": "2026-10-14",
+     "start_date": "2026-10-13",
+     "sample": 571,
+     "population": "RV",
+     "pct": {
+      "Jim Pillen": 48.0,
+      "Lynne Walz": 46.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Public Policy Polling (D)",
+     "end_date": "2026-10-14",
+     "start_date": "2026-10-13",
+     "sample": 571,
+     "population": "RV",
+     "pct": {
+      "Jim Pillen": 44.0,
+      "Lynne Walz": 43.0,
+      "Brett Lindstrom": 5.0,
+      "Rick Beard": 3.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "National Public Affairs (R)",
+     "end_date": "2026-10-05",
+     "start_date": "2026-10-02",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Jim Pillen": 44.0,
+      "Lynne Walz": 40.0,
+      "Brett Lindstrom": 7.0,
+      "Rick Beard": 5.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "YouGov",
+     "end_date": "2026-10-03",
+     "start_date": "2026-09-24",
+     "sample": 1809,
+     "population": "LV",
+     "pct": {
+      "Jim Pillen": 44.0,
+      "Lynne Walz": 43.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "co/efficient (R)",
+     "end_date": "2026-09-30",
+     "start_date": "2026-09-28",
+     "sample": 1113,
+     "population": "LV",
+     "pct": {
+      "Jim Pillen": 43.0,
+      "Lynne Walz": 38.0,
+      "Brett Lindstrom": 5.0,
+      "Rick Beard": 3.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "Lake Research Partners (D)",
+     "end_date": "2026-09-14",
+     "start_date": "2026-09-08",
+     "sample": null,
+     "population": "RV",
+     "pct": {
+      "Jim Pillen": 40.0,
+      "Lynne Walz": 40.0,
+      "Brett Lindstrom": 9.0,
+      "Rick Beard": 4.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "SurveyUSA",
+     "end_date": "2026-09-13",
+     "start_date": "2026-09-08",
+     "sample": 503,
+     "population": "LV",
+     "pct": {
+      "Jim Pillen": 43.0,
+      "Lynne Walz": 35.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Public Policy Polling (D)",
+     "end_date": "2026-09-02",
+     "start_date": "2026-09-01",
+     "sample": 559,
+     "population": "RV",
+     "pct": {
+      "Jim Pillen": 32.0,
+      "Lynne Walz": 31.0,
+      "Brett Lindstrom": 10.0,
+      "Rick Beard": 7.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "Lake Research Partners (D)",
+     "end_date": "2026-04-29",
+     "start_date": "2026-04-25",
+     "sample": 900,
+     "population": "LV",
+     "pct": {
+      "Jim Pillen": 47.0,
+      "Lynne Walz": 45.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Public Policy Polling (D)",
+     "end_date": "2026-04-07",
+     "start_date": "2026-04-06",
+     "sample": 670,
+     "population": "RV",
+     "pct": {
+      "Jim Pillen": 38.0,
+      "Lynne Walz": 33.0,
+      "Rick Beard": 12.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "Lake Research Partners (D)",
+     "end_date": "2025-12-17",
+     "start_date": "2025-12-11",
+     "sample": 900,
+     "population": "LV",
+     "pct": {
+      "Jim Pillen": 48.0,
+      "Lynne Walz": 43.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Lake Research Partners (D)",
+     "end_date": "2025-07-29",
+     "start_date": "2025-07-23",
+     "sample": 900,
+     "population": "LV",
+     "pct": {
+      "Jim Pillen": 51.0,
+      "Lynne Walz": 39.0
+     },
+     "undecided": 10.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "NH-G",
+   "state": "New Hampshire",
+   "state_po": "NH",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_New_Hampshire_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Kelly Ayotte",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Jon Kiper",
+     "party": "Community First",
+     "incumbent": false,
+     "party_full": "Community First"
+    },
+    {
+     "name": "Cinde Warmington",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    }
+   ],
+   "ratings": {
+    "Cook": "Likely R",
+    "DDHQ": "Lean R",
+    "Fox": "Likely R",
+    "IE": "Solid R",
+    "NBC": "Likely R",
+    "RCP": "Lean R",
+    "Sabato": "Likely R",
+    "Silver": "Likely R"
+   },
+   "polls": [
+    {
+     "pollster": "Rasmussen Reports (R)",
+     "end_date": "2026-10-23",
+     "start_date": "2026-10-20",
+     "sample": 970,
+     "population": "LV",
+     "pct": {
+      "Kelly Ayotte": 52.0,
+      "Cinde Warmington": 42.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Saint Anselm College",
+     "end_date": "2026-10-20",
+     "start_date": "2026-10-19",
+     "sample": 1672,
+     "population": "LV",
+     "pct": {
+      "Kelly Ayotte": 50.0,
+      "Cinde Warmington": 42.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "UMass Lowell / YouGov",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-02",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Kelly Ayotte": 48.0,
+      "Cinde Warmington": 42.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "National Public Affairs (R)",
+     "end_date": "2026-10-12",
+     "start_date": "2026-10-08",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Kelly Ayotte": 54.0,
+      "Cinde Warmington": 38.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "YouGov",
+     "end_date": "2026-10-05",
+     "start_date": "2026-09-28",
+     "sample": 1520,
+     "population": "LV",
+     "pct": {
+      "Kelly Ayotte": 49.0,
+      "Cinde Warmington": 40.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "Saint Anselm College",
+     "end_date": "2026-09-29",
+     "start_date": "2026-09-28",
+     "sample": 1042,
+     "population": "LV",
+     "pct": {
+      "Kelly Ayotte": 52.0,
+      "Cinde Warmington": 45.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "The New York Times / Siena University",
+     "end_date": "2026-09-22",
+     "start_date": "2026-09-15",
+     "sample": 613,
+     "population": "LV",
+     "pct": {
+      "Kelly Ayotte": 52.0,
+      "Cinde Warmington": 41.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-09-21",
+     "start_date": "2026-09-17",
+     "sample": 1418,
+     "population": "LV",
+     "pct": {
+      "Kelly Ayotte": 47.0,
+      "Cinde Warmington": 43.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "co/efficient (R)",
+     "end_date": "2026-09-11",
+     "start_date": "2026-09-09",
+     "sample": 958,
+     "population": "LV",
+     "pct": {
+      "Kelly Ayotte": 55.0,
+      "Cinde Warmington": 34.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-08-24",
+     "start_date": "2026-08-20",
+     "sample": 1878,
+     "population": "LV",
+     "pct": {
+      "Kelly Ayotte": 49.0,
+      "Cinde Warmington": 39.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Saint Anselm College",
+     "end_date": "2026-08-18",
+     "start_date": "2026-08-17",
+     "sample": 1411,
+     "population": "LV",
+     "pct": {
+      "Kelly Ayotte": 49.0,
+      "Cinde Warmington": 38.0
+     },
+     "undecided": 13.0
+    },
+    {
+     "pollster": "Saint Anselm College",
+     "end_date": "2026-06-25",
+     "start_date": "2026-06-24",
+     "sample": 1614,
+     "population": "RV",
+     "pct": {
+      "Kelly Ayotte": 45.0,
+      "Cinde Warmington": 37.0
+     },
+     "undecided": 18.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-06-23",
+     "start_date": "2026-06-18",
+     "sample": 2232,
+     "population": "LV",
+     "pct": {
+      "Kelly Ayotte": 44.0,
+      "Cinde Warmington": 39.0
+     },
+     "undecided": 13.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-04-21",
+     "start_date": "2026-04-17",
+     "sample": 1117,
+     "population": "LV",
+     "pct": {
+      "Kelly Ayotte": 47.0,
+      "Cinde Warmington": 39.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "Saint Anselm College",
+     "end_date": "2026-03-18",
+     "start_date": "2026-03-16",
+     "sample": 1491,
+     "population": "RV",
+     "pct": {
+      "Kelly Ayotte": 46.0,
+      "Cinde Warmington": 39.0
+     },
+     "undecided": 15.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "NM-G",
+   "state": "New Mexico",
+   "state_po": "NM",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_New_Mexico_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Deb Haaland",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Gregg Hull",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Likely D",
+    "Fox": "Solid D",
+    "IE": "Likely D",
+    "NBC": "Solid D",
+    "RCP": "Lean D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D"
+   },
+   "polls": [
+    {
+     "pollster": "Research & Polling Inc.",
+     "end_date": "2026-10-09",
+     "start_date": "2026-10-01",
+     "sample": 1125,
+     "population": "LV",
+     "pct": {
+      "Deb Haaland": 49.0,
+      "Gregg Hull": 42.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "SurveyUSA",
+     "end_date": "2026-09-30",
+     "start_date": "2026-09-25",
+     "sample": 567,
+     "population": "LV",
+     "pct": {
+      "Deb Haaland": 47.0,
+      "Gregg Hull": 41.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "Research & Polling Inc.",
+     "end_date": "2026-08-28",
+     "start_date": "2026-08-21",
+     "sample": 516,
+     "population": "LV",
+     "pct": {
+      "Deb Haaland": 49.0,
+      "Gregg Hull": 43.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "BSP Research (D)",
+     "end_date": "2026-08-07",
+     "start_date": "2026-07-22",
+     "sample": 800,
+     "population": "RV",
+     "pct": {
+      "Deb Haaland": 41.0,
+      "Gregg Hull": 24.0
+     },
+     "undecided": 27.0
+    },
+    {
+     "pollster": "McLaughlin & Associates (R)",
+     "end_date": "2026-07-15",
+     "start_date": "2026-07-13",
+     "sample": 400,
+     "population": "LV",
+     "pct": {
+      "Deb Haaland": 46.0,
+      "Gregg Hull": 45.0
+     },
+     "undecided": 9.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "NV-G",
+   "state": "Nevada",
+   "state_po": "NV",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Nevada_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Aaron Ford",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Danielle Ford",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Joe Lombardo",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   ],
+   "ratings": {
+    "Cook": "Tossup",
+    "DDHQ": "Tossup",
+    "Fox": "Tossup",
+    "IE": "Tossup",
+    "NBC": "Tossup",
+    "RCP": "Tossup",
+    "Sabato": "Tossup",
+    "Silver": "Tossup"
+   },
+   "polls": [
+    {
+     "pollster": "Hart Research (D)",
+     "end_date": "2026-10-25",
+     "start_date": "2026-10-20",
+     "sample": 950,
+     "population": "LV",
+     "pct": {
+      "Joe Lombardo": 45.0,
+      "Aaron Ford": 49.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "RedBox Research (D)",
+     "end_date": "2026-10-23",
+     "start_date": "2026-10-20",
+     "sample": 1407,
+     "population": "LV",
+     "pct": {
+      "Joe Lombardo": 43.0,
+      "Aaron Ford": 46.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Global Strategy Group (D)",
+     "end_date": "2026-10-13",
+     "start_date": "2026-10-08",
+     "sample": 700,
+     "population": "LV",
+     "pct": {
+      "Joe Lombardo": 48.0,
+      "Aaron Ford": 47.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Concord Public Opinion Partners (D)",
+     "end_date": "2026-09-30",
+     "start_date": "2026-09-26",
+     "sample": 565,
+     "population": "LV",
+     "pct": {
+      "Joe Lombardo": 43.0,
+      "Aaron Ford": 42.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Noble Predictive Insights",
+     "end_date": "2026-09-26",
+     "start_date": "2026-09-22",
+     "sample": 800,
+     "population": "RV",
+     "pct": {
+      "Joe Lombardo": 38.0,
+      "Aaron Ford": 37.0
+     },
+     "undecided": 13.0
+    },
+    {
+     "pollster": "Noble Predictive Insights",
+     "end_date": "2026-09-26",
+     "start_date": "2026-09-22",
+     "sample": 708,
+     "population": "LV",
+     "pct": {
+      "Joe Lombardo": 42.0,
+      "Aaron Ford": 40.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-09-08",
+     "start_date": "2026-09-05",
+     "sample": 680,
+     "population": "LV",
+     "pct": {
+      "Joe Lombardo": 42.0,
+      "Aaron Ford": 44.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "Tarrance Group (R)",
+     "end_date": "2026-07-29",
+     "start_date": "2026-07-25",
+     "sample": null,
+     "population": "LV",
+     "pct": {
+      "Joe Lombardo": 50.0,
+      "Aaron Ford": 43.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Public Policy Polling (D)",
+     "end_date": "2026-07-16",
+     "start_date": "2026-07-15",
+     "sample": 558,
+     "population": "LV",
+     "pct": {
+      "Joe Lombardo": 44.0,
+      "Aaron Ford": 44.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "Grassroots Targeting (R)",
+     "end_date": "2026-07-06",
+     "start_date": null,
+     "sample": null,
+     "population": "LV",
+     "pct": {
+      "Joe Lombardo": 52.0,
+      "Aaron Ford": 40.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Public Opinion Strategies (R)",
+     "end_date": "2026-06-29",
+     "start_date": "2026-06-27",
+     "sample": null,
+     "population": "LV",
+     "pct": {
+      "Joe Lombardo": 51.0,
+      "Aaron Ford": 42.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Global Strategy Group (D)",
+     "end_date": "2026-05-11",
+     "start_date": "2026-05-05",
+     "sample": 700,
+     "population": "LV",
+     "pct": {
+      "Joe Lombardo": 45.0,
+      "Aaron Ford": 42.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Noble Predictive Insights",
+     "end_date": "2026-03-13",
+     "start_date": "2026-03-10",
+     "sample": 845,
+     "population": "RV",
+     "pct": {
+      "Joe Lombardo": 39.0,
+      "Aaron Ford": 38.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "Hart Research (D)",
+     "end_date": "2026-02-17",
+     "start_date": "2026-02-11",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Joe Lombardo": 46.0,
+      "Aaron Ford": 43.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2025-11-18",
+     "start_date": "2025-11-16",
+     "sample": 800,
+     "population": "RV",
+     "pct": {
+      "Joe Lombardo": 41.0,
+      "Aaron Ford": 41.0
+     },
+     "undecided": 18.0
+    },
+    {
+     "pollster": "Noble Predictive Insights",
+     "end_date": "2025-10-13",
+     "start_date": "2025-10-07",
+     "sample": 766,
+     "population": "RV",
+     "pct": {
+      "Joe Lombardo": 40.0,
+      "Aaron Ford": 37.0
+     },
+     "undecided": 23.0
+    },
+    {
+     "pollster": "Vote TXT",
+     "end_date": "2023-05-19",
+     "start_date": "2023-05-15",
+     "sample": 412,
+     "population": "RV",
+     "pct": {
+      "Joe Lombardo": 51.0,
+      "Aaron Ford": 30.0
+     },
+     "undecided": 12.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "NY-G",
+   "state": "New York",
+   "state_po": "NY",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_New_York_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Bruce Blakeman",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Kathy Hochul",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Likely D",
+    "Fox": "Solid D",
+    "IE": "Likely D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D"
+   },
+   "polls": [
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-10-25",
+     "start_date": "2026-10-22",
+     "sample": null,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 53.0,
+      "Bruce Blakeman": 42.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-10-25",
+     "start_date": "2026-10-22",
+     "sample": 1448,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 55.0,
+      "Bruce Blakeman": 41.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "ActiVote",
+     "end_date": "2026-10-23",
+     "start_date": "2026-10-01",
+     "sample": 400,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 59.0,
+      "Bruce Blakeman": 41.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Siena College",
+     "end_date": "2026-10-22",
+     "start_date": "2026-10-19",
+     "sample": 807,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 54.0,
+      "Bruce Blakeman": 40.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Quinnipiac University",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-15",
+     "sample": 1167,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 55.0,
+      "Bruce Blakeman": 41.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "OnMessage Inc. (R)",
+     "end_date": "2026-10-06",
+     "start_date": "2026-10-01",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 50.0,
+      "Bruce Blakeman": 46.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Beacon Research (D)",
+     "end_date": "2026-10-06",
+     "start_date": "2026-10-01",
+     "sample": 820,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 53.0,
+      "Bruce Blakeman": 31.0
+     },
+     "undecided": 16.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-10-05",
+     "start_date": "2026-10-03",
+     "sample": 900,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 52.0,
+      "Bruce Blakeman": 40.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-10-04",
+     "start_date": "2026-10-01",
+     "sample": 1361,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 53.0,
+      "Bruce Blakeman": 42.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "co/efficient (R)",
+     "end_date": "2026-09-25",
+     "start_date": "2026-09-23",
+     "sample": 1046,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 48.0,
+      "Bruce Blakeman": 41.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "Quinnipiac University",
+     "end_date": "2026-09-20",
+     "start_date": "2026-09-17",
+     "sample": 1026,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 58.0,
+      "Bruce Blakeman": 39.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "Siena College",
+     "end_date": "2026-09-17",
+     "start_date": "2026-09-11",
+     "sample": 1144,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 50.0,
+      "Bruce Blakeman": 41.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "McLaughlin & Associates (R)",
+     "end_date": "2026-08-31",
+     "start_date": "2026-08-27",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 50.0,
+      "Bruce Blakeman": 46.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Concord Public Opinion Partners (D)",
+     "end_date": "2026-08-21",
+     "start_date": "2026-08-19",
+     "sample": 505,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 50.0,
+      "Bruce Blakeman": 34.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "Siena College",
+     "end_date": "2026-08-06",
+     "start_date": "2026-08-03",
+     "sample": 811,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 49.0,
+      "Bruce Blakeman": 39.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "Moxie Strategies",
+     "end_date": "2026-07-28",
+     "start_date": "2026-07-22",
+     "sample": 813,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 49.0,
+      "Bruce Blakeman": 37.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Red Oak Strategic (R)",
+     "end_date": "2026-07-12",
+     "start_date": "2026-07-07",
+     "sample": 2000,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 47.0,
+      "Bruce Blakeman": 43.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "co/efficient (R)",
+     "end_date": "2026-07-02",
+     "start_date": "2026-06-30",
+     "sample": 1085,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 47.0,
+      "Bruce Blakeman": 41.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "Siena College",
+     "end_date": "2026-06-23",
+     "start_date": "2026-06-17",
+     "sample": 1120,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 52.0,
+      "Bruce Blakeman": 32.0
+     },
+     "undecided": 15.0
+    },
+    {
+     "pollster": "Pollfinity Research",
+     "end_date": "2026-06-14",
+     "start_date": "2026-06-11",
+     "sample": 229,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 50.0,
+      "Bruce Blakeman": 40.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "Pollfinity Research",
+     "end_date": "2026-06-14",
+     "start_date": "2026-06-11",
+     "sample": 229,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 46.0,
+      "Bruce Blakeman": 35.0
+     },
+     "undecided": 14.0
+    },
+    {
+     "pollster": "Siena College",
+     "end_date": "2026-04-30",
+     "start_date": "2026-04-27",
+     "sample": 806,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 49.0,
+      "Bruce Blakeman": 33.0
+     },
+     "undecided": 16.0
+    },
+    {
+     "pollster": "Siena College",
+     "end_date": "2026-03-26",
+     "start_date": "2026-03-23",
+     "sample": 804,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 47.0,
+      "Bruce Blakeman": 34.0
+     },
+     "undecided": 16.0
+    },
+    {
+     "pollster": "Echelon Insights/Tusk Strategies",
+     "end_date": "2026-03-26",
+     "start_date": "2026-03-24",
+     "sample": 500,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 55.0,
+      "Bruce Blakeman": 40.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "McLaughlin & Associates (R)",
+     "end_date": "2026-03-08",
+     "start_date": "2026-03-04",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 52.0,
+      "Bruce Blakeman": 43.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Siena College",
+     "end_date": "2026-02-26",
+     "start_date": "2026-02-23",
+     "sample": 805,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 51.0,
+      "Bruce Blakeman": 31.0
+     },
+     "undecided": 15.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-02-19",
+     "start_date": "2026-02-16",
+     "sample": 1442,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 50.0,
+      "Bruce Blakeman": 33.0
+     },
+     "undecided": 15.0
+    },
+    {
+     "pollster": "MAD Global Strategy",
+     "end_date": "2026-02-04",
+     "start_date": "2026-02-02",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 47.0,
+      "Bruce Blakeman": 34.0
+     },
+     "undecided": 19.0
+    },
+    {
+     "pollster": "Siena College",
+     "end_date": "2026-01-28",
+     "start_date": "2026-01-26",
+     "sample": 802,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 54.0,
+      "Bruce Blakeman": 28.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "John Zogby Strategies",
+     "end_date": "2026-01-08",
+     "start_date": "2026-01-06",
+     "sample": 844,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 53.0,
+      "Bruce Blakeman": 39.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "John Zogby Strategies",
+     "end_date": "2026-01-08",
+     "start_date": "2026-01-06",
+     "sample": 844,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 49.0,
+      "Bruce Blakeman": 34.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Siena College",
+     "end_date": "2025-12-12",
+     "start_date": "2025-12-08",
+     "sample": 801,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 50.0,
+      "Bruce Blakeman": 25.0
+     },
+     "undecided": 21.0
+    },
+    {
+     "pollster": "J.L. Partners (R)",
+     "end_date": "2025-11-10",
+     "start_date": "2025-11-09",
+     "sample": 500,
+     "population": "LV",
+     "pct": {
+      "Kathy Hochul": 47.0,
+      "Bruce Blakeman": 36.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "Siena College",
+     "end_date": "2025-06-26",
+     "start_date": "2025-06-23",
+     "sample": 800,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 44.0,
+      "Bruce Blakeman": 19.0
+     },
+     "undecided": 37.0
+    },
+    {
+     "pollster": "GrayHouse (R)",
+     "end_date": "2025-04-24",
+     "start_date": "2025-04-22",
+     "sample": 600,
+     "population": "RV",
+     "pct": {
+      "Kathy Hochul": 44.0,
+      "Bruce Blakeman": 36.0
+     },
+     "undecided": 20.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "OH-G",
+   "state": "Ohio",
+   "state_po": "OH",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Ohio_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Amy Acton",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Donald Kissick",
+     "party": "L",
+     "incumbent": false,
+     "party_full": "Libertarian"
+    },
+    {
+     "name": "Vivek Ramaswamy",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "ratings": {
+    "Cook": "Lean D (flip)",
+    "DDHQ": "Lean D (flip)",
+    "Fox": "Lean D (flip)",
+    "IE": "Tilt D (flip)",
+    "NBC": "Lean D (flip)",
+    "RCP": "Tossup",
+    "Sabato": "Lean D (flip)",
+    "Silver": "Likely D (flip)"
+   },
+   "polls": [
+    {
+     "pollster": "Suffolk University",
+     "end_date": "2026-10-26",
+     "start_date": "2026-10-21",
+     "sample": 500,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 44.0,
+      "Amy Acton": 48.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "RedBox Research (D)",
+     "end_date": "2026-10-23",
+     "start_date": "2026-10-20",
+     "sample": 2998,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 44.0,
+      "Amy Acton": 48.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "Echelon Insights (R)",
+     "end_date": "2026-10-23",
+     "start_date": "2026-10-16",
+     "sample": 508,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 47.0,
+      "Amy Acton": 45.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "Verasight/VoteHub",
+     "end_date": "2026-10-20",
+     "start_date": "2026-10-01",
+     "sample": 531,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 45.0,
+      "Amy Acton": 46.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Verasight/VoteHub",
+     "end_date": "2026-10-20",
+     "start_date": "2026-10-01",
+     "sample": 531,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 44.0,
+      "Amy Acton": 44.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-15",
+     "sample": 2005,
+     "population": "RV",
+     "pct": {
+      "Vivek Ramaswamy": 47.0,
+      "Amy Acton": 51.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-15",
+     "sample": 1592,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 48.0,
+      "Amy Acton": 50.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "ActiVote",
+     "end_date": "2026-10-19",
+     "start_date": "2026-09-27",
+     "sample": 400,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 51.0,
+      "Amy Acton": 49.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-10-18",
+     "start_date": "2026-10-15",
+     "sample": null,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 43.0,
+      "Amy Acton": 51.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-10-18",
+     "start_date": "2026-10-15",
+     "sample": 1176,
+     "population": "RV",
+     "pct": {
+      "Vivek Ramaswamy": 43.0,
+      "Amy Acton": 50.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "GS Strategy Group (R)/ New River Strategies (D)",
+     "end_date": "2026-10-13",
+     "start_date": "2026-10-09",
+     "sample": 959,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 44.0,
+      "Amy Acton": 49.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Bowling Green State University / YouGov",
+     "end_date": "2026-10-09",
+     "start_date": "2026-09-29",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 44.0,
+      "Amy Acton": 50.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "co/efficient (R)",
+     "end_date": "2026-10-06",
+     "start_date": "2026-10-05",
+     "sample": 925,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 45.0,
+      "Amy Acton": 43.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "SSRS",
+     "end_date": "2026-10-05",
+     "start_date": "2026-09-29",
+     "sample": 760,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 42.0,
+      "Amy Acton": 50.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "New York Times / Siena University",
+     "end_date": "2026-10-01",
+     "start_date": "2026-09-22",
+     "sample": 616,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 45.0,
+      "Amy Acton": 49.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "YouGov",
+     "end_date": "2026-09-30",
+     "start_date": "2026-09-18",
+     "sample": 3780,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 44.0,
+      "Amy Acton": 48.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Big Data Poll (R)",
+     "end_date": "2026-09-27",
+     "start_date": "2026-09-26",
+     "sample": 680,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 48.0,
+      "Amy Acton": 47.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Big Data Poll (R)",
+     "end_date": "2026-09-27",
+     "start_date": "2026-09-26",
+     "sample": 680,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 46.0,
+      "Amy Acton": 44.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Big Data Poll (R)",
+     "end_date": "2026-09-27",
+     "start_date": "2026-09-26",
+     "sample": 735,
+     "population": "RV",
+     "pct": {
+      "Vivek Ramaswamy": 47.0,
+      "Amy Acton": 46.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Big Data Poll (R)",
+     "end_date": "2026-09-27",
+     "start_date": "2026-09-26",
+     "sample": 735,
+     "population": "RV",
+     "pct": {
+      "Vivek Ramaswamy": 45.0,
+      "Amy Acton": 43.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-09-27",
+     "start_date": "2026-09-24",
+     "sample": 1298,
+     "population": "RV",
+     "pct": {
+      "Vivek Ramaswamy": 44.0,
+      "Amy Acton": 50.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "Suffolk University",
+     "end_date": "2026-09-27",
+     "start_date": "2026-09-23",
+     "sample": 500,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 41.0,
+      "Amy Acton": 50.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Bowling Green State University / YouGov",
+     "end_date": "2026-09-10",
+     "start_date": "2026-09-01",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 45.0,
+      "Amy Acton": 48.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Concord Public Opinion Partners (D)",
+     "end_date": "2026-08-31",
+     "start_date": "2026-08-29",
+     "sample": 504,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 37.0,
+      "Amy Acton": 49.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-08-10",
+     "start_date": "2026-08-06",
+     "sample": 1008,
+     "population": "RV",
+     "pct": {
+      "Vivek Ramaswamy": 50.0,
+      "Amy Acton": 48.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "Tulchin Research (D)",
+     "end_date": "2026-08-04",
+     "start_date": "2026-07-29",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 44.0,
+      "Amy Acton": 46.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "New York Times / Siena University",
+     "end_date": "2026-06-28",
+     "start_date": "2026-06-15",
+     "sample": 601,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 47.0,
+      "Amy Acton": 47.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Fabrizio Ward (R)/ Impact Research (D)",
+     "end_date": "2026-06-16",
+     "start_date": "2026-06-14",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 44.0,
+      "Amy Acton": 47.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Tulchin Research (D)",
+     "end_date": "2026-06-04",
+     "start_date": "2026-06-02",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 44.0,
+      "Amy Acton": 47.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-06-01",
+     "start_date": "2026-05-28",
+     "sample": 1015,
+     "population": "RV",
+     "pct": {
+      "Vivek Ramaswamy": 49.0,
+      "Amy Acton": 50.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Bowling Green State University / YouGov",
+     "end_date": "2026-04-14",
+     "start_date": "2026-04-07",
+     "sample": 1000,
+     "population": "RV",
+     "pct": {
+      "Vivek Ramaswamy": 48.0,
+      "Amy Acton": 47.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Echelon Insights (R)",
+     "end_date": "2026-04-09",
+     "start_date": "2026-04-03",
+     "sample": 413,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 49.0,
+      "Amy Acton": 44.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Quantus Insights (R)",
+     "end_date": "2026-03-14",
+     "start_date": "2026-03-13",
+     "sample": 809,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 45.0,
+      "Amy Acton": 46.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "EMC Research (D)",
+     "end_date": "2026-02-22",
+     "start_date": "2026-02-10",
+     "sample": 1343,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 43.0,
+      "Amy Acton": 53.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2025-12-08",
+     "start_date": "2025-12-06",
+     "sample": 850,
+     "population": "RV",
+     "pct": {
+      "Vivek Ramaswamy": 45.0,
+      "Amy Acton": 46.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Data Targeting (R)",
+     "end_date": "2025-12-08",
+     "start_date": "2025-12-03",
+     "sample": 603,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 45.0,
+      "Amy Acton": 43.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "Bowling Green State University / YouGov",
+     "end_date": "2025-10-14",
+     "start_date": "2025-10-02",
+     "sample": 800,
+     "population": "RV",
+     "pct": {
+      "Vivek Ramaswamy": 50.0,
+      "Amy Acton": 47.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Hart Research (D)",
+     "end_date": "2025-09-22",
+     "start_date": "2025-09-19",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 45.0,
+      "Amy Acton": 46.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2025-08-19",
+     "start_date": "2025-08-18",
+     "sample": 1000,
+     "population": "RV",
+     "pct": {
+      "Vivek Ramaswamy": 49.0,
+      "Amy Acton": 39.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "Impact Research (D)",
+     "end_date": "2025-07-28",
+     "start_date": "2025-07-24",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Vivek Ramaswamy": 47.0,
+      "Amy Acton": 46.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Bowling Green State University / YouGov",
+     "end_date": "2025-04-24",
+     "start_date": "2025-04-18",
+     "sample": 800,
+     "population": "RV",
+     "pct": {
+      "Vivek Ramaswamy": 50.0,
+      "Amy Acton": 45.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Public Policy Polling (D)",
+     "end_date": "2025-02-20",
+     "start_date": "2025-02-19",
+     "sample": 642,
+     "population": "RV",
+     "pct": {
+      "Vivek Ramaswamy": 44.0,
+      "Amy Acton": 45.0
+     },
+     "undecided": 11.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "OK-G",
+   "state": "Oklahoma",
+   "state_po": "OK",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Oklahoma_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Robert Brooks Sr.",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Orlando Bush",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Jerry Griffin",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Mike Mazzei",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Cyndi Munson",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    }
+   ],
+   "ratings": {
+    "Cook": "Likely R",
+    "DDHQ": "Safe R",
+    "Fox": "Solid R",
+    "IE": "Likely R",
+    "NBC": "Likely R",
+    "RCP": "Solid R",
+    "Sabato": "Likely R",
+    "Silver": "Likely R"
+   },
+   "polls": [
+    {
+     "pollster": "Workbench Strategy (D)",
+     "end_date": "2026-10-13",
+     "start_date": "2026-10-08",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Mike Mazzei": 49.0,
+      "Cyndi Munson": 45.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Cross Timbers Poll",
+     "end_date": "2026-10-12",
+     "start_date": "2026-10-07",
+     "sample": 91,
+     "population": "LV",
+     "pct": {
+      "Mike Mazzei": 39.0,
+      "Cyndi Munson": 36.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "Cross Timbers Poll",
+     "end_date": "2026-10-12",
+     "start_date": "2026-10-07",
+     "sample": 128,
+     "population": "RV",
+     "pct": {
+      "Mike Mazzei": 33.0,
+      "Cyndi Munson": 30.0
+     },
+     "undecided": 32.0
+    },
+    {
+     "pollster": "Cross Timbers Poll",
+     "end_date": "2026-09-30",
+     "start_date": "2026-09-27",
+     "sample": 86,
+     "population": "LV",
+     "pct": {
+      "Mike Mazzei": 46.0,
+      "Cyndi Munson": 36.0
+     },
+     "undecided": 18.0
+    },
+    {
+     "pollster": "Cross Timbers Poll",
+     "end_date": "2026-09-30",
+     "start_date": "2026-09-27",
+     "sample": 118,
+     "population": "RV",
+     "pct": {
+      "Mike Mazzei": 38.0,
+      "Cyndi Munson": 34.0
+     },
+     "undecided": 27.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "OR-G",
+   "state": "Oregon",
+   "state_po": "OR",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Oregon_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Christine Drazan",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Tina Kotek",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Brett Smith",
+     "party": "Pacific Green",
+     "incumbent": false,
+     "party_full": "Pacific Green"
+    }
+   ],
+   "ratings": {
+    "Cook": "Lean D",
+    "DDHQ": "Likely D",
+    "Fox": "Lean D",
+    "IE": "Tilt D",
+    "NBC": "Likely D",
+    "RCP": "Tossup",
+    "Sabato": "Lean D",
+    "Silver": "Likely D"
+   },
+   "polls": [
+    {
+     "pollster": "GBAO (D)",
+     "end_date": "2026-10-04",
+     "start_date": "2026-10-01",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Tina Kotek": 46.0,
+      "Christine Drazan": 42.0,
+      "Brett Smith": 6.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "DHM Research",
+     "end_date": "2026-10-01",
+     "start_date": "2026-09-24",
+     "sample": 549,
+     "population": "LV",
+     "pct": {
+      "Tina Kotek": 46.0,
+      "Christine Drazan": 44.0,
+      "Brett Smith": 3.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "DHM Research",
+     "end_date": "2026-09-27",
+     "start_date": "2026-09-17",
+     "sample": 915,
+     "population": "LV",
+     "pct": {
+      "Tina Kotek": 46.0,
+      "Christine Drazan": 47.0,
+      "Brett Smith": 3.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "DHM Research",
+     "end_date": "2026-09-27",
+     "start_date": "2026-09-17",
+     "sample": 915,
+     "population": "LV",
+     "pct": {
+      "Tina Kotek": 44.0,
+      "Christine Drazan": 46.0,
+      "Brett Smith": 3.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "DHM Research",
+     "end_date": "2026-09-09",
+     "start_date": "2026-09-03",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Tina Kotek": 43.0,
+      "Christine Drazan": 45.0,
+      "Brett Smith": 4.0
+     },
+     "undecided": 13.0
+    },
+    {
+     "pollster": "Public Opinion Strategies (R)",
+     "end_date": "2026-06-24",
+     "start_date": "2026-06-22",
+     "sample": 600,
+     "population": "RV",
+     "pct": {
+      "Tina Kotek": 44.0,
+      "Christine Drazan": 48.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Hoffman Research Group (R)",
+     "end_date": "2026-05-12",
+     "start_date": "2026-05-11",
+     "sample": 603,
+     "population": "LV",
+     "pct": {
+      "Tina Kotek": 45.0,
+      "Christine Drazan": 45.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "FM3 Research (D)",
+     "end_date": "2026-02-04",
+     "start_date": "2026-01-28",
+     "sample": 1065,
+     "population": "LV",
+     "pct": {
+      "Tina Kotek": 45.0,
+      "Christine Drazan": 40.0
+     },
+     "undecided": 15.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "PA-G",
+   "state": "Pennsylvania",
+   "state_po": "PA",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Pennsylvania_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Stacy Garrity",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Ken Krawchuk",
+     "party": "L",
+     "incumbent": false,
+     "party_full": "Libertarian"
+    },
+    {
+     "name": "Josh Shapiro",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Safe D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D"
+   },
+   "polls": [
+    {
+     "pollster": "ActiVote",
+     "end_date": "2026-10-21",
+     "start_date": "2026-10-01",
+     "sample": 400,
+     "population": "LV",
+     "pct": {
+      "Josh Shapiro": 61.5,
+      "Stacy Garrity": 38.5
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Franklin & Marshall College",
+     "end_date": "2026-10-18",
+     "start_date": "2026-10-07",
+     "sample": 808,
+     "population": "RV",
+     "pct": {
+      "Josh Shapiro": 52.0,
+      "Stacy Garrity": 30.0
+     },
+     "undecided": 14.0
+    },
+    {
+     "pollster": "Franklin & Marshall College",
+     "end_date": "2026-10-18",
+     "start_date": "2026-10-07",
+     "sample": 808,
+     "population": "RV",
+     "pct": {
+      "Josh Shapiro": 54.0,
+      "Stacy Garrity": 33.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "PennLive",
+     "end_date": "2026-10-11",
+     "start_date": "2026-10-05",
+     "sample": 628,
+     "population": "RV",
+     "pct": {
+      "Josh Shapiro": 58.0,
+      "Stacy Garrity": 28.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Quinnipiac University",
+     "end_date": "2026-10-05",
+     "start_date": "2026-10-01",
+     "sample": 1159,
+     "population": "LV",
+     "pct": {
+      "Josh Shapiro": 59.0,
+      "Stacy Garrity": 34.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Z to A Research (D)",
+     "end_date": "2026-10-01",
+     "start_date": "2026-09-28",
+     "sample": 630,
+     "population": "LV",
+     "pct": {
+      "Josh Shapiro": 53.0,
+      "Stacy Garrity": 34.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Susquehanna Polling & Research (R)",
+     "end_date": "2026-09-30",
+     "start_date": "2026-09-22",
+     "sample": 700,
+     "population": "LV",
+     "pct": {
+      "Josh Shapiro": 52.0,
+      "Stacy Garrity": 31.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "PennLive",
+     "end_date": "2026-09-22",
+     "start_date": "2026-09-16",
+     "sample": 624,
+     "population": "RV",
+     "pct": {
+      "Josh Shapiro": 55.0,
+      "Stacy Garrity": 28.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "The New York Times / The Philadelphia Inquirer / Siena University",
+     "end_date": "2026-09-22",
+     "start_date": "2026-09-15",
+     "sample": 615,
+     "population": "LV",
+     "pct": {
+      "Josh Shapiro": 58.0,
+      "Stacy Garrity": 38.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "The New York Times / The Philadelphia Inquirer / Siena University",
+     "end_date": "2026-09-22",
+     "start_date": "2026-09-15",
+     "sample": 615,
+     "population": "RV",
+     "pct": {
+      "Josh Shapiro": 57.0,
+      "Stacy Garrity": 38.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Franklin & Marshall College",
+     "end_date": "2026-08-23",
+     "start_date": "2026-08-17",
+     "sample": 501,
+     "population": "RV",
+     "pct": {
+      "Josh Shapiro": 50.0,
+      "Stacy Garrity": 25.0
+     },
+     "undecided": 18.0
+    },
+    {
+     "pollster": "PennLive",
+     "end_date": "2026-08-22",
+     "start_date": "2026-08-18",
+     "sample": 711,
+     "population": "RV",
+     "pct": {
+      "Josh Shapiro": 56.0,
+      "Stacy Garrity": 25.0
+     },
+     "undecided": 19.0
+    },
+    {
+     "pollster": "The New York Times / The Philadelphia Inquirer / Siena University",
+     "end_date": "2026-08-21",
+     "start_date": "2026-08-17",
+     "sample": 760,
+     "population": "LV",
+     "pct": {
+      "Josh Shapiro": 55.0,
+      "Stacy Garrity": 39.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "The New York Times / The Philadelphia Inquirer / Siena University",
+     "end_date": "2026-08-21",
+     "start_date": "2026-08-17",
+     "sample": 760,
+     "population": "RV",
+     "pct": {
+      "Josh Shapiro": 54.0,
+      "Stacy Garrity": 37.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "National Public Affairs (R)",
+     "end_date": "2026-07-30",
+     "start_date": "2026-07-26",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Josh Shapiro": 50.0,
+      "Stacy Garrity": 43.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Quinnipiac University",
+     "end_date": "2026-07-13",
+     "start_date": "2026-07-09",
+     "sample": 895,
+     "population": "RV",
+     "pct": {
+      "Josh Shapiro": 53.0,
+      "Stacy Garrity": 40.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "PennLive",
+     "end_date": "2026-06-25",
+     "start_date": "2026-06-18",
+     "sample": 644,
+     "population": "RV",
+     "pct": {
+      "Josh Shapiro": 54.0,
+      "Stacy Garrity": 29.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Franklin & Marshall College",
+     "end_date": "2026-06-14",
+     "start_date": "2026-06-08",
+     "sample": 546,
+     "population": "RV",
+     "pct": {
+      "Josh Shapiro": 50.0,
+      "Stacy Garrity": 28.0
+     },
+     "undecided": 16.0
+    },
+    {
+     "pollster": "MAD Global Strategy",
+     "end_date": "2026-06-11",
+     "start_date": "2026-06-09",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Josh Shapiro": 48.0,
+      "Stacy Garrity": 31.0
+     },
+     "undecided": 18.0
+    },
+    {
+     "pollster": "PennLive",
+     "end_date": "2026-05-24",
+     "start_date": "2026-05-20",
+     "sample": 683,
+     "population": "LV",
+     "pct": {
+      "Josh Shapiro": 53.0,
+      "Stacy Garrity": 29.0
+     },
+     "undecided": 18.0
+    },
+    {
+     "pollster": "Susquehanna Polling & Research (R)",
+     "end_date": "2026-03-29",
+     "start_date": "2026-03-18",
+     "sample": 700,
+     "population": "LV",
+     "pct": {
+      "Josh Shapiro": 58.0,
+      "Stacy Garrity": 36.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Franklin & Marshall College",
+     "end_date": "2026-03-01",
+     "start_date": "2026-02-18",
+     "sample": 834,
+     "population": "RV",
+     "pct": {
+      "Josh Shapiro": 48.0,
+      "Stacy Garrity": 28.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "Quinnipiac University",
+     "end_date": "2026-02-23",
+     "start_date": "2026-02-19",
+     "sample": 836,
+     "population": "RV",
+     "pct": {
+      "Josh Shapiro": 55.0,
+      "Stacy Garrity": 37.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Quinnipiac University",
+     "end_date": "2025-09-29",
+     "start_date": "2025-09-25",
+     "sample": 1579,
+     "population": "RV",
+     "pct": {
+      "Josh Shapiro": 55.0,
+      "Stacy Garrity": 39.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Susquehanna Polling & Research (R)",
+     "end_date": "2025-09-28",
+     "start_date": "2025-09-22",
+     "sample": 700,
+     "population": "LV",
+     "pct": {
+      "Josh Shapiro": 54.0,
+      "Stacy Garrity": 36.0
+     },
+     "undecided": 9.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "RI-G",
+   "state": "Rhode Island",
+   "state_po": "RI",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Rhode_Island_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Ken Block",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Helena Foulkes",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Jasjit Gotra",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Aaron Guckian",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "CD Reynolds",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Safe D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D"
+   },
+   "polls": [
+    {
+     "pollster": "Emerson College / WPRI-TV",
+     "end_date": "2026-10-11",
+     "start_date": "2026-10-08",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Helena Foulkes": 44.0,
+      "Aaron Guckian": 10.0,
+      "Ken Block": 35.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Emerson College / WPRI-TV",
+     "end_date": "2026-10-11",
+     "start_date": "2026-10-08",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Helena Foulkes": 48.0,
+      "Aaron Guckian": 12.0,
+      "Ken Block": 38.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Embold Research",
+     "end_date": "2026-10-08",
+     "start_date": "2026-10-05",
+     "sample": 815,
+     "population": "LV",
+     "pct": {
+      "Helena Foulkes": 39.0,
+      "Aaron Guckian": 17.0,
+      "Ken Block": 28.0
+     },
+     "undecided": 13.0
+    },
+    {
+     "pollster": "Opinion Diagnostics",
+     "end_date": "2026-09-25",
+     "start_date": "2026-09-23",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Helena Foulkes": 41.0,
+      "Aaron Guckian": 19.0,
+      "Ken Block": 24.0
+     },
+     "undecided": 16.0
+    },
+    {
+     "pollster": "Opinion Diagnostics",
+     "end_date": "2026-09-25",
+     "start_date": "2026-09-23",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Helena Foulkes": 39.0,
+      "Ken Block": 44.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-09-21",
+     "start_date": "2026-09-17",
+     "sample": 598,
+     "population": "LV",
+     "pct": {
+      "Helena Foulkes": 44.0,
+      "Aaron Guckian": 17.0,
+      "Ken Block": 25.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-08-24",
+     "start_date": "2026-08-20",
+     "sample": 750,
+     "population": "LV",
+     "pct": {
+      "Helena Foulkes": 40.0,
+      "Aaron Guckian": 15.0,
+      "Ken Block": 19.0
+     },
+     "undecided": 19.0
+    },
+    {
+     "pollster": "Emerson College / WPRI-TV",
+     "end_date": "2026-08-22",
+     "start_date": "2026-08-21",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Helena Foulkes": 45.0,
+      "Aaron Guckian": 18.0,
+      "Ken Block": 21.0
+     },
+     "undecided": 14.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-06-23",
+     "start_date": "2026-06-18",
+     "sample": 664,
+     "population": "LV",
+     "pct": {
+      "Helena Foulkes": 38.0,
+      "Aaron Guckian": 22.0,
+      "Ken Block": 19.0
+     },
+     "undecided": 21.0
+    },
+    {
+     "pollster": "Opinion Diagnostics",
+     "end_date": "2026-04-16",
+     "start_date": "2026-04-13",
+     "sample": 802,
+     "population": "LV",
+     "pct": {
+      "Helena Foulkes": 33.0,
+      "Aaron Guckian": 16.0,
+      "Ken Block": 18.0
+     },
+     "undecided": 33.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "SC-G",
+   "state": "South Carolina",
+   "state_po": "SC",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_South_Carolina_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Michael Addison",
+     "party": "United Citizens",
+     "incumbent": false,
+     "party_full": "United Citizens"
+    },
+    {
+     "name": "Walid Hakim",
+     "party": "G",
+     "incumbent": false,
+     "party_full": "Green"
+    },
+    {
+     "name": "Jermaine Johnson",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Alan Wilson",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Lean R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Solid R",
+    "RCP": "Likely R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R"
+   },
+   "polls": [
+    {
+     "pollster": "New York Times / Siena University",
+     "end_date": "2026-10-26",
+     "start_date": "2026-10-19",
+     "sample": 707,
+     "population": "LV",
+     "pct": {
+      "Alan Wilson": 51.0,
+      "Jermaine Johnson": 44.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Targoz Media Research",
+     "end_date": "2026-10-25",
+     "start_date": "2026-10-16",
+     "sample": 895,
+     "population": "LV",
+     "pct": {
+      "Alan Wilson": 51.0,
+      "Jermaine Johnson": 41.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "The Citadel",
+     "end_date": "2026-10-25",
+     "start_date": "2026-10-14",
+     "sample": 890,
+     "population": "LV",
+     "pct": {
+      "Alan Wilson": 42.0,
+      "Jermaine Johnson": 31.0
+     },
+     "undecided": 26.0
+    },
+    {
+     "pollster": "The Citadel",
+     "end_date": "2026-10-25",
+     "start_date": "2026-10-14",
+     "sample": 1009,
+     "population": "RV",
+     "pct": {
+      "Alan Wilson": 36.0,
+      "Jermaine Johnson": 32.0
+     },
+     "undecided": 28.0
+    },
+    {
+     "pollster": "Trafalgar Group (R)",
+     "end_date": "2026-10-18",
+     "start_date": "2026-10-16",
+     "sample": 1095,
+     "population": "LV",
+     "pct": {
+      "Alan Wilson": 53.0,
+      "Jermaine Johnson": 37.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "National Public Affairs",
+     "end_date": "2026-10-16",
+     "start_date": "2026-10-13",
+     "sample": 604,
+     "population": "LV",
+     "pct": {
+      "Alan Wilson": 51.0,
+      "Jermaine Johnson": 41.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Resonance Media",
+     "end_date": "2026-10-03",
+     "start_date": "2026-09-29",
+     "sample": 638,
+     "population": "RV",
+     "pct": {
+      "Alan Wilson": 45.0,
+      "Jermaine Johnson": 35.0
+     },
+     "undecided": 16.0
+    },
+    {
+     "pollster": "Hart Research (D)",
+     "end_date": "2026-08-15",
+     "start_date": "2026-08-12",
+     "sample": 600,
+     "population": null,
+     "pct": {
+      "Alan Wilson": 50.0,
+      "Jermaine Johnson": 42.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Public Policy Polling (D)",
+     "end_date": "2026-07-17",
+     "start_date": "2026-07-16",
+     "sample": 577,
+     "population": null,
+     "pct": {
+      "Alan Wilson": 45.0,
+      "Jermaine Johnson": 37.0
+     },
+     "undecided": 17.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "SD-G",
+   "state": "South Dakota",
+   "state_po": "SD",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_South_Dakota_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Dan Ahlers",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Larry Rhoden",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Safe R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R"
+   },
+   "polls": [
+    {
+     "pollster": "Mason-Dixon Polling & Strategy",
+     "end_date": "2026-10-14",
+     "start_date": "2026-10-12",
+     "sample": 500,
+     "population": "LV",
+     "pct": {
+      "Larry Rhoden": 56.0,
+      "Dan Ahlers": 36.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Concord Public Opinion Partners (D)",
+     "end_date": "2026-10-08",
+     "start_date": "2026-10-06",
+     "sample": 400,
+     "population": "LV",
+     "pct": {
+      "Larry Rhoden": 48.0,
+      "Dan Ahlers": 38.0
+     },
+     "undecided": 10.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "TN-G",
+   "state": "Tennessee",
+   "state_po": "TN",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Tennessee_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Misam Abidi",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Santiago Asconape",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Marsha Blackburn",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Dean Brewer",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Ray Brown",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Jerri Green",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Taylor Hafley",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "David Hatley",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Wendell Jackson",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Charles Van Morgan",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Eddie Lee Murphy",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Lauren Pinkston",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Karl Smithson",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "L. Webb Taylor",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Robert Vick",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Likely R",
+    "Fox": "Solid R",
+    "IE": "Likely R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R"
+   },
+   "polls": [
+    {
+     "pollster": "GOTV Polling",
+     "end_date": "2026-10-26",
+     "start_date": "2026-10-25",
+     "sample": 1196,
+     "population": null,
+     "pct": {
+      "Marsha Blackburn": 35.0,
+      "Jerri Green": 30.0,
+      "David Hatley": 26.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Spry Strategies (R)",
+     "end_date": "2026-10-15",
+     "start_date": "2026-10-10",
+     "sample": 635,
+     "population": "LV",
+     "pct": {
+      "Marsha Blackburn": 44.0,
+      "Jerri Green": 32.0,
+      "David Hatley": 12.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "TargetSmart",
+     "end_date": "2026-09-12",
+     "start_date": "2026-09-09",
+     "sample": 600,
+     "population": "LV",
+     "pct": {
+      "Marsha Blackburn": 45.0,
+      "Jerri Green": 36.0,
+      "David Hatley": 10.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Targoz Market Research",
+     "end_date": "2026-08-26",
+     "start_date": "2026-08-15",
+     "sample": 1149,
+     "population": "RV",
+     "pct": {
+      "Marsha Blackburn": 46.0,
+      "Jerri Green": 33.0
+     },
+     "undecided": 14.0
+    },
+    {
+     "pollster": "Targoz Market Research",
+     "end_date": "2026-08-26",
+     "start_date": "2026-08-15",
+     "sample": 601,
+     "population": "LV",
+     "pct": {
+      "Marsha Blackburn": 55.0,
+      "Jerri Green": 34.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Targoz Market Research",
+     "end_date": "2026-04-27",
+     "start_date": "2026-04-20",
+     "sample": 1200,
+     "population": "RV",
+     "pct": {
+      "Marsha Blackburn": 51.0,
+      "Jerri Green": 27.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Quantus Insights (R)",
+     "end_date": "2025-08-07",
+     "start_date": "2025-08-05",
+     "sample": 600,
+     "population": "RV",
+     "pct": {
+      "Marsha Blackburn": 49.0,
+      "Jerri Green": 28.0
+     },
+     "undecided": 17.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "TX-G",
+   "state": "Texas",
+   "state_po": "TX",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Texas_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Greg Abbott",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Pat Dixon",
+     "party": "L",
+     "incumbent": false,
+     "party_full": "Libertarian"
+    },
+    {
+     "name": "Gina Hinojosa",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    }
+   ],
+   "ratings": {
+    "Cook": "Lean R",
+    "DDHQ": "Lean R",
+    "Fox": "Lean R",
+    "IE": "Tilt R",
+    "NBC": "Lean R",
+    "RCP": "Tossup",
+    "Sabato": "Lean R",
+    "Silver": "Lean R"
+   },
+   "polls": [
+    {
+     "pollster": "SSRS",
+     "end_date": "2026-10-27",
+     "start_date": "2026-10-20",
+     "sample": 923,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 48.0,
+      "Gina Hinojosa": 46.0
+     },
+     "undecided": 0.0
+    },
+    {
+     "pollster": "YouGov Blue (D)",
+     "end_date": "2026-10-26",
+     "start_date": "2026-10-21",
+     "sample": 1000,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 46.0,
+      "Gina Hinojosa": 49.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Texas Southern University",
+     "end_date": "2026-10-25",
+     "start_date": "2026-10-21",
+     "sample": 2000,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 50.0,
+      "Gina Hinojosa": 47.0,
+      "Pat Dixon": 2.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "ActiVote",
+     "end_date": "2026-10-21",
+     "start_date": "2026-10-17",
+     "sample": 400,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 53.0,
+      "Gina Hinojosa": 48.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Univision / YouGov",
+     "end_date": "2026-10-21",
+     "start_date": "2026-10-13",
+     "sample": 1000,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 48.0,
+      "Gina Hinojosa": 46.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Verasight/VoteHub",
+     "end_date": "2026-10-20",
+     "start_date": "2026-10-01",
+     "sample": 509,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 48.0,
+      "Gina Hinojosa": 46.0,
+      "Pat Dixon": 1.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Verasight/VoteHub",
+     "end_date": "2026-10-20",
+     "start_date": "2026-10-01",
+     "sample": 509,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 46.0,
+      "Gina Hinojosa": 44.0,
+      "Pat Dixon": 2.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Verasight/VoteHub",
+     "end_date": "2026-10-20",
+     "start_date": "2026-10-01",
+     "sample": 517,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 48.0,
+      "Gina Hinojosa": 45.0,
+      "Pat Dixon": 1.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Verasight/VoteHub",
+     "end_date": "2026-10-20",
+     "start_date": "2026-10-01",
+     "sample": 517,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 46.0,
+      "Gina Hinojosa": 42.0,
+      "Pat Dixon": 5.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-17",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 45.0,
+      "Pat Dixon": 1.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-15",
+     "sample": 2011,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 50.0,
+      "Gina Hinojosa": 49.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-10-19",
+     "start_date": "2026-10-15",
+     "sample": 1398,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 52.0,
+      "Gina Hinojosa": 47.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Texas Public Opinion Research",
+     "end_date": "2026-10-18",
+     "start_date": "2026-10-15",
+     "sample": 969,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 51.0,
+      "Gina Hinojosa": 48.0,
+      "Pat Dixon": 1.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Pollfinity Research",
+     "end_date": "2026-10-18",
+     "start_date": "2026-10-15",
+     "sample": 278,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 46.0,
+      "Gina Hinojosa": 45.0,
+      "Pat Dixon": 2.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "CBS News / YouGov",
+     "end_date": "2026-10-16",
+     "start_date": "2026-10-08",
+     "sample": 1492,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 52.0,
+      "Gina Hinojosa": 48.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "University of Houston",
+     "end_date": "2026-10-14",
+     "start_date": "2026-10-10",
+     "sample": 2000,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 46.0,
+      "Pat Dixon": 2.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "ActiVote",
+     "end_date": "2026-10-14",
+     "start_date": "2026-09-30",
+     "sample": 400,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 51.0,
+      "Gina Hinojosa": 49.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "GS Strategy Group (R)/New River Strategies (D)",
+     "end_date": "2026-10-13",
+     "start_date": "2026-10-09",
+     "sample": 934,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 48.0,
+      "Gina Hinojosa": 46.0,
+      "Pat Dixon": 3.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-10-11",
+     "start_date": "2026-10-08",
+     "sample": null,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 45.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-10-11",
+     "start_date": "2026-10-08",
+     "sample": 1196,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 48.0,
+      "Gina Hinojosa": 47.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "GBAO (D)",
+     "end_date": "2026-10-08",
+     "start_date": "2026-10-05",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 45.0,
+      "Gina Hinojosa": 47.0,
+      "Pat Dixon": 4.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "ReconMR/ Siena University",
+     "end_date": "2026-10-08",
+     "start_date": "2026-10-05",
+     "sample": 617,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 48.0,
+      "Gina Hinojosa": 47.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "YouGov",
+     "end_date": "2026-10-05",
+     "start_date": "2026-09-28",
+     "sample": 3625,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 47.0,
+      "Gina Hinojosa": 48.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "University of Texas /Texas Politics Project",
+     "end_date": "2026-10-05",
+     "start_date": "2026-09-25",
+     "sample": 861,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 48.0,
+      "Gina Hinojosa": 49.0,
+      "Pat Dixon": 1.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "New York Times / Siena University",
+     "end_date": "2026-10-01",
+     "start_date": "2026-09-22",
+     "sample": 615,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 46.0,
+      "Gina Hinojosa": 49.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-09-28",
+     "start_date": "2026-09-24",
+     "sample": 1005,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 52.0,
+      "Gina Hinojosa": 47.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-09-28",
+     "start_date": "2026-09-24",
+     "sample": 1203,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 50.0,
+      "Gina Hinojosa": 49.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Guidant Polling & Strategy",
+     "end_date": "2026-09-28",
+     "start_date": "2026-09-20",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 46.0,
+      "Gina Hinojosa": 44.0,
+      "Pat Dixon": 4.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "UMass Lowell / YouGov",
+     "end_date": "2026-09-28",
+     "start_date": "2026-09-18",
+     "sample": 850,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 48.0,
+      "Gina Hinojosa": 44.0,
+      "Pat Dixon": 1.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Big Data Poll",
+     "end_date": "2026-09-26",
+     "start_date": "2026-09-24",
+     "sample": 698,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 44.0,
+      "Pat Dixon": 6.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Big Data Poll",
+     "end_date": "2026-09-26",
+     "start_date": "2026-09-24",
+     "sample": 698,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 47.0,
+      "Gina Hinojosa": 44.0,
+      "Pat Dixon": 4.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Big Data Poll",
+     "end_date": "2026-09-26",
+     "start_date": "2026-09-24",
+     "sample": 793,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 48.0,
+      "Gina Hinojosa": 44.0,
+      "Pat Dixon": 8.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Big Data Poll",
+     "end_date": "2026-09-26",
+     "start_date": "2026-09-24",
+     "sample": 793,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 46.0,
+      "Gina Hinojosa": 43.0,
+      "Pat Dixon": 4.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Stratus Intelligence (R)",
+     "end_date": "2026-09-24",
+     "start_date": "2026-09-22",
+     "sample": 865,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 50.0,
+      "Gina Hinojosa": 45.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Texas Public Opinion Research",
+     "end_date": "2026-09-22",
+     "start_date": "2026-09-19",
+     "sample": 1007,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 50.0,
+      "Gina Hinojosa": 46.0,
+      "Pat Dixon": 2.0
+     },
+     "undecided": 2.0
+    },
+    {
+     "pollster": "Marist University",
+     "end_date": "2026-09-20",
+     "start_date": "2026-09-17",
+     "sample": 1139,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 46.0,
+      "Gina Hinojosa": 49.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "Texas Southern University",
+     "end_date": "2026-09-19",
+     "start_date": "2026-09-15",
+     "sample": 1800,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 45.0,
+      "Pat Dixon": 2.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-09-14",
+     "start_date": "2026-09-12",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 46.0,
+      "Pat Dixon": 2.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "SoCal Strategies (R)",
+     "end_date": "2026-09-13",
+     "start_date": "2026-09-12",
+     "sample": 649,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 52.0,
+      "Gina Hinojosa": 44.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "ReconMR/ Siena University",
+     "end_date": "2026-09-11",
+     "start_date": "2026-09-08",
+     "sample": 614,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 45.0,
+      "Gina Hinojosa": 49.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Mason-Dixon",
+     "end_date": "2026-09-10",
+     "start_date": "2026-09-08",
+     "sample": 625,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 48.0,
+      "Gina Hinojosa": 41.0,
+      "Pat Dixon": 1.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Univision / YouGov",
+     "end_date": "2026-09-04",
+     "start_date": "2026-08-27",
+     "sample": 1000,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 47.0,
+      "Gina Hinojosa": 47.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Fabrizio Ward (R)/ Impact Research (D)",
+     "end_date": "2026-09-01",
+     "start_date": "2026-08-30",
+     "sample": 895,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 46.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Overton Insights (R)",
+     "end_date": "2026-08-26",
+     "start_date": "2026-08-24",
+     "sample": 1167,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 51.0,
+      "Gina Hinojosa": 49.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "Overton Insights (R)",
+     "end_date": "2026-08-26",
+     "start_date": "2026-08-24",
+     "sample": 1167,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 47.0,
+      "Gina Hinojosa": 46.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Texas Public Opinion Research",
+     "end_date": "2026-08-24",
+     "start_date": "2026-08-21",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 42.0,
+      "Pat Dixon": 1.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "University of Texas /Texas Politics Project",
+     "end_date": "2026-08-13",
+     "start_date": "2026-08-05",
+     "sample": 1200,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 45.0,
+      "Gina Hinojosa": 40.0,
+      "Pat Dixon": 3.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-08-10",
+     "start_date": "2026-08-09",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 45.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "GBAO (D)",
+     "end_date": "2026-08-09",
+     "start_date": "2026-08-04",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 48.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "Cygnal (R)",
+     "end_date": "2026-07-31",
+     "start_date": "2026-07-29",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 46.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Texas A&M University /ReconMR/ Siena University",
+     "end_date": "2026-07-30",
+     "start_date": "2026-07-27",
+     "sample": 619,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 46.0,
+      "Gina Hinojosa": 45.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Texas Southern University",
+     "end_date": "2026-07-30",
+     "start_date": "2026-07-27",
+     "sample": 1200,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 43.0,
+      "Pat Dixon": 3.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+     "end_date": "2026-07-27",
+     "start_date": "2026-07-23",
+     "sample": 1005,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 50.0,
+      "Gina Hinojosa": 49.0
+     },
+     "undecided": 1.0
+    },
+    {
+     "pollster": "Texas Public Opinion Research",
+     "end_date": "2026-07-17",
+     "start_date": "2026-07-15",
+     "sample": 1048,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 45.0,
+      "Gina Hinojosa": 42.0
+     },
+     "undecided": 13.0
+    },
+    {
+     "pollster": "New York Times / Siena University",
+     "end_date": "2026-06-27",
+     "start_date": "2026-06-19",
+     "sample": 656,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 51.0,
+      "Gina Hinojosa": 44.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "SoCal Strategies(R)",
+     "end_date": "2026-06-21",
+     "start_date": "2026-06-21",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 54.0,
+      "Gina Hinojosa": 42.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "University of Texas /Texas Politics Project",
+     "end_date": "2026-06-12",
+     "start_date": "2026-06-05",
+     "sample": 1200,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 47.0,
+      "Gina Hinojosa": 40.0,
+      "Pat Dixon": 1.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "Quantus Insights (R)",
+     "end_date": "2026-06-04",
+     "start_date": "2026-06-03",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 41.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Texas A&M University /ReconMR",
+     "end_date": "2026-06-04",
+     "start_date": "2026-06-01",
+     "sample": 807,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 43.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Texas Public Opinion Research",
+     "end_date": "2026-05-28",
+     "start_date": "2026-05-27",
+     "sample": 1670,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 46.0,
+      "Gina Hinojosa": 41.0,
+      "Pat Dixon": 1.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Public Policy Polling (D)",
+     "end_date": "2026-05-23",
+     "start_date": "2026-05-22",
+     "sample": 643,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 48.0,
+      "Gina Hinojosa": 44.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Texas Southern University / YouGov",
+     "end_date": "2026-05-05",
+     "start_date": "2026-04-22",
+     "sample": 1223,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 43.0,
+      "Pat Dixon": 3.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Slingshot Strategies (D)",
+     "end_date": "2026-04-20",
+     "start_date": "2026-04-17",
+     "sample": 1018,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 48.0,
+      "Gina Hinojosa": 43.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "University of Texas /Texas Politics Project",
+     "end_date": "2026-04-20",
+     "start_date": "2026-04-10",
+     "sample": 1200,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 44.0,
+      "Gina Hinojosa": 38.0
+     },
+     "undecided": 13.0
+    },
+    {
+     "pollster": "UT Tyler",
+     "end_date": "2026-02-22",
+     "start_date": "2026-02-13",
+     "sample": 1117,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 41.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "University of Texas /Texas Politics Project",
+     "end_date": "2026-02-16",
+     "start_date": "2026-02-02",
+     "sample": 1300,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 45.0,
+      "Gina Hinojosa": 35.0
+     },
+     "undecided": 14.0
+    },
+    {
+     "pollster": "GBAO (D)",
+     "end_date": "2026-02-03",
+     "start_date": "2026-01-26",
+     "sample": 1000,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 46.0,
+      "Gina Hinojosa": 43.0,
+      "Pat Dixon": 6.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "University of Houston / YouGov",
+     "end_date": "2026-01-31",
+     "start_date": "2026-01-20",
+     "sample": 1502,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 49.0,
+      "Gina Hinojosa": 42.0,
+      "Pat Dixon": 3.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-01-12",
+     "start_date": "2026-01-10",
+     "sample": 1165,
+     "population": "RV",
+     "pct": {
+      "Greg Abbott": 50.0,
+      "Gina Hinojosa": 42.0
+     },
+     "undecided": 8.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "VT-G",
+   "state": "Vermont",
+   "state_po": "VT",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Vermont_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "June Goodband",
+     "party": "Green Mountain",
+     "incumbent": false,
+     "party_full": "Green Mountain"
+    },
+    {
+     "name": "Amanda Janoo",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Brian Judd",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Phil Scott",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Dean Roy",
+     "party": "Freedom and Unity",
+     "incumbent": false,
+     "party_full": "Freedom and Unity"
+    }
+   ],
+   "ratings": {
+    "Cook": "Likely R",
+    "DDHQ": "Likely R",
+    "Fox": "Likely R",
+    "IE": "Likely R",
+    "NBC": "Likely R",
+    "RCP": "Lean R",
+    "Sabato": "Lean R",
+    "Silver": "Lean R"
+   },
+   "polls": [
+    {
+     "pollster": "State Navigate",
+     "end_date": "2026-10-25",
+     "start_date": "2026-10-23",
+     "sample": 1752,
+     "population": "LV",
+     "pct": {
+      "Phil Scott": 49.0,
+      "Amanda Janoo": 46.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "State Navigate",
+     "end_date": "2026-10-25",
+     "start_date": "2026-10-23",
+     "sample": 1752,
+     "population": "LV",
+     "pct": {
+      "Phil Scott": 48.0,
+      "Amanda Janoo": 46.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "State Navigate",
+     "end_date": "2026-10-04",
+     "start_date": "2026-10-02",
+     "sample": 948,
+     "population": "LV",
+     "pct": {
+      "Phil Scott": 46.0,
+      "Amanda Janoo": 43.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "State Navigate",
+     "end_date": "2026-10-04",
+     "start_date": "2026-10-02",
+     "sample": 948,
+     "population": "LV",
+     "pct": {
+      "Phil Scott": 43.0,
+      "Amanda Janoo": 41.0
+     },
+     "undecided": 14.0
+    },
+    {
+     "pollster": "Braun Research/ Vermont Public",
+     "end_date": "2026-09-21",
+     "start_date": "2026-09-10",
+     "sample": 817,
+     "population": "RV",
+     "pct": {
+      "Phil Scott": 42.0,
+      "Amanda Janoo": 32.0
+     },
+     "undecided": 20.0
+    },
+    {
+     "pollster": "Braun Research/ Vermont Public",
+     "end_date": "2026-09-21",
+     "start_date": "2026-09-10",
+     "sample": 737,
+     "population": "LV",
+     "pct": {
+      "Phil Scott": 44.0,
+      "Amanda Janoo": 34.0
+     },
+     "undecided": 16.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-09-21",
+     "start_date": "2026-09-17",
+     "sample": 829,
+     "population": "LV",
+     "pct": {
+      "Phil Scott": 43.0,
+      "Amanda Janoo": 49.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-07-20",
+     "start_date": "2026-07-15",
+     "sample": 954,
+     "population": "LV",
+     "pct": {
+      "Phil Scott": 44.0,
+      "Amanda Janoo": 33.0
+     },
+     "undecided": 17.0
+    },
+    {
+     "pollster": "University of New Hampshire",
+     "end_date": "2026-06-23",
+     "start_date": "2026-06-18",
+     "sample": 887,
+     "population": "LV",
+     "pct": {
+      "Phil Scott": 42.0,
+      "Amanda Janoo": 27.0
+     },
+     "undecided": 26.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "WI-G",
+   "state": "Wisconsin",
+   "state_po": "WI",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Wisconsin_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "David Crowley",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Tom Tiffany",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "ratings": {
+    "Cook": "Tossup",
+    "DDHQ": "Lean D",
+    "Fox": "Tossup",
+    "IE": "Tilt D",
+    "NBC": "Lean D",
+    "RCP": "Lean D",
+    "Sabato": "Lean D",
+    "Silver": "Lean D"
+   },
+   "polls": [
+    {
+     "pollster": "Wick (R)",
+     "end_date": "2026-10-23",
+     "start_date": "2026-10-19",
+     "sample": 1213,
+     "population": "LV",
+     "pct": {
+      "David Crowley": 48.0,
+      "Tom Tiffany": 45.0
+     },
+     "undecided": 8.0
+    },
+    {
+     "pollster": "Marquette University",
+     "end_date": "2026-10-22",
+     "start_date": "2026-10-14",
+     "sample": 668,
+     "population": "LV",
+     "pct": {
+      "David Crowley": 51.0,
+      "Tom Tiffany": 44.0
+     },
+     "undecided": 4.0
+    },
+    {
+     "pollster": "Marquette University",
+     "end_date": "2026-10-22",
+     "start_date": "2026-10-14",
+     "sample": 818,
+     "population": "RV",
+     "pct": {
+      "David Crowley": 47.0,
+      "Tom Tiffany": 44.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "YouGov (D)",
+     "end_date": "2026-10-09",
+     "start_date": "2026-09-22",
+     "sample": 1715,
+     "population": "A",
+     "pct": {
+      "David Crowley": 46.0,
+      "Tom Tiffany": 42.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Z to A Research (D)",
+     "end_date": "2026-10-01",
+     "start_date": "2026-09-28",
+     "sample": 662,
+     "population": "LV",
+     "pct": {
+      "David Crowley": 49.0,
+      "Tom Tiffany": 44.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Marquette University",
+     "end_date": "2026-09-23",
+     "start_date": "2026-09-16",
+     "sample": 692,
+     "population": "LV",
+     "pct": {
+      "David Crowley": 49.0,
+      "Tom Tiffany": 46.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "Marquette University",
+     "end_date": "2026-09-23",
+     "start_date": "2026-09-16",
+     "sample": 843,
+     "population": "RV",
+     "pct": {
+      "David Crowley": 46.0,
+      "Tom Tiffany": 45.0
+     },
+     "undecided": 9.0
+    },
+    {
+     "pollster": "Marquette University",
+     "end_date": "2026-08-20",
+     "start_date": "2026-08-12",
+     "sample": 738,
+     "population": "LV",
+     "pct": {
+      "David Crowley": 49.0,
+      "Tom Tiffany": 44.0
+     },
+     "undecided": 7.0
+    },
+    {
+     "pollster": "Marquette University",
+     "end_date": "2026-08-20",
+     "start_date": "2026-08-12",
+     "sample": 891,
+     "population": "RV",
+     "pct": {
+      "David Crowley": 44.0,
+      "Tom Tiffany": 44.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "TIPP Insights (R)",
+     "end_date": "2026-08-18",
+     "start_date": "2026-08-14",
+     "sample": 1199,
+     "population": "LV",
+     "pct": {
+      "David Crowley": 47.0,
+      "Tom Tiffany": 43.0
+     },
+     "undecided": 6.0
+    },
+    {
+     "pollster": "TIPP Insights (R)",
+     "end_date": "2026-08-18",
+     "start_date": "2026-08-14",
+     "sample": 1434,
+     "population": "RV",
+     "pct": {
+      "David Crowley": 43.0,
+      "Tom Tiffany": 41.0
+     },
+     "undecided": 10.0
+    },
+    {
+     "pollster": "Platform Communications (R)",
+     "end_date": "2026-08-13",
+     "start_date": "2026-08-12",
+     "sample": 500,
+     "population": "LV",
+     "pct": {
+      "David Crowley": 48.0,
+      "Tom Tiffany": 44.0
+     },
+     "undecided": null
+    },
+    {
+     "pollster": "GBAO (D)",
+     "end_date": "2026-08-03",
+     "start_date": "2026-07-30",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "David Crowley": 47.0,
+      "Tom Tiffany": 44.0
+     },
+     "undecided": 5.0
+    },
+    {
+     "pollster": "RMG Research",
+     "end_date": "2026-07-24",
+     "start_date": "2026-07-20",
+     "sample": 800,
+     "population": "RV",
+     "pct": {
+      "David Crowley": 46.0,
+      "Tom Tiffany": 43.0
+     },
+     "undecided": 11.0
+    },
+    {
+     "pollster": "TIPP Insights (R)",
+     "end_date": "2026-03-19",
+     "start_date": "2026-03-13",
+     "sample": 1175,
+     "population": "LV",
+     "pct": {
+      "David Crowley": 42.0,
+      "Tom Tiffany": 41.0
+     },
+     "undecided": 12.0
+    },
+    {
+     "pollster": "TIPP Insights (R)",
+     "end_date": "2026-03-19",
+     "start_date": "2026-03-13",
+     "sample": 1495,
+     "population": "RV",
+     "pct": {
+      "David Crowley": 39.0,
+      "Tom Tiffany": 38.0
+     },
+     "undecided": 17.0
+    }
+   ],
+   "parse_notes": []
+  },
+  {
+   "id": "WY-G",
+   "state": "Wyoming",
+   "state_po": "WY",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_Wyoming_gubernatorial_election",
+   "candidates": [
+    {
+     "name": "Eric Barlow",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Kenneth Casner",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Joseph Kibler",
+     "party": "C",
+     "incumbent": false,
+     "party_full": "Constitution"
+    }
+   ],
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Safe R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R"
+   },
+   "polls": [],
+   "parse_notes": []
+  }
+ ]
+}

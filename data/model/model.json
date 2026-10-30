@@ -1,0 +1,421 @@
+{
+ "entities": {
+  "Duck Dynasty": {
+   "id": "5DCF1443-F3CA-45A9-B065-A2786D5E88A8",
+   "weight": -3.267,
+   "lean": "R",
+   "partial_r": -0.487,
+   "states_consistent": 1.0
+  },
+  "Beyonc\u00e9": {
+   "id": "F6754C46-B3E7-457F-8B7E-06C613597320",
+   "weight": 3.521,
+   "lean": "D",
+   "partial_r": 0.449,
+   "states_consistent": 0.978
+  },
+  "Donald Trump Jr.": {
+   "id": "08171B94-62B8-4BB2-AA93-BC7C70724338",
+   "weight": -3.495,
+   "lean": "R",
+   "partial_r": -0.439,
+   "states_consistent": 1.0
+  },
+  "The Ben Shapiro Show": {
+   "id": "1FA0FBFF-6332-4D80-B2BA-4718E3F7666D",
+   "weight": 0.463,
+   "lean": "R",
+   "partial_r": -0.415,
+   "states_consistent": 0.978
+  },
+  "Moonlight": {
+   "id": "2955F3C4-36AB-49F3-A818-3597F35EF46C",
+   "weight": 0.029,
+   "lean": "D",
+   "partial_r": 0.414,
+   "states_consistent": 0.978
+  },
+  "The Dan Bongino Show": {
+   "id": "079AAA07-8820-40F2-8698-ACB22F762971",
+   "weight": -4.273,
+   "lean": "R",
+   "partial_r": -0.399,
+   "states_consistent": 0.956
+  },
+  "Lizzo": {
+   "id": "2D1676A1-EC6D-482C-A778-4B2BAAD2D92E",
+   "weight": -3.721,
+   "lean": "D",
+   "partial_r": 0.388,
+   "states_consistent": 0.978
+  },
+  "Alexandria Ocasio-Cortez": {
+   "id": "A7AFB2DE-A485-418F-A92D-A5A1501B36BA",
+   "weight": 1.71,
+   "lean": "D",
+   "partial_r": 0.383,
+   "states_consistent": 0.911
+  },
+  "Dan Bongino": {
+   "id": "CA58E2FE-1B51-4A66-9B4C-688D9B9137FC",
+   "weight": -1.16,
+   "lean": "R",
+   "partial_r": -0.359,
+   "states_consistent": 0.978
+  },
+  "The New Yorker": {
+   "id": "399654ED-B417-49C5-A9AA-8682BE35A85D",
+   "weight": 0.193,
+   "lean": "D",
+   "partial_r": 0.357,
+   "states_consistent": 0.956
+  },
+  "Kendrick Lamar": {
+   "id": "C915A918-39C5-47A3-A101-D9FA1DECBD9C",
+   "weight": 0.437,
+   "lean": "D",
+   "partial_r": 0.355,
+   "states_consistent": 0.978
+  },
+  "The New York Times": {
+   "id": "46DB54ED-CBA2-4F52-9512-EAA9B7C2CB69",
+   "weight": -4.559,
+   "lean": "D",
+   "partial_r": 0.353,
+   "states_consistent": 0.956
+  },
+  "Ben Shapiro": {
+   "id": "2AFA465B-17DE-4BDC-A71F-DEA45CB49387",
+   "weight": 1.439,
+   "lean": "R",
+   "partial_r": -0.346,
+   "states_consistent": 0.933
+  },
+  "Rachel Maddow": {
+   "id": "424675E1-B3DF-4483-B17B-FEB5F92E02ED",
+   "weight": 3.836,
+   "lean": "D",
+   "partial_r": 0.344,
+   "states_consistent": 0.956
+  },
+  "NPR": {
+   "id": "36A3F981-5BFB-45B5-A8CF-A16F273B04F0",
+   "weight": 5.088,
+   "lean": "D",
+   "partial_r": 0.342,
+   "states_consistent": 1.0
+  },
+  "The Atlantic": {
+   "id": "309122BE-9C37-438E-A17B-59416C7B0C65",
+   "weight": 4.014,
+   "lean": "D",
+   "partial_r": 0.336,
+   "states_consistent": 0.933
+  },
+  "Pod Save America": {
+   "id": "D8BA0114-6FA9-468F-8B02-A643851BF930",
+   "weight": 0.699,
+   "lean": "D",
+   "partial_r": 0.335,
+   "states_consistent": 0.956
+  },
+  "Tucker Carlson": {
+   "id": "F2085F8D-7E02-4DFE-989E-17FB79D043EC",
+   "weight": -3.999,
+   "lean": "R",
+   "partial_r": -0.327,
+   "states_consistent": 0.911
+  },
+  "Whole Foods Market": {
+   "id": "1E5D90F5-5E0D-4486-B651-D0E7B8A6BE23",
+   "weight": -3.2,
+   "lean": "D",
+   "partial_r": 0.319,
+   "states_consistent": 0.956
+  },
+  "Bernie Sanders": {
+   "id": "8388DBC7-7F76-45DB-98E4-26284EA8C890",
+   "weight": -1.276,
+   "lean": "D",
+   "partial_r": 0.317,
+   "states_consistent": 0.844
+  },
+  "Sean Hannity": {
+   "id": "A8DBD86A-5CC8-4004-8261-4F7DEE1B6814",
+   "weight": -0.817,
+   "lean": "R",
+   "partial_r": -0.311,
+   "states_consistent": 0.978
+  },
+  "Last Week Tonight with John Oliver": {
+   "id": "7E132C51-E002-49D0-A692-FAEAF33E08F4",
+   "weight": 0.293,
+   "lean": "D",
+   "partial_r": 0.303,
+   "states_consistent": 0.889
+  },
+  "MSNBC": {
+   "id": "A34AD40F-6B5F-48D3-A159-53FF7C544575",
+   "weight": 0.472,
+   "lean": "D",
+   "partial_r": 0.296,
+   "states_consistent": 0.911
+  },
+  "Succession": {
+   "id": "65EAC55F-6FDC-452D-A633-A9E9F2BBD45E",
+   "weight": 0.391,
+   "lean": "D",
+   "partial_r": 0.294,
+   "states_consistent": 0.956
+  }
+ },
+ "intercept": -142.58857402936576,
+ "logv": 11.22938877278536,
+ "beta_gap_to_swing": 0.013790753478995173,
+ "gap_coef": [
+  -122.94957283617225,
+  -0.7840897463438949,
+  9.985616924596679
+ ],
+ "backtest": {
+  "beta": 0.0138,
+  "r_pooled": 0.057,
+  "hit_extremes": 0.564,
+  "states_positive": 34,
+  "states": {
+   "Alabama": {
+    "r": 0.099,
+    "hit": 0.536,
+    "n": 67
+   },
+   "Arizona": {
+    "r": -0.051,
+    "hit": 0.833,
+    "n": 15
+   },
+   "Arkansas": {
+    "r": 0.207,
+    "hit": 0.567,
+    "n": 75
+   },
+   "California": {
+    "r": 0.421,
+    "hit": 0.792,
+    "n": 58
+   },
+   "Colorado": {
+    "r": -0.081,
+    "hit": 0.385,
+    "n": 64
+   },
+   "Florida": {
+    "r": -0.256,
+    "hit": 0.393,
+    "n": 67
+   },
+   "Georgia": {
+    "r": 0.328,
+    "hit": 0.703,
+    "n": 159
+   },
+   "Idaho": {
+    "r": 0.112,
+    "hit": 0.778,
+    "n": 44
+   },
+   "Illinois": {
+    "r": 0.021,
+    "hit": 0.476,
+    "n": 102
+   },
+   "Indiana": {
+    "r": 0.15,
+    "hit": 0.605,
+    "n": 92
+   },
+   "Iowa": {
+    "r": 0.167,
+    "hit": 0.675,
+    "n": 99
+   },
+   "Kansas": {
+    "r": 0.055,
+    "hit": 0.476,
+    "n": 104
+   },
+   "Kentucky": {
+    "r": -0.089,
+    "hit": 0.5,
+    "n": 120
+   },
+   "Louisiana": {
+    "r": 0.382,
+    "hit": 0.731,
+    "n": 64
+   },
+   "Maine": {
+    "r": 0.841,
+    "hit": 0.625,
+    "n": 16
+   },
+   "Maryland": {
+    "r": 0.33,
+    "hit": 0.5,
+    "n": 24
+   },
+   "Massachusetts": {
+    "r": 0.67,
+    "hit": 0.667,
+    "n": 14
+   },
+   "Michigan": {
+    "r": 0.222,
+    "hit": 0.588,
+    "n": 83
+   },
+   "Minnesota": {
+    "r": 0.153,
+    "hit": 0.528,
+    "n": 87
+   },
+   "Mississippi": {
+    "r": -0.258,
+    "hit": 0.471,
+    "n": 82
+   },
+   "Missouri": {
+    "r": 0.116,
+    "hit": 0.565,
+    "n": 115
+   },
+   "Montana": {
+    "r": -0.145,
+    "hit": 0.5,
+    "n": 56
+   },
+   "Nebraska": {
+    "r": 0.12,
+    "hit": 0.447,
+    "n": 93
+   },
+   "Nevada": {
+    "r": 0.235,
+    "hit": 0.625,
+    "n": 17
+   },
+   "New Hampshire": {
+    "r": 0.049,
+    "hit": 0.75,
+    "n": 10
+   },
+   "New Jersey": {
+    "r": -0.536,
+    "hit": 0.5,
+    "n": 21
+   },
+   "New Mexico": {
+    "r": 0.232,
+    "hit": 0.5,
+    "n": 33
+   },
+   "New York": {
+    "r": 0.468,
+    "hit": 0.769,
+    "n": 62
+   },
+   "North Carolina": {
+    "r": 0.366,
+    "hit": 0.7,
+    "n": 100
+   },
+   "North Dakota": {
+    "r": 0.152,
+    "hit": 0.5,
+    "n": 53
+   },
+   "Ohio": {
+    "r": 0.083,
+    "hit": 0.444,
+    "n": 88
+   },
+   "Oklahoma": {
+    "r": 0.221,
+    "hit": 0.625,
+    "n": 77
+   },
+   "Oregon": {
+    "r": 0.325,
+    "hit": 0.5,
+    "n": 36
+   },
+   "Pennsylvania": {
+    "r": -0.199,
+    "hit": 0.429,
+    "n": 67
+   },
+   "South Carolina": {
+    "r": 0.55,
+    "hit": 0.65,
+    "n": 47
+   },
+   "South Dakota": {
+    "r": 0.049,
+    "hit": 0.393,
+    "n": 67
+   },
+   "Tennessee": {
+    "r": 0.089,
+    "hit": 0.5,
+    "n": 96
+   },
+   "Texas": {
+    "r": -0.247,
+    "hit": 0.49,
+    "n": 254
+   },
+   "Utah": {
+    "r": -0.147,
+    "hit": 0.417,
+    "n": 29
+   },
+   "Vermont": {
+    "r": 0.64,
+    "hit": 0.833,
+    "n": 14
+   },
+   "Virginia": {
+    "r": 0.012,
+    "hit": 0.423,
+    "n": 128
+   },
+   "Washington": {
+    "r": 0.605,
+    "hit": 0.562,
+    "n": 40
+   },
+   "West Virginia": {
+    "r": -0.137,
+    "hit": 0.545,
+    "n": 55
+   },
+   "Wisconsin": {
+    "r": 0.018,
+    "hit": 0.467,
+    "n": 72
+   },
+   "Wyoming": {
+    "r": 0.125,
+    "hit": 0.4,
+    "n": 23
+   }
+  }
+ },
+ "fit": {
+  "r_county_qloo": 0.643,
+  "r_county_density": 0.548
+ },
+ "n_counties": 3105,
+ "n_states": 50,
+ "k": 24,
+ "lambda": 30.0
+}

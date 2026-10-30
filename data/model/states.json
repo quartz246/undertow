@@ -1,0 +1,4206 @@
+{
+ "Alabama": {
+  "m24": -30.6,
+  "qloo_swing": 0.05,
+  "qloo_swing_lo": 0.02,
+  "qloo_swing_hi": 0.07,
+  "counties": 67,
+  "share_moving_d": 0.643,
+  "out_of_step_d": [
+   [
+    "01047",
+    "Dallas County",
+    27.5,
+    8.0,
+    32.5
+   ],
+   [
+    "01125",
+    "Tuscaloosa County",
+    15.4,
+    1.4,
+    -20.4
+   ],
+   [
+    "01021",
+    "Chilton County",
+    14.9,
+    -24.9,
+    -72.1
+   ],
+   [
+    "01049",
+    "DeKalb County",
+    14.2,
+    -21.9,
+    -73.9
+   ],
+   [
+    "01073",
+    "Jefferson County",
+    14.1,
+    19.2,
+    10.4
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "01045",
+    "Dale County",
+    -11.1,
+    -46.9,
+    -52.3
+   ],
+   [
+    "01039",
+    "Covington County",
+    -9.0,
+    -50.3,
+    -72.4
+   ],
+   [
+    "01003",
+    "Baldwin County",
+    -7.0,
+    -25.6,
+    -58.2
+   ],
+   [
+    "01079",
+    "Lawrence County",
+    -5.3,
+    -45.0,
+    -62.3
+   ],
+   [
+    "01031",
+    "Coffee County",
+    -4.6,
+    -40.1,
+    -57.9
+   ]
+  ],
+  "backtest": {
+   "r": 0.099,
+   "hit": 0.536,
+   "n": 67
+  }
+ },
+ "Alaska": {
+  "m24": -13.8,
+  "qloo_swing": -0.28,
+  "qloo_swing_lo": -0.48,
+  "qloo_swing_hi": -0.05,
+  "counties": 3,
+  "share_moving_d": 0.309,
+  "out_of_step_d": [
+   [
+    "02013",
+    "State House District 13",
+    5.2,
+    -28.7,
+    1.3
+   ],
+   [
+    "02020",
+    "State House District 20",
+    -23.2,
+    -55.1,
+    12.7
+   ],
+   [
+    "02016",
+    "State House District 16",
+    -38.9,
+    -67.3,
+    15.3
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "02016",
+    "State House District 16",
+    -38.9,
+    -67.3,
+    15.3
+   ],
+   [
+    "02020",
+    "State House District 20",
+    -23.2,
+    -55.1,
+    12.7
+   ],
+   [
+    "02013",
+    "State House District 13",
+    5.2,
+    -28.7,
+    1.3
+   ]
+  ],
+  "backtest": null
+ },
+ "Arizona": {
+  "m24": -5.5,
+  "qloo_swing": -0.02,
+  "qloo_swing_lo": -0.06,
+  "qloo_swing_hi": 0.1,
+  "counties": 15,
+  "share_moving_d": 0.249,
+  "out_of_step_d": [
+   [
+    "04023",
+    "Santa Cruz County",
+    16.7,
+    -3.7,
+    18.6
+   ],
+   [
+    "04005",
+    "Coconino County",
+    15.3,
+    8.0,
+    19.9
+   ],
+   [
+    "04019",
+    "Pima County",
+    14.1,
+    25.8,
+    15.2
+   ],
+   [
+    "04003",
+    "Cochise County",
+    10.7,
+    -7.5,
+    -23.1
+   ],
+   [
+    "04001",
+    "Apache County",
+    3.0,
+    -12.3,
+    19.0
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "04009",
+    "Graham County",
+    -25.4,
+    -62.6,
+    -48.1
+   ],
+   [
+    "04027",
+    "Yuma County",
+    -5.8,
+    -22.0,
+    -20.4
+   ],
+   [
+    "04013",
+    "Maricopa County",
+    -5.5,
+    16.0,
+    -3.5
+   ],
+   [
+    "04017",
+    "Navajo County",
+    -4.2,
+    -22.7,
+    -17.2
+   ],
+   [
+    "04021",
+    "Pinal County",
+    -3.1,
+    -8.5,
+    -22.1
+   ]
+  ],
+  "backtest": {
+   "r": -0.051,
+   "hit": 0.833,
+   "n": 15
+  }
+ },
+ "Arkansas": {
+  "m24": -30.6,
+  "qloo_swing": 0.03,
+  "qloo_swing_lo": 0.01,
+  "qloo_swing_hi": 0.04,
+  "counties": 75,
+  "share_moving_d": 0.746,
+  "out_of_step_d": [
+   [
+    "05139",
+    "Union County",
+    16.7,
+    -17.2,
+    -33.5
+   ],
+   [
+    "05069",
+    "Jefferson County",
+    11.9,
+    -7.0,
+    20.1
+   ],
+   [
+    "05031",
+    "Craighead County",
+    11.8,
+    -14.1,
+    -37.4
+   ],
+   [
+    "05145",
+    "White County",
+    9.9,
+    -23.0,
+    -61.2
+   ],
+   [
+    "05009",
+    "Boone County",
+    6.8,
+    -32.8,
+    -64.9
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "05091",
+    "Miller County",
+    -14.1,
+    -51.6,
+    -51.1
+   ],
+   [
+    "05131",
+    "Sebastian County",
+    -4.8,
+    -28.7,
+    -37.5
+   ],
+   [
+    "05115",
+    "Pope County",
+    -1.4,
+    -34.8,
+    -52.2
+   ],
+   [
+    "05051",
+    "Garland County",
+    -0.6,
+    -25.0,
+    -36.3
+   ],
+   [
+    "05007",
+    "Benton County",
+    0.1,
+    -11.2,
+    -27.0
+   ]
+  ],
+  "backtest": {
+   "r": 0.207,
+   "hit": 0.567,
+   "n": 75
+  }
+ },
+ "California": {
+  "m24": 20.1,
+  "qloo_swing": -0.12,
+  "qloo_swing_lo": -0.18,
+  "qloo_swing_hi": -0.05,
+  "counties": 58,
+  "share_moving_d": 0.222,
+  "out_of_step_d": [
+   [
+    "06075",
+    "San Francisco County",
+    28.7,
+    48.6,
+    64.8
+   ],
+   [
+    "06081",
+    "San Mateo County",
+    28.5,
+    43.3,
+    50.3
+   ],
+   [
+    "06041",
+    "Marin County",
+    26.6,
+    36.1,
+    63.9
+   ],
+   [
+    "06087",
+    "Santa Cruz County",
+    17.1,
+    23.8,
+    54.4
+   ],
+   [
+    "06097",
+    "Sonoma County",
+    16.1,
+    27.3,
+    46.2
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "06099",
+    "Stanislaus County",
+    -32.5,
+    -36.1,
+    -11.0
+   ],
+   [
+    "06059",
+    "Orange County",
+    -28.8,
+    -9.9,
+    2.7
+   ],
+   [
+    "06101",
+    "Sutter County",
+    -28.4,
+    -52.5,
+    -31.4
+   ],
+   [
+    "06077",
+    "San Joaquin County",
+    -27.4,
+    -25.9,
+    -0.9
+   ],
+   [
+    "06089",
+    "Shasta County",
+    -27.3,
+    -44.3,
+    -36.5
+   ]
+  ],
+  "backtest": {
+   "r": 0.421,
+   "hit": 0.792,
+   "n": 58
+  }
+ },
+ "Colorado": {
+  "m24": 11.0,
+  "qloo_swing": -0.04,
+  "qloo_swing_lo": -0.1,
+  "qloo_swing_hi": 0.0,
+  "counties": 64,
+  "share_moving_d": 0.388,
+  "out_of_step_d": [
+   [
+    "08013",
+    "Boulder County",
+    20.6,
+    31.4,
+    55.8
+   ],
+   [
+    "08001",
+    "Adams County",
+    8.0,
+    10.4,
+    9.0
+   ],
+   [
+    "08083",
+    "Montezuma County",
+    6.0,
+    -25.3,
+    -21.0
+   ],
+   [
+    "08031",
+    "Denver County",
+    5.6,
+    22.6,
+    56.2
+   ],
+   [
+    "08059",
+    "Jefferson County",
+    4.2,
+    13.2,
+    19.5
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "08039",
+    "Elbert County",
+    -22.3,
+    -57.2,
+    -51.1
+   ],
+   [
+    "08035",
+    "Douglas County",
+    -18.6,
+    -19.2,
+    -7.0
+   ],
+   [
+    "08067",
+    "La Plata County",
+    -16.5,
+    -30.8,
+    18.6
+   ],
+   [
+    "08107",
+    "Routt County",
+    -15.8,
+    -35.8,
+    27.7
+   ],
+   [
+    "08041",
+    "El Paso County",
+    -15.1,
+    -11.9,
+    -9.8
+   ]
+  ],
+  "backtest": {
+   "r": -0.081,
+   "hit": 0.385,
+   "n": 64
+  }
+ },
+ "Delaware": {
+  "m24": 14.7,
+  "qloo_swing": -0.07,
+  "qloo_swing_lo": -0.13,
+  "qloo_swing_hi": -0.03,
+  "counties": 3,
+  "share_moving_d": 0.0,
+  "out_of_step_d": [
+   [
+    "10003",
+    "New Castle County",
+    -0.9,
+    8.2,
+    32.6
+   ],
+   [
+    "10005",
+    "Sussex County",
+    -8.9,
+    -15.4,
+    -11.0
+   ],
+   [
+    "10001",
+    "Kent County",
+    -10.1,
+    -18.9,
+    2.0
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "10001",
+    "Kent County",
+    -10.1,
+    -18.9,
+    2.0
+   ],
+   [
+    "10005",
+    "Sussex County",
+    -8.9,
+    -15.4,
+    -11.0
+   ],
+   [
+    "10003",
+    "New Castle County",
+    -0.9,
+    8.2,
+    32.6
+   ]
+  ],
+  "backtest": null
+ },
+ "District of Columbia": {
+  "m24": 83.8,
+  "qloo_swing": -0.35,
+  "qloo_swing_lo": -0.35,
+  "qloo_swing_hi": -0.35,
+  "counties": 1,
+  "share_moving_d": 0.0,
+  "out_of_step_d": [
+   [
+    "11001",
+    "Ward 1",
+    -25.1,
+    -23.5,
+    86.1
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "11001",
+    "Ward 1",
+    -25.1,
+    -23.5,
+    86.1
+   ]
+  ],
+  "backtest": null
+ },
+ "Florida": {
+  "m24": -13.1,
+  "qloo_swing": 0.15,
+  "qloo_swing_lo": 0.09,
+  "qloo_swing_hi": 0.21,
+  "counties": 67,
+  "share_moving_d": 0.733,
+  "out_of_step_d": [
+   [
+    "12086",
+    "Miami-Dade County",
+    40.0,
+    53.4,
+    -11.4
+   ],
+   [
+    "12073",
+    "Leon County",
+    28.9,
+    30.1,
+    21.8
+   ],
+   [
+    "12011",
+    "Broward County",
+    28.3,
+    45.7,
+    17.0
+   ],
+   [
+    "12129",
+    "Wakulla County",
+    25.9,
+    -7.8,
+    -44.3
+   ],
+   [
+    "12095",
+    "Orange County",
+    22.7,
+    35.7,
+    13.6
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "12119",
+    "Sumter County",
+    -17.7,
+    -33.3,
+    -37.6
+   ],
+   [
+    "12055",
+    "Highlands County",
+    -11.8,
+    -35.2,
+    -40.8
+   ],
+   [
+    "12019",
+    "Clay County",
+    -11.4,
+    -25.5,
+    -39.3
+   ],
+   [
+    "12015",
+    "Charlotte County",
+    -11.1,
+    -24.3,
+    -34.0
+   ],
+   [
+    "12017",
+    "Citrus County",
+    -11.1,
+    -29.2,
+    -45.9
+   ]
+  ],
+  "backtest": {
+   "r": -0.256,
+   "hit": 0.393,
+   "n": 67
+  }
+ },
+ "Georgia": {
+  "m24": -2.2,
+  "qloo_swing": 0.08,
+  "qloo_swing_lo": 0.04,
+  "qloo_swing_hi": 0.11,
+  "counties": 159,
+  "share_moving_d": 0.692,
+  "out_of_step_d": [
+   [
+    "13089",
+    "DeKalb County",
+    24.4,
+    43.4,
+    64.8
+   ],
+   [
+    "13175",
+    "Laurens County",
+    19.3,
+    -10.2,
+    -32.7
+   ],
+   [
+    "13195",
+    "Madison County",
+    18.7,
+    -18.9,
+    -54.8
+   ],
+   [
+    "13067",
+    "Cobb County",
+    17.8,
+    26.9,
+    14.9
+   ],
+   [
+    "13219",
+    "Oconee County",
+    16.6,
+    -12.1,
+    -35.9
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "13047",
+    "Catoosa County",
+    -14.8,
+    -45.2,
+    -55.5
+   ],
+   [
+    "13179",
+    "Liberty County",
+    -14.1,
+    -33.0,
+    17.4
+   ],
+   [
+    "13127",
+    "Glynn County",
+    -13.7,
+    -35.6,
+    -26.0
+   ],
+   [
+    "13227",
+    "Pickens County",
+    -12.9,
+    -50.7,
+    -65.8
+   ],
+   [
+    "13057",
+    "Cherokee County",
+    -12.4,
+    -24.0,
+    -39.0
+   ]
+  ],
+  "backtest": {
+   "r": 0.328,
+   "hit": 0.703,
+   "n": 159
+  }
+ },
+ "Hawaii": {
+  "m24": 23.1,
+  "qloo_swing": -0.38,
+  "qloo_swing_lo": -0.51,
+  "qloo_swing_hi": 0.03,
+  "counties": 4,
+  "share_moving_d": 0.218,
+  "out_of_step_d": [
+   [
+    "15001",
+    "Hawaii County",
+    6.8,
+    3.1,
+    28.3
+   ],
+   [
+    "15007",
+    "Kauai County",
+    3.0,
+    -12.8,
+    19.5
+   ],
+   [
+    "15009",
+    "Maui County",
+    -11.9,
+    -18.9,
+    25.9
+   ],
+   [
+    "15003",
+    "Honolulu County",
+    -41.1,
+    -32.2,
+    21.7
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "15003",
+    "Honolulu County",
+    -41.1,
+    -32.2,
+    21.7
+   ],
+   [
+    "15009",
+    "Maui County",
+    -11.9,
+    -18.9,
+    25.9
+   ],
+   [
+    "15007",
+    "Kauai County",
+    3.0,
+    -12.8,
+    19.5
+   ],
+   [
+    "15001",
+    "Hawaii County",
+    6.8,
+    3.1,
+    28.3
+   ]
+  ],
+  "backtest": null
+ },
+ "Idaho": {
+  "m24": -36.5,
+  "qloo_swing": 0.03,
+  "qloo_swing_lo": -0.0,
+  "qloo_swing_hi": 0.08,
+  "counties": 44,
+  "share_moving_d": 0.825,
+  "out_of_step_d": [
+   [
+    "16057",
+    "Latah County",
+    25.1,
+    -0.5,
+    -8.0
+   ],
+   [
+    "16051",
+    "Jefferson County",
+    19.7,
+    -22.5,
+    -73.3
+   ],
+   [
+    "16069",
+    "Nez Perce County",
+    17.6,
+    -14.7,
+    -38.6
+   ],
+   [
+    "16065",
+    "Madison County",
+    15.7,
+    -23.7,
+    -64.3
+   ],
+   [
+    "16017",
+    "Bonner County",
+    10.8,
+    -19.3,
+    -46.1
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "16027",
+    "Canyon County",
+    -16.3,
+    -34.3,
+    -46.6
+   ],
+   [
+    "16001",
+    "Ada County",
+    1.6,
+    1.2,
+    -10.3
+   ],
+   [
+    "16055",
+    "Kootenai County",
+    3.4,
+    -16.2,
+    -51.8
+   ],
+   [
+    "16083",
+    "Twin Falls County",
+    6.3,
+    -22.1,
+    -48.8
+   ],
+   [
+    "16019",
+    "Bonneville County",
+    7.6,
+    -15.9,
+    -45.4
+   ]
+  ],
+  "backtest": {
+   "r": 0.112,
+   "hit": 0.778,
+   "n": 44
+  }
+ },
+ "Illinois": {
+  "m24": 11.0,
+  "qloo_swing": 0.06,
+  "qloo_swing_lo": -0.02,
+  "qloo_swing_hi": 0.1,
+  "counties": 102,
+  "share_moving_d": 0.603,
+  "out_of_step_d": [
+   [
+    "17105",
+    "Livingston County",
+    17.1,
+    -18.9,
+    -46.3
+   ],
+   [
+    "17031",
+    "Cook County",
+    13.5,
+    44.8,
+    42.0
+   ],
+   [
+    "17195",
+    "Whiteside County",
+    12.0,
+    -12.5,
+    -14.7
+   ],
+   [
+    "17095",
+    "Knox County",
+    11.8,
+    -13.2,
+    -9.4
+   ],
+   [
+    "17019",
+    "Champaign County",
+    11.7,
+    7.7,
+    24.1
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "17057",
+    "Fulton County",
+    -15.7,
+    -47.0,
+    -23.8
+   ],
+   [
+    "17093",
+    "Kendall County",
+    -14.0,
+    -25.8,
+    1.5
+   ],
+   [
+    "17081",
+    "Jefferson County",
+    -13.9,
+    -50.2,
+    -47.8
+   ],
+   [
+    "17121",
+    "Marion County",
+    -10.5,
+    -47.0,
+    -49.5
+   ],
+   [
+    "17001",
+    "Adams County",
+    -9.9,
+    -39.6,
+    -47.4
+   ]
+  ],
+  "backtest": {
+   "r": 0.021,
+   "hit": 0.476,
+   "n": 102
+  }
+ },
+ "Indiana": {
+  "m24": -19.0,
+  "qloo_swing": 0.07,
+  "qloo_swing_lo": 0.03,
+  "qloo_swing_hi": 0.1,
+  "counties": 92,
+  "share_moving_d": 0.727,
+  "out_of_step_d": [
+   [
+    "18083",
+    "Knox County",
+    30.2,
+    -7.5,
+    -50.4
+   ],
+   [
+    "18091",
+    "LaPorte County",
+    26.4,
+    8.0,
+    -14.1
+   ],
+   [
+    "18035",
+    "Delaware County",
+    23.2,
+    4.0,
+    -15.8
+   ],
+   [
+    "18105",
+    "Monroe County",
+    19.5,
+    12.1,
+    27.4
+   ],
+   [
+    "18127",
+    "Porter County",
+    18.1,
+    6.2,
+    -10.5
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "18051",
+    "Gibson County",
+    -27.4,
+    -64.8,
+    -51.4
+   ],
+   [
+    "18067",
+    "Howard County",
+    -20.9,
+    -46.0,
+    -35.3
+   ],
+   [
+    "18029",
+    "Dearborn County",
+    -19.5,
+    -53.3,
+    -58.3
+   ],
+   [
+    "18039",
+    "Elkhart County",
+    -17.5,
+    -36.1,
+    -32.4
+   ],
+   [
+    "18099",
+    "Marshall County",
+    -12.3,
+    -45.9,
+    -43.4
+   ]
+  ],
+  "backtest": {
+   "r": 0.15,
+   "hit": 0.605,
+   "n": 92
+  }
+ },
+ "Iowa": {
+  "m24": -13.3,
+  "qloo_swing": 0.0,
+  "qloo_swing_lo": -0.02,
+  "qloo_swing_hi": 0.02,
+  "counties": 99,
+  "share_moving_d": 0.423,
+  "out_of_step_d": [
+   [
+    "19103",
+    "Johnson County",
+    11.4,
+    10.1,
+    38.1
+   ],
+   [
+    "19013",
+    "Black Hawk County",
+    9.0,
+    -3.4,
+    1.2
+   ],
+   [
+    "19155",
+    "Pottawattamie County",
+    8.9,
+    -11.5,
+    -20.0
+   ],
+   [
+    "19113",
+    "Linn County",
+    6.6,
+    2.7,
+    9.9
+   ],
+   [
+    "19169",
+    "Story County",
+    5.9,
+    -7.0,
+    10.4
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "19125",
+    "Marion County",
+    -12.8,
+    -45.3,
+    -37.8
+   ],
+   [
+    "19099",
+    "Jasper County",
+    -11.7,
+    -41.6,
+    -27.6
+   ],
+   [
+    "19111",
+    "Lee County",
+    -10.9,
+    -43.1,
+    -27.8
+   ],
+   [
+    "19193",
+    "Woodbury County",
+    -9.7,
+    -31.2,
+    -23.0
+   ],
+   [
+    "19127",
+    "Marshall County",
+    -8.8,
+    -37.7,
+    -15.6
+   ]
+  ],
+  "backtest": {
+   "r": 0.167,
+   "hit": 0.675,
+   "n": 99
+  }
+ },
+ "Kansas": {
+  "m24": -16.1,
+  "qloo_swing": 0.05,
+  "qloo_swing_lo": 0.03,
+  "qloo_swing_hi": 0.07,
+  "counties": 104,
+  "share_moving_d": 0.798,
+  "out_of_step_d": [
+   [
+    "20177",
+    "Shawnee County",
+    15.0,
+    5.1,
+    0.5
+   ],
+   [
+    "20209",
+    "Wyandotte County",
+    14.2,
+    4.6,
+    23.9
+   ],
+   [
+    "20045",
+    "Douglas County",
+    13.2,
+    8.0,
+    38.0
+   ],
+   [
+    "20155",
+    "Reno County",
+    10.3,
+    -18.2,
+    -34.5
+   ],
+   [
+    "20015",
+    "Butler County",
+    9.5,
+    -18.7,
+    -41.2
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "20079",
+    "Harvey County",
+    -12.1,
+    -42.9,
+    -21.1
+   ],
+   [
+    "20169",
+    "Saline County",
+    -8.3,
+    -37.7,
+    -31.6
+   ],
+   [
+    "20103",
+    "Leavenworth County",
+    -6.5,
+    -29.5,
+    -22.8
+   ],
+   [
+    "20121",
+    "Miami County",
+    -4.6,
+    -37.9,
+    -39.5
+   ],
+   [
+    "20037",
+    "Crawford County",
+    -2.5,
+    -34.0,
+    -25.3
+   ]
+  ],
+  "backtest": {
+   "r": 0.055,
+   "hit": 0.476,
+   "n": 104
+  }
+ },
+ "Kentucky": {
+  "m24": -30.6,
+  "qloo_swing": 0.08,
+  "qloo_swing_lo": 0.05,
+  "qloo_swing_hi": 0.1,
+  "counties": 120,
+  "share_moving_d": 0.74,
+  "out_of_step_d": [
+   [
+    "21083",
+    "Graves County",
+    22.9,
+    -16.3,
+    -61.6
+   ],
+   [
+    "21035",
+    "Calloway County",
+    20.2,
+    -13.7,
+    -38.0
+   ],
+   [
+    "21037",
+    "Campbell County",
+    16.3,
+    -3.2,
+    -19.7
+   ],
+   [
+    "21101",
+    "Henderson County",
+    16.2,
+    -14.3,
+    -29.2
+   ],
+   [
+    "21009",
+    "Barren County",
+    15.4,
+    -20.2,
+    -52.8
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "21145",
+    "McCracken County",
+    -16.8,
+    -43.8,
+    -34.9
+   ],
+   [
+    "21157",
+    "Marshall County",
+    -14.8,
+    -52.3,
+    -56.7
+   ],
+   [
+    "21113",
+    "Jessamine County",
+    -6.8,
+    -35.7,
+    -35.8
+   ],
+   [
+    "21089",
+    "Greenup County",
+    -4.5,
+    -40.9,
+    -50.5
+   ],
+   [
+    "21179",
+    "Nelson County",
+    -4.3,
+    -36.0,
+    -41.8
+   ]
+  ],
+  "backtest": {
+   "r": -0.089,
+   "hit": 0.5,
+   "n": 120
+  }
+ },
+ "Louisiana": {
+  "m24": -22.0,
+  "qloo_swing": 0.04,
+  "qloo_swing_lo": -0.02,
+  "qloo_swing_hi": 0.08,
+  "counties": 64,
+  "share_moving_d": 0.496,
+  "out_of_step_d": [
+   [
+    "22051",
+    "Jefferson Parish",
+    23.9,
+    18.9,
+    -13.0
+   ],
+   [
+    "22001",
+    "Acadia Parish",
+    21.3,
+    -13.7,
+    -64.0
+   ],
+   [
+    "22097",
+    "St. Landry Parish",
+    20.9,
+    -1.1,
+    -18.8
+   ],
+   [
+    "22089",
+    "St. Charles Parish",
+    18.8,
+    -9.4,
+    -32.3
+   ],
+   [
+    "22009",
+    "Avoyelles Parish",
+    18.8,
+    -16.8,
+    -43.1
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "22017",
+    "Caddo Parish",
+    -13.8,
+    -21.4,
+    4.6
+   ],
+   [
+    "22073",
+    "Ouachita Parish",
+    -11.0,
+    -29.4,
+    -27.9
+   ],
+   [
+    "22069",
+    "Natchitoches Parish",
+    -9.7,
+    -41.5,
+    -22.3
+   ],
+   [
+    "22015",
+    "Bossier Parish",
+    -9.7,
+    -33.5,
+    -43.3
+   ],
+   [
+    "22019",
+    "Calcasieu Parish",
+    -9.1,
+    -27.7,
+    -39.6
+   ]
+  ],
+  "backtest": {
+   "r": 0.382,
+   "hit": 0.731,
+   "n": 64
+  }
+ },
+ "Maine": {
+  "m24": 6.9,
+  "qloo_swing": -0.08,
+  "qloo_swing_lo": -0.14,
+  "qloo_swing_hi": -0.03,
+  "counties": 16,
+  "share_moving_d": 0.403,
+  "out_of_step_d": [
+   [
+    "23023",
+    "Sagadahoc County",
+    16.5,
+    -2.0,
+    16.6
+   ],
+   [
+    "23015",
+    "Lincoln County",
+    13.0,
+    -6.8,
+    11.3
+   ],
+   [
+    "23009",
+    "Hancock County",
+    12.5,
+    -3.1,
+    11.8
+   ],
+   [
+    "23027",
+    "Waldo County",
+    11.9,
+    -9.1,
+    3.4
+   ],
+   [
+    "23013",
+    "Knox County",
+    9.0,
+    -8.5,
+    18.6
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "23007",
+    "Franklin County",
+    -22.3,
+    -49.3,
+    -8.2
+   ],
+   [
+    "23025",
+    "Somerset County",
+    -20.2,
+    -46.6,
+    -27.0
+   ],
+   [
+    "23003",
+    "Aroostook County",
+    -19.8,
+    -43.8,
+    -26.2
+   ],
+   [
+    "23001",
+    "Androscoggin County",
+    -17.7,
+    -32.3,
+    -6.1
+   ],
+   [
+    "23019",
+    "Penobscot County",
+    -12.6,
+    -24.3,
+    -10.9
+   ]
+  ],
+  "backtest": {
+   "r": 0.841,
+   "hit": 0.625,
+   "n": 16
+  }
+ },
+ "Maryland": {
+  "m24": 28.8,
+  "qloo_swing": 0.05,
+  "qloo_swing_lo": -0.02,
+  "qloo_swing_hi": 0.11,
+  "counties": 24,
+  "share_moving_d": 0.581,
+  "out_of_step_d": [
+   [
+    "24031",
+    "Montgomery County",
+    19.8,
+    39.7,
+    53.3
+   ],
+   [
+    "24510",
+    "Baltimore city",
+    12.9,
+    29.0,
+    73.0
+   ],
+   [
+    "24033",
+    "Prince George's County",
+    12.2,
+    34.3,
+    75.2
+   ],
+   [
+    "24027",
+    "Howard County",
+    10.4,
+    17.4,
+    41.7
+   ],
+   [
+    "24023",
+    "Garrett County",
+    6.5,
+    -31.6,
+    -54.0
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "24047",
+    "Worcester County",
+    -20.8,
+    -44.7,
+    -22.0
+   ],
+   [
+    "24011",
+    "Caroline County",
+    -17.8,
+    -52.2,
+    -38.0
+   ],
+   [
+    "24045",
+    "Wicomico County",
+    -17.7,
+    -34.5,
+    -5.5
+   ],
+   [
+    "24035",
+    "Queen Anne's County",
+    -14.3,
+    -39.6,
+    -27.8
+   ],
+   [
+    "24041",
+    "Talbot County",
+    -13.5,
+    -36.3,
+    -0.0
+   ]
+  ],
+  "backtest": {
+   "r": 0.33,
+   "hit": 0.5,
+   "n": 24
+  }
+ },
+ "Massachusetts": {
+  "m24": 25.3,
+  "qloo_swing": -0.25,
+  "qloo_swing_lo": -0.3,
+  "qloo_swing_hi": -0.2,
+  "counties": 14,
+  "share_moving_d": 0.06,
+  "out_of_step_d": [
+   [
+    "25003",
+    "Berkshire County",
+    15.7,
+    12.6,
+    39.9
+   ],
+   [
+    "25011",
+    "Franklin County",
+    4.6,
+    -3.9,
+    37.8
+   ],
+   [
+    "25015",
+    "Hampshire County",
+    3.4,
+    2.7,
+    41.9
+   ],
+   [
+    "25017",
+    "Middlesex County",
+    -11.2,
+    10.2,
+    39.5
+   ],
+   [
+    "25025",
+    "Suffolk County",
+    -15.5,
+    -1.3,
+    52.5
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "25023",
+    "Plymouth County",
+    -27.4,
+    -22.6,
+    8.8
+   ],
+   [
+    "25005",
+    "Bristol County",
+    -27.4,
+    -24.9,
+    1.3
+   ],
+   [
+    "25027",
+    "Worcester County",
+    -25.8,
+    -17.3,
+    10.0
+   ],
+   [
+    "25001",
+    "Barnstable County",
+    -22.8,
+    -22.4,
+    20.7
+   ],
+   [
+    "25009",
+    "Essex County",
+    -21.3,
+    -11.1,
+    20.3
+   ]
+  ],
+  "backtest": {
+   "r": 0.67,
+   "hit": 0.667,
+   "n": 14
+  }
+ },
+ "Michigan": {
+  "m24": -1.4,
+  "qloo_swing": -0.06,
+  "qloo_swing_lo": -0.13,
+  "qloo_swing_hi": 0.01,
+  "counties": 83,
+  "share_moving_d": 0.404,
+  "out_of_step_d": [
+   [
+    "26021",
+    "Berrien County",
+    22.9,
+    11.5,
+    -7.9
+   ],
+   [
+    "26037",
+    "Clinton County",
+    22.0,
+    5.2,
+    -8.6
+   ],
+   [
+    "26007",
+    "Alpena County",
+    20.4,
+    -11.3,
+    -28.6
+   ],
+   [
+    "26089",
+    "Leelanau County",
+    19.9,
+    -3.7,
+    7.8
+   ],
+   [
+    "26161",
+    "Washtenaw County",
+    19.3,
+    28.9,
+    44.4
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "26087",
+    "Lapeer County",
+    -39.2,
+    -61.7,
+    -39.8
+   ],
+   [
+    "26093",
+    "Livingston County",
+    -30.0,
+    -40.4,
+    -24.0
+   ],
+   [
+    "26157",
+    "Tuscola County",
+    -29.6,
+    -58.7,
+    -43.0
+   ],
+   [
+    "26137",
+    "Otsego County",
+    -28.7,
+    -62.6,
+    -35.3
+   ],
+   [
+    "26099",
+    "Macomb County",
+    -26.4,
+    -21.1,
+    -13.7
+   ]
+  ],
+  "backtest": {
+   "r": 0.222,
+   "hit": 0.588,
+   "n": 83
+  }
+ },
+ "Minnesota": {
+  "m24": 4.3,
+  "qloo_swing": -0.02,
+  "qloo_swing_lo": -0.05,
+  "qloo_swing_hi": 0.0,
+  "counties": 87,
+  "share_moving_d": 0.516,
+  "out_of_step_d": [
+   [
+    "27103",
+    "Nicollet County",
+    13.9,
+    -10.6,
+    -0.5
+   ],
+   [
+    "27111",
+    "Otter Tail County",
+    9.6,
+    -15.8,
+    -34.2
+   ],
+   [
+    "27099",
+    "Mower County",
+    8.7,
+    -18.2,
+    -10.5
+   ],
+   [
+    "27123",
+    "Ramsey County",
+    8.4,
+    19.9,
+    43.3
+   ],
+   [
+    "27119",
+    "Polk County",
+    8.3,
+    -25.7,
+    -33.8
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "27003",
+    "Anoka County",
+    -14.9,
+    -16.5,
+    -4.4
+   ],
+   [
+    "27141",
+    "Sherburne County",
+    -14.3,
+    -35.3,
+    -34.9
+   ],
+   [
+    "27041",
+    "Douglas County",
+    -14.1,
+    -43.5,
+    -35.1
+   ],
+   [
+    "27013",
+    "Blue Earth County",
+    -12.1,
+    -30.4,
+    -1.2
+   ],
+   [
+    "27171",
+    "Wright County",
+    -11.4,
+    -26.8,
+    -29.4
+   ]
+  ],
+  "backtest": {
+   "r": 0.153,
+   "hit": 0.528,
+   "n": 87
+  }
+ },
+ "Mississippi": {
+  "m24": -22.9,
+  "qloo_swing": -0.04,
+  "qloo_swing_lo": -0.05,
+  "qloo_swing_hi": -0.02,
+  "counties": 82,
+  "share_moving_d": 0.362,
+  "out_of_step_d": [
+   [
+    "28087",
+    "Lowndes County",
+    13.6,
+    -10.2,
+    -8.2
+   ],
+   [
+    "28113",
+    "Pike County",
+    5.8,
+    -21.6,
+    -3.5
+   ],
+   [
+    "28071",
+    "Lafayette County",
+    3.5,
+    -23.7,
+    -21.8
+   ],
+   [
+    "28121",
+    "Rankin County",
+    3.0,
+    -18.8,
+    -47.1
+   ],
+   [
+    "28033",
+    "DeSoto County",
+    2.7,
+    -12.9,
+    -24.1
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "28075",
+    "Lauderdale County",
+    -18.3,
+    -43.8,
+    -21.2
+   ],
+   [
+    "28067",
+    "Jones County",
+    -16.3,
+    -47.2,
+    -46.8
+   ],
+   [
+    "28149",
+    "Warren County",
+    -13.8,
+    -39.6,
+    -4.0
+   ],
+   [
+    "28045",
+    "Hancock County",
+    -8.4,
+    -44.6,
+    -58.7
+   ],
+   [
+    "28081",
+    "Lee County",
+    -7.7,
+    -34.5,
+    -38.8
+   ]
+  ],
+  "backtest": {
+   "r": -0.258,
+   "hit": 0.471,
+   "n": 82
+  }
+ },
+ "Missouri": {
+  "m24": -18.4,
+  "qloo_swing": 0.11,
+  "qloo_swing_lo": 0.07,
+  "qloo_swing_hi": 0.14,
+  "counties": 115,
+  "share_moving_d": 0.71,
+  "out_of_step_d": [
+   [
+    "29019",
+    "Boone County",
+    25.6,
+    18.7,
+    9.8
+   ],
+   [
+    "29510",
+    "St. Louis city",
+    24.7,
+    32.1,
+    64.7
+   ],
+   [
+    "29113",
+    "Lincoln County",
+    22.2,
+    -9.2,
+    -55.9
+   ],
+   [
+    "29027",
+    "Callaway County",
+    19.0,
+    -13.8,
+    -43.3
+   ],
+   [
+    "29051",
+    "Cole County",
+    18.2,
+    -6.4,
+    -34.4
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "29145",
+    "Newton County",
+    -20.3,
+    -53.3,
+    -58.6
+   ],
+   [
+    "29225",
+    "Webster County",
+    -18.3,
+    -55.8,
+    -62.3
+   ],
+   [
+    "29107",
+    "Lafayette County",
+    -11.6,
+    -47.7,
+    -48.9
+   ],
+   [
+    "29105",
+    "Laclede County",
+    -7.2,
+    -47.2,
+    -66.8
+   ],
+   [
+    "29209",
+    "Stone County",
+    -6.0,
+    -43.7,
+    -61.4
+   ]
+  ],
+  "backtest": {
+   "r": 0.116,
+   "hit": 0.565,
+   "n": 115
+  }
+ },
+ "Montana": {
+  "m24": -19.9,
+  "qloo_swing": 0.0,
+  "qloo_swing_lo": -0.02,
+  "qloo_swing_hi": 0.02,
+  "counties": 56,
+  "share_moving_d": 0.459,
+  "out_of_step_d": [
+   [
+    "30047",
+    "Lake County",
+    10.4,
+    -19.6,
+    -19.9
+   ],
+   [
+    "30029",
+    "Flathead County",
+    6.2,
+    -13.6,
+    -33.8
+   ],
+   [
+    "30063",
+    "Missoula County",
+    4.0,
+    -2.5,
+    21.4
+   ],
+   [
+    "30031",
+    "Gallatin County",
+    0.8,
+    -10.0,
+    3.2
+   ],
+   [
+    "30093",
+    "Silver Bow County",
+    -0.8,
+    -24.2,
+    7.0
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "30049",
+    "Lewis and Clark County",
+    -6.1,
+    -24.0,
+    -5.7
+   ],
+   [
+    "30111",
+    "Yellowstone County",
+    -1.7,
+    -17.6,
+    -27.1
+   ],
+   [
+    "30013",
+    "Cascade County",
+    -1.3,
+    -23.9,
+    -22.3
+   ],
+   [
+    "30081",
+    "Ravalli County",
+    -0.8,
+    -29.6,
+    -40.6
+   ],
+   [
+    "30093",
+    "Silver Bow County",
+    -0.8,
+    -24.2,
+    7.0
+   ]
+  ],
+  "backtest": {
+   "r": -0.145,
+   "hit": 0.5,
+   "n": 56
+  }
+ },
+ "Nebraska": {
+  "m24": -20.6,
+  "qloo_swing": 0.04,
+  "qloo_swing_lo": 0.02,
+  "qloo_swing_hi": 0.06,
+  "counties": 93,
+  "share_moving_d": 0.858,
+  "out_of_step_d": [
+   [
+    "31119",
+    "Madison County",
+    13.9,
+    -24.7,
+    -56.0
+   ],
+   [
+    "31025",
+    "Cass County",
+    10.5,
+    -23.9,
+    -37.2
+   ],
+   [
+    "31109",
+    "Lancaster County",
+    9.1,
+    6.6,
+    4.3
+   ],
+   [
+    "31157",
+    "Scotts Bluff County",
+    3.9,
+    -33.3,
+    -47.7
+   ],
+   [
+    "31053",
+    "Dodge County",
+    3.1,
+    -29.9,
+    -32.6
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "31111",
+    "Lincoln County",
+    -11.5,
+    -49.5,
+    -55.2
+   ],
+   [
+    "31079",
+    "Hall County",
+    -6.9,
+    -37.8,
+    -37.8
+   ],
+   [
+    "31141",
+    "Platte County",
+    1.4,
+    -37.7,
+    -58.3
+   ],
+   [
+    "31055",
+    "Douglas County",
+    1.6,
+    5.8,
+    10.2
+   ],
+   [
+    "31019",
+    "Buffalo County",
+    2.8,
+    -29.2,
+    -44.9
+   ]
+  ],
+  "backtest": {
+   "r": 0.12,
+   "hit": 0.447,
+   "n": 93
+  }
+ },
+ "Nevada": {
+  "m24": -3.1,
+  "qloo_swing": -0.14,
+  "qloo_swing_lo": -0.17,
+  "qloo_swing_hi": -0.01,
+  "counties": 17,
+  "share_moving_d": 0.03,
+  "out_of_step_d": [
+   [
+    "32023",
+    "Nye County",
+    4.3,
+    -25.9,
+    -42.2
+   ],
+   [
+    "32031",
+    "Washoe County",
+    -0.1,
+    1.8,
+    1.0
+   ],
+   [
+    "32005",
+    "Douglas County",
+    -0.2,
+    -25.6,
+    -32.9
+   ],
+   [
+    "32510",
+    "Carson City",
+    -4.4,
+    -26.5,
+    -11.3
+   ],
+   [
+    "32007",
+    "Elko County",
+    -5.8,
+    -40.9,
+    -56.6
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "32019",
+    "Lyon County",
+    -14.2,
+    -42.7,
+    -44.4
+   ],
+   [
+    "32003",
+    "Clark County",
+    -13.7,
+    2.2,
+    2.6
+   ],
+   [
+    "32007",
+    "Elko County",
+    -5.8,
+    -40.9,
+    -56.6
+   ],
+   [
+    "32510",
+    "Carson City",
+    -4.4,
+    -26.5,
+    -11.3
+   ],
+   [
+    "32005",
+    "Douglas County",
+    -0.2,
+    -25.6,
+    -32.9
+   ]
+  ],
+  "backtest": {
+   "r": 0.235,
+   "hit": 0.625,
+   "n": 17
+  }
+ },
+ "New Hampshire": {
+  "m24": 2.8,
+  "qloo_swing": -0.18,
+  "qloo_swing_lo": -0.25,
+  "qloo_swing_hi": -0.07,
+  "counties": 10,
+  "share_moving_d": 0.153,
+  "out_of_step_d": [
+   [
+    "33019",
+    "Sullivan County",
+    36.1,
+    14.1,
+    -0.7
+   ],
+   [
+    "33009",
+    "Grafton County",
+    13.8,
+    4.3,
+    19.9
+   ],
+   [
+    "33005",
+    "Cheshire County",
+    9.4,
+    -4.4,
+    9.8
+   ],
+   [
+    "33017",
+    "Strafford County",
+    -1.5,
+    -9.5,
+    12.1
+   ],
+   [
+    "33013",
+    "Merrimack County",
+    -14.1,
+    -21.7,
+    5.2
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "33001",
+    "Belknap County",
+    -28.3,
+    -48.1,
+    -13.1
+   ],
+   [
+    "33011",
+    "Hillsborough County",
+    -24.1,
+    -23.0,
+    2.9
+   ],
+   [
+    "33015",
+    "Rockingham County",
+    -19.7,
+    -21.2,
+    -2.4
+   ],
+   [
+    "33003",
+    "Carroll County",
+    -17.5,
+    -36.5,
+    -1.7
+   ],
+   [
+    "33007",
+    "Coos County",
+    -17.4,
+    -46.0,
+    -13.8
+   ]
+  ],
+  "backtest": {
+   "r": 0.049,
+   "hit": 0.75,
+   "n": 10
+  }
+ },
+ "New Jersey": {
+  "m24": 5.9,
+  "qloo_swing": -0.04,
+  "qloo_swing_lo": -0.1,
+  "qloo_swing_hi": 0.03,
+  "counties": 21,
+  "share_moving_d": 0.415,
+  "out_of_step_d": [
+   [
+    "34017",
+    "Hudson County",
+    30.8,
+    37.3,
+    28.1
+   ],
+   [
+    "34039",
+    "Union County",
+    16.7,
+    22.7,
+    24.2
+   ],
+   [
+    "34021",
+    "Mercer County",
+    16.3,
+    20.6,
+    33.9
+   ],
+   [
+    "34023",
+    "Middlesex County",
+    9.2,
+    15.9,
+    8.0
+   ],
+   [
+    "34013",
+    "Essex County",
+    8.1,
+    21.3,
+    44.9
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "34015",
+    "Gloucester County",
+    -26.0,
+    -29.6,
+    -2.8
+   ],
+   [
+    "34041",
+    "Warren County",
+    -20.8,
+    -38.3,
+    -20.7
+   ],
+   [
+    "34037",
+    "Sussex County",
+    -19.3,
+    -34.3,
+    -24.9
+   ],
+   [
+    "34011",
+    "Cumberland County",
+    -18.3,
+    -32.9,
+    -3.8
+   ],
+   [
+    "34025",
+    "Monmouth County",
+    -17.7,
+    -15.3,
+    -11.4
+   ]
+  ],
+  "backtest": {
+   "r": -0.536,
+   "hit": 0.5,
+   "n": 21
+  }
+ },
+ "New Mexico": {
+  "m24": 6.0,
+  "qloo_swing": 0.01,
+  "qloo_swing_lo": -0.03,
+  "qloo_swing_hi": 0.04,
+  "counties": 33,
+  "share_moving_d": 0.755,
+  "out_of_step_d": [
+   [
+    "35049",
+    "Santa Fe County",
+    15.4,
+    16.2,
+    48.9
+   ],
+   [
+    "35055",
+    "Taos County",
+    6.9,
+    -8.8,
+    47.5
+   ],
+   [
+    "35039",
+    "Rio Arriba County",
+    6.7,
+    -15.4,
+    19.4
+   ],
+   [
+    "35001",
+    "Bernalillo County",
+    3.0,
+    10.8,
+    21.0
+   ],
+   [
+    "35045",
+    "San Juan County",
+    2.6,
+    -18.6,
+    -31.7
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "35009",
+    "Curry County",
+    -22.5,
+    -58.4,
+    -42.6
+   ],
+   [
+    "35025",
+    "Lea County",
+    -14.2,
+    -50.9,
+    -61.6
+   ],
+   [
+    "35005",
+    "Chaves County",
+    -11.0,
+    -43.7,
+    -44.8
+   ],
+   [
+    "35061",
+    "Valencia County",
+    -9.4,
+    -31.9,
+    -16.4
+   ],
+   [
+    "35015",
+    "Eddy County",
+    -4.8,
+    -39.4,
+    -55.8
+   ]
+  ],
+  "backtest": {
+   "r": 0.232,
+   "hit": 0.5,
+   "n": 33
+  }
+ },
+ "New York": {
+  "m24": 12.7,
+  "qloo_swing": -0.13,
+  "qloo_swing_lo": -0.17,
+  "qloo_swing_hi": -0.08,
+  "counties": 62,
+  "share_moving_d": 0.201,
+  "out_of_step_d": [
+   [
+    "36021",
+    "Columbia County",
+    29.7,
+    14.5,
+    14.7
+   ],
+   [
+    "36111",
+    "Ulster County",
+    26.9,
+    22.7,
+    18.7
+   ],
+   [
+    "36039",
+    "Greene County",
+    26.7,
+    1.3,
+    -17.0
+   ],
+   [
+    "36109",
+    "Tompkins County",
+    21.4,
+    16.6,
+    50.6
+   ],
+   [
+    "36025",
+    "Delaware County",
+    15.4,
+    -11.5,
+    -19.8
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "36059",
+    "Nassau County",
+    -27.7,
+    -17.1,
+    -4.2
+   ],
+   [
+    "36015",
+    "Chemung County",
+    -24.9,
+    -46.3,
+    -16.8
+   ],
+   [
+    "36103",
+    "Suffolk County",
+    -22.9,
+    -12.8,
+    -10.0
+   ],
+   [
+    "36065",
+    "Oneida County",
+    -19.6,
+    -32.2,
+    -21.3
+   ],
+   [
+    "36085",
+    "Richmond County",
+    -19.3,
+    -26.9,
+    -29.8
+   ]
+  ],
+  "backtest": {
+   "r": 0.468,
+   "hit": 0.769,
+   "n": 62
+  }
+ },
+ "North Carolina": {
+  "m24": -3.2,
+  "qloo_swing": 0.03,
+  "qloo_swing_lo": -0.01,
+  "qloo_swing_hi": 0.06,
+  "counties": 100,
+  "share_moving_d": 0.589,
+  "out_of_step_d": [
+   [
+    "37063",
+    "Durham County",
+    26.9,
+    38.2,
+    61.9
+   ],
+   [
+    "37135",
+    "Orange County",
+    23.7,
+    25.4,
+    51.1
+   ],
+   [
+    "37001",
+    "Alamance County",
+    21.8,
+    11.0,
+    -8.2
+   ],
+   [
+    "37065",
+    "Edgecombe County",
+    19.2,
+    2.0,
+    22.7
+   ],
+   [
+    "37181",
+    "Vance County",
+    17.6,
+    -3.5,
+    13.4
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "37035",
+    "Catawba County",
+    -18.8,
+    -36.4,
+    -38.0
+   ],
+   [
+    "37097",
+    "Iredell County",
+    -17.9,
+    -32.0,
+    -32.6
+   ],
+   [
+    "37133",
+    "Onslow County",
+    -17.9,
+    -35.7,
+    -35.9
+   ],
+   [
+    "37061",
+    "Duplin County",
+    -15.7,
+    -44.7,
+    -29.0
+   ],
+   [
+    "37109",
+    "Lincoln County",
+    -15.4,
+    -39.1,
+    -45.7
+   ]
+  ],
+  "backtest": {
+   "r": 0.366,
+   "hit": 0.7,
+   "n": 100
+  }
+ },
+ "North Dakota": {
+  "m24": -36.8,
+  "qloo_swing": 0.01,
+  "qloo_swing_lo": -0.04,
+  "qloo_swing_hi": 0.03,
+  "counties": 53,
+  "share_moving_d": 0.627,
+  "out_of_step_d": [
+   [
+    "38017",
+    "Cass County",
+    6.5,
+    -4.4,
+    -8.4
+   ],
+   [
+    "38101",
+    "Ward County",
+    3.4,
+    -27.4,
+    -47.4
+   ],
+   [
+    "38035",
+    "Grand Forks County",
+    1.3,
+    -22.3,
+    -18.2
+   ],
+   [
+    "38059",
+    "Morton County",
+    0.0,
+    -37.3,
+    -53.8
+   ],
+   [
+    "38015",
+    "Burleigh County",
+    -3.6,
+    -27.5,
+    -43.2
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "38105",
+    "Williams County",
+    -17.8,
+    -59.5,
+    -68.1
+   ],
+   [
+    "38089",
+    "Stark County",
+    -4.5,
+    -45.6,
+    -65.6
+   ],
+   [
+    "38015",
+    "Burleigh County",
+    -3.6,
+    -27.5,
+    -43.2
+   ],
+   [
+    "38059",
+    "Morton County",
+    0.0,
+    -37.3,
+    -53.8
+   ],
+   [
+    "38035",
+    "Grand Forks County",
+    1.3,
+    -22.3,
+    -18.2
+   ]
+  ],
+  "backtest": {
+   "r": 0.152,
+   "hit": 0.5,
+   "n": 53
+  }
+ },
+ "Ohio": {
+  "m24": -11.2,
+  "qloo_swing": 0.09,
+  "qloo_swing_lo": 0.05,
+  "qloo_swing_hi": 0.12,
+  "counties": 88,
+  "share_moving_d": 0.71,
+  "out_of_step_d": [
+   [
+    "39147",
+    "Seneca County",
+    35.3,
+    5.5,
+    -37.5
+   ],
+   [
+    "39009",
+    "Athens County",
+    33.1,
+    13.8,
+    10.7
+   ],
+   [
+    "39137",
+    "Putnam County",
+    30.7,
+    -8.3,
+    -68.7
+   ],
+   [
+    "39143",
+    "Sandusky County",
+    20.8,
+    -6.0,
+    -30.9
+   ],
+   [
+    "39055",
+    "Geauga County",
+    19.7,
+    0.6,
+    -24.1
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "39029",
+    "Columbiana County",
+    -22.5,
+    -48.4,
+    -49.0
+   ],
+   [
+    "39013",
+    "Belmont County",
+    -16.8,
+    -46.6,
+    -47.3
+   ],
+   [
+    "39027",
+    "Clinton County",
+    -16.4,
+    -51.8,
+    -54.6
+   ],
+   [
+    "39169",
+    "Wayne County",
+    -15.2,
+    -37.9,
+    -39.3
+   ],
+   [
+    "39081",
+    "Jefferson County",
+    -14.5,
+    -43.6,
+    -43.9
+   ]
+  ],
+  "backtest": {
+   "r": 0.083,
+   "hit": 0.444,
+   "n": 88
+  }
+ },
+ "Oklahoma": {
+  "m24": -34.3,
+  "qloo_swing": 0.05,
+  "qloo_swing_lo": 0.04,
+  "qloo_swing_hi": 0.07,
+  "counties": 77,
+  "share_moving_d": 0.847,
+  "out_of_step_d": [
+   [
+    "40071",
+    "Kay County",
+    22.0,
+    -14.4,
+    -49.4
+   ],
+   [
+    "40147",
+    "Washington County",
+    17.9,
+    -15.0,
+    -47.7
+   ],
+   [
+    "40051",
+    "Grady County",
+    15.6,
+    -19.6,
+    -62.7
+   ],
+   [
+    "40113",
+    "Osage County",
+    13.0,
+    -19.6,
+    -41.4
+   ],
+   [
+    "40121",
+    "Pittsburg County",
+    12.6,
+    -25.5,
+    -59.0
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "40137",
+    "Stephens County",
+    -15.3,
+    -53.8,
+    -63.7
+   ],
+   [
+    "40097",
+    "Mayes County",
+    -6.0,
+    -43.9,
+    -57.5
+   ],
+   [
+    "40101",
+    "Muskogee County",
+    -5.9,
+    -36.1,
+    -37.6
+   ],
+   [
+    "40135",
+    "Sequoyah County",
+    -4.3,
+    -44.2,
+    -61.5
+   ],
+   [
+    "40125",
+    "Pottawatomie County",
+    -3.9,
+    -34.6,
+    -47.4
+   ]
+  ],
+  "backtest": {
+   "r": 0.221,
+   "hit": 0.625,
+   "n": 77
+  }
+ },
+ "Oregon": {
+  "m24": 14.4,
+  "qloo_swing": 0.03,
+  "qloo_swing_lo": -0.06,
+  "qloo_swing_hi": 0.08,
+  "counties": 36,
+  "share_moving_d": 0.607,
+  "out_of_step_d": [
+   [
+    "41051",
+    "Multnomah County",
+    20.9,
+    40.4,
+    62.1
+   ],
+   [
+    "41057",
+    "Tillamook County",
+    14.0,
+    -12.5,
+    -1.4
+   ],
+   [
+    "41067",
+    "Washington County",
+    12.1,
+    22.3,
+    34.0
+   ],
+   [
+    "41071",
+    "Yamhill County",
+    10.9,
+    -4.0,
+    -6.1
+   ],
+   [
+    "41007",
+    "Clatsop County",
+    9.0,
+    -11.2,
+    11.4
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "41043",
+    "Linn County",
+    -21.6,
+    -38.2,
+    -24.4
+   ],
+   [
+    "41011",
+    "Coos County",
+    -20.6,
+    -43.3,
+    -19.9
+   ],
+   [
+    "41019",
+    "Douglas County",
+    -16.5,
+    -37.6,
+    -37.7
+   ],
+   [
+    "41029",
+    "Jackson County",
+    -13.8,
+    -21.5,
+    -6.4
+   ],
+   [
+    "41035",
+    "Klamath County",
+    -12.7,
+    -40.2,
+    -41.9
+   ]
+  ],
+  "backtest": {
+   "r": 0.325,
+   "hit": 0.5,
+   "n": 36
+  }
+ },
+ "Pennsylvania": {
+  "m24": -1.7,
+  "qloo_swing": 0.11,
+  "qloo_swing_lo": 0.05,
+  "qloo_swing_hi": 0.15,
+  "counties": 67,
+  "share_moving_d": 0.615,
+  "out_of_step_d": [
+   [
+    "42045",
+    "Delaware County",
+    35.3,
+    44.3,
+    23.7
+   ],
+   [
+    "42101",
+    "Philadelphia County",
+    32.7,
+    57.1,
+    58.8
+   ],
+   [
+    "42033",
+    "Clearfield County",
+    23.0,
+    -5.2,
+    -51.5
+   ],
+   [
+    "42027",
+    "Centre County",
+    21.1,
+    11.6,
+    2.8
+   ],
+   [
+    "42029",
+    "Chester County",
+    20.9,
+    27.8,
+    14.5
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "42075",
+    "Lebanon County",
+    -28.2,
+    -46.1,
+    -32.0
+   ],
+   [
+    "42121",
+    "Venango County",
+    -21.4,
+    -51.6,
+    -42.1
+   ],
+   [
+    "42099",
+    "Perry County",
+    -18.5,
+    -50.7,
+    -49.3
+   ],
+   [
+    "42109",
+    "Snyder County",
+    -14.8,
+    -49.0,
+    -47.0
+   ],
+   [
+    "42059",
+    "Greene County",
+    -14.0,
+    -49.2,
+    -44.8
+   ]
+  ],
+  "backtest": {
+   "r": -0.199,
+   "hit": 0.429,
+   "n": 67
+  }
+ },
+ "Rhode Island": {
+  "m24": 13.9,
+  "qloo_swing": -0.04,
+  "qloo_swing_lo": -0.18,
+  "qloo_swing_hi": 0.03,
+  "counties": 5,
+  "share_moving_d": 0.616,
+  "out_of_step_d": [
+   [
+    "44007",
+    "Providence County",
+    5.0,
+    10.0,
+    14.4
+   ],
+   [
+    "44005",
+    "Newport County",
+    1.5,
+    -9.1,
+    25.5
+   ],
+   [
+    "44003",
+    "Kent County",
+    -8.8,
+    -17.1,
+    1.9
+   ],
+   [
+    "44009",
+    "Washington County",
+    -13.6,
+    -21.1,
+    15.0
+   ],
+   [
+    "44001",
+    "Bristol County",
+    -31.3,
+    -46.2,
+    26.4
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "44001",
+    "Bristol County",
+    -31.3,
+    -46.2,
+    26.4
+   ],
+   [
+    "44009",
+    "Washington County",
+    -13.6,
+    -21.1,
+    15.0
+   ],
+   [
+    "44003",
+    "Kent County",
+    -8.8,
+    -17.1,
+    1.9
+   ],
+   [
+    "44005",
+    "Newport County",
+    1.5,
+    -9.1,
+    25.5
+   ],
+   [
+    "44007",
+    "Providence County",
+    5.0,
+    10.0,
+    14.4
+   ]
+  ],
+  "backtest": null
+ },
+ "South Carolina": {
+  "m24": -17.9,
+  "qloo_swing": -0.0,
+  "qloo_swing_lo": -0.04,
+  "qloo_swing_hi": 0.04,
+  "counties": 47,
+  "share_moving_d": 0.431,
+  "out_of_step_d": [
+   [
+    "45079",
+    "Richland County",
+    17.2,
+    22.7,
+    34.6
+   ],
+   [
+    "45075",
+    "Orangeburg County",
+    14.6,
+    2.0,
+    24.6
+   ],
+   [
+    "45019",
+    "Charleston County",
+    13.3,
+    14.1,
+    5.7
+   ],
+   [
+    "45041",
+    "Florence County",
+    10.9,
+    -3.7,
+    -8.0
+   ],
+   [
+    "45015",
+    "Berkeley County",
+    9.2,
+    -1.1,
+    -16.3
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "45053",
+    "Jasper County",
+    -17.2,
+    -44.3,
+    -9.6
+   ],
+   [
+    "45027",
+    "Clarendon County",
+    -16.9,
+    -45.6,
+    -12.3
+   ],
+   [
+    "45023",
+    "Chester County",
+    -15.0,
+    -45.3,
+    -17.2
+   ],
+   [
+    "45071",
+    "Newberry County",
+    -12.5,
+    -44.9,
+    -34.3
+   ],
+   [
+    "45043",
+    "Georgetown County",
+    -12.1,
+    -34.0,
+    -19.5
+   ]
+  ],
+  "backtest": {
+   "r": 0.55,
+   "hit": 0.65,
+   "n": 47
+  }
+ },
+ "South Dakota": {
+  "m24": -29.2,
+  "qloo_swing": -0.05,
+  "qloo_swing_lo": -0.07,
+  "qloo_swing_hi": -0.02,
+  "counties": 67,
+  "share_moving_d": 0.43,
+  "out_of_step_d": [
+   [
+    "46007",
+    "Bennett County",
+    28.2,
+    -30.7,
+    -26.4
+   ],
+   [
+    "46021",
+    "Campbell County",
+    21.6,
+    -49.3,
+    -70.1
+   ],
+   [
+    "46137",
+    "Ziebach County",
+    21.5,
+    -35.6,
+    -2.8
+   ],
+   [
+    "19119",
+    "Lyon County",
+    20.7,
+    -28.9,
+    -69.8
+   ],
+   [
+    "46031",
+    "Corson County",
+    18.3,
+    -36.9,
+    -11.9
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "46003",
+    "Aurora County",
+    -23.5,
+    -85.8,
+    -54.1
+   ],
+   [
+    "46019",
+    "Butte County",
+    -21.1,
+    -72.0,
+    -60.6
+   ],
+   [
+    "46047",
+    "Fall River County",
+    -20.1,
+    -70.2,
+    -49.3
+   ],
+   [
+    "46053",
+    "Gregory County",
+    -20.0,
+    -78.8,
+    -60.2
+   ],
+   [
+    "46123",
+    "Tripp County",
+    -18.7,
+    -76.6,
+    -63.3
+   ]
+  ],
+  "backtest": {
+   "r": 0.049,
+   "hit": 0.393,
+   "n": 67
+  }
+ },
+ "Tennessee": {
+  "m24": -29.7,
+  "qloo_swing": 0.12,
+  "qloo_swing_lo": 0.08,
+  "qloo_swing_hi": 0.16,
+  "counties": 96,
+  "share_moving_d": 0.751,
+  "out_of_step_d": [
+   [
+    "01077",
+    "Lauderdale County",
+    28.6,
+    1.2,
+    -51.5
+   ],
+   [
+    "47021",
+    "Cheatham County",
+    27.6,
+    -6.0,
+    -45.9
+   ],
+   [
+    "47157",
+    "Shelby County",
+    26.4,
+    35.7,
+    25.4
+   ],
+   [
+    "47043",
+    "Dickson County",
+    20.2,
+    -12.7,
+    -51.9
+   ],
+   [
+    "47037",
+    "Davidson County",
+    19.4,
+    28.0,
+    27.4
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "47009",
+    "Blount County",
+    -5.1,
+    -27.0,
+    -47.7
+   ],
+   [
+    "47117",
+    "Marshall County",
+    -4.9,
+    -43.5,
+    -56.6
+   ],
+   [
+    "47001",
+    "Anderson County",
+    -4.6,
+    -30.4,
+    -35.7
+   ],
+   [
+    "47035",
+    "Cumberland County",
+    -4.1,
+    -35.4,
+    -58.9
+   ],
+   [
+    "47063",
+    "Hamblen County",
+    -3.8,
+    -38.1,
+    -58.9
+   ]
+  ],
+  "backtest": {
+   "r": 0.089,
+   "hit": 0.5,
+   "n": 96
+  }
+ },
+ "Texas": {
+  "m24": -13.7,
+  "qloo_swing": 0.19,
+  "qloo_swing_lo": 0.16,
+  "qloo_swing_hi": 0.23,
+  "counties": 254,
+  "share_moving_d": 0.938,
+  "out_of_step_d": [
+   [
+    "48323",
+    "Maverick County",
+    31.7,
+    1.2,
+    -18.5
+   ],
+   [
+    "48215",
+    "Hidalgo County",
+    31.0,
+    30.1,
+    -2.9
+   ],
+   [
+    "48061",
+    "Cameron County",
+    29.9,
+    22.2,
+    -5.8
+   ],
+   [
+    "48113",
+    "Dallas County",
+    29.5,
+    47.7,
+    22.2
+   ],
+   [
+    "48141",
+    "El Paso County",
+    29.5,
+    33.9,
+    15.1
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "48329",
+    "Midland County",
+    -13.4,
+    -39.7,
+    -60.5
+   ],
+   [
+    "48339",
+    "Montgomery County",
+    -3.9,
+    -10.5,
+    -45.5
+   ],
+   [
+    "48221",
+    "Hood County",
+    -2.1,
+    -34.4,
+    -66.0
+   ],
+   [
+    "48375",
+    "Potter County",
+    -0.1,
+    -29.0,
+    -44.4
+   ],
+   [
+    "48441",
+    "Taylor County",
+    0.1,
+    -24.5,
+    -49.8
+   ]
+  ],
+  "backtest": {
+   "r": -0.247,
+   "hit": 0.49,
+   "n": 254
+  }
+ },
+ "Utah": {
+  "m24": -21.6,
+  "qloo_swing": 0.05,
+  "qloo_swing_lo": -0.02,
+  "qloo_swing_hi": 0.1,
+  "counties": 29,
+  "share_moving_d": 0.554,
+  "out_of_step_d": [
+   [
+    "49035",
+    "Salt Lake County",
+    10.7,
+    21.2,
+    10.2
+   ],
+   [
+    "49045",
+    "Tooele County",
+    10.3,
+    -17.4,
+    -41.0
+   ],
+   [
+    "49003",
+    "Box Elder County",
+    8.4,
+    -25.2,
+    -60.8
+   ],
+   [
+    "49043",
+    "Summit County",
+    5.3,
+    -12.9,
+    14.8
+   ],
+   [
+    "49053",
+    "Washington County",
+    2.8,
+    -16.7,
+    -52.3
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "49021",
+    "Iron County",
+    -6.8,
+    -39.8,
+    -57.0
+   ],
+   [
+    "49049",
+    "Utah County",
+    -4.7,
+    -10.4,
+    -39.8
+   ],
+   [
+    "49057",
+    "Weber County",
+    -3.7,
+    -15.6,
+    -23.5
+   ],
+   [
+    "49051",
+    "Wasatch County",
+    -3.5,
+    -34.3,
+    -27.4
+   ],
+   [
+    "49011",
+    "Davis County",
+    -0.3,
+    -8.6,
+    -24.9
+   ]
+  ],
+  "backtest": {
+   "r": -0.147,
+   "hit": 0.417,
+   "n": 29
+  }
+ },
+ "Vermont": {
+  "m24": 31.8,
+  "qloo_swing": -0.11,
+  "qloo_swing_lo": -0.19,
+  "qloo_swing_hi": -0.05,
+  "counties": 14,
+  "share_moving_d": 0.324,
+  "out_of_step_d": [
+   [
+    "50001",
+    "Addison County",
+    9.5,
+    -5.7,
+    35.9
+   ],
+   [
+    "50007",
+    "Chittenden County",
+    5.5,
+    8.8,
+    53.6
+   ],
+   [
+    "50027",
+    "Windsor County",
+    -5.8,
+    -16.9,
+    35.6
+   ],
+   [
+    "50023",
+    "Washington County",
+    -7.6,
+    -16.7,
+    43.4
+   ],
+   [
+    "50025",
+    "Windham County",
+    -10.2,
+    -22.5,
+    42.7
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "50021",
+    "Rutland County",
+    -27.8,
+    -45.5,
+    5.3
+   ],
+   [
+    "50005",
+    "Caledonia County",
+    -21.7,
+    -45.0,
+    12.4
+   ],
+   [
+    "50011",
+    "Franklin County",
+    -21.4,
+    -42.0,
+    3.0
+   ],
+   [
+    "50003",
+    "Bennington County",
+    -18.2,
+    -37.1,
+    22.5
+   ],
+   [
+    "50017",
+    "Orange County",
+    -12.7,
+    -33.7,
+    20.2
+   ]
+  ],
+  "backtest": {
+   "r": 0.64,
+   "hit": 0.833,
+   "n": 14
+  }
+ },
+ "Virginia": {
+  "m24": 5.8,
+  "qloo_swing": -0.03,
+  "qloo_swing_lo": -0.07,
+  "qloo_swing_hi": 0.01,
+  "counties": 128,
+  "share_moving_d": 0.402,
+  "out_of_step_d": [
+   [
+    "51059",
+    "Fairfax County",
+    13.0,
+    30.2,
+    35.0
+   ],
+   [
+    "51165",
+    "Rockingham County",
+    11.3,
+    -11.9,
+    -37.0
+   ],
+   [
+    "51003",
+    "Albemarle County",
+    10.7,
+    6.0,
+    34.1
+   ],
+   [
+    "51760",
+    "Richmond city",
+    8.9,
+    16.0,
+    66.3
+   ],
+   [
+    "51015",
+    "Augusta County",
+    7.9,
+    -18.5,
+    -47.5
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "51680",
+    "Lynchburg city",
+    -23.9,
+    -43.6,
+    -7.9
+   ],
+   [
+    "51683",
+    "Manassas city",
+    -21.6,
+    -44.7,
+    14.8
+   ],
+   [
+    "51177",
+    "Spotsylvania County",
+    -20.8,
+    -32.9,
+    -8.6
+   ],
+   [
+    "51770",
+    "Roanoke city",
+    -20.2,
+    -31.7,
+    23.6
+   ],
+   [
+    "51031",
+    "Campbell County",
+    -18.0,
+    -48.1,
+    -48.6
+   ]
+  ],
+  "backtest": {
+   "r": 0.012,
+   "hit": 0.423,
+   "n": 128
+  }
+ },
+ "Washington": {
+  "m24": 18.3,
+  "qloo_swing": -0.01,
+  "qloo_swing_lo": -0.09,
+  "qloo_swing_hi": 0.05,
+  "counties": 40,
+  "share_moving_d": 0.489,
+  "out_of_step_d": [
+   [
+    "41051",
+    "Multnomah County",
+    24.1,
+    43.6,
+    62.1
+   ],
+   [
+    "53009",
+    "Clallam County",
+    13.3,
+    -0.3,
+    7.9
+   ],
+   [
+    "53035",
+    "Kitsap County",
+    12.8,
+    13.8,
+    20.9
+   ],
+   [
+    "53029",
+    "Island County",
+    11.6,
+    0.7,
+    16.6
+   ],
+   [
+    "53031",
+    "Jefferson County",
+    10.8,
+    -1.4,
+    45.3
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "53065",
+    "Stevens County",
+    -23.7,
+    -53.8,
+    -44.1
+   ],
+   [
+    "53017",
+    "Douglas County",
+    -22.2,
+    -51.6,
+    -27.0
+   ],
+   [
+    "53063",
+    "Spokane County",
+    -20.9,
+    -19.5,
+    -5.0
+   ],
+   [
+    "53005",
+    "Benton County",
+    -18.7,
+    -31.4,
+    -21.9
+   ],
+   [
+    "53021",
+    "Franklin County",
+    -17.9,
+    -42.3,
+    -22.7
+   ]
+  ],
+  "backtest": {
+   "r": 0.605,
+   "hit": 0.562,
+   "n": 40
+  }
+ },
+ "West Virginia": {
+  "m24": -41.9,
+  "qloo_swing": 0.02,
+  "qloo_swing_lo": -0.01,
+  "qloo_swing_hi": 0.04,
+  "counties": 55,
+  "share_moving_d": 0.527,
+  "out_of_step_d": [
+   [
+    "54037",
+    "Jefferson County",
+    8.4,
+    -15.3,
+    -15.8
+   ],
+   [
+    "54061",
+    "Monongalia County",
+    6.4,
+    -11.3,
+    -4.4
+   ],
+   [
+    "54033",
+    "Harrison County",
+    4.6,
+    -24.5,
+    -40.9
+   ],
+   [
+    "54099",
+    "Wayne County",
+    2.1,
+    -35.9,
+    -53.4
+   ],
+   [
+    "54039",
+    "Kanawha County",
+    1.8,
+    -12.8,
+    -17.4
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "54069",
+    "Ohio County",
+    -11.2,
+    -41.5,
+    -26.0
+   ],
+   [
+    "54055",
+    "Mercer County",
+    -9.9,
+    -44.7,
+    -57.3
+   ],
+   [
+    "54003",
+    "Berkeley County",
+    -8.9,
+    -30.3,
+    -35.8
+   ],
+   [
+    "54107",
+    "Wood County",
+    -8.6,
+    -35.7,
+    -43.0
+   ],
+   [
+    "54019",
+    "Fayette County",
+    -6.5,
+    -42.0,
+    -41.8
+   ]
+  ],
+  "backtest": {
+   "r": -0.137,
+   "hit": 0.545,
+   "n": 55
+  }
+ },
+ "Wisconsin": {
+  "m24": -0.9,
+  "qloo_swing": -0.0,
+  "qloo_swing_lo": -0.06,
+  "qloo_swing_hi": 0.05,
+  "counties": 72,
+  "share_moving_d": 0.404,
+  "out_of_step_d": [
+   [
+    "55045",
+    "Green County",
+    26.6,
+    3.6,
+    0.3
+   ],
+   [
+    "55025",
+    "Dane County",
+    21.9,
+    38.0,
+    51.7
+   ],
+   [
+    "55029",
+    "Door County",
+    18.6,
+    -4.5,
+    2.2
+   ],
+   [
+    "55079",
+    "Milwaukee County",
+    12.3,
+    27.9,
+    38.5
+   ],
+   [
+    "55121",
+    "Trempealeau County",
+    12.1,
+    -18.8,
+    -21.4
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "55139",
+    "Winnebago County",
+    -21.1,
+    -30.6,
+    -4.7
+   ],
+   [
+    "55131",
+    "Washington County",
+    -18.4,
+    -35.1,
+    -36.3
+   ],
+   [
+    "55073",
+    "Marathon County",
+    -18.3,
+    -32.7,
+    -18.7
+   ],
+   [
+    "55081",
+    "Monroe County",
+    -15.0,
+    -43.2,
+    -26.1
+   ],
+   [
+    "55059",
+    "Kenosha County",
+    -14.5,
+    -24.8,
+    -6.2
+   ]
+  ],
+  "backtest": {
+   "r": 0.018,
+   "hit": 0.467,
+   "n": 72
+  }
+ },
+ "Wyoming": {
+  "m24": -46.2,
+  "qloo_swing": 0.08,
+  "qloo_swing_lo": 0.05,
+  "qloo_swing_hi": 0.11,
+  "counties": 23,
+  "share_moving_d": 0.804,
+  "out_of_step_d": [
+   [
+    "56013",
+    "Fremont County",
+    19.6,
+    -14.1,
+    -37.4
+   ],
+   [
+    "56029",
+    "Park County",
+    18.2,
+    -20.6,
+    -59.3
+   ],
+   [
+    "56033",
+    "Sheridan County",
+    12.9,
+    -24.0,
+    -50.1
+   ],
+   [
+    "56037",
+    "Sweetwater County",
+    9.2,
+    -28.2,
+    -53.2
+   ],
+   [
+    "56025",
+    "Natrona County",
+    7.9,
+    -21.5,
+    -48.6
+   ]
+  ],
+  "out_of_step_r": [
+   [
+    "56005",
+    "Campbell County",
+    -0.1,
+    -41.7,
+    -76.8
+   ],
+   [
+    "56021",
+    "Laramie County",
+    0.1,
+    -23.3,
+    -32.4
+   ],
+   [
+    "56001",
+    "Albany County",
+    7.1,
+    -18.9,
+    -3.2
+   ],
+   [
+    "56025",
+    "Natrona County",
+    7.9,
+    -21.5,
+    -48.6
+   ],
+   [
+    "56037",
+    "Sweetwater County",
+    9.2,
+    -28.2,
+    -53.2
+   ]
+  ],
+  "backtest": {
+   "r": 0.125,
+   "hit": 0.4,
+   "n": 23
+  }
+ }
+}

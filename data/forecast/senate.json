@@ -1,0 +1,7052 @@
+{
+ "generated_at": "2026-10-30T03:46:25+00:00",
+ "polls_through": "2026-10-28",
+ "polls_fetched_at": "2026-10-30T03:23:14+00:00",
+ "national": {
+  "median_poll_swing_since_2024": 13.3
+ },
+ "races": [
+  {
+   "id": "AK-S",
+   "state": "Alaska",
+   "state_po": "AK",
+   "stfips": "02",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alaska",
+   "ratings": {
+    "Cook": "Tossup",
+    "DDHQ": "Tossup",
+    "Econ": "Tossup",
+    "FPO": "Lean D (flip)",
+    "Fox": "Tossup",
+    "IE": "Tossup",
+    "NBC": "Tossup",
+    "RCP": "Tossup",
+    "Sabato": "Lean D (flip)",
+    "Silver": "Lean D (flip)",
+    "ST": "Lean D (flip)"
+   },
+   "candidates": [
+    {
+     "name": "Mary Peltola",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Dan S. Sullivan",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Mary Peltola",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Dan S. Sullivan",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 25,
+    "n_recent": 10,
+    "avg_margin_d": 2.5,
+    "latest": "2026-10-16",
+    "house": {},
+    "independent_avg": 3.8,
+    "list": [
+     {
+      "pollster": "Data for Progress (D)",
+      "end_date": "2026-10-16",
+      "sample": 694,
+      "population": "LV",
+      "margin_d": 3.0
+     },
+     {
+      "pollster": "Public Policy Polling (D)",
+      "end_date": "2026-10-15",
+      "sample": 578,
+      "population": "RV",
+      "margin_d": 1.0
+     },
+     {
+      "pollster": "Rasmussen Reports (R)",
+      "end_date": "2026-10-15",
+      "sample": 775,
+      "population": "LV",
+      "margin_d": 2.0
+     },
+     {
+      "pollster": "InsiderAdvantage (R)",
+      "end_date": "2026-10-10",
+      "sample": 1200,
+      "population": "LV",
+      "margin_d": 5.0
+     },
+     {
+      "pollster": "Alaska Survey Research",
+      "end_date": "2026-10-03",
+      "sample": 1512,
+      "population": "LV",
+      "margin_d": 2.0
+     },
+     {
+      "pollster": "New York Times / Siena University",
+      "end_date": "2026-10-01",
+      "sample": 504,
+      "population": "LV",
+      "margin_d": 7.0
+     },
+     {
+      "pollster": "Quantus Insights (R)",
+      "end_date": "2026-09-30",
+      "sample": 758,
+      "population": "LV",
+      "margin_d": 0.0
+     },
+     {
+      "pollster": "Trafalgar Group (R)",
+      "end_date": "2026-09-24",
+      "sample": 1079,
+      "population": "LV",
+      "margin_d": -1.0
+     }
+    ]
+   },
+   "pres24_margin_d": -13.8,
+   "qloo": {
+    "share_moving_d": 0.309,
+    "out_of_step_d": [
+     [
+      "02013",
+      "State House District 13",
+      5.2,
+      -28.7,
+      1.3
+     ],
+     [
+      "02020",
+      "State House District 20",
+      -23.2,
+      -55.1,
+      12.7
+     ],
+     [
+      "02016",
+      "State House District 16",
+      -38.9,
+      -67.3,
+      15.3
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "02016",
+      "State House District 16",
+      -38.9,
+      -67.3,
+      15.3
+     ],
+     [
+      "02020",
+      "State House District 20",
+      -23.2,
+      -55.1,
+      12.7
+     ],
+     [
+      "02013",
+      "State House District 13",
+      5.2,
+      -28.7,
+      1.3
+     ]
+    ],
+    "backtest": null
+   },
+   "skew": {
+    "poll_swing": 16.3,
+    "rel_poll_swing": 3.0,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +16.3 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": 2.5,
+    "p_win": 0.691,
+    "winner_party": "D",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 2.5,
+    "p_win": 0.69,
+    "confidence": "medium",
+    "headline": "Peltola holds narrow lead over incumbent Sullivan",
+    "reasoning": "Polls average Peltola +2.5, with independents +3.8 and no house skew; 10 recent polls. That is a +16.3 swing from 2024 versus typical +13.3. Ratings are mostly tossup, some lean D. Sullivan\u2019s incumbency keeps confidence medium; script gives D +2.5 at 69%.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "AL-S",
+   "state": "Alabama",
+   "state_po": "AL",
+   "stfips": "01",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alabama",
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Safe R",
+    "Econ": "Safe R",
+    "FPO": "Safe R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R",
+    "ST": "Safe R"
+   },
+   "candidates": [
+    {
+     "name": "Barry Moore",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Everett Wess",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Everett Wess",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Barry Moore",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 5,
+    "n_recent": 4,
+    "avg_margin_d": -15.7,
+    "latest": "2026-10-24",
+    "house": {},
+    "independent_avg": -21.0,
+    "list": [
+     {
+      "pollster": "Chism Strategies (D)",
+      "end_date": "2026-10-24",
+      "sample": 695,
+      "population": "LV",
+      "margin_d": -8.0
+     },
+     {
+      "pollster": "Cygnal (R)",
+      "end_date": "2026-10-17",
+      "sample": 500,
+      "population": "LV",
+      "margin_d": -15.0
+     },
+     {
+      "pollster": "The Alabama Poll",
+      "end_date": "2026-10-16",
+      "sample": 600,
+      "population": "LV",
+      "margin_d": -21.0
+     },
+     {
+      "pollster": "RMG Research (R)",
+      "end_date": "2026-09-25",
+      "sample": 800,
+      "population": "RV",
+      "margin_d": -21.0
+     },
+     {
+      "pollster": "yes. every kid.",
+      "end_date": "2026-07-11",
+      "sample": 601,
+      "population": "LV",
+      "margin_d": -15.0
+     }
+    ]
+   },
+   "pres24_margin_d": -30.6,
+   "qloo": {
+    "share_moving_d": 0.643,
+    "out_of_step_d": [
+     [
+      "01047",
+      "Dallas County",
+      27.5,
+      8.0,
+      32.5
+     ],
+     [
+      "01125",
+      "Tuscaloosa County",
+      15.4,
+      1.4,
+      -20.4
+     ],
+     [
+      "01021",
+      "Chilton County",
+      14.9,
+      -24.9,
+      -72.1
+     ],
+     [
+      "01049",
+      "DeKalb County",
+      14.2,
+      -21.9,
+      -73.9
+     ],
+     [
+      "01073",
+      "Jefferson County",
+      14.1,
+      19.2,
+      10.4
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "01045",
+      "Dale County",
+      -11.1,
+      -46.9,
+      -52.3
+     ],
+     [
+      "01039",
+      "Covington County",
+      -9.0,
+      -50.3,
+      -72.4
+     ],
+     [
+      "01003",
+      "Baldwin County",
+      -7.0,
+      -25.6,
+      -58.2
+     ],
+     [
+      "01079",
+      "Lawrence County",
+      -5.3,
+      -45.0,
+      -62.3
+     ],
+     [
+      "01031",
+      "Coffee County",
+      -4.6,
+      -40.1,
+      -57.9
+     ]
+    ],
+    "backtest": {
+     "r": 0.099,
+     "hit": 0.536,
+     "n": 67
+    }
+   },
+   "skew": {
+    "poll_swing": 14.9,
+    "rel_poll_swing": 1.6,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +14.9 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": -15.7,
+    "p_win": 0.999,
+    "winner_party": "R",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "R",
+    "margin_d": -17.0,
+    "p_win": 0.96,
+    "confidence": "high",
+    "headline": "Alabama remains safely Republican despite closer Democratic poll",
+    "reasoning": "Polls average Wess -15.7 and independent polls -21.0; Alabama's 2024 presidential margin was -30.6 and ratings are Safe/Solid R. The +14.9 poll swing is near the typical +13.3, so no unusual Democratic surge. I set the final margin near the poll average, -17, with high confidence.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "AR-S",
+   "state": "Arkansas",
+   "state_po": "AR",
+   "stfips": "05",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Arkansas",
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Safe R",
+    "Econ": "Likely R",
+    "FPO": "Safe R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R",
+    "ST": "Safe R"
+   },
+   "candidates": [
+    {
+     "name": "Tom Cotton",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Hallie Shoffner",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Hallie Shoffner",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Tom Cotton",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 6,
+    "n_recent": 2,
+    "avg_margin_d": -9.6,
+    "latest": "2026-10-13",
+    "house": {},
+    "independent_avg": -9.0,
+    "list": [
+     {
+      "pollster": "Hendrix College",
+      "end_date": "2026-10-13",
+      "sample": 709,
+      "population": "LV",
+      "margin_d": -9.0
+     },
+     {
+      "pollster": "GrayHouse (R)",
+      "end_date": "2026-10-04",
+      "sample": 550,
+      "population": "LV",
+      "margin_d": -11.0
+     },
+     {
+      "pollster": "J.L. Partners",
+      "end_date": "2026-08-18",
+      "sample": 803,
+      "population": "LV",
+      "margin_d": -16.0
+     },
+     {
+      "pollster": "Hendrix College",
+      "end_date": "2026-08-12",
+      "sample": 1217,
+      "population": "LV",
+      "margin_d": 3.0
+     },
+     {
+      "pollster": "2040 Strategy Group (D)",
+      "end_date": "2026-07-25",
+      "sample": 586,
+      "population": "LV",
+      "margin_d": -3.0
+     },
+     {
+      "pollster": "GrayHouse (R)",
+      "end_date": "2026-02-09",
+      "sample": 550,
+      "population": "LV",
+      "margin_d": -22.0
+     }
+    ]
+   },
+   "pres24_margin_d": -30.6,
+   "qloo": {
+    "share_moving_d": 0.746,
+    "out_of_step_d": [
+     [
+      "05139",
+      "Union County",
+      16.7,
+      -17.2,
+      -33.5
+     ],
+     [
+      "05069",
+      "Jefferson County",
+      11.9,
+      -7.0,
+      20.1
+     ],
+     [
+      "05031",
+      "Craighead County",
+      11.8,
+      -14.1,
+      -37.4
+     ],
+     [
+      "05145",
+      "White County",
+      9.9,
+      -23.0,
+      -61.2
+     ],
+     [
+      "05009",
+      "Boone County",
+      6.8,
+      -32.8,
+      -64.9
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "05091",
+      "Miller County",
+      -14.1,
+      -51.6,
+      -51.1
+     ],
+     [
+      "05131",
+      "Sebastian County",
+      -4.8,
+      -28.7,
+      -37.5
+     ],
+     [
+      "05115",
+      "Pope County",
+      -1.4,
+      -34.8,
+      -52.2
+     ],
+     [
+      "05051",
+      "Garland County",
+      -0.6,
+      -25.0,
+      -36.3
+     ],
+     [
+      "05007",
+      "Benton County",
+      0.1,
+      -11.2,
+      -27.0
+     ]
+    ],
+    "backtest": {
+     "r": 0.207,
+     "hit": 0.567,
+     "n": 75
+    }
+   },
+   "skew": {
+    "poll_swing": 21.0,
+    "rel_poll_swing": 7.7,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +21.0 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": -9.6,
+    "p_win": 0.93,
+    "winner_party": "R",
+    "sigma": 6.5
+   },
+   "verdict": {
+    "winner_party": "R",
+    "margin_d": -9.6,
+    "p_win": 0.93,
+    "confidence": "high",
+    "headline": "Cotton favored by polls and unanimous Republican ratings",
+    "reasoning": "Cotton is the incumbent and recent independent polling averages -9.0, with the overall average at -9.6. All published ratings are Safe or Solid R. Arkansas remains heavily Republican (2024 margin -30.6), though polls imply a 21-point Democratic swing since 2024. With no skew flag, a Republican win is highly likely.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "CO-S",
+   "state": "Colorado",
+   "state_po": "CO",
+   "stfips": "08",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Colorado",
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Safe D",
+    "Econ": "Safe D",
+    "FPO": "Safe D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D",
+    "ST": "Safe D"
+   },
+   "candidates": [
+    {
+     "name": "Mark Baisley",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "John Hickenlooper",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "John Hickenlooper",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Mark Baisley",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 0,
+    "n_recent": 0,
+    "avg_margin_d": null,
+    "latest": null,
+    "house": {},
+    "independent_avg": null,
+    "list": []
+   },
+   "pres24_margin_d": 11.0,
+   "qloo": {
+    "share_moving_d": 0.388,
+    "out_of_step_d": [
+     [
+      "08013",
+      "Boulder County",
+      20.6,
+      31.4,
+      55.8
+     ],
+     [
+      "08001",
+      "Adams County",
+      8.0,
+      10.4,
+      9.0
+     ],
+     [
+      "08083",
+      "Montezuma County",
+      6.0,
+      -25.3,
+      -21.0
+     ],
+     [
+      "08031",
+      "Denver County",
+      5.6,
+      22.6,
+      56.2
+     ],
+     [
+      "08059",
+      "Jefferson County",
+      4.2,
+      13.2,
+      19.5
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "08039",
+      "Elbert County",
+      -22.3,
+      -57.2,
+      -51.1
+     ],
+     [
+      "08035",
+      "Douglas County",
+      -18.6,
+      -19.2,
+      -7.0
+     ],
+     [
+      "08067",
+      "La Plata County",
+      -16.5,
+      -30.8,
+      18.6
+     ],
+     [
+      "08107",
+      "Routt County",
+      -15.8,
+      -35.8,
+      27.7
+     ],
+     [
+      "08041",
+      "El Paso County",
+      -15.1,
+      -11.9,
+      -9.8
+     ]
+    ],
+    "backtest": {
+     "r": -0.081,
+     "hit": 0.385,
+     "n": 64
+    }
+   },
+   "skew": {
+    "poll_swing": null,
+    "rel_poll_swing": null,
+    "flag": null,
+    "short": null,
+    "text": "No recent polls. The call uses the 2024 result (D+11.0) plus the typical shift in polled races (+13.3)."
+   },
+   "script": {
+    "margin_d": 24.3,
+    "p_win": 0.997,
+    "winner_party": "D",
+    "sigma": 9.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 18.0,
+    "p_win": 0.95,
+    "confidence": "high",
+    "headline": "Hickenlooper coasting to easy Colorado reelection",
+    "reasoning": "No recent polls exist, so the race rests on Colorado's 2024 baseline (D+11.0), unanimous Safe/Solid D ratings, and Hickenlooper's incumbent strength. The script's mechanical +13.3 typical shift gives D+24.3, which likely overstates it; I shade to about D+18 while keeping a near-certain Democratic win.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "DE-S",
+   "state": "Delaware",
+   "state_po": "DE",
+   "stfips": "10",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Delaware",
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Safe D",
+    "Econ": "Safe D",
+    "FPO": "Safe D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D",
+    "ST": "Safe D"
+   },
+   "candidates": [
+    {
+     "name": "Chris Coons",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Michael Katz",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Chris Coons",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Michael Katz",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 0,
+    "n_recent": 0,
+    "avg_margin_d": null,
+    "latest": null,
+    "house": {},
+    "independent_avg": null,
+    "list": []
+   },
+   "pres24_margin_d": 14.7,
+   "qloo": {
+    "share_moving_d": 0.0,
+    "out_of_step_d": [
+     [
+      "10003",
+      "New Castle County",
+      -0.9,
+      8.2,
+      32.6
+     ],
+     [
+      "10005",
+      "Sussex County",
+      -8.9,
+      -15.4,
+      -11.0
+     ],
+     [
+      "10001",
+      "Kent County",
+      -10.1,
+      -18.9,
+      2.0
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "10001",
+      "Kent County",
+      -10.1,
+      -18.9,
+      2.0
+     ],
+     [
+      "10005",
+      "Sussex County",
+      -8.9,
+      -15.4,
+      -11.0
+     ],
+     [
+      "10003",
+      "New Castle County",
+      -0.9,
+      8.2,
+      32.6
+     ]
+    ],
+    "backtest": null
+   },
+   "skew": {
+    "poll_swing": null,
+    "rel_poll_swing": null,
+    "flag": null,
+    "short": null,
+    "text": "No recent polls. The call uses the 2024 result (D+14.7) plus the typical shift in polled races (+13.3)."
+   },
+   "script": {
+    "margin_d": 28.0,
+    "p_win": 0.999,
+    "winner_party": "D",
+    "sigma": 9.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 28.0,
+    "p_win": 0.98,
+    "confidence": "high",
+    "headline": "Coons favored in safely Democratic Delaware",
+    "reasoning": "No recent polls. All ratings are Safe/Solid D, and incumbent Chris Coons has a strong baseline: 2024 Delaware was D+14.7. The script applies the typical shift, giving D+28.0. With no contrary data, I cap confidence at high and probability at 0.98.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "FL-S2",
+   "state": "Florida",
+   "state_po": "FL",
+   "stfips": "12",
+   "special": true,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Florida",
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Likely R",
+    "Econ": "Likely R",
+    "FPO": "Likely R",
+    "Fox": "Solid R",
+    "IE": "Likely R",
+    "NBC": "Likely R",
+    "RCP": "Lean R",
+    "Sabato": "Likely R",
+    "Silver": "Likely R",
+    "ST": "Likely R"
+   },
+   "candidates": [
+    {
+     "name": "Ashley Moody",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Angie Nixon",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Angie Nixon",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Ashley Moody",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 20,
+    "n_recent": 16,
+    "avg_margin_d": -6.5,
+    "latest": "2026-10-27",
+    "house": {
+     "R": {
+      "n": 4,
+      "diff": -0.4
+     }
+    },
+    "independent_avg": -6.4,
+    "list": [
+     {
+      "pollster": "St. Pete Polls",
+      "end_date": "2026-10-27",
+      "sample": 916,
+      "population": "LV",
+      "margin_d": -4.0
+     },
+     {
+      "pollster": "ActiVote",
+      "end_date": "2026-10-27",
+      "sample": 400,
+      "population": "LV",
+      "margin_d": -6.0
+     },
+     {
+      "pollster": "New York Times / Siena University",
+      "end_date": "2026-10-25",
+      "sample": 813,
+      "population": "LV",
+      "margin_d": -6.0
+     },
+     {
+      "pollster": "RedBox Research (D)",
+      "end_date": "2026-10-23",
+      "sample": 4832,
+      "population": "LV",
+      "margin_d": -7.0
+     },
+     {
+      "pollster": "Echelon Insights (R)",
+      "end_date": "2026-10-23",
+      "sample": 515,
+      "population": "LV",
+      "margin_d": -8.0
+     },
+     {
+      "pollster": "co/efficient (R)",
+      "end_date": "2026-10-20",
+      "sample": 1014,
+      "population": "LV",
+      "margin_d": -8.0
+     },
+     {
+      "pollster": "University of North Florida",
+      "end_date": "2026-10-19",
+      "sample": 1471,
+      "population": "LV",
+      "margin_d": -4.0
+     },
+     {
+      "pollster": "Univision / YouGov",
+      "end_date": "2026-10-15",
+      "sample": 825,
+      "population": "RV",
+      "margin_d": -9.0
+     }
+    ]
+   },
+   "pres24_margin_d": -13.1,
+   "qloo": {
+    "share_moving_d": 0.733,
+    "out_of_step_d": [
+     [
+      "12086",
+      "Miami-Dade County",
+      40.0,
+      53.4,
+      -11.4
+     ],
+     [
+      "12073",
+      "Leon County",
+      28.9,
+      30.1,
+      21.8
+     ],
+     [
+      "12011",
+      "Broward County",
+      28.3,
+      45.7,
+      17.0
+     ],
+     [
+      "12129",
+      "Wakulla County",
+      25.9,
+      -7.8,
+      -44.3
+     ],
+     [
+      "12095",
+      "Orange County",
+      22.7,
+      35.7,
+      13.6
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "12119",
+      "Sumter County",
+      -17.7,
+      -33.3,
+      -37.6
+     ],
+     [
+      "12055",
+      "Highlands County",
+      -11.8,
+      -35.2,
+      -40.8
+     ],
+     [
+      "12019",
+      "Clay County",
+      -11.4,
+      -25.5,
+      -39.3
+     ],
+     [
+      "12015",
+      "Charlotte County",
+      -11.1,
+      -24.3,
+      -34.0
+     ],
+     [
+      "12017",
+      "Citrus County",
+      -11.1,
+      -29.2,
+      -45.9
+     ]
+    ],
+    "backtest": {
+     "r": -0.256,
+     "hit": 0.393,
+     "n": 67
+    }
+   },
+   "skew": {
+    "poll_swing": 6.6,
+    "rel_poll_swing": -6.7,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +6.6 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": -6.5,
+    "p_win": 0.903,
+    "winner_party": "R",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "R",
+    "margin_d": -6.5,
+    "p_win": 0.9,
+    "confidence": "high",
+    "headline": "Moody favored as polls show consistent Republican lead",
+    "reasoning": "Polling averages show Moody ahead by 6.5 points, with independent polls at -6.4 and NYT/Siena at -6. Ratings are mostly Likely/Solid R. The 2024 baseline is R+13.1 and polls moved toward Democrats by 6.6, but still leave a clear GOP lead.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "GA-S",
+   "state": "Georgia",
+   "state_po": "GA",
+   "stfips": "13",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia",
+   "ratings": {
+    "Cook": "Likely D",
+    "DDHQ": "Likely D",
+    "Econ": "Likely D",
+    "FPO": "Safe D",
+    "Fox": "Likely D",
+    "IE": "Likely D",
+    "NBC": "Likely D",
+    "RCP": "Likely D",
+    "Sabato": "Likely D",
+    "Silver": "Solid D",
+    "ST": "Safe D"
+   },
+   "candidates": [
+    {
+     "name": "Mike Collins",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Jon Ossoff",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Jon Ossoff",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Mike Collins",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 20,
+    "n_recent": 9,
+    "avg_margin_d": 9.1,
+    "latest": "2026-10-23",
+    "house": {
+     "R": {
+      "n": 6,
+      "diff": 1.0
+     }
+    },
+    "independent_avg": 8.4,
+    "list": [
+     {
+      "pollster": "Echelon Insights (R)",
+      "end_date": "2026-10-23",
+      "sample": 508,
+      "population": "LV",
+      "margin_d": 15.0
+     },
+     {
+      "pollster": "ActiVote",
+      "end_date": "2026-10-20",
+      "sample": 400,
+      "population": "LV",
+      "margin_d": 8.0
+     },
+     {
+      "pollster": "Quantus Insights (R)",
+      "end_date": "2026-10-17",
+      "sample": 755,
+      "population": "LV",
+      "margin_d": 7.0
+     },
+     {
+      "pollster": "University of Georgia School of Public and International Affairs",
+      "end_date": "2026-10-15",
+      "sample": 1000,
+      "population": "LV",
+      "margin_d": 8.0
+     },
+     {
+      "pollster": "Trafalgar Group (R)",
+      "end_date": "2026-10-09",
+      "sample": 1101,
+      "population": "LV",
+      "margin_d": 8.0
+     },
+     {
+      "pollster": "InsiderAdvantage (R)",
+      "end_date": "2026-09-23",
+      "sample": 1200,
+      "population": "LV",
+      "margin_d": 8.0
+     },
+     {
+      "pollster": "Big Data Poll (R)",
+      "end_date": "2026-09-23",
+      "sample": 721,
+      "population": "RV",
+      "margin_d": 11.0
+     },
+     {
+      "pollster": "YouGov",
+      "end_date": "2026-09-18",
+      "sample": 3416,
+      "population": "RV",
+      "margin_d": 10.0
+     }
+    ]
+   },
+   "pres24_margin_d": -2.2,
+   "qloo": {
+    "share_moving_d": 0.692,
+    "out_of_step_d": [
+     [
+      "13089",
+      "DeKalb County",
+      24.4,
+      43.4,
+      64.8
+     ],
+     [
+      "13175",
+      "Laurens County",
+      19.3,
+      -10.2,
+      -32.7
+     ],
+     [
+      "13195",
+      "Madison County",
+      18.7,
+      -18.9,
+      -54.8
+     ],
+     [
+      "13067",
+      "Cobb County",
+      17.8,
+      26.9,
+      14.9
+     ],
+     [
+      "13219",
+      "Oconee County",
+      16.6,
+      -12.1,
+      -35.9
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "13047",
+      "Catoosa County",
+      -14.8,
+      -45.2,
+      -55.5
+     ],
+     [
+      "13179",
+      "Liberty County",
+      -14.1,
+      -33.0,
+      17.4
+     ],
+     [
+      "13127",
+      "Glynn County",
+      -13.7,
+      -35.6,
+      -26.0
+     ],
+     [
+      "13227",
+      "Pickens County",
+      -12.9,
+      -50.7,
+      -65.8
+     ],
+     [
+      "13057",
+      "Cherokee County",
+      -12.4,
+      -24.0,
+      -39.0
+     ]
+    ],
+    "backtest": {
+     "r": 0.328,
+     "hit": 0.703,
+     "n": 159
+    }
+   },
+   "skew": {
+    "poll_swing": 11.3,
+    "rel_poll_swing": -2.0,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +11.3 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": 9.1,
+    "p_win": 0.966,
+    "winner_party": "D",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 8.5,
+    "p_win": 0.95,
+    "confidence": "high",
+    "headline": "Ossoff holds clear lead in Georgia Senate race",
+    "reasoning": "Polls average Ossoff +9.1, with independents +8.4 and no meaningful house skew despite Georgia's 2024 R+2.2 baseline. All published ratings are Likely/Solid/Safe D, and Ossoff is an incumbent. I set the margin slightly below the poll average to account for polling error.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "IA-S",
+   "state": "Iowa",
+   "state_po": "IA",
+   "stfips": "19",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Iowa",
+   "ratings": {
+    "Cook": "Tossup",
+    "DDHQ": "Tossup",
+    "Econ": "Lean R",
+    "FPO": "Tossup",
+    "Fox": "Tossup",
+    "IE": "Tossup",
+    "NBC": "Tossup",
+    "RCP": "Tossup",
+    "Sabato": "Tossup",
+    "Silver": "Tossup",
+    "ST": "Tossup"
+   },
+   "candidates": [
+    {
+     "name": "Ashley Hinson",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Josh Turek",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Josh Turek",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Ashley Hinson",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 29,
+    "n_recent": 17,
+    "avg_margin_d": -0.0,
+    "latest": "2026-10-28",
+    "house": {
+     "R": {
+      "n": 8,
+      "diff": 0.1
+     }
+    },
+    "independent_avg": 0.0,
+    "list": [
+     {
+      "pollster": "co/efficient (R)",
+      "end_date": "2026-10-28",
+      "sample": 1020,
+      "population": "LV",
+      "margin_d": -2.0
+     },
+     {
+      "pollster": "Echelon Insights (R)",
+      "end_date": "2026-10-23",
+      "sample": 403,
+      "population": "LV",
+      "margin_d": 2.0
+     },
+     {
+      "pollster": "InsiderAdvantage (R)",
+      "end_date": "2026-10-22",
+      "sample": 1200,
+      "population": "LV",
+      "margin_d": -2.0
+     },
+     {
+      "pollster": "Trafalgar Group (R)",
+      "end_date": "2026-10-15",
+      "sample": 1094,
+      "population": "LV",
+      "margin_d": -2.0
+     },
+     {
+      "pollster": "GS Strategy Group (R)/ New River Strategies (D)",
+      "end_date": "2026-10-13",
+      "sample": 602,
+      "population": "LV",
+      "margin_d": 2.0
+     },
+     {
+      "pollster": "NPA Polling",
+      "end_date": "2026-10-12",
+      "sample": 678,
+      "population": "LV",
+      "margin_d": -3.0
+     },
+     {
+      "pollster": "YouGov",
+      "end_date": "2026-10-12",
+      "sample": 2245,
+      "population": "LV",
+      "margin_d": 1.0
+     },
+     {
+      "pollster": "Marist University",
+      "end_date": "2026-10-11",
+      "sample": null,
+      "population": "LV",
+      "margin_d": 3.0
+     }
+    ]
+   },
+   "pres24_margin_d": -13.3,
+   "qloo": {
+    "share_moving_d": 0.423,
+    "out_of_step_d": [
+     [
+      "19103",
+      "Johnson County",
+      11.4,
+      10.1,
+      38.1
+     ],
+     [
+      "19013",
+      "Black Hawk County",
+      9.0,
+      -3.4,
+      1.2
+     ],
+     [
+      "19155",
+      "Pottawattamie County",
+      8.9,
+      -11.5,
+      -20.0
+     ],
+     [
+      "19113",
+      "Linn County",
+      6.6,
+      2.7,
+      9.9
+     ],
+     [
+      "19169",
+      "Story County",
+      5.9,
+      -7.0,
+      10.4
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "19125",
+      "Marion County",
+      -12.8,
+      -45.3,
+      -37.8
+     ],
+     [
+      "19099",
+      "Jasper County",
+      -11.7,
+      -41.6,
+      -27.6
+     ],
+     [
+      "19111",
+      "Lee County",
+      -10.9,
+      -43.1,
+      -27.8
+     ],
+     [
+      "19193",
+      "Woodbury County",
+      -9.7,
+      -31.2,
+      -23.0
+     ],
+     [
+      "19127",
+      "Marshall County",
+      -8.8,
+      -37.7,
+      -15.6
+     ]
+    ],
+    "backtest": {
+     "r": 0.167,
+     "hit": 0.675,
+     "n": 99
+    }
+   },
+   "skew": {
+    "poll_swing": 13.3,
+    "rel_poll_swing": 0.0,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +13.3 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": -0.0,
+    "p_win": 0.5,
+    "winner_party": "R",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "R",
+    "margin_d": -0.5,
+    "p_win": 0.51,
+    "confidence": "low",
+    "headline": "Tied Iowa Senate race; R holds narrow edge",
+    "reasoning": "Polls average 0.0 with 17 recent and independent_avg 0.0; house difference only 0.1, so no poll skew. Ratings are mostly tossup, with Econ Lean R. 2024 Iowa was R+13.3 and the 13.3-point poll swing is typical. That leaves a near coin-flip; I give R a slight edge.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "ID-S",
+   "state": "Idaho",
+   "state_po": "ID",
+   "stfips": "16",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Idaho",
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Safe R",
+    "Econ": "Safe R",
+    "FPO": "Safe R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R",
+    "ST": "Safe R"
+   },
+   "candidates": [
+    {
+     "name": "Todd Achilles",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Jim Risch",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Todd Achilles",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    "r": {
+     "name": "Jim Risch",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 9,
+    "n_recent": 3,
+    "avg_margin_d": -6.3,
+    "latest": "2026-10-22",
+    "house": {},
+    "independent_avg": -2.7,
+    "list": [
+     {
+      "pollster": "VoteNexus Research",
+      "end_date": "2026-10-22",
+      "sample": 700,
+      "population": "LV",
+      "margin_d": -6.0
+     },
+     {
+      "pollster": "Peak Insights (R)",
+      "end_date": "2026-09-30",
+      "sample": 500,
+      "population": "LV",
+      "margin_d": -25.0
+     },
+     {
+      "pollster": "Advanced Targeting Research",
+      "end_date": "2026-09-16",
+      "sample": 700,
+      "population": "RV",
+      "margin_d": 11.0
+     },
+     {
+      "pollster": "Peak Insights (R)",
+      "end_date": "2026-08-13",
+      "sample": 500,
+      "population": "LV",
+      "margin_d": -34.0
+     },
+     {
+      "pollster": "The Bullfinch Group",
+      "end_date": "2026-08-07",
+      "sample": 608,
+      "population": "LV",
+      "margin_d": 5.0
+     },
+     {
+      "pollster": "The Bullfinch Group",
+      "end_date": "2026-08-07",
+      "sample": 608,
+      "population": "LV",
+      "margin_d": -4.0
+     },
+     {
+      "pollster": "Change Research (D)",
+      "end_date": "2026-07-30",
+      "sample": 1213,
+      "population": "LV",
+      "margin_d": -24.0
+     },
+     {
+      "pollster": "The Bullfinch Group",
+      "end_date": "2026-06-01",
+      "sample": 774,
+      "population": "RV",
+      "margin_d": -4.0
+     }
+    ]
+   },
+   "pres24_margin_d": -36.5,
+   "qloo": {
+    "share_moving_d": 0.825,
+    "out_of_step_d": [
+     [
+      "16057",
+      "Latah County",
+      25.1,
+      -0.5,
+      -8.0
+     ],
+     [
+      "16051",
+      "Jefferson County",
+      19.7,
+      -22.5,
+      -73.3
+     ],
+     [
+      "16069",
+      "Nez Perce County",
+      17.6,
+      -14.7,
+      -38.6
+     ],
+     [
+      "16065",
+      "Madison County",
+      15.7,
+      -23.7,
+      -64.3
+     ],
+     [
+      "16017",
+      "Bonner County",
+      10.8,
+      -19.3,
+      -46.1
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "16027",
+      "Canyon County",
+      -16.3,
+      -34.3,
+      -46.6
+     ],
+     [
+      "16001",
+      "Ada County",
+      1.6,
+      1.2,
+      -10.3
+     ],
+     [
+      "16055",
+      "Kootenai County",
+      3.4,
+      -16.2,
+      -51.8
+     ],
+     [
+      "16083",
+      "Twin Falls County",
+      6.3,
+      -22.1,
+      -48.8
+     ],
+     [
+      "16019",
+      "Bonneville County",
+      7.6,
+      -15.9,
+      -45.4
+     ]
+    ],
+    "backtest": {
+     "r": 0.112,
+     "hit": 0.778,
+     "n": 44
+    }
+   },
+   "skew": {
+    "poll_swing": 30.2,
+    "rel_poll_swing": 16.9,
+    "flag": "shift",
+    "short": "Unusual shift toward Achilles",
+    "text": "Polls have ID 16.9 pts further toward Achilles than the typical race moved since 2024 (typical: +13.3). That can be a real candidate effect or a polling miss; candidate-driven Senate races often break this way."
+   },
+   "script": {
+    "margin_d": -6.3,
+    "p_win": 0.896,
+    "winner_party": "R",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "R",
+    "margin_d": -8.0,
+    "p_win": 0.9,
+    "confidence": "high",
+    "headline": "Risch favored; Idaho remains safely Republican despite closer polls",
+    "reasoning": "Risch is the incumbent and every rating is Safe/Solid R. Polls average R+6.3, with independents R+2.7, far closer than Idaho's 2024 R+36.5 baseline. The skew flag suggests a real Achilles effect, but the incumbent and ratings make an R win highly likely.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "IL-S",
+   "state": "Illinois",
+   "state_po": "IL",
+   "stfips": "17",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Illinois",
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Safe D",
+    "Econ": "Safe D",
+    "FPO": "Safe D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D",
+    "ST": "Safe D"
+   },
+   "candidates": [
+    {
+     "name": "Juliana Stratton",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Don Tracy",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Juliana Stratton",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Don Tracy",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 2,
+    "n_recent": 2,
+    "avg_margin_d": 15.9,
+    "latest": "2026-10-20",
+    "house": {},
+    "independent_avg": 17.0,
+    "list": [
+     {
+      "pollster": "ActiVote",
+      "end_date": "2026-10-20",
+      "sample": 400,
+      "population": "LV",
+      "margin_d": 17.0
+     },
+     {
+      "pollster": "Public Policy Polling (D)",
+      "end_date": "2026-10-01",
+      "sample": 569,
+      "population": "LV",
+      "margin_d": 13.0
+     }
+    ]
+   },
+   "pres24_margin_d": 11.0,
+   "qloo": {
+    "share_moving_d": 0.603,
+    "out_of_step_d": [
+     [
+      "17105",
+      "Livingston County",
+      17.1,
+      -18.9,
+      -46.3
+     ],
+     [
+      "17031",
+      "Cook County",
+      13.5,
+      44.8,
+      42.0
+     ],
+     [
+      "17195",
+      "Whiteside County",
+      12.0,
+      -12.5,
+      -14.7
+     ],
+     [
+      "17095",
+      "Knox County",
+      11.8,
+      -13.2,
+      -9.4
+     ],
+     [
+      "17019",
+      "Champaign County",
+      11.7,
+      7.7,
+      24.1
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "17057",
+      "Fulton County",
+      -15.7,
+      -47.0,
+      -23.8
+     ],
+     [
+      "17093",
+      "Kendall County",
+      -14.0,
+      -25.8,
+      1.5
+     ],
+     [
+      "17081",
+      "Jefferson County",
+      -13.9,
+      -50.2,
+      -47.8
+     ],
+     [
+      "17121",
+      "Marion County",
+      -10.5,
+      -47.0,
+      -49.5
+     ],
+     [
+      "17001",
+      "Adams County",
+      -9.9,
+      -39.6,
+      -47.4
+     ]
+    ],
+    "backtest": {
+     "r": 0.021,
+     "hit": 0.476,
+     "n": 102
+    }
+   },
+   "skew": {
+    "poll_swing": 4.9,
+    "rel_poll_swing": -8.4,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +4.9 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": 15.9,
+    "p_win": 0.993,
+    "winner_party": "D",
+    "sigma": 6.5
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 16.0,
+    "p_win": 0.99,
+    "confidence": "high",
+    "headline": "Stratton favored by double digits in safely Democratic Illinois",
+    "reasoning": "Two recent polls put Stratton ahead by 15.9 points on average, with independents at D+17; Illinois' 2024 presidential baseline is D+11. All ratings are Solid/Safe D. The deterministic script gives D+15.9 and p=0.993, so I cap p_win at 0.99.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "KS-S",
+   "state": "Kansas",
+   "state_po": "KS",
+   "stfips": "20",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Kansas",
+   "ratings": {
+    "Cook": "Tossup",
+    "DDHQ": "Tossup",
+    "Econ": "Tossup",
+    "FPO": "Tossup",
+    "Fox": "Lean R",
+    "IE": "Tossup",
+    "NBC": "Tossup",
+    "RCP": "Tossup",
+    "Sabato": "Tossup",
+    "Silver": "Tossup",
+    "ST": "Lean R"
+   },
+   "candidates": [
+    {
+     "name": "Adam Hamilton",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Roger Marshall",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Adam Hamilton",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Roger Marshall",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 14,
+    "n_recent": 10,
+    "avg_margin_d": 1.5,
+    "latest": "2026-10-26",
+    "house": {
+     "D": {
+      "n": 3,
+      "diff": -0.2
+     },
+     "R": {
+      "n": 3,
+      "diff": -4.2
+     }
+    },
+    "independent_avg": 2.9,
+    "list": [
+     {
+      "pollster": "SSRS",
+      "end_date": "2026-10-26",
+      "sample": 838,
+      "population": "LV",
+      "margin_d": 4.0
+     },
+     {
+      "pollster": "RedBox Research (D)",
+      "end_date": "2026-10-23",
+      "sample": 1301,
+      "population": "LV",
+      "margin_d": -1.0
+     },
+     {
+      "pollster": "InsiderAdvantage (R)",
+      "end_date": "2026-10-14",
+      "sample": 1200,
+      "population": "LV",
+      "margin_d": -1.0
+     },
+     {
+      "pollster": "GBAO (D)",
+      "end_date": "2026-10-04",
+      "sample": 600,
+      "population": "LV",
+      "margin_d": 5.0
+     },
+     {
+      "pollster": "YouGov",
+      "end_date": "2026-10-04",
+      "sample": 2255,
+      "population": "LV",
+      "margin_d": 3.0
+     },
+     {
+      "pollster": "Trafalgar Group (R)",
+      "end_date": "2026-10-01",
+      "sample": 1095,
+      "population": "LV",
+      "margin_d": 0.0
+     },
+     {
+      "pollster": "New York Times / Siena University",
+      "end_date": "2026-09-30",
+      "sample": 605,
+      "population": "LV",
+      "margin_d": 0.0
+     },
+     {
+      "pollster": "Emerson College",
+      "end_date": "2026-09-16",
+      "sample": 750,
+      "population": "LV",
+      "margin_d": 2.0
+     }
+    ]
+   },
+   "pres24_margin_d": -16.1,
+   "qloo": {
+    "share_moving_d": 0.798,
+    "out_of_step_d": [
+     [
+      "20177",
+      "Shawnee County",
+      15.0,
+      5.1,
+      0.5
+     ],
+     [
+      "20209",
+      "Wyandotte County",
+      14.2,
+      4.6,
+      23.9
+     ],
+     [
+      "20045",
+      "Douglas County",
+      13.2,
+      8.0,
+      38.0
+     ],
+     [
+      "20155",
+      "Reno County",
+      10.3,
+      -18.2,
+      -34.5
+     ],
+     [
+      "20015",
+      "Butler County",
+      9.5,
+      -18.7,
+      -41.2
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "20079",
+      "Harvey County",
+      -12.1,
+      -42.9,
+      -21.1
+     ],
+     [
+      "20169",
+      "Saline County",
+      -8.3,
+      -37.7,
+      -31.6
+     ],
+     [
+      "20103",
+      "Leavenworth County",
+      -6.5,
+      -29.5,
+      -22.8
+     ],
+     [
+      "20121",
+      "Miami County",
+      -4.6,
+      -37.9,
+      -39.5
+     ],
+     [
+      "20037",
+      "Crawford County",
+      -2.5,
+      -34.0,
+      -25.3
+     ]
+    ],
+    "backtest": {
+     "r": 0.055,
+     "hit": 0.476,
+     "n": 104
+    }
+   },
+   "skew": {
+    "poll_swing": 17.6,
+    "rel_poll_swing": 4.3,
+    "flag": "house",
+    "short": "R-sponsored polls lean Marshall",
+    "text": "3 Republican-sponsored polls show Marshall 4.2 pts better than the 4 independent polls. The average already counts them at 60%; the independent polls alone say D+2.9."
+   },
+   "script": {
+    "margin_d": 1.5,
+    "p_win": 0.618,
+    "winner_party": "D",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 2.5,
+    "p_win": 0.63,
+    "confidence": "medium",
+    "headline": "Hamilton edges Marshall in Kansas tossup",
+    "reasoning": "Ten recent polls average D+1.5; independent polls show D+2.9, including SSRS D+4 and YouGov D+3. Republican house polls pull the average down, but even script is D+1.5. Ratings are mostly tossup despite Kansas's R+16.1 2024 baseline, so I give Hamilton a modest edge.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "KY-S",
+   "state": "Kentucky",
+   "state_po": "KY",
+   "stfips": "21",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Kentucky",
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Safe R",
+    "Econ": "Safe R",
+    "FPO": "Safe R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R",
+    "ST": "Safe R"
+   },
+   "candidates": [
+    {
+     "name": "Andy Barr",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Charles Booker",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Charles Booker",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Andy Barr",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 2,
+    "n_recent": 0,
+    "avg_margin_d": -9.0,
+    "latest": "2026-08-27",
+    "house": {},
+    "independent_avg": null,
+    "list": [
+     {
+      "pollster": "Global Strategy Group (D)",
+      "end_date": "2026-08-27",
+      "sample": 600,
+      "population": "LV",
+      "margin_d": -9.0
+     },
+     {
+      "pollster": "Public Policy Polling (D)",
+      "end_date": "2025-12-19",
+      "sample": 650,
+      "population": null,
+      "margin_d": -11.0
+     }
+    ]
+   },
+   "pres24_margin_d": -30.6,
+   "qloo": {
+    "share_moving_d": 0.74,
+    "out_of_step_d": [
+     [
+      "21083",
+      "Graves County",
+      22.9,
+      -16.3,
+      -61.6
+     ],
+     [
+      "21035",
+      "Calloway County",
+      20.2,
+      -13.7,
+      -38.0
+     ],
+     [
+      "21037",
+      "Campbell County",
+      16.3,
+      -3.2,
+      -19.7
+     ],
+     [
+      "21101",
+      "Henderson County",
+      16.2,
+      -14.3,
+      -29.2
+     ],
+     [
+      "21009",
+      "Barren County",
+      15.4,
+      -20.2,
+      -52.8
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "21145",
+      "McCracken County",
+      -16.8,
+      -43.8,
+      -34.9
+     ],
+     [
+      "21157",
+      "Marshall County",
+      -14.8,
+      -52.3,
+      -56.7
+     ],
+     [
+      "21113",
+      "Jessamine County",
+      -6.8,
+      -35.7,
+      -35.8
+     ],
+     [
+      "21089",
+      "Greenup County",
+      -4.5,
+      -40.9,
+      -50.5
+     ],
+     [
+      "21179",
+      "Nelson County",
+      -4.3,
+      -36.0,
+      -41.8
+     ]
+    ],
+    "backtest": {
+     "r": -0.089,
+     "hit": 0.5,
+     "n": 120
+    }
+   },
+   "skew": {
+    "poll_swing": 21.6,
+    "rel_poll_swing": 8.3,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +21.6 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": -13.2,
+    "p_win": 0.96,
+    "winner_party": "R",
+    "sigma": 7.5
+   },
+   "verdict": {
+    "winner_party": "R",
+    "margin_d": -13.2,
+    "p_win": 0.95,
+    "confidence": "high",
+    "headline": "Barr favored as Kentucky remains solidly Republican",
+    "reasoning": "Two Democratic-sponsored polls put Barr ahead by 9-11 points; there are no independent polls. Kentucky\u2019s 2024 baseline was R+30.6, and all ratings are Safe/Solid R. The script\u2019s polls-only margin is R+13.2. Discounting the Democratic house effect, Barr remains a clear favorite.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "LA-S",
+   "state": "Louisiana",
+   "state_po": "LA",
+   "stfips": "22",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Louisiana",
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Likely R",
+    "Econ": "Likely R",
+    "FPO": "Likely R",
+    "Fox": "Solid R",
+    "IE": "Likely R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R",
+    "ST": "Safe R"
+   },
+   "candidates": [
+    {
+     "name": "Jamie Davis",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Julia Letlow",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Jamie Davis",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Julia Letlow",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 2,
+    "n_recent": 1,
+    "avg_margin_d": -4.0,
+    "latest": "2026-09-19",
+    "house": {},
+    "independent_avg": null,
+    "list": [
+     {
+      "pollster": "Hart Research Associates (D)",
+      "end_date": "2026-09-19",
+      "sample": 500,
+      "population": "LV",
+      "margin_d": -4.0
+     },
+     {
+      "pollster": "Public Policy Polling (D)",
+      "end_date": "2026-07-22",
+      "sample": 518,
+      "population": "RV",
+      "margin_d": -4.0
+     }
+    ]
+   },
+   "pres24_margin_d": -22.0,
+   "qloo": {
+    "share_moving_d": 0.496,
+    "out_of_step_d": [
+     [
+      "22051",
+      "Jefferson Parish",
+      23.9,
+      18.9,
+      -13.0
+     ],
+     [
+      "22001",
+      "Acadia Parish",
+      21.3,
+      -13.7,
+      -64.0
+     ],
+     [
+      "22097",
+      "St. Landry Parish",
+      20.9,
+      -1.1,
+      -18.8
+     ],
+     [
+      "22089",
+      "St. Charles Parish",
+      18.8,
+      -9.4,
+      -32.3
+     ],
+     [
+      "22009",
+      "Avoyelles Parish",
+      18.8,
+      -16.8,
+      -43.1
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "22017",
+      "Caddo Parish",
+      -13.8,
+      -21.4,
+      4.6
+     ],
+     [
+      "22073",
+      "Ouachita Parish",
+      -11.0,
+      -29.4,
+      -27.9
+     ],
+     [
+      "22069",
+      "Natchitoches Parish",
+      -9.7,
+      -41.5,
+      -22.3
+     ],
+     [
+      "22015",
+      "Bossier Parish",
+      -9.7,
+      -33.5,
+      -43.3
+     ],
+     [
+      "22019",
+      "Calcasieu Parish",
+      -9.1,
+      -27.7,
+      -39.6
+     ]
+    ],
+    "backtest": {
+     "r": 0.382,
+     "hit": 0.731,
+     "n": 64
+    }
+   },
+   "skew": {
+    "poll_swing": 18.0,
+    "rel_poll_swing": 4.7,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +18.0 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": -4.0,
+    "p_win": 0.731,
+    "winner_party": "R",
+    "sigma": 6.5
+   },
+   "verdict": {
+    "winner_party": "R",
+    "margin_d": -8.0,
+    "p_win": 0.86,
+    "confidence": "high",
+    "headline": "Letlow favored; Democratic polls still show her trailing",
+    "reasoning": "Only two recent polls, both Democratic-sponsored, still average Letlow +4. No independent polls, but 2024 was Trump +22 in Louisiana and every rating is Solid/Safe/Likely R. Typical polling shift would imply about R+9, so I put the race near R+8 rather than the raw poll R+4.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "MA-S",
+   "state": "Massachusetts",
+   "state_po": "MA",
+   "stfips": "25",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Massachusetts",
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Safe D",
+    "Econ": "Safe D",
+    "FPO": "Safe D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D",
+    "ST": "Safe D"
+   },
+   "candidates": [
+    {
+     "name": "John Deaton",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Ed Markey",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Ed Markey",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "John Deaton",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 13,
+    "n_recent": 4,
+    "avg_margin_d": 26.5,
+    "latest": "2026-10-18",
+    "house": {},
+    "independent_avg": 26.5,
+    "list": [
+     {
+      "pollster": "Suffolk University",
+      "end_date": "2026-10-18",
+      "sample": 500,
+      "population": "LV",
+      "margin_d": 28.0
+     },
+     {
+      "pollster": "UMass Amherst / YouGov",
+      "end_date": "2026-10-12",
+      "sample": 800,
+      "population": "RV",
+      "margin_d": 27.0
+     },
+     {
+      "pollster": "MassINC Polling Group",
+      "end_date": "2026-09-22",
+      "sample": 800,
+      "population": "LV",
+      "margin_d": 26.0
+     },
+     {
+      "pollster": "University of New Hampshire",
+      "end_date": "2026-09-21",
+      "sample": 564,
+      "population": "LV",
+      "margin_d": 23.0
+     },
+     {
+      "pollster": "University of New Hampshire",
+      "end_date": "2026-08-24",
+      "sample": 881,
+      "population": "LV",
+      "margin_d": 19.0
+     },
+     {
+      "pollster": "UMass Amherst / YouGov",
+      "end_date": "2026-08-12",
+      "sample": 800,
+      "population": "RV",
+      "margin_d": 21.0
+     },
+     {
+      "pollster": "University of New Hampshire",
+      "end_date": "2026-06-23",
+      "sample": 623,
+      "population": "LV",
+      "margin_d": 16.0
+     },
+     {
+      "pollster": "Suffolk University",
+      "end_date": "2026-06-12",
+      "sample": 500,
+      "population": "LV",
+      "margin_d": 25.0
+     }
+    ]
+   },
+   "pres24_margin_d": 25.3,
+   "qloo": {
+    "share_moving_d": 0.06,
+    "out_of_step_d": [
+     [
+      "25003",
+      "Berkshire County",
+      15.7,
+      12.6,
+      39.9
+     ],
+     [
+      "25011",
+      "Franklin County",
+      4.6,
+      -3.9,
+      37.8
+     ],
+     [
+      "25015",
+      "Hampshire County",
+      3.4,
+      2.7,
+      41.9
+     ],
+     [
+      "25017",
+      "Middlesex County",
+      -11.2,
+      10.2,
+      39.5
+     ],
+     [
+      "25025",
+      "Suffolk County",
+      -15.5,
+      -1.3,
+      52.5
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "25023",
+      "Plymouth County",
+      -27.4,
+      -22.6,
+      8.8
+     ],
+     [
+      "25005",
+      "Bristol County",
+      -27.4,
+      -24.9,
+      1.3
+     ],
+     [
+      "25027",
+      "Worcester County",
+      -25.8,
+      -17.3,
+      10.0
+     ],
+     [
+      "25001",
+      "Barnstable County",
+      -22.8,
+      -22.4,
+      20.7
+     ],
+     [
+      "25009",
+      "Essex County",
+      -21.3,
+      -11.1,
+      20.3
+     ]
+    ],
+    "backtest": {
+     "r": 0.67,
+     "hit": 0.667,
+     "n": 14
+    }
+   },
+   "skew": {
+    "poll_swing": 1.2,
+    "rel_poll_swing": -12.1,
+    "flag": "shift",
+    "short": "Unusual shift toward Deaton",
+    "text": "Polls have MA 12.1 pts further toward Deaton than the typical race moved since 2024 (typical: +13.3). That can be a real candidate effect or a polling miss; candidate-driven Senate races often break this way."
+   },
+   "script": {
+    "margin_d": 26.5,
+    "p_win": 1.0,
+    "winner_party": "D",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 26.5,
+    "p_win": 0.98,
+    "confidence": "high",
+    "headline": "Markey holds large lead in safely Democratic Massachusetts",
+    "reasoning": "Four recent independent polls average Markey +26.5, led by Suffolk +28 and UMass +27; the 2024 baseline was D+25.3 and all ratings are Safe/Solid D. The skew flag notes relative underperformance, but the lead remains far beyond any plausible polling error.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "ME-S",
+   "state": "Maine",
+   "state_po": "ME",
+   "stfips": "23",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Maine",
+   "ratings": {
+    "Cook": "Tossup",
+    "DDHQ": "Tossup",
+    "Econ": "Lean D (flip)",
+    "FPO": "Lean D (flip)",
+    "Fox": "Tossup",
+    "IE": "Tossup",
+    "NBC": "Lean D (flip)",
+    "RCP": "Tossup",
+    "Sabato": "Tossup",
+    "Silver": "Lean D (flip)",
+    "ST": "Lean D (flip)"
+   },
+   "candidates": [
+    {
+     "name": "Susan Collins",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Troy Jackson",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Troy Jackson",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Susan Collins",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 25,
+    "n_recent": 18,
+    "avg_margin_d": 2.0,
+    "latest": "2026-10-26",
+    "house": {
+     "R": {
+      "n": 7,
+      "diff": -0.8
+     }
+    },
+    "independent_avg": 2.5,
+    "list": [
+     {
+      "pollster": "SSRS",
+      "end_date": "2026-10-26",
+      "sample": 783,
+      "population": "LV",
+      "margin_d": 4.0
+     },
+     {
+      "pollster": "Marist University",
+      "end_date": "2026-10-25",
+      "sample": null,
+      "population": "LV",
+      "margin_d": 2.0
+     },
+     {
+      "pollster": "Trafalgar Group (R)",
+      "end_date": "2026-10-23",
+      "sample": 1077,
+      "population": "LV",
+      "margin_d": 0.0
+     },
+     {
+      "pollster": "Echelon Insights (R)",
+      "end_date": "2026-10-23",
+      "sample": 413,
+      "population": "LV",
+      "margin_d": 7.0
+     },
+     {
+      "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+      "end_date": "2026-10-20",
+      "sample": 1514,
+      "population": "LV",
+      "margin_d": 0.0
+     },
+     {
+      "pollster": "InsiderAdvantage (R)",
+      "end_date": "2026-10-14",
+      "sample": 1200,
+      "population": "LV",
+      "margin_d": 2.0
+     },
+     {
+      "pollster": "Suffolk University",
+      "end_date": "2026-10-11",
+      "sample": 500,
+      "population": "LV",
+      "margin_d": 2.0
+     },
+     {
+      "pollster": "Rasmussen Reports (R)",
+      "end_date": "2026-10-08",
+      "sample": 804,
+      "population": "LV",
+      "margin_d": 2.0
+     }
+    ]
+   },
+   "pres24_margin_d": 6.9,
+   "qloo": {
+    "share_moving_d": 0.403,
+    "out_of_step_d": [
+     [
+      "23023",
+      "Sagadahoc County",
+      16.5,
+      -2.0,
+      16.6
+     ],
+     [
+      "23015",
+      "Lincoln County",
+      13.0,
+      -6.8,
+      11.3
+     ],
+     [
+      "23009",
+      "Hancock County",
+      12.5,
+      -3.1,
+      11.8
+     ],
+     [
+      "23027",
+      "Waldo County",
+      11.9,
+      -9.1,
+      3.4
+     ],
+     [
+      "23013",
+      "Knox County",
+      9.0,
+      -8.5,
+      18.6
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "23007",
+      "Franklin County",
+      -22.3,
+      -49.3,
+      -8.2
+     ],
+     [
+      "23025",
+      "Somerset County",
+      -20.2,
+      -46.6,
+      -27.0
+     ],
+     [
+      "23003",
+      "Aroostook County",
+      -19.8,
+      -43.8,
+      -26.2
+     ],
+     [
+      "23001",
+      "Androscoggin County",
+      -17.7,
+      -32.3,
+      -6.1
+     ],
+     [
+      "23019",
+      "Penobscot County",
+      -12.6,
+      -24.3,
+      -10.9
+     ]
+    ],
+    "backtest": {
+     "r": 0.841,
+     "hit": 0.625,
+     "n": 16
+    }
+   },
+   "skew": {
+    "poll_swing": -4.9,
+    "rel_poll_swing": -18.2,
+    "flag": "shift",
+    "short": "Unusual shift toward Collins",
+    "text": "Polls have ME 18.2 pts further toward Collins than the typical race moved since 2024 (typical: +13.3). That can be a real candidate effect or a polling miss; candidate-driven Senate races often break this way."
+   },
+   "script": {
+    "margin_d": 2.0,
+    "p_win": 0.655,
+    "winner_party": "D",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 2.0,
+    "p_win": 0.62,
+    "confidence": "medium",
+    "headline": "Jackson narrowly ahead as Collins keeps Maine close",
+    "reasoning": "Polls average Jackson +2.0, with independent polls +2.5 across 18 recent surveys. Ratings split between tossup and Lean D, and the script gives D +2.0. Collins is a strong incumbent and the skew flag warns Maine polls are 18.2 points more Republican than the typical race, so confidence stays medium.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "MI-S",
+   "state": "Michigan",
+   "state_po": "MI",
+   "stfips": "26",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Michigan",
+   "ratings": {
+    "Cook": "Tossup",
+    "DDHQ": "Lean D",
+    "Econ": "Lean D",
+    "FPO": "Lean D",
+    "Fox": "Tossup",
+    "IE": "Tilt D",
+    "NBC": "Lean D",
+    "RCP": "Tossup",
+    "Sabato": "Lean D",
+    "Silver": "Likely D",
+    "ST": "Lean D"
+   },
+   "candidates": [
+    {
+     "name": "Abdul El-Sayed",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Mike Rogers",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Abdul El-Sayed",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Mike Rogers",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 59,
+    "n_recent": 26,
+    "avg_margin_d": 4.1,
+    "latest": "2026-10-28",
+    "house": {
+     "D": {
+      "n": 5,
+      "diff": -0.2
+     },
+     "R": {
+      "n": 9,
+      "diff": -3.1
+     }
+    },
+    "independent_avg": 5.0,
+    "list": [
+     {
+      "pollster": "Upswing Research (D)",
+      "end_date": "2026-10-28",
+      "sample": 505,
+      "population": "LV",
+      "margin_d": 5.0
+     },
+     {
+      "pollster": "Mitchell Research & Communications",
+      "end_date": "2026-10-27",
+      "sample": 636,
+      "population": "LV",
+      "margin_d": 7.0
+     },
+     {
+      "pollster": "SSRS",
+      "end_date": "2026-10-27",
+      "sample": 768,
+      "population": "LV",
+      "margin_d": 7.0
+     },
+     {
+      "pollster": "RedBox Research (D)",
+      "end_date": "2026-10-23",
+      "sample": 2696,
+      "population": "LV",
+      "margin_d": 5.0
+     },
+     {
+      "pollster": "Michigan State University /Verasight",
+      "end_date": "2026-10-23",
+      "sample": 1383,
+      "population": "LV",
+      "margin_d": 8.0
+     },
+     {
+      "pollster": "InsiderAdvantage (R)",
+      "end_date": "2026-10-22",
+      "sample": 1200,
+      "population": "LV",
+      "margin_d": 1.0
+     },
+     {
+      "pollster": "Glengariff Group",
+      "end_date": "2026-10-22",
+      "sample": 600,
+      "population": "LV",
+      "margin_d": 6.0
+     },
+     {
+      "pollster": "Michigan State University / YouGov",
+      "end_date": "2026-10-19",
+      "sample": 836,
+      "population": "LV",
+      "margin_d": 2.0
+     }
+    ]
+   },
+   "pres24_margin_d": -1.4,
+   "qloo": {
+    "share_moving_d": 0.404,
+    "out_of_step_d": [
+     [
+      "26021",
+      "Berrien County",
+      22.9,
+      11.5,
+      -7.9
+     ],
+     [
+      "26037",
+      "Clinton County",
+      22.0,
+      5.2,
+      -8.6
+     ],
+     [
+      "26007",
+      "Alpena County",
+      20.4,
+      -11.3,
+      -28.6
+     ],
+     [
+      "26089",
+      "Leelanau County",
+      19.9,
+      -3.7,
+      7.8
+     ],
+     [
+      "26161",
+      "Washtenaw County",
+      19.3,
+      28.9,
+      44.4
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "26087",
+      "Lapeer County",
+      -39.2,
+      -61.7,
+      -39.8
+     ],
+     [
+      "26093",
+      "Livingston County",
+      -30.0,
+      -40.4,
+      -24.0
+     ],
+     [
+      "26157",
+      "Tuscola County",
+      -29.6,
+      -58.7,
+      -43.0
+     ],
+     [
+      "26137",
+      "Otsego County",
+      -28.7,
+      -62.6,
+      -35.3
+     ],
+     [
+      "26099",
+      "Macomb County",
+      -26.4,
+      -21.1,
+      -13.7
+     ]
+    ],
+    "backtest": {
+     "r": 0.222,
+     "hit": 0.588,
+     "n": 83
+    }
+   },
+   "skew": {
+    "poll_swing": 5.5,
+    "rel_poll_swing": -7.8,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +5.5 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": 4.1,
+    "p_win": 0.794,
+    "winner_party": "D",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 4.5,
+    "p_win": 0.83,
+    "confidence": "medium",
+    "headline": "El-Sayed holds polling edge in Michigan Senate race",
+    "reasoning": "Polls average D+4.1 over 26 recent surveys, with independents at D+5.0 and latest polls showing D+5 to D+8. Ratings mostly Lean D, though Cook/Fox/RCP call it Tossup. Michigan remains competitive and 2024 was R+1.4, so confidence is medium, not high.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "MN-S",
+   "state": "Minnesota",
+   "state_po": "MN",
+   "stfips": "27",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Minnesota",
+   "ratings": {
+    "Cook": "Lean D",
+    "DDHQ": "Likely D",
+    "Econ": "Likely D",
+    "FPO": "Likely D",
+    "Fox": "Lean D",
+    "IE": "Lean D",
+    "NBC": "Likely D",
+    "RCP": "Lean D",
+    "Sabato": "Lean D",
+    "Silver": "Likely D",
+    "ST": "Likely D"
+   },
+   "candidates": [
+    {
+     "name": "Peggy Flanagan",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "DFL"
+    },
+    {
+     "name": "Michele Tafoya",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Peggy Flanagan",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "DFL"
+    },
+    "r": {
+     "name": "Michele Tafoya",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 18,
+    "n_recent": 13,
+    "avg_margin_d": 5.3,
+    "latest": "2026-10-26",
+    "house": {
+     "R": {
+      "n": 8,
+      "diff": -3.8
+     }
+    },
+    "independent_avg": 7.5,
+    "list": [
+     {
+      "pollster": "New York Times / Siena University",
+      "end_date": "2026-10-26",
+      "sample": 752,
+      "population": "LV",
+      "margin_d": 14.0
+     },
+     {
+      "pollster": "Victory Insights (R)",
+      "end_date": "2026-10-22",
+      "sample": 1194,
+      "population": "LV",
+      "margin_d": 4.0
+     },
+     {
+      "pollster": "Rasmussen Reports (R)",
+      "end_date": "2026-10-21",
+      "sample": 1182,
+      "population": "LV",
+      "margin_d": 3.0
+     },
+     {
+      "pollster": "Trafalgar Group (R)",
+      "end_date": "2026-10-15",
+      "sample": 1079,
+      "population": "LV",
+      "margin_d": 3.0
+     },
+     {
+      "pollster": "KSTP / SurveyUSA",
+      "end_date": "2026-10-12",
+      "sample": 718,
+      "population": "LV",
+      "margin_d": 3.0
+     },
+     {
+      "pollster": "Mason-Dixon Polling & Strategy",
+      "end_date": "2026-10-07",
+      "sample": 800,
+      "population": "LV",
+      "margin_d": 4.0
+     },
+     {
+      "pollster": "Morning Consult",
+      "end_date": "2026-10-07",
+      "sample": 1000,
+      "population": "RV",
+      "margin_d": 4.0
+     },
+     {
+      "pollster": "GQR (D)",
+      "end_date": "2026-10-04",
+      "sample": 800,
+      "population": "LV",
+      "margin_d": 9.0
+     }
+    ]
+   },
+   "pres24_margin_d": 4.3,
+   "qloo": {
+    "share_moving_d": 0.516,
+    "out_of_step_d": [
+     [
+      "27103",
+      "Nicollet County",
+      13.9,
+      -10.6,
+      -0.5
+     ],
+     [
+      "27111",
+      "Otter Tail County",
+      9.6,
+      -15.8,
+      -34.2
+     ],
+     [
+      "27099",
+      "Mower County",
+      8.7,
+      -18.2,
+      -10.5
+     ],
+     [
+      "27123",
+      "Ramsey County",
+      8.4,
+      19.9,
+      43.3
+     ],
+     [
+      "27119",
+      "Polk County",
+      8.3,
+      -25.7,
+      -33.8
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "27003",
+      "Anoka County",
+      -14.9,
+      -16.5,
+      -4.4
+     ],
+     [
+      "27141",
+      "Sherburne County",
+      -14.3,
+      -35.3,
+      -34.9
+     ],
+     [
+      "27041",
+      "Douglas County",
+      -14.1,
+      -43.5,
+      -35.1
+     ],
+     [
+      "27013",
+      "Blue Earth County",
+      -12.1,
+      -30.4,
+      -1.2
+     ],
+     [
+      "27171",
+      "Wright County",
+      -11.4,
+      -26.8,
+      -29.4
+     ]
+    ],
+    "backtest": {
+     "r": 0.153,
+     "hit": 0.528,
+     "n": 87
+    }
+   },
+   "skew": {
+    "poll_swing": 1.0,
+    "rel_poll_swing": -12.3,
+    "flag": "shift",
+    "short": "Unusual shift toward Tafoya",
+    "text": "Polls have MN 12.3 pts further toward Tafoya than the typical race moved since 2024 (typical: +13.3). That can be a real candidate effect or a polling miss; candidate-driven Senate races often break this way."
+   },
+   "script": {
+    "margin_d": 5.3,
+    "p_win": 0.855,
+    "winner_party": "D",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 5.5,
+    "p_win": 0.84,
+    "confidence": "medium",
+    "headline": "Flanagan favored; independent polls show wider lead",
+    "reasoning": "D+5.3 weighted average across 13 recent polls; independent polls average D+7.5, including NYT/Siena D+14, while R-sponsored polls are 3.8 pts more Republican. Ratings are Lean/Likely D. The skew flag warns of a Tafoya overperformance, so I trim to D+5.5 and medium confidence.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "MS-S",
+   "state": "Mississippi",
+   "state_po": "MS",
+   "stfips": "28",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Mississippi",
+   "ratings": {
+    "Cook": "Likely R",
+    "DDHQ": "Likely R",
+    "Econ": "Likely R",
+    "FPO": "Safe R",
+    "Fox": "Likely R",
+    "IE": "Likely R",
+    "NBC": "Likely R",
+    "RCP": "Likely R",
+    "Sabato": "Likely R",
+    "Silver": "Solid R",
+    "ST": "Safe R"
+   },
+   "candidates": [
+    {
+     "name": "Scott Colom",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Cindy Hyde-Smith",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Scott Colom",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Cindy Hyde-Smith",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 6,
+    "n_recent": 1,
+    "avg_margin_d": -3.0,
+    "latest": "2026-10-22",
+    "house": {},
+    "independent_avg": null,
+    "list": [
+     {
+      "pollster": "Change Research (D)",
+      "end_date": "2026-10-22",
+      "sample": 842,
+      "population": "LV",
+      "margin_d": -3.0
+     },
+     {
+      "pollster": "Data for Progress (D)",
+      "end_date": "2026-08-15",
+      "sample": 1018,
+      "population": "LV",
+      "margin_d": -6.0
+     },
+     {
+      "pollster": "Data for Progress (D)",
+      "end_date": "2026-08-15",
+      "sample": 1018,
+      "population": "LV",
+      "margin_d": -6.0
+     },
+     {
+      "pollster": "Impact Research (D)",
+      "end_date": "2026-04-12",
+      "sample": 500,
+      "population": "LV",
+      "margin_d": -3.0
+     },
+     {
+      "pollster": "Impact Research (D)",
+      "end_date": "2026-04-12",
+      "sample": 500,
+      "population": "LV",
+      "margin_d": -3.0
+     },
+     {
+      "pollster": "Impact Research (D)",
+      "end_date": "2025-06-22",
+      "sample": 500,
+      "population": "RV",
+      "margin_d": -13.0
+     }
+    ]
+   },
+   "pres24_margin_d": -22.9,
+   "qloo": {
+    "share_moving_d": 0.362,
+    "out_of_step_d": [
+     [
+      "28087",
+      "Lowndes County",
+      13.6,
+      -10.2,
+      -8.2
+     ],
+     [
+      "28113",
+      "Pike County",
+      5.8,
+      -21.6,
+      -3.5
+     ],
+     [
+      "28071",
+      "Lafayette County",
+      3.5,
+      -23.7,
+      -21.8
+     ],
+     [
+      "28121",
+      "Rankin County",
+      3.0,
+      -18.8,
+      -47.1
+     ],
+     [
+      "28033",
+      "DeSoto County",
+      2.7,
+      -12.9,
+      -24.1
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "28075",
+      "Lauderdale County",
+      -18.3,
+      -43.8,
+      -21.2
+     ],
+     [
+      "28067",
+      "Jones County",
+      -16.3,
+      -47.2,
+      -46.8
+     ],
+     [
+      "28149",
+      "Warren County",
+      -13.8,
+      -39.6,
+      -4.0
+     ],
+     [
+      "28045",
+      "Hancock County",
+      -8.4,
+      -44.6,
+      -58.7
+     ],
+     [
+      "28081",
+      "Lee County",
+      -7.7,
+      -34.5,
+      -38.8
+     ]
+    ],
+    "backtest": {
+     "r": -0.258,
+     "hit": 0.471,
+     "n": 82
+    }
+   },
+   "skew": {
+    "poll_swing": 19.9,
+    "rel_poll_swing": 6.6,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +19.9 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": -3.0,
+    "p_win": 0.678,
+    "winner_party": "R",
+    "sigma": 6.5
+   },
+   "verdict": {
+    "winner_party": "R",
+    "margin_d": -8.0,
+    "p_win": 0.85,
+    "confidence": "medium",
+    "headline": "Hyde-Smith holds Mississippi despite Democratic polls showing close race",
+    "reasoning": "Only recent polls are Democratic-sponsored and put Colom within 3 points, likely inflated; there are no independent polls. Mississippi's 2024 baseline is R +22.9, and every rating is Likely/Safe/Solid R. Hyde-Smith is the incumbent. I discount the partisan polling and expect a high-single-digit Republican win.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "MT-S",
+   "state": "Montana",
+   "state_po": "MT",
+   "stfips": "30",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Montana",
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Likely R",
+    "Econ": "Likely R",
+    "FPO": "Likely R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Likely R",
+    "RCP": "Likely R",
+    "Sabato": "Safe R",
+    "Silver": "Lean R",
+    "ST": "Safe R"
+   },
+   "candidates": [
+    {
+     "name": "Kurt Alme",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Seth Bodnar",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Seth Bodnar",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    "r": {
+     "name": "Kurt Alme",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 17,
+    "n_recent": 6,
+    "avg_margin_d": -11.7,
+    "latest": "2026-10-23",
+    "house": {},
+    "independent_avg": -14.1,
+    "list": [
+     {
+      "pollster": "Concord Public Opinion Partners (D)",
+      "end_date": "2026-10-23",
+      "sample": 410,
+      "population": "LV",
+      "margin_d": 1.0
+     },
+     {
+      "pollster": "Quantus Insights (R)",
+      "end_date": "2026-10-18",
+      "sample": 667,
+      "population": "LV",
+      "margin_d": -17.0
+     },
+     {
+      "pollster": "Peak Insights (R)",
+      "end_date": "2026-10-12",
+      "sample": 500,
+      "population": "LV",
+      "margin_d": -15.0
+     },
+     {
+      "pollster": "American Pulse Research",
+      "end_date": "2026-09-24",
+      "sample": 604,
+      "population": "LV",
+      "margin_d": -19.0
+     },
+     {
+      "pollster": "Aspect Strategic",
+      "end_date": "2026-09-15",
+      "sample": 715,
+      "population": "LV",
+      "margin_d": -12.0
+     },
+     {
+      "pollster": "Rutgers-Eagleton",
+      "end_date": "2026-09-07",
+      "sample": 845,
+      "population": "RV",
+      "margin_d": -8.0
+     },
+     {
+      "pollster": "Peak Insights (R)",
+      "end_date": "2026-08-25",
+      "sample": 600,
+      "population": "LV",
+      "margin_d": -22.0
+     },
+     {
+      "pollster": "Hart Research (D)",
+      "end_date": "2026-08-04",
+      "sample": 800,
+      "population": "LV",
+      "margin_d": -15.0
+     }
+    ]
+   },
+   "pres24_margin_d": -19.9,
+   "qloo": {
+    "share_moving_d": 0.459,
+    "out_of_step_d": [
+     [
+      "30047",
+      "Lake County",
+      10.4,
+      -19.6,
+      -19.9
+     ],
+     [
+      "30029",
+      "Flathead County",
+      6.2,
+      -13.6,
+      -33.8
+     ],
+     [
+      "30063",
+      "Missoula County",
+      4.0,
+      -2.5,
+      21.4
+     ],
+     [
+      "30031",
+      "Gallatin County",
+      0.8,
+      -10.0,
+      3.2
+     ],
+     [
+      "30093",
+      "Silver Bow County",
+      -0.8,
+      -24.2,
+      7.0
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "30049",
+      "Lewis and Clark County",
+      -6.1,
+      -24.0,
+      -5.7
+     ],
+     [
+      "30111",
+      "Yellowstone County",
+      -1.7,
+      -17.6,
+      -27.1
+     ],
+     [
+      "30013",
+      "Cascade County",
+      -1.3,
+      -23.9,
+      -22.3
+     ],
+     [
+      "30081",
+      "Ravalli County",
+      -0.8,
+      -29.6,
+      -40.6
+     ],
+     [
+      "30093",
+      "Silver Bow County",
+      -0.8,
+      -24.2,
+      7.0
+     ]
+    ],
+    "backtest": {
+     "r": -0.145,
+     "hit": 0.5,
+     "n": 56
+    }
+   },
+   "skew": {
+    "poll_swing": 8.2,
+    "rel_poll_swing": -5.1,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +8.2 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": -11.7,
+    "p_win": 0.99,
+    "winner_party": "R",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "R",
+    "margin_d": -13.0,
+    "p_win": 0.96,
+    "confidence": "high",
+    "headline": "Alme favored as Montana remains strongly Republican",
+    "reasoning": "Six recent polls average R+11.7 and independent polls R+14.1; the lone D poll is an outlier. Montana's 2024 baseline is R+19.9 and ratings are Lean/Safe R. Bodnar's independent bid may trim the margin slightly, but Alme remains a clear favorite.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "NC-S",
+   "state": "North Carolina",
+   "state_po": "NC",
+   "stfips": "37",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_North_Carolina",
+   "ratings": {
+    "Cook": "Likely D (flip)",
+    "DDHQ": "Likely D (flip)",
+    "Econ": "Likely D (flip)",
+    "FPO": "Likely D (flip)",
+    "Fox": "Likely D (flip)",
+    "IE": "Lean D (flip)",
+    "NBC": "Likely D (flip)",
+    "RCP": "Likely D (flip)",
+    "Sabato": "Likely D (flip)",
+    "Silver": "Solid D (flip)",
+    "ST": "Safe D (flip)"
+   },
+   "candidates": [
+    {
+     "name": "Roy Cooper",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Michael Whatley",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Roy Cooper",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Michael Whatley",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 49,
+    "n_recent": 17,
+    "avg_margin_d": 10.9,
+    "latest": "2026-10-25",
+    "house": {
+     "R": {
+      "n": 6,
+      "diff": -3.7
+     }
+    },
+    "independent_avg": 12.1,
+    "list": [
+     {
+      "pollster": "Quantus Insights (R)",
+      "end_date": "2026-10-25",
+      "sample": 722,
+      "population": "LV",
+      "margin_d": 8.0
+     },
+     {
+      "pollster": "Harper Polling (R)",
+      "end_date": "2026-10-20",
+      "sample": 600,
+      "population": "LV",
+      "margin_d": 10.0
+     },
+     {
+      "pollster": "ActiVote",
+      "end_date": "2026-10-20",
+      "sample": 400,
+      "population": "LV",
+      "margin_d": 14.0
+     },
+     {
+      "pollster": "High Point University / YouGov",
+      "end_date": "2026-10-20",
+      "sample": 620,
+      "population": "LV",
+      "margin_d": 14.0
+     },
+     {
+      "pollster": "SurveyUSA",
+      "end_date": "2026-10-11",
+      "sample": 643,
+      "population": "LV",
+      "margin_d": 14.0
+     },
+     {
+      "pollster": "Trafalgar Group (R)",
+      "end_date": "2026-10-10",
+      "sample": 1091,
+      "population": "LV",
+      "margin_d": 8.0
+     },
+     {
+      "pollster": "Elon University / YouGov",
+      "end_date": "2026-10-08",
+      "sample": 561,
+      "population": "LV",
+      "margin_d": 13.0
+     },
+     {
+      "pollster": "Change Research (D)",
+      "end_date": "2026-10-07",
+      "sample": 829,
+      "population": "LV",
+      "margin_d": 10.0
+     }
+    ]
+   },
+   "pres24_margin_d": -3.2,
+   "qloo": {
+    "share_moving_d": 0.589,
+    "out_of_step_d": [
+     [
+      "37063",
+      "Durham County",
+      26.9,
+      38.2,
+      61.9
+     ],
+     [
+      "37135",
+      "Orange County",
+      23.7,
+      25.4,
+      51.1
+     ],
+     [
+      "37001",
+      "Alamance County",
+      21.8,
+      11.0,
+      -8.2
+     ],
+     [
+      "37065",
+      "Edgecombe County",
+      19.2,
+      2.0,
+      22.7
+     ],
+     [
+      "37181",
+      "Vance County",
+      17.6,
+      -3.5,
+      13.4
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "37035",
+      "Catawba County",
+      -18.8,
+      -36.4,
+      -38.0
+     ],
+     [
+      "37097",
+      "Iredell County",
+      -17.9,
+      -32.0,
+      -32.6
+     ],
+     [
+      "37133",
+      "Onslow County",
+      -17.9,
+      -35.7,
+      -35.9
+     ],
+     [
+      "37061",
+      "Duplin County",
+      -15.7,
+      -44.7,
+      -29.0
+     ],
+     [
+      "37109",
+      "Lincoln County",
+      -15.4,
+      -39.1,
+      -45.7
+     ]
+    ],
+    "backtest": {
+     "r": 0.366,
+     "hit": 0.7,
+     "n": 100
+    }
+   },
+   "skew": {
+    "poll_swing": 14.1,
+    "rel_poll_swing": 0.8,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +14.1 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": 10.9,
+    "p_win": 0.985,
+    "winner_party": "D",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 10.5,
+    "p_win": 0.96,
+    "confidence": "high",
+    "headline": "Cooper favored by double digits in North Carolina",
+    "reasoning": "17 recent polls average D+10.9; independents average D+12.1, with latest independents at D+14. Ratings are Likely/Solid/Safe D. The 2024 baseline was R+3.2, but the 14.1-point swing is near the typical 13.3 and shows no house skew. Cooper stays near D+10.5.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "NE-S",
+   "state": "Nebraska",
+   "state_po": "NE",
+   "stfips": "31",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Nebraska",
+   "ratings": {
+    "Cook": "Likely R",
+    "DDHQ": "Lean R",
+    "Econ": "Likely R",
+    "FPO": "Likely R",
+    "Fox": "Likely R",
+    "IE": "Tilt R",
+    "NBC": "Likely R",
+    "RCP": "Tossup",
+    "Sabato": "Lean R",
+    "Silver": "Lean R",
+    "ST": "Lean R"
+   },
+   "candidates": [
+    {
+     "name": "Dan Osborn",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Pete Ricketts",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Dan Osborn",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    "r": {
+     "name": "Pete Ricketts",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 14,
+    "n_recent": 8,
+    "avg_margin_d": 0.2,
+    "latest": "2026-10-23",
+    "house": {},
+    "independent_avg": 1.6,
+    "list": [
+     {
+      "pollster": "Echelon Insights (R)",
+      "end_date": "2026-10-23",
+      "sample": 407,
+      "population": "LV",
+      "margin_d": -1.0
+     },
+     {
+      "pollster": "GBAO (D)",
+      "end_date": "2026-10-22",
+      "sample": 800,
+      "population": "LV",
+      "margin_d": 1.0
+     },
+     {
+      "pollster": "Impact Research (D)",
+      "end_date": "2026-10-20",
+      "sample": 600,
+      "population": "LV",
+      "margin_d": -2.0
+     },
+     {
+      "pollster": "Concord Public Opinion Partners (D)",
+      "end_date": "2026-10-18",
+      "sample": 500,
+      "population": "LV",
+      "margin_d": 7.0
+     },
+     {
+      "pollster": "National Public Affairs (R)",
+      "end_date": "2026-10-18",
+      "sample": 598,
+      "population": "LV",
+      "margin_d": -3.0
+     },
+     {
+      "pollster": "YouGov",
+      "end_date": "2026-10-03",
+      "sample": 1809,
+      "population": "LV",
+      "margin_d": 1.0
+     },
+     {
+      "pollster": "co/efficient (R)",
+      "end_date": "2026-09-30",
+      "sample": 1113,
+      "population": "LV",
+      "margin_d": -5.0
+     },
+     {
+      "pollster": "SurveyUSA",
+      "end_date": "2026-09-13",
+      "sample": 503,
+      "population": "LV",
+      "margin_d": 4.0
+     }
+    ]
+   },
+   "pres24_margin_d": -20.6,
+   "qloo": {
+    "share_moving_d": 0.858,
+    "out_of_step_d": [
+     [
+      "31119",
+      "Madison County",
+      13.9,
+      -24.7,
+      -56.0
+     ],
+     [
+      "31025",
+      "Cass County",
+      10.5,
+      -23.9,
+      -37.2
+     ],
+     [
+      "31109",
+      "Lancaster County",
+      9.1,
+      6.6,
+      4.3
+     ],
+     [
+      "31157",
+      "Scotts Bluff County",
+      3.9,
+      -33.3,
+      -47.7
+     ],
+     [
+      "31053",
+      "Dodge County",
+      3.1,
+      -29.9,
+      -32.6
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "31111",
+      "Lincoln County",
+      -11.5,
+      -49.5,
+      -55.2
+     ],
+     [
+      "31079",
+      "Hall County",
+      -6.9,
+      -37.8,
+      -37.8
+     ],
+     [
+      "31141",
+      "Platte County",
+      1.4,
+      -37.7,
+      -58.3
+     ],
+     [
+      "31055",
+      "Douglas County",
+      1.6,
+      5.8,
+      10.2
+     ],
+     [
+      "31019",
+      "Buffalo County",
+      2.8,
+      -29.2,
+      -44.9
+     ]
+    ],
+    "backtest": {
+     "r": 0.12,
+     "hit": 0.447,
+     "n": 93
+    }
+   },
+   "skew": {
+    "poll_swing": 20.8,
+    "rel_poll_swing": 7.5,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +20.8 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": 0.2,
+    "p_win": 0.516,
+    "winner_party": "I",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "I",
+    "margin_d": 0.2,
+    "p_win": 0.54,
+    "confidence": "low",
+    "headline": "Osborn holds slim lead in Nebraska Senate tossup",
+    "reasoning": "Eight recent polls put Osborn at +0.2 overall and +1.6 among independents, essentially tied; poll swing +20.8 is above the typical +13.3, with no house skew. Ratings mostly Lean/Likely R and Ricketts is incumbent, with Nebraska\u2019s 2024 R+20.6 baseline, so this is a low-confidence Osborn edge.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "NH-S",
+   "state": "New Hampshire",
+   "state_po": "NH",
+   "stfips": "33",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_New_Hampshire",
+   "ratings": {
+    "Cook": "Lean D",
+    "DDHQ": "Likely D",
+    "Econ": "Likely D",
+    "FPO": "Likely D",
+    "Fox": "Lean D",
+    "IE": "Tilt D",
+    "NBC": "Lean D",
+    "RCP": "Lean D",
+    "Sabato": "Likely D",
+    "Silver": "Likely D",
+    "ST": "Likely D"
+   },
+   "candidates": [
+    {
+     "name": "Chris Pappas",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "John E. Sununu",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Chris Pappas",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "John E. Sununu",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 27,
+    "n_recent": 10,
+    "avg_margin_d": 6.4,
+    "latest": "2026-10-23",
+    "house": {
+     "R": {
+      "n": 6,
+      "diff": -3.0
+     }
+    },
+    "independent_avg": 7.2,
+    "list": [
+     {
+      "pollster": "Rasmussen Reports (R)",
+      "end_date": "2026-10-23",
+      "sample": 970,
+      "population": "LV",
+      "margin_d": 6.0
+     },
+     {
+      "pollster": "Saint Anselm College",
+      "end_date": "2026-10-20",
+      "sample": 1672,
+      "population": "LV",
+      "margin_d": 7.0
+     },
+     {
+      "pollster": "National Public Affairs (R)",
+      "end_date": "2026-10-12",
+      "sample": 600,
+      "population": "LV",
+      "margin_d": 5.0
+     },
+     {
+      "pollster": "YouGov",
+      "end_date": "2026-10-05",
+      "sample": 1520,
+      "population": "LV",
+      "margin_d": 8.0
+     },
+     {
+      "pollster": "Trafalgar Group (R)",
+      "end_date": "2026-09-27",
+      "sample": 1082,
+      "population": "LV",
+      "margin_d": 6.0
+     },
+     {
+      "pollster": "New York Times / Siena University",
+      "end_date": "2026-09-22",
+      "sample": 613,
+      "population": "LV",
+      "margin_d": 5.0
+     },
+     {
+      "pollster": "University of New Hampshire",
+      "end_date": "2026-09-21",
+      "sample": 1418,
+      "population": "LV",
+      "margin_d": 8.0
+     },
+     {
+      "pollster": "InsiderAdvantage (R)",
+      "end_date": "2026-09-17",
+      "sample": 1200,
+      "population": "LV",
+      "margin_d": 8.0
+     }
+    ]
+   },
+   "pres24_margin_d": 2.8,
+   "qloo": {
+    "share_moving_d": 0.153,
+    "out_of_step_d": [
+     [
+      "33019",
+      "Sullivan County",
+      36.1,
+      14.1,
+      -0.7
+     ],
+     [
+      "33009",
+      "Grafton County",
+      13.8,
+      4.3,
+      19.9
+     ],
+     [
+      "33005",
+      "Cheshire County",
+      9.4,
+      -4.4,
+      9.8
+     ],
+     [
+      "33017",
+      "Strafford County",
+      -1.5,
+      -9.5,
+      12.1
+     ],
+     [
+      "33013",
+      "Merrimack County",
+      -14.1,
+      -21.7,
+      5.2
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "33001",
+      "Belknap County",
+      -28.3,
+      -48.1,
+      -13.1
+     ],
+     [
+      "33011",
+      "Hillsborough County",
+      -24.1,
+      -23.0,
+      2.9
+     ],
+     [
+      "33015",
+      "Rockingham County",
+      -19.7,
+      -21.2,
+      -2.4
+     ],
+     [
+      "33003",
+      "Carroll County",
+      -17.5,
+      -36.5,
+      -1.7
+     ],
+     [
+      "33007",
+      "Coos County",
+      -17.4,
+      -46.0,
+      -13.8
+     ]
+    ],
+    "backtest": {
+     "r": 0.049,
+     "hit": 0.75,
+     "n": 10
+    }
+   },
+   "skew": {
+    "poll_swing": 3.6,
+    "rel_poll_swing": -9.7,
+    "flag": "shift",
+    "short": "Unusual shift toward Sununu",
+    "text": "Polls have NH 9.7 pts further toward Sununu than the typical race moved since 2024 (typical: +13.3). That can be a real candidate effect or a polling miss; candidate-driven Senate races often break this way."
+   },
+   "script": {
+    "margin_d": 6.4,
+    "p_win": 0.9,
+    "winner_party": "D",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 6.0,
+    "p_win": 0.88,
+    "confidence": "high",
+    "headline": "Pappas holds durable lead in New Hampshire Senate race",
+    "reasoning": "Pappas leads by 6.4 pts across 10 recent polls and 7.2 among independents; even Republican-sponsored polls average only 3 pts more Republican. Ratings range Lean to Likely D, and the 2024 baseline is D+2.8. The skew flag suggests Sununu may run ahead of the typical shift, so I shade the margin to D+6.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "NJ-S",
+   "state": "New Jersey",
+   "state_po": "NJ",
+   "stfips": "34",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_New_Jersey",
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Safe D",
+    "Econ": "Safe D",
+    "FPO": "Safe D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D",
+    "ST": "Safe D"
+   },
+   "candidates": [
+    {
+     "name": "Cory Booker",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Justin Murphy",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Cory Booker",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Justin Murphy",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 0,
+    "n_recent": 0,
+    "avg_margin_d": null,
+    "latest": null,
+    "house": {},
+    "independent_avg": null,
+    "list": []
+   },
+   "pres24_margin_d": 5.9,
+   "qloo": {
+    "share_moving_d": 0.415,
+    "out_of_step_d": [
+     [
+      "34017",
+      "Hudson County",
+      30.8,
+      37.3,
+      28.1
+     ],
+     [
+      "34039",
+      "Union County",
+      16.7,
+      22.7,
+      24.2
+     ],
+     [
+      "34021",
+      "Mercer County",
+      16.3,
+      20.6,
+      33.9
+     ],
+     [
+      "34023",
+      "Middlesex County",
+      9.2,
+      15.9,
+      8.0
+     ],
+     [
+      "34013",
+      "Essex County",
+      8.1,
+      21.3,
+      44.9
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "34015",
+      "Gloucester County",
+      -26.0,
+      -29.6,
+      -2.8
+     ],
+     [
+      "34041",
+      "Warren County",
+      -20.8,
+      -38.3,
+      -20.7
+     ],
+     [
+      "34037",
+      "Sussex County",
+      -19.3,
+      -34.3,
+      -24.9
+     ],
+     [
+      "34011",
+      "Cumberland County",
+      -18.3,
+      -32.9,
+      -3.8
+     ],
+     [
+      "34025",
+      "Monmouth County",
+      -17.7,
+      -15.3,
+      -11.4
+     ]
+    ],
+    "backtest": {
+     "r": -0.536,
+     "hit": 0.5,
+     "n": 21
+    }
+   },
+   "skew": {
+    "poll_swing": null,
+    "rel_poll_swing": null,
+    "flag": null,
+    "short": null,
+    "text": "No recent polls. The call uses the 2024 result (D+5.9) plus the typical shift in polled races (+13.3)."
+   },
+   "script": {
+    "margin_d": 19.2,
+    "p_win": 0.984,
+    "winner_party": "D",
+    "sigma": 9.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 19.2,
+    "p_win": 0.97,
+    "confidence": "high",
+    "headline": "Booker favored by safe Democratic baseline and ratings",
+    "reasoning": "No recent polls. The 2024 presidential margin was D+5.9, and the typical polled-race shift is +13.3, producing a script margin of D+19.2. Every published rating is Safe or Solid D, and Booker is the incumbent. This strongly favors a Democratic win.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "NM-S",
+   "state": "New Mexico",
+   "state_po": "NM",
+   "stfips": "35",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_New_Mexico",
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Safe D",
+    "Econ": "Safe D",
+    "FPO": "Safe D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Likely D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D",
+    "ST": "Safe D"
+   },
+   "candidates": [
+    {
+     "name": "Ben Ray Luj\u00e1n",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Larry Marker",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Ben Ray Luj\u00e1n",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Larry Marker",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 3,
+    "n_recent": 2,
+    "avg_margin_d": 16.7,
+    "latest": "2026-10-09",
+    "house": {},
+    "independent_avg": 16.7,
+    "list": [
+     {
+      "pollster": "Research & Polling Inc.",
+      "end_date": "2026-10-09",
+      "sample": 1125,
+      "population": "LV",
+      "margin_d": 16.0
+     },
+     {
+      "pollster": "SurveyUSA",
+      "end_date": "2026-09-30",
+      "sample": 567,
+      "population": "LV",
+      "margin_d": 18.0
+     },
+     {
+      "pollster": "Research & Polling Inc.",
+      "end_date": "2026-08-28",
+      "sample": 516,
+      "population": "LV",
+      "margin_d": 15.0
+     }
+    ]
+   },
+   "pres24_margin_d": 6.0,
+   "qloo": {
+    "share_moving_d": 0.755,
+    "out_of_step_d": [
+     [
+      "35049",
+      "Santa Fe County",
+      15.4,
+      16.2,
+      48.9
+     ],
+     [
+      "35055",
+      "Taos County",
+      6.9,
+      -8.8,
+      47.5
+     ],
+     [
+      "35039",
+      "Rio Arriba County",
+      6.7,
+      -15.4,
+      19.4
+     ],
+     [
+      "35001",
+      "Bernalillo County",
+      3.0,
+      10.8,
+      21.0
+     ],
+     [
+      "35045",
+      "San Juan County",
+      2.6,
+      -18.6,
+      -31.7
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "35009",
+      "Curry County",
+      -22.5,
+      -58.4,
+      -42.6
+     ],
+     [
+      "35025",
+      "Lea County",
+      -14.2,
+      -50.9,
+      -61.6
+     ],
+     [
+      "35005",
+      "Chaves County",
+      -11.0,
+      -43.7,
+      -44.8
+     ],
+     [
+      "35061",
+      "Valencia County",
+      -9.4,
+      -31.9,
+      -16.4
+     ],
+     [
+      "35015",
+      "Eddy County",
+      -4.8,
+      -39.4,
+      -55.8
+     ]
+    ],
+    "backtest": {
+     "r": 0.232,
+     "hit": 0.5,
+     "n": 33
+    }
+   },
+   "skew": {
+    "poll_swing": 10.7,
+    "rel_poll_swing": -2.6,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +10.7 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": 16.7,
+    "p_win": 0.995,
+    "winner_party": "D",
+    "sigma": 6.5
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 16.0,
+    "p_win": 0.95,
+    "confidence": "high",
+    "headline": "Luj\u00e1n holds safe Democratic seat in New Mexico",
+    "reasoning": "Two recent independent polls average D+16.7 (16 and 18), with the third at 15 \u2014 consistent, no house skew. Polls swing +10.7 from 2024's D+6, near the typical +13.3, and ratings are uniformly Safe/Solid D. Incumbent Luj\u00e1n outruns a generic race; expect roughly D+16.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "OH-S2",
+   "state": "Ohio",
+   "state_po": "OH",
+   "stfips": "39",
+   "special": true,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Ohio",
+   "ratings": {
+    "Cook": "Tossup",
+    "DDHQ": "Tossup",
+    "Econ": "Tossup",
+    "FPO": "Tossup",
+    "Fox": "Lean D (flip)",
+    "IE": "Tilt D (flip)",
+    "NBC": "Tossup",
+    "RCP": "Tossup",
+    "Sabato": "Tossup",
+    "Silver": "Lean D (flip)",
+    "ST": "Lean D (flip)"
+   },
+   "candidates": [
+    {
+     "name": "Sherrod Brown",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Jon Husted",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Sherrod Brown",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Jon Husted",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 38,
+    "n_recent": 19,
+    "avg_margin_d": 3.3,
+    "latest": "2026-10-26",
+    "house": {
+     "D": {
+      "n": 3,
+      "diff": 2.9
+     },
+     "R": {
+      "n": 8,
+      "diff": -2.2
+     }
+    },
+    "independent_avg": 3.8,
+    "list": [
+     {
+      "pollster": "Suffolk University",
+      "end_date": "2026-10-26",
+      "sample": 500,
+      "population": "LV",
+      "margin_d": 3.0
+     },
+     {
+      "pollster": "RedBox Research (D)",
+      "end_date": "2026-10-23",
+      "sample": 2998,
+      "population": "LV",
+      "margin_d": 3.0
+     },
+     {
+      "pollster": "Echelon Insights (R)",
+      "end_date": "2026-10-23",
+      "sample": 508,
+      "population": "LV",
+      "margin_d": 0.0
+     },
+     {
+      "pollster": "InsiderAdvantage (R)",
+      "end_date": "2026-10-22",
+      "sample": 1200,
+      "population": "LV",
+      "margin_d": 3.0
+     },
+     {
+      "pollster": "Verasight/VoteHub",
+      "end_date": "2026-10-20",
+      "sample": 531,
+      "population": "LV",
+      "margin_d": 4.0
+     },
+     {
+      "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
+      "end_date": "2026-10-19",
+      "sample": 2005,
+      "population": "RV",
+      "margin_d": 7.0
+     },
+     {
+      "pollster": "Marist University",
+      "end_date": "2026-10-18",
+      "sample": null,
+      "population": "LV",
+      "margin_d": 4.0
+     },
+     {
+      "pollster": "ActiVote",
+      "end_date": "2026-10-18",
+      "sample": 400,
+      "population": "LV",
+      "margin_d": 0.0
+     }
+    ]
+   },
+   "pres24_margin_d": -11.2,
+   "qloo": {
+    "share_moving_d": 0.71,
+    "out_of_step_d": [
+     [
+      "39147",
+      "Seneca County",
+      35.3,
+      5.5,
+      -37.5
+     ],
+     [
+      "39009",
+      "Athens County",
+      33.1,
+      13.8,
+      10.7
+     ],
+     [
+      "39137",
+      "Putnam County",
+      30.7,
+      -8.3,
+      -68.7
+     ],
+     [
+      "39143",
+      "Sandusky County",
+      20.8,
+      -6.0,
+      -30.9
+     ],
+     [
+      "39055",
+      "Geauga County",
+      19.7,
+      0.6,
+      -24.1
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "39029",
+      "Columbiana County",
+      -22.5,
+      -48.4,
+      -49.0
+     ],
+     [
+      "39013",
+      "Belmont County",
+      -16.8,
+      -46.6,
+      -47.3
+     ],
+     [
+      "39027",
+      "Clinton County",
+      -16.4,
+      -51.8,
+      -54.6
+     ],
+     [
+      "39169",
+      "Wayne County",
+      -15.2,
+      -37.9,
+      -39.3
+     ],
+     [
+      "39081",
+      "Jefferson County",
+      -14.5,
+      -43.6,
+      -43.9
+     ]
+    ],
+    "backtest": {
+     "r": 0.083,
+     "hit": 0.444,
+     "n": 88
+    }
+   },
+   "skew": {
+    "poll_swing": 14.5,
+    "rel_poll_swing": 1.2,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +14.5 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": 3.3,
+    "p_win": 0.745,
+    "winner_party": "D",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 3.3,
+    "p_win": 0.75,
+    "confidence": "medium",
+    "headline": "Brown holds narrow lead in Ohio Senate special",
+    "reasoning": "Poll average is Brown +3.3 with 19 recent polls; independent polls average +3.8 and latest Suffolk has +3.0. Ratings are mostly tossup, with several lean/tilt D. Ohio was R +11.2 in 2024, but the +14.5 poll swing is near typical. A small but consistent lead supports a medium-confidence D call.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "OK-S",
+   "state": "Oklahoma",
+   "state_po": "OK",
+   "stfips": "40",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Oklahoma",
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Safe R",
+    "Econ": "Safe R",
+    "FPO": "Safe R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R",
+    "ST": "Safe R"
+   },
+   "candidates": [
+    {
+     "name": "Kevin Hern",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "N'Kiyla Jasmine Thomas",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "N'Kiyla Jasmine Thomas",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Kevin Hern",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 1,
+    "n_recent": 0,
+    "avg_margin_d": -24.0,
+    "latest": "2026-08-06",
+    "house": {},
+    "independent_avg": null,
+    "list": [
+     {
+      "pollster": "CHS & Associates",
+      "end_date": "2026-08-06",
+      "sample": 500,
+      "population": "RV",
+      "margin_d": -24.0
+     }
+    ]
+   },
+   "pres24_margin_d": -34.3,
+   "qloo": {
+    "share_moving_d": 0.847,
+    "out_of_step_d": [
+     [
+      "40071",
+      "Kay County",
+      22.0,
+      -14.4,
+      -49.4
+     ],
+     [
+      "40147",
+      "Washington County",
+      17.9,
+      -15.0,
+      -47.7
+     ],
+     [
+      "40051",
+      "Grady County",
+      15.6,
+      -19.6,
+      -62.7
+     ],
+     [
+      "40113",
+      "Osage County",
+      13.0,
+      -19.6,
+      -41.4
+     ],
+     [
+      "40121",
+      "Pittsburg County",
+      12.6,
+      -25.5,
+      -59.0
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "40137",
+      "Stephens County",
+      -15.3,
+      -53.8,
+      -63.7
+     ],
+     [
+      "40097",
+      "Mayes County",
+      -6.0,
+      -43.9,
+      -57.5
+     ],
+     [
+      "40101",
+      "Muskogee County",
+      -5.9,
+      -36.1,
+      -37.6
+     ],
+     [
+      "40135",
+      "Sequoyah County",
+      -4.3,
+      -44.2,
+      -61.5
+     ],
+     [
+      "40125",
+      "Pottawatomie County",
+      -3.9,
+      -34.6,
+      -47.4
+     ]
+    ],
+    "backtest": {
+     "r": 0.221,
+     "hit": 0.625,
+     "n": 77
+    }
+   },
+   "skew": {
+    "poll_swing": 10.3,
+    "rel_poll_swing": -3.0,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +10.3 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": -22.5,
+    "p_win": 0.999,
+    "winner_party": "R",
+    "sigma": 7.5
+   },
+   "verdict": {
+    "winner_party": "R",
+    "margin_d": -22.5,
+    "p_win": 0.99,
+    "confidence": "high",
+    "headline": "Hern favored by safe Republican margins in Oklahoma",
+    "reasoning": "The lone poll shows Hern ahead by 24 points, and Oklahoma's 2024 presidential baseline was Republican +34.3. Every published rating is Solid or Safe R. The script's polls-plus-baseline call is R+22.5, so I expect Hern to win comfortably.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "OR-S",
+   "state": "Oregon",
+   "state_po": "OR",
+   "stfips": "41",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Oregon",
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Safe D",
+    "Econ": "Safe D",
+    "FPO": "Safe D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D",
+    "ST": "Safe D"
+   },
+   "candidates": [
+    {
+     "name": "Jeff Merkley",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "David Brock Smith",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Jeff Merkley",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "David Brock Smith",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 0,
+    "n_recent": 0,
+    "avg_margin_d": null,
+    "latest": null,
+    "house": {},
+    "independent_avg": null,
+    "list": []
+   },
+   "pres24_margin_d": 14.4,
+   "qloo": {
+    "share_moving_d": 0.607,
+    "out_of_step_d": [
+     [
+      "41051",
+      "Multnomah County",
+      20.9,
+      40.4,
+      62.1
+     ],
+     [
+      "41057",
+      "Tillamook County",
+      14.0,
+      -12.5,
+      -1.4
+     ],
+     [
+      "41067",
+      "Washington County",
+      12.1,
+      22.3,
+      34.0
+     ],
+     [
+      "41071",
+      "Yamhill County",
+      10.9,
+      -4.0,
+      -6.1
+     ],
+     [
+      "41007",
+      "Clatsop County",
+      9.0,
+      -11.2,
+      11.4
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "41043",
+      "Linn County",
+      -21.6,
+      -38.2,
+      -24.4
+     ],
+     [
+      "41011",
+      "Coos County",
+      -20.6,
+      -43.3,
+      -19.9
+     ],
+     [
+      "41019",
+      "Douglas County",
+      -16.5,
+      -37.6,
+      -37.7
+     ],
+     [
+      "41029",
+      "Jackson County",
+      -13.8,
+      -21.5,
+      -6.4
+     ],
+     [
+      "41035",
+      "Klamath County",
+      -12.7,
+      -40.2,
+      -41.9
+     ]
+    ],
+    "backtest": {
+     "r": 0.325,
+     "hit": 0.5,
+     "n": 36
+    }
+   },
+   "skew": {
+    "poll_swing": null,
+    "rel_poll_swing": null,
+    "flag": null,
+    "short": null,
+    "text": "No recent polls. The call uses the 2024 result (D+14.4) plus the typical shift in polled races (+13.3)."
+   },
+   "script": {
+    "margin_d": 27.7,
+    "p_win": 0.999,
+    "winner_party": "D",
+    "sigma": 9.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 24.0,
+    "p_win": 0.98,
+    "confidence": "high",
+    "headline": "Merkley favored by Oregon lean and safe ratings",
+    "reasoning": "No recent polls. Oregon's 2024 presidential margin was D+14.4, and every published rating is Safe/Solid D. Incumbent Merkley further reinforces the Democratic advantage. The script's no-poll baseline is D+27.7; I shade toward D+24 for uncertainty but still expect a comfortable Democratic win.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "RI-S",
+   "state": "Rhode Island",
+   "state_po": "RI",
+   "stfips": "44",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Rhode_Island",
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Safe D",
+    "Econ": "Safe D",
+    "FPO": "Safe D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D",
+    "ST": "Safe D"
+   },
+   "candidates": [
+    {
+     "name": "Raymond McKay",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Jack Reed",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Jack Reed",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Raymond McKay",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 6,
+    "n_recent": 3,
+    "avg_margin_d": 27.1,
+    "latest": "2026-10-11",
+    "house": {},
+    "independent_avg": 27.1,
+    "list": [
+     {
+      "pollster": "Emerson College / WPRI-TV",
+      "end_date": "2026-10-11",
+      "sample": 800,
+      "population": "LV",
+      "margin_d": 34.0
+     },
+     {
+      "pollster": "Embold Research",
+      "end_date": "2026-10-08",
+      "sample": 815,
+      "population": "LV",
+      "margin_d": 23.0
+     },
+     {
+      "pollster": "University of New Hampshire",
+      "end_date": "2026-09-21",
+      "sample": 595,
+      "population": "LV",
+      "margin_d": 20.0
+     },
+     {
+      "pollster": "University of New Hampshire",
+      "end_date": "2026-08-24",
+      "sample": 750,
+      "population": "LV",
+      "margin_d": 20.0
+     },
+     {
+      "pollster": "University of New Hampshire",
+      "end_date": "2026-06-23",
+      "sample": 664,
+      "population": "LV",
+      "margin_d": 17.0
+     },
+     {
+      "pollster": "University of New Hampshire",
+      "end_date": "2026-04-20",
+      "sample": 556,
+      "population": "LV",
+      "margin_d": 18.0
+     }
+    ]
+   },
+   "pres24_margin_d": 13.9,
+   "qloo": {
+    "share_moving_d": 0.616,
+    "out_of_step_d": [
+     [
+      "44007",
+      "Providence County",
+      5.0,
+      10.0,
+      14.4
+     ],
+     [
+      "44005",
+      "Newport County",
+      1.5,
+      -9.1,
+      25.5
+     ],
+     [
+      "44003",
+      "Kent County",
+      -8.8,
+      -17.1,
+      1.9
+     ],
+     [
+      "44009",
+      "Washington County",
+      -13.6,
+      -21.1,
+      15.0
+     ],
+     [
+      "44001",
+      "Bristol County",
+      -31.3,
+      -46.2,
+      26.4
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "44001",
+      "Bristol County",
+      -31.3,
+      -46.2,
+      26.4
+     ],
+     [
+      "44009",
+      "Washington County",
+      -13.6,
+      -21.1,
+      15.0
+     ],
+     [
+      "44003",
+      "Kent County",
+      -8.8,
+      -17.1,
+      1.9
+     ],
+     [
+      "44005",
+      "Newport County",
+      1.5,
+      -9.1,
+      25.5
+     ],
+     [
+      "44007",
+      "Providence County",
+      5.0,
+      10.0,
+      14.4
+     ]
+    ],
+    "backtest": null
+   },
+   "skew": {
+    "poll_swing": 13.2,
+    "rel_poll_swing": -0.1,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +13.2 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": 27.1,
+    "p_win": 1.0,
+    "winner_party": "D",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 27.1,
+    "p_win": 0.99,
+    "confidence": "high",
+    "headline": "Reed heavily favored in Rhode Island Senate race",
+    "reasoning": "Three recent independent polls average Reed +27.1, with no house skew. The 2024 baseline was D+13.9, and the poll swing is typical. All ratings are Safe/Solid D. Incumbent Reed is well known, so I set the margin near the polling average and confidence high.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "SC-S",
+   "state": "South Carolina",
+   "state_po": "SC",
+   "stfips": "45",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_South_Carolina",
+   "ratings": {
+    "Cook": "Lean R",
+    "DDHQ": "Lean R",
+    "Econ": "Lean R",
+    "FPO": "Lean R",
+    "Fox": "Tossup",
+    "IE": "Tilt R",
+    "NBC": "Lean R",
+    "RCP": "Tossup",
+    "Sabato": "Lean R",
+    "Silver": "Lean R",
+    "ST": "Lean R"
+   },
+   "candidates": [
+    {
+     "name": "Annie Andrews",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Darline Graham",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Annie Andrews",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Darline Graham",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 12,
+    "n_recent": 8,
+    "avg_margin_d": -2.1,
+    "latest": "2026-10-26",
+    "house": {
+     "R": {
+      "n": 3,
+      "diff": -0.4
+     }
+    },
+    "independent_avg": -2.3,
+    "list": [
+     {
+      "pollster": "New York Times / Siena University",
+      "end_date": "2026-10-26",
+      "sample": 707,
+      "population": "LV",
+      "margin_d": 0.0
+     },
+     {
+      "pollster": "Targoz Media Research",
+      "end_date": "2026-10-25",
+      "sample": 895,
+      "population": "LV",
+      "margin_d": -1.0
+     },
+     {
+      "pollster": "The Citadel",
+      "end_date": "2026-10-25",
+      "sample": 890,
+      "population": "LV",
+      "margin_d": -4.0
+     },
+     {
+      "pollster": "East Carolina University",
+      "end_date": "2026-10-24",
+      "sample": 955,
+      "population": "LV",
+      "margin_d": -4.0
+     },
+     {
+      "pollster": "Impact Research (D)",
+      "end_date": "2026-10-21",
+      "sample": 800,
+      "population": "LV",
+      "margin_d": 1.0
+     },
+     {
+      "pollster": "Trafalgar Group (R)",
+      "end_date": "2026-10-18",
+      "sample": 1095,
+      "population": "LV",
+      "margin_d": -3.0
+     },
+     {
+      "pollster": "Rasmussen Reports (R)",
+      "end_date": "2026-10-08",
+      "sample": 837,
+      "population": "LV",
+      "margin_d": -4.0
+     },
+     {
+      "pollster": "InsiderAdvantage (R)",
+      "end_date": "2026-09-29",
+      "sample": 1200,
+      "population": "LV",
+      "margin_d": -1.0
+     }
+    ]
+   },
+   "pres24_margin_d": -17.9,
+   "qloo": {
+    "share_moving_d": 0.431,
+    "out_of_step_d": [
+     [
+      "45079",
+      "Richland County",
+      17.2,
+      22.7,
+      34.6
+     ],
+     [
+      "45075",
+      "Orangeburg County",
+      14.6,
+      2.0,
+      24.6
+     ],
+     [
+      "45019",
+      "Charleston County",
+      13.3,
+      14.1,
+      5.7
+     ],
+     [
+      "45041",
+      "Florence County",
+      10.9,
+      -3.7,
+      -8.0
+     ],
+     [
+      "45015",
+      "Berkeley County",
+      9.2,
+      -1.1,
+      -16.3
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "45053",
+      "Jasper County",
+      -17.2,
+      -44.3,
+      -9.6
+     ],
+     [
+      "45027",
+      "Clarendon County",
+      -16.9,
+      -45.6,
+      -12.3
+     ],
+     [
+      "45023",
+      "Chester County",
+      -15.0,
+      -45.3,
+      -17.2
+     ],
+     [
+      "45071",
+      "Newberry County",
+      -12.5,
+      -44.9,
+      -34.3
+     ],
+     [
+      "45043",
+      "Georgetown County",
+      -12.1,
+      -34.0,
+      -19.5
+     ]
+    ],
+    "backtest": {
+     "r": 0.55,
+     "hit": 0.65,
+     "n": 47
+    }
+   },
+   "skew": {
+    "poll_swing": 15.8,
+    "rel_poll_swing": 2.5,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +15.8 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": -2.1,
+    "p_win": 0.663,
+    "winner_party": "R",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "R",
+    "margin_d": -2.3,
+    "p_win": 0.67,
+    "confidence": "medium",
+    "headline": "Graham holds narrow lead in close South Carolina race",
+    "reasoning": "Independent polls average R+2.3, with the overall recent average R+2.1; NYT/Siena is tied but Citadel and ECU show R+4. Ratings are mostly Lean R. The 2024 baseline was R+17.9, and polls swung 15.8 points toward Democrats, but the incumbent still narrowly leads.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "SD-S",
+   "state": "South Dakota",
+   "state_po": "SD",
+   "stfips": "46",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_South_Dakota",
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Safe R",
+    "Econ": "Safe R",
+    "FPO": "Safe R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R",
+    "ST": "Safe R"
+   },
+   "candidates": [
+    {
+     "name": "Brian Bengs",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    {
+     "name": "Mike Rounds",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Brian Bengs",
+     "party": "I",
+     "incumbent": false,
+     "party_full": "Independent"
+    },
+    "r": {
+     "name": "Mike Rounds",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 14,
+    "n_recent": 8,
+    "avg_margin_d": -11.5,
+    "latest": "2026-10-20",
+    "house": {
+     "D": {
+      "n": 3,
+      "diff": 12.7
+     }
+    },
+    "independent_avg": -10.6,
+    "list": [
+     {
+      "pollster": "Emerson College",
+      "end_date": "2026-10-20",
+      "sample": 803,
+      "population": "LV",
+      "margin_d": -8.0
+     },
+     {
+      "pollster": "Quantus Insights (R)",
+      "end_date": "2026-10-19",
+      "sample": 633,
+      "population": "LV",
+      "margin_d": -22.0
+     },
+     {
+      "pollster": "Public Opinon Strategies (R)",
+      "end_date": "2026-10-16",
+      "sample": 500,
+      "population": "LV",
+      "margin_d": -17.0
+     },
+     {
+      "pollster": "Mason-Dixon Polling & Strategy",
+      "end_date": "2026-10-14",
+      "sample": 500,
+      "population": "RV",
+      "margin_d": -19.0
+     },
+     {
+      "pollster": "Concord Public Opinion Partners (D)",
+      "end_date": "2026-10-08",
+      "sample": 400,
+      "population": "LV",
+      "margin_d": 1.0
+     },
+     {
+      "pollster": "Zenith Research",
+      "end_date": "2026-09-27",
+      "sample": 500,
+      "population": "LV",
+      "margin_d": -6.0
+     },
+     {
+      "pollster": "Public Policy Polling (D)",
+      "end_date": "2026-09-09",
+      "sample": 629,
+      "population": "RV",
+      "margin_d": -3.0
+     },
+     {
+      "pollster": "Lake Research Partners (D)",
+      "end_date": "2026-08-30",
+      "sample": 500,
+      "population": "LV",
+      "margin_d": 7.0
+     }
+    ]
+   },
+   "pres24_margin_d": -29.2,
+   "qloo": {
+    "share_moving_d": 0.43,
+    "out_of_step_d": [
+     [
+      "46007",
+      "Bennett County",
+      28.2,
+      -30.7,
+      -26.4
+     ],
+     [
+      "46021",
+      "Campbell County",
+      21.6,
+      -49.3,
+      -70.1
+     ],
+     [
+      "46137",
+      "Ziebach County",
+      21.5,
+      -35.6,
+      -2.8
+     ],
+     [
+      "19119",
+      "Lyon County",
+      20.7,
+      -28.9,
+      -69.8
+     ],
+     [
+      "46031",
+      "Corson County",
+      18.3,
+      -36.9,
+      -11.9
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "46003",
+      "Aurora County",
+      -23.5,
+      -85.8,
+      -54.1
+     ],
+     [
+      "46019",
+      "Butte County",
+      -21.1,
+      -72.0,
+      -60.6
+     ],
+     [
+      "46047",
+      "Fall River County",
+      -20.1,
+      -70.2,
+      -49.3
+     ],
+     [
+      "46053",
+      "Gregory County",
+      -20.0,
+      -78.8,
+      -60.2
+     ],
+     [
+      "46123",
+      "Tripp County",
+      -18.7,
+      -76.6,
+      -63.3
+     ]
+    ],
+    "backtest": {
+     "r": 0.049,
+     "hit": 0.393,
+     "n": 67
+    }
+   },
+   "skew": {
+    "poll_swing": 17.7,
+    "rel_poll_swing": 4.4,
+    "flag": "house",
+    "short": "D-sponsored polls lean Bengs",
+    "text": "3 Democratic-sponsored polls show Bengs 12.7 pts better than the 3 independent polls. The average already counts them at 60%; the independent polls alone say R+10.6."
+   },
+   "script": {
+    "margin_d": -11.5,
+    "p_win": 0.989,
+    "winner_party": "R",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "R",
+    "margin_d": -11.5,
+    "p_win": 0.97,
+    "confidence": "high",
+    "headline": "Rounds favored; independent polls show double-digit Republican lead",
+    "reasoning": "Independent polls average R+10.6 and the overall average is R+11.5. Democratic-sponsored polls skew 12.7 points but are downweighted. Rounds is the incumbent and all ratings are Safe/Solid R, despite the D+29.2 2024 presidential baseline. The polls still leave the GOP clearly ahead.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "TN-S",
+   "state": "Tennessee",
+   "state_po": "TN",
+   "stfips": "47",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Tennessee",
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Safe R",
+    "Econ": "Safe R",
+    "FPO": "Safe R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R",
+    "ST": "Safe R"
+   },
+   "candidates": [
+    {
+     "name": "Marquita Bradshaw",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Bill Hagerty",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Marquita Bradshaw",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Bill Hagerty",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 1,
+    "n_recent": 0,
+    "avg_margin_d": -20.0,
+    "latest": "2026-08-26",
+    "house": {},
+    "independent_avg": null,
+    "list": [
+     {
+      "pollster": "Targoz Market Research",
+      "end_date": "2026-08-26",
+      "sample": 1157,
+      "population": "RV",
+      "margin_d": -20.0
+     }
+    ]
+   },
+   "pres24_margin_d": -29.7,
+   "qloo": {
+    "share_moving_d": 0.751,
+    "out_of_step_d": [
+     [
+      "01077",
+      "Lauderdale County",
+      28.6,
+      1.2,
+      -51.5
+     ],
+     [
+      "47021",
+      "Cheatham County",
+      27.6,
+      -6.0,
+      -45.9
+     ],
+     [
+      "47157",
+      "Shelby County",
+      26.4,
+      35.7,
+      25.4
+     ],
+     [
+      "47043",
+      "Dickson County",
+      20.2,
+      -12.7,
+      -51.9
+     ],
+     [
+      "47037",
+      "Davidson County",
+      19.4,
+      28.0,
+      27.4
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "47009",
+      "Blount County",
+      -5.1,
+      -27.0,
+      -47.7
+     ],
+     [
+      "47117",
+      "Marshall County",
+      -4.9,
+      -43.5,
+      -56.6
+     ],
+     [
+      "47001",
+      "Anderson County",
+      -4.6,
+      -30.4,
+      -35.7
+     ],
+     [
+      "47035",
+      "Cumberland County",
+      -4.1,
+      -35.4,
+      -58.9
+     ],
+     [
+      "47063",
+      "Hamblen County",
+      -3.8,
+      -38.1,
+      -58.9
+     ]
+    ],
+    "backtest": {
+     "r": 0.089,
+     "hit": 0.5,
+     "n": 96
+    }
+   },
+   "skew": {
+    "poll_swing": 9.7,
+    "rel_poll_swing": -3.6,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +9.7 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": -18.2,
+    "p_win": 0.992,
+    "winner_party": "R",
+    "sigma": 7.5
+   },
+   "verdict": {
+    "winner_party": "R",
+    "margin_d": -18.2,
+    "p_win": 0.95,
+    "confidence": "high",
+    "headline": "Hagerty favored by safe Tennessee ratings",
+    "reasoning": "Incumbent Republican Hagerty leads the only recent poll by 20 points, and the 2024 baseline is R+29.7. All published ratings are Safe/Solid R, and the script gives R+18.2 with 0.992 win probability. With no contrary independent polling, a comfortable Republican win is expected.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "TX-S",
+   "state": "Texas",
+   "state_po": "TX",
+   "stfips": "48",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Texas",
+   "ratings": {
+    "Cook": "Tossup",
+    "DDHQ": "Tossup",
+    "Econ": "Tossup",
+    "FPO": "Lean D (flip)",
+    "Fox": "Tossup",
+    "IE": "Tilt D (flip)",
+    "NBC": "Tossup",
+    "RCP": "Tossup",
+    "Sabato": "Tossup",
+    "Silver": "Lean D (flip)",
+    "ST": "Lean D (flip)"
+   },
+   "candidates": [
+    {
+     "name": "Ken Paxton",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "James Talarico",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "James Talarico",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Ken Paxton",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 60,
+    "n_recent": 32,
+    "avg_margin_d": 2.8,
+    "latest": "2026-10-28",
+    "house": {
+     "D": {
+      "n": 3,
+      "diff": 1.1
+     },
+     "R": {
+      "n": 7,
+      "diff": -0.6
+     }
+    },
+    "independent_avg": 2.7,
+    "list": [
+     {
+      "pollster": "ActiVote",
+      "end_date": "2026-10-28",
+      "sample": 400,
+      "population": "LV",
+      "margin_d": 4.0
+     },
+     {
+      "pollster": "A2 Insights",
+      "end_date": "2026-10-27",
+      "sample": 631,
+      "population": "LV",
+      "margin_d": 3.0
+     },
+     {
+      "pollster": "SSRS",
+      "end_date": "2026-10-27",
+      "sample": 923,
+      "population": "LV",
+      "margin_d": 6.0
+     },
+     {
+      "pollster": "YouGov Blue (D)",
+      "end_date": "2026-10-26",
+      "sample": 1000,
+      "population": "RV",
+      "margin_d": 8.0
+     },
+     {
+      "pollster": "Texas Southern University",
+      "end_date": "2026-10-25",
+      "sample": 2000,
+      "population": "LV",
+      "margin_d": 2.0
+     },
+     {
+      "pollster": "Rasmussen Reports",
+      "end_date": "2026-10-21",
+      "sample": 965,
+      "population": "LV",
+      "margin_d": 0.0
+     },
+     {
+      "pollster": "Univision / YouGov",
+      "end_date": "2026-10-21",
+      "sample": 1000,
+      "population": "RV",
+      "margin_d": 5.0
+     },
+     {
+      "pollster": "Verasight /VoteHub",
+      "end_date": "2026-10-20",
+      "sample": 509,
+      "population": "LV",
+      "margin_d": 3.0
+     }
+    ]
+   },
+   "pres24_margin_d": -13.7,
+   "qloo": {
+    "share_moving_d": 0.938,
+    "out_of_step_d": [
+     [
+      "48323",
+      "Maverick County",
+      31.7,
+      1.2,
+      -18.5
+     ],
+     [
+      "48215",
+      "Hidalgo County",
+      31.0,
+      30.1,
+      -2.9
+     ],
+     [
+      "48061",
+      "Cameron County",
+      29.9,
+      22.2,
+      -5.8
+     ],
+     [
+      "48113",
+      "Dallas County",
+      29.5,
+      47.7,
+      22.2
+     ],
+     [
+      "48141",
+      "El Paso County",
+      29.5,
+      33.9,
+      15.1
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "48329",
+      "Midland County",
+      -13.4,
+      -39.7,
+      -60.5
+     ],
+     [
+      "48339",
+      "Montgomery County",
+      -3.9,
+      -10.5,
+      -45.5
+     ],
+     [
+      "48221",
+      "Hood County",
+      -2.1,
+      -34.4,
+      -66.0
+     ],
+     [
+      "48375",
+      "Potter County",
+      -0.1,
+      -29.0,
+      -44.4
+     ],
+     [
+      "48441",
+      "Taylor County",
+      0.1,
+      -24.5,
+      -49.8
+     ]
+    ],
+    "backtest": {
+     "r": -0.247,
+     "hit": 0.49,
+     "n": 254
+    }
+   },
+   "skew": {
+    "poll_swing": 16.5,
+    "rel_poll_swing": 3.2,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +16.5 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": 2.8,
+    "p_win": 0.712,
+    "winner_party": "D",
+    "sigma": 5.0
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 2.8,
+    "p_win": 0.72,
+    "confidence": "medium",
+    "headline": "Talarico holds polling edge in Texas tossup",
+    "reasoning": "Poll average is D+2.8 with 32 recent polls; independent polls average D+2.7 and latest range D+2 to D+6. No house-skew flag; ratings are mostly tossup with several Lean D. The 2024 R+13.7 baseline is overcome by a +16.5 poll swing, near typical. Call D but keep confidence medium.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "VA-S",
+   "state": "Virginia",
+   "state_po": "VA",
+   "stfips": "51",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Virginia",
+   "ratings": {
+    "Cook": "Solid D",
+    "DDHQ": "Safe D",
+    "Econ": "Safe D",
+    "FPO": "Safe D",
+    "Fox": "Solid D",
+    "IE": "Solid D",
+    "NBC": "Solid D",
+    "RCP": "Solid D",
+    "Sabato": "Safe D",
+    "Silver": "Solid D",
+    "ST": "Safe D"
+   },
+   "candidates": [
+    {
+     "name": "Bert Mizusawa",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    },
+    {
+     "name": "Mark Warner",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Mark Warner",
+     "party": "D",
+     "incumbent": true,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Bert Mizusawa",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 2,
+    "n_recent": 0,
+    "avg_margin_d": 19.1,
+    "latest": "2026-06-16",
+    "house": {},
+    "independent_avg": null,
+    "list": [
+     {
+      "pollster": "The Public Sentiment Institute",
+      "end_date": "2026-06-16",
+      "sample": 996,
+      "population": "LV",
+      "margin_d": 18.0
+     },
+     {
+      "pollster": "The Public Sentiment Institute/ Virginia Project (R)",
+      "end_date": "2026-05-05",
+      "sample": 1047,
+      "population": "LV",
+      "margin_d": 26.0
+     }
+    ]
+   },
+   "pres24_margin_d": 5.8,
+   "qloo": {
+    "share_moving_d": 0.402,
+    "out_of_step_d": [
+     [
+      "51059",
+      "Fairfax County",
+      13.0,
+      30.2,
+      35.0
+     ],
+     [
+      "51165",
+      "Rockingham County",
+      11.3,
+      -11.9,
+      -37.0
+     ],
+     [
+      "51003",
+      "Albemarle County",
+      10.7,
+      6.0,
+      34.1
+     ],
+     [
+      "51760",
+      "Richmond city",
+      8.9,
+      16.0,
+      66.3
+     ],
+     [
+      "51015",
+      "Augusta County",
+      7.9,
+      -18.5,
+      -47.5
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "51680",
+      "Lynchburg city",
+      -23.9,
+      -43.6,
+      -7.9
+     ],
+     [
+      "51683",
+      "Manassas city",
+      -21.6,
+      -44.7,
+      14.8
+     ],
+     [
+      "51177",
+      "Spotsylvania County",
+      -20.8,
+      -32.9,
+      -8.6
+     ],
+     [
+      "51770",
+      "Roanoke city",
+      -20.2,
+      -31.7,
+      23.6
+     ],
+     [
+      "51031",
+      "Campbell County",
+      -18.0,
+      -48.1,
+      -48.6
+     ]
+    ],
+    "backtest": {
+     "r": 0.012,
+     "hit": 0.423,
+     "n": 128
+    }
+   },
+   "skew": {
+    "poll_swing": 13.3,
+    "rel_poll_swing": 0.0,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +13.3 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+   },
+   "script": {
+    "margin_d": 19.1,
+    "p_win": 0.995,
+    "winner_party": "D",
+    "sigma": 7.5
+   },
+   "verdict": {
+    "winner_party": "D",
+    "margin_d": 19.1,
+    "p_win": 0.97,
+    "confidence": "high",
+    "headline": "Warner favored by large margin in Virginia",
+    "reasoning": "Polling averages show Warner ahead by 19.1 points, with recent surveys at D+18 and D+26. All published ratings are Safe/Solid D, and Warner is the incumbent. Virginia\u2019s 2024 presidential margin was D+5.8, and the poll swing is typical with no skew flag. This supports a comfortable Democratic win.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "WV-S",
+   "state": "West Virginia",
+   "state_po": "WV",
+   "stfips": "54",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_West_Virginia",
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Safe R",
+    "Econ": "Safe R",
+    "FPO": "Safe R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R",
+    "ST": "Safe R"
+   },
+   "candidates": [
+    {
+     "name": "Rachel Fetty Anderson",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Shelley Moore Capito",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "Rachel Fetty Anderson",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Shelley Moore Capito",
+     "party": "R",
+     "incumbent": true,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 0,
+    "n_recent": 0,
+    "avg_margin_d": null,
+    "latest": null,
+    "house": {},
+    "independent_avg": null,
+    "list": []
+   },
+   "pres24_margin_d": -41.9,
+   "qloo": {
+    "share_moving_d": 0.527,
+    "out_of_step_d": [
+     [
+      "54037",
+      "Jefferson County",
+      8.4,
+      -15.3,
+      -15.8
+     ],
+     [
+      "54061",
+      "Monongalia County",
+      6.4,
+      -11.3,
+      -4.4
+     ],
+     [
+      "54033",
+      "Harrison County",
+      4.6,
+      -24.5,
+      -40.9
+     ],
+     [
+      "54099",
+      "Wayne County",
+      2.1,
+      -35.9,
+      -53.4
+     ],
+     [
+      "54039",
+      "Kanawha County",
+      1.8,
+      -12.8,
+      -17.4
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "54069",
+      "Ohio County",
+      -11.2,
+      -41.5,
+      -26.0
+     ],
+     [
+      "54055",
+      "Mercer County",
+      -9.9,
+      -44.7,
+      -57.3
+     ],
+     [
+      "54003",
+      "Berkeley County",
+      -8.9,
+      -30.3,
+      -35.8
+     ],
+     [
+      "54107",
+      "Wood County",
+      -8.6,
+      -35.7,
+      -43.0
+     ],
+     [
+      "54019",
+      "Fayette County",
+      -6.5,
+      -42.0,
+      -41.8
+     ]
+    ],
+    "backtest": {
+     "r": -0.137,
+     "hit": 0.545,
+     "n": 55
+    }
+   },
+   "skew": {
+    "poll_swing": null,
+    "rel_poll_swing": null,
+    "flag": null,
+    "short": null,
+    "text": "No recent polls. The call uses the 2024 result (R+41.9) plus the typical shift in polled races (+13.3)."
+   },
+   "script": {
+    "margin_d": -28.6,
+    "p_win": 0.999,
+    "winner_party": "R",
+    "sigma": 9.0
+   },
+   "verdict": {
+    "winner_party": "R",
+    "margin_d": -28.6,
+    "p_win": 0.99,
+    "confidence": "high",
+    "headline": "Capito favored; no polls, solid Republican ratings",
+    "reasoning": "No recent polls. The 2024 presidential margin was R+41.9; the script applies the typical +13.3 shift, giving R+28.6. All published ratings are Safe/Solid R, and Capito is the incumbent. Winner R with margin_d -28.6.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  },
+  {
+   "id": "WY-S",
+   "state": "Wyoming",
+   "state_po": "WY",
+   "stfips": "56",
+   "special": false,
+   "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Wyoming",
+   "ratings": {
+    "Cook": "Solid R",
+    "DDHQ": "Safe R",
+    "Econ": "Safe R",
+    "FPO": "Safe R",
+    "Fox": "Solid R",
+    "IE": "Solid R",
+    "NBC": "Solid R",
+    "RCP": "Solid R",
+    "Sabato": "Safe R",
+    "Silver": "Solid R",
+    "ST": "Safe R"
+   },
+   "candidates": [
+    {
+     "name": "James W. Byrd",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    {
+     "name": "Harriet Hageman",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   ],
+   "main": {
+    "d": {
+     "name": "James W. Byrd",
+     "party": "D",
+     "incumbent": false,
+     "party_full": "Democratic"
+    },
+    "r": {
+     "name": "Harriet Hageman",
+     "party": "R",
+     "incumbent": false,
+     "party_full": "Republican"
+    }
+   },
+   "polls": {
+    "n": 0,
+    "n_recent": 0,
+    "avg_margin_d": null,
+    "latest": null,
+    "house": {},
+    "independent_avg": null,
+    "list": []
+   },
+   "pres24_margin_d": -46.2,
+   "qloo": {
+    "share_moving_d": 0.804,
+    "out_of_step_d": [
+     [
+      "56013",
+      "Fremont County",
+      19.6,
+      -14.1,
+      -37.4
+     ],
+     [
+      "56029",
+      "Park County",
+      18.2,
+      -20.6,
+      -59.3
+     ],
+     [
+      "56033",
+      "Sheridan County",
+      12.9,
+      -24.0,
+      -50.1
+     ],
+     [
+      "56037",
+      "Sweetwater County",
+      9.2,
+      -28.2,
+      -53.2
+     ],
+     [
+      "56025",
+      "Natrona County",
+      7.9,
+      -21.5,
+      -48.6
+     ]
+    ],
+    "out_of_step_r": [
+     [
+      "56005",
+      "Campbell County",
+      -0.1,
+      -41.7,
+      -76.8
+     ],
+     [
+      "56021",
+      "Laramie County",
+      0.1,
+      -23.3,
+      -32.4
+     ],
+     [
+      "56001",
+      "Albany County",
+      7.1,
+      -18.9,
+      -3.2
+     ],
+     [
+      "56025",
+      "Natrona County",
+      7.9,
+      -21.5,
+      -48.6
+     ],
+     [
+      "56037",
+      "Sweetwater County",
+      9.2,
+      -28.2,
+      -53.2
+     ]
+    ],
+    "backtest": {
+     "r": 0.125,
+     "hit": 0.4,
+     "n": 23
+    }
+   },
+   "skew": {
+    "poll_swing": null,
+    "rel_poll_swing": null,
+    "flag": null,
+    "short": null,
+    "text": "No recent polls. The call uses the 2024 result (R+46.2) plus the typical shift in polled races (+13.3)."
+   },
+   "script": {
+    "margin_d": -32.9,
+    "p_win": 1.0,
+    "winner_party": "R",
+    "sigma": 9.0
+   },
+   "verdict": {
+    "winner_party": "R",
+    "margin_d": -32.9,
+    "p_win": 0.99,
+    "confidence": "high",
+    "headline": "Hageman favored in deep-red Wyoming; no polls, ratings Solid R",
+    "reasoning": "No recent polls. Wyoming's 2024 presidential margin was R+46.2, and all ratings are Safe/Solid R. Applying the typical +13.3 Democratic shift yields a script margin of R+32.9. With no contrary evidence, Hageman is a heavy favorite.",
+    "model": "deepseek-v4.1-flash",
+    "at": "2026-10-30T03:48:03+00:00"
+   }
+  }
+ ]
+}

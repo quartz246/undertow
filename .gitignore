@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+node_modules/
+tools/node_modules/
+# raw Qloo API responses and other bulky/raw inputs (regenerate with the pipeline)
+data/qloo/
+data/raw/*
+!data/raw/counties-10m.json
+!data/raw/counties.geojson
+!data/raw/entities.json
+data/polls/cache/
+*.log
+secrets.env
+tools/shots/

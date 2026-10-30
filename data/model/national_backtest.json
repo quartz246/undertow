@@ -1,0 +1,11 @@
+{
+ "n_states": 49,
+ "county_r_out_of_state": 0.733,
+ "state_r_raw": -0.052,
+ "state_r_controlled": -0.171,
+ "state_hit_extremes": 0.5,
+ "state_n_extremes": 26,
+ "within_state_median_r": 0.095,
+ "within_state_positive": 34,
+ "within_state_n": 45
+}

@@ -1,0 +1,314 @@
+{
+ "Fox News": [
+  "F1AA9F1A-6594-48E0-980C-14C52EE247A0",
+  "urn:entity:brand"
+ ],
+ "Trader Joe's": [
+  "096B986E-3D63-44F4-BE44-F85D52A2979D",
+  "urn:entity:brand"
+ ],
+ "MSNBC": [
+  "A34AD40F-6B5F-48D3-A159-53FF7C544575",
+  "urn:entity:brand"
+ ],
+ "Cracker Barrel": [
+  "31F7D3DA-7A3B-4579-BF17-DAB3F541A2EB",
+  "urn:entity:brand"
+ ],
+ "Whole Foods Market": [
+  "1E5D90F5-5E0D-4486-B651-D0E7B8A6BE23",
+  "urn:entity:brand"
+ ],
+ "Bass Pro Shops": [
+  "2D00EBC5-9F4C-46E2-86D5-99E55B8D30D9",
+  "urn:entity:brand"
+ ],
+ "Patagonia": [
+  "DB4CE34E-3A63-4947-946F-9D52502C5762",
+  "urn:entity:brand"
+ ],
+ "Hobby Lobby": [
+  "423EDCAF-1289-474E-9982-0CC39A5BAEFE",
+  "urn:entity:brand"
+ ],
+ "Duck Dynasty": [
+  "5DCF1443-F3CA-45A9-B065-A2786D5E88A8",
+  "urn:entity:tv_show"
+ ],
+ "The Daily Show": [
+  "9F00E9A4-640F-48DC-B9E6-309013308A92",
+  "urn:entity:tv_show"
+ ],
+ "Phoebe Bridgers": [
+  "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
+  "urn:entity:artist"
+ ],
+ "The New Yorker": [
+  "399654ED-B417-49C5-A9AA-8682BE35A85D",
+  "urn:entity:brand"
+ ],
+ "Chick-fil-A": [
+  "B4606C6E-9133-4FB8-88FD-CF1D37F5AAC7",
+  "urn:entity:brand"
+ ],
+ "Tucker Carlson": [
+  "F2085F8D-7E02-4DFE-989E-17FB79D043EC",
+  "urn:entity:person"
+ ],
+ "Rachel Maddow": [
+  "424675E1-B3DF-4483-B17B-FEB5F92E02ED",
+  "urn:entity:person"
+ ],
+ "The Ben Shapiro Show": [
+  "1FA0FBFF-6332-4D80-B2BA-4718E3F7666D",
+  "urn:entity:podcast"
+ ],
+ "Pod Save America": [
+  "D8BA0114-6FA9-468F-8B02-A643851BF930",
+  "urn:entity:podcast"
+ ],
+ "Ben Shapiro": [
+  "2AFA465B-17DE-4BDC-A71F-DEA45CB49387",
+  "urn:entity:person"
+ ],
+ "The Joe Rogan Experience": [
+  "2BBC8913-13CA-47A3-BCD0-B48E70D6B005",
+  "urn:entity:podcast"
+ ],
+ "The Dan Bongino Show": [
+  "079AAA07-8820-40F2-8698-ACB22F762971",
+  "urn:entity:podcast"
+ ],
+ "The Daily Wire": [
+  "302A745A-344F-4EC6-8BD5-E06302E75326",
+  "urn:entity:brand"
+ ],
+ "Dan Bongino": [
+  "CA58E2FE-1B51-4A66-9B4C-688D9B9137FC",
+  "urn:entity:person"
+ ],
+ "Sean Hannity": [
+  "A8DBD86A-5CC8-4004-8261-4F7DEE1B6814",
+  "urn:entity:person"
+ ],
+ "The Ramsey Show": [
+  "F80EB348-708A-48E7-8CCD-6CDC458676E6",
+  "urn:entity:podcast"
+ ],
+ "Kid Rock": [
+  "11F1F0F7-1F74-4229-B9CD-FC39728B66B2",
+  "urn:entity:artist"
+ ],
+ "Luke Bryan": [
+  "4A09478F-69D8-4D49-B969-0E023D317864",
+  "urn:entity:artist"
+ ],
+ "Jason Aldean": [
+  "782462EC-6DE6-47A9-B4F1-D629CC179199",
+  "urn:entity:artist"
+ ],
+ "Brantley Gilbert": [
+  "B328AD5E-AB5F-45F9-B04C-F921B15CF9CE",
+  "urn:entity:artist"
+ ],
+ "Larry the Cable Guy": [
+  "2ACFB3D8-7E29-4509-9CF3-0FDE9CBBD8AC",
+  "urn:entity:person"
+ ],
+ "Jeff Foxworthy": [
+  "4B01DE86-FD2C-4E92-8BBC-4D162ED2B3CB",
+  "urn:entity:person"
+ ],
+ "Nascar": [
+  "4CDC94AB-1CD7-4AE1-AC23-7D76F1586883",
+  "urn:entity:brand"
+ ],
+ "Cabela's": [
+  "D46C358B-C258-40FD-BE2F-1B03DBAC7913",
+  "urn:entity:brand"
+ ],
+ "Dollar General": [
+  "77A843BF-AA9A-4588-A44B-E8AA684A910C",
+  "urn:entity:brand"
+ ],
+ "Waffle House": [
+  "4C7C9E59-5CD7-4EDF-860D-5427FEA4046C",
+  "urn:entity:brand"
+ ],
+ "Ram Trucks": [
+  "797558CF-C92A-4D35-891C-FD5D2E1FF120",
+  "urn:entity:brand"
+ ],
+ "Sonic Drive-In": [
+  "28C14EC0-E167-413A-9DAB-3C2A54F00072",
+  "urn:entity:brand"
+ ],
+ "Blue Bloods": [
+  "82F0260A-58F2-408F-8054-B331F2AD3F74",
+  "urn:entity:tv_show"
+ ],
+ "Swamp People": [
+  "2EBFD7A0-2CBC-42C1-AE56-FA465E789581",
+  "urn:entity:tv_show"
+ ],
+ "American Pickers": [
+  "9F394FD1-45F9-49E7-9AD5-4CD59610D5E8",
+  "urn:entity:tv_show"
+ ],
+ "The Chosen": [
+  "FAD6AABE-4AC3-4E70-8F31-E16B723A4151",
+  "urn:entity:tv_show"
+ ],
+ "Gunsmoke": [
+  "70BEF2EF-ABE4-49F4-B64C-5F9F7BBBAA13",
+  "urn:entity:tv_show"
+ ],
+ "American Sniper": [
+  "6C3E7749-DD4B-488E-A66D-918A686C0B61",
+  "urn:entity:movie"
+ ],
+ "Sound of Freedom": [
+  "668AC781-9404-4889-8213-E0D6991B0501",
+  "urn:entity:movie"
+ ],
+ "God's Not Dead": [
+  "A38007DA-0CAE-454B-83E6-0CE06A8C2D1B",
+  "urn:entity:movie"
+ ],
+ "Top Gun: Maverick": [
+  "63109D8F-F736-42BF-BF29-460BB2AE0D2F",
+  "urn:entity:movie"
+ ],
+ "The New York Times": [
+  "46DB54ED-CBA2-4F52-9512-EAA9B7C2CB69",
+  "urn:entity:brand"
+ ],
+ "NPR": [
+  "36A3F981-5BFB-45B5-A8CF-A16F273B04F0",
+  "urn:entity:brand"
+ ],
+ "The Atlantic": [
+  "309122BE-9C37-438E-A17B-59416C7B0C65",
+  "urn:entity:brand"
+ ],
+ "Mike Huckabee": [
+  "D891AA97-DCEB-40D0-BAA7-41C888A06D44",
+  "urn:entity:person"
+ ],
+ "Last Week Tonight with John Oliver": [
+  "7E132C51-E002-49D0-A692-FAEAF33E08F4",
+  "urn:entity:tv_show"
+ ],
+ "RuPaul's Drag Race": [
+  "F484DCB5-3576-49FF-A8F6-8B3F3A9C3056",
+  "urn:entity:tv_show"
+ ],
+ "Succession": [
+  "65EAC55F-6FDC-452D-A633-A9E9F2BBD45E",
+  "urn:entity:tv_show"
+ ],
+ "Saturday Night Live": [
+  "FE2C475B-666B-471B-A982-D4802CF6ABE5",
+  "urn:entity:tv_show"
+ ],
+ "Abbott Elementary": [
+  "505ED979-1B7F-4181-9F03-3AED3FF1ED7D",
+  "urn:entity:tv_show"
+ ],
+ "Call Her Daddy": [
+  "056BCF4A-7C1D-4F19-AC0C-B1093EDE153C",
+  "urn:entity:podcast"
+ ],
+ "Recreational Equipment Inc": [
+  "205AF33F-118E-4C49-9721-6BDBAF981DA0",
+  "urn:entity:brand"
+ ],
+ "Sweetgreen": [
+  "E515D012-5197-4B01-BFAD-5E5FAC25B525",
+  "urn:entity:brand"
+ ],
+ "Subaru": [
+  "8CA6EA46-2090-4154-8E26-4399B2BD04E9",
+  "urn:entity:brand"
+ ],
+ "Lululemon": [
+  "D9B9B404-7B35-4E4B-A0CE-4CAB8155FE9E",
+  "urn:entity:brand"
+ ],
+ "Tesla": [
+  "29B49E3F-A0EC-42C6-A453-38B1C20D8374",
+  "urn:entity:brand"
+ ],
+ "Beyonc\u00e9": [
+  "F6754C46-B3E7-457F-8B7E-06C613597320",
+  "urn:entity:artist"
+ ],
+ "Bad Bunny": [
+  "BDA1B73F-10E7-4D09-AC51-B796CCEC5FF3",
+  "urn:entity:artist"
+ ],
+ "Kendrick Lamar": [
+  "C915A918-39C5-47A3-A101-D9FA1DECBD9C",
+  "urn:entity:artist"
+ ],
+ "Lizzo": [
+  "2D1676A1-EC6D-482C-A778-4B2BAAD2D92E",
+  "urn:entity:artist"
+ ],
+ "Tyler Perry": [
+  "19DB9F78-6505-4552-BF01-501977E9B6F1",
+  "urn:entity:person"
+ ],
+ "Bet Networks": [
+  "254DFF57-50F9-446E-9DE1-3DDCF7C8AC0C",
+  "urn:entity:brand"
+ ],
+ "Telemundo": [
+  "0FC2954D-FB03-49FB-9AE0-F9E27482C3C8",
+  "urn:entity:brand"
+ ],
+ "Essence": [
+  "E8B34FC8-DA4A-4FBB-992A-A915C8DCD0E7",
+  "urn:entity:brand"
+ ],
+ "Univision": [
+  "0618E8CA-F7BD-4A2F-8C96-5E29D61D30DF",
+  "urn:entity:brand"
+ ],
+ "Moonlight": [
+  "2955F3C4-36AB-49F3-A818-3597F35EF46C",
+  "urn:entity:movie"
+ ],
+ "Everything Everywhere All at Once": [
+  "F0D354AA-BA7E-49D2-8ABA-9A8250F5C852",
+  "urn:entity:movie"
+ ],
+ "Barbie": [
+  "BAF6FB9E-7E2E-4008-944B-97C0CF430D41",
+  "urn:entity:movie"
+ ],
+ "Taylor Swift": [
+  "4BBEF799-A0C4-4110-AB01-39216993C312",
+  "urn:entity:artist"
+ ],
+ "Bernie Sanders": [
+  "8388DBC7-7F76-45DB-98E4-26284EA8C890",
+  "urn:entity:person"
+ ],
+ "Alexandria Ocasio-Cortez": [
+  "A7AFB2DE-A485-418F-A92D-A5A1501B36BA",
+  "urn:entity:person"
+ ],
+ "Nikki Haley": [
+  "666E207F-477D-44F8-B819-50C7EC3BD7C7",
+  "urn:entity:person"
+ ],
+ "Marjorie Taylor Greene": [
+  "A9A9E250-DBFD-4808-A875-272DD318053A",
+  "urn:entity:person"
+ ],
+ "Donald Trump Jr.": [
+  "08171B94-62B8-4BB2-AA93-BC7C70724338",
+  "urn:entity:person"
+ ]
+}

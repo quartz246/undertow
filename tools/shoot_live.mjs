@@ -1,0 +1,12 @@
+import { createRequire } from "module"; const require = createRequire("/tmp/adflank-ui/tools/package.json"); const puppeteer = require("puppeteer-core");
+const base = process.argv[2];
+const b = await puppeteer.launch({ executablePath: "/usr/bin/google-chrome", headless: "new", args: ["--no-sandbox", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"] });
+const p = await b.newPage(); await p.setViewport({ width: 1440, height: 900 });
+const errs = []; p.on("pageerror", (e) => errs.push("PAGEERR " + e.message)); p.on("console", (m) => m.type() === "error" && errs.push(m.text()));
+await p.goto(base, { waitUntil: "networkidle2", timeout: 90000 }); await new Promise((r) => setTimeout(r, 3000));
+await p.evaluate(() => document.querySelector('.race[data-id="OH-S2"]')?.click()); await new Promise((r) => setTimeout(r, 2500));
+await p.evaluate(() => __map.jumpTo({ center: [-82.999, 39.961], zoom: 13 })); await new Promise((r) => setTimeout(r, 9000));
+await p.screenshot({ path: "shots/7-live-block.png" });
+console.log("scan box:", await p.evaluate(() => document.querySelector("#scan").innerText));
+console.log("errors:", JSON.stringify(errs.slice(0, 5)));
+await b.close();

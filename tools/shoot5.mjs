@@ -1,0 +1,15 @@
+import { createRequire } from "module"; const require = createRequire("/tmp/adflank-ui/tools/package.json"); const puppeteer = require("puppeteer-core");
+const base = process.argv[2];
+const b = await puppeteer.launch({ executablePath: "/usr/bin/google-chrome", headless: "new", args: ["--no-sandbox", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"] });
+const p = await b.newPage(); await p.setViewport({ width: 1440, height: 900 });
+const errs = []; p.on("pageerror", (e) => errs.push("PAGEERR " + e.message)); p.on("console", (m) => m.type() === "error" && errs.push(m.text()));
+const W = (ms) => new Promise((r) => setTimeout(r, ms));
+await p.goto(base, { waitUntil: "networkidle2", timeout: 90000 }); await W(3000);
+await p.evaluate(() => document.querySelector("#welcome-go").click()); await W(800);
+await p.evaluate(() => document.querySelector('[data-mode="undertow"]').click()); await W(2500);
+await p.screenshot({ path: "shots/l-undertow-states.png" });
+await p.evaluate(() => document.querySelector("#tools-btn").click()); await W(1200);
+await p.evaluate(() => { const h = [...document.querySelectorAll(".card h3")].find((x) => x.textContent === "Statewide undertow"); h.scrollIntoView(); });
+await W(500); await p.screenshot({ path: "shots/m-tools-undertow.png" });
+console.log("errors:", JSON.stringify(errs.slice(0, 8)));
+await b.close();

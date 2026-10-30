@@ -99,3 +99,13 @@ if __name__ == "__main__":
                "counties": {f: round(float(v), 1) for f, v in zip(M.fips, M.pred24)}},
               open("data/model/qloo_national.json", "w"))
     print("Qloo-only 2024 check: state MAE %.1f, winner right %.0f%%, county r %.2f" % (err.mean(), 100 * np.mean(np.sign(S24.pred) == np.sign(S24.m24)), np.corrcoef(M.pred24, M.m24)[0, 1]))
+    # statewide undertow: Qloo-only expected 2024 minus actual, minus what the 2024 margin alone explains (DC excluded)
+    q = json.load(open("data/model/qloo_national.json"))
+    S24n = S24.drop(index="District of Columbia", errors="ignore")
+    gap = S24n.pred - S24n.m24; A = np.c_[np.ones(len(S24n)), S24n.m24]
+    res = gap - A @ np.linalg.lstsq(A, gap, rcond=None)[0]
+    q["state_undertow"] = {s: round(float(v), 1) for s, v in res.items()}
+    q["state_undertow_note"] = ("Statewide undertow: Qloo-only expected 2024 margin minus actual 2024, minus what the 2024 margin alone explains "
+                                "(regression to the mean). DC excluded. Backtest on 2020->2024: did not predict statewide swing.")
+    json.dump(q, open("data/model/qloo_national.json", "w"))
+    print("statewide undertow sd %.1f" % res.std())

@@ -62,7 +62,7 @@ const stateFinal = (fips) => (S.raceBy[fips] ? final(S.raceBy[fips][0]).margin_d
 function countyEst(fips) {
   const c = S.counties[fips]; if (!c) return null;
   const st = S.states[c.state], sf = stateFinal(fips.slice(0, 2));
-  return (sf == null ? c.m24 : c.m24 + (sf - st.m24)) + (c.swing_est - st.qloo_swing);
+  return (sf == null ? c.m24 + natSwing() : c.m24 + (sf - st.m24)) + (c.swing_est - st.qloo_swing);
 }
 function countyValue(f) {
   const c = S.counties[f.properties.fips]; if (!c) return null;
@@ -74,7 +74,9 @@ function stateValue(f) {
   const name = f.properties.name, st = S.states[name];
   if (S.mode === "r24") return st ? st.m24 : null;
   if (S.mode === "undertow") return null; // the undertow is a within-state signal: states stay clear so counties show
-  return stateFinal(f.properties.fips);
+  const sf = stateFinal(f.properties.fips);
+  return sf != null ? sf : st ? st.m24 + natSwing() : null; // no race this year: generic estimate, drawn faded
+
 }
 function cellValue(c) {
   const co = S.counties[c.fips]; if (!co) return null;
@@ -100,7 +102,7 @@ function initMap() {
     map.addLayer({ id: "counties-fill", type: "fill", source: "counties", paint: { "fill-color": expr(RAMP), "fill-opacity": ["interpolate", ["linear"], ["zoom"], 4.2, 0, 5.2, 0.85, 7.5, 0.55, 10, 0.12] } }, before);
     map.addLayer({ id: "cells-fill", type: "fill", source: "cells", minzoom: 6.3, maxzoom: 11.2, paint: { "fill-color": expr(RAMP), "fill-opacity": ["interpolate", ["linear"], ["zoom"], 6.3, 0, 7.3, 0.8, 10.6, 0.8, 11.2, 0] } }, before);
     map.addLayer({ id: "live-fill", type: "fill", source: "live", minzoom: 9.8, paint: { "fill-color": expr(RAMP), "fill-opacity": ["interpolate", ["linear"], ["zoom"], 9.8, 0, 10.6, 0.75, 15, 0.6] } }, before);
-    map.addLayer({ id: "states-fill", type: "fill", source: "states", paint: { "fill-color": expr(RAMP), "fill-opacity": ["interpolate", ["linear"], ["zoom"], 4.2, 0.92, 5.2, 0] } }, before);
+    map.addLayer({ id: "states-fill", type: "fill", source: "states", paint: { "fill-color": expr(RAMP), "fill-opacity": ["interpolate", ["linear"], ["zoom"], 4.2, ["case", ["==", ["get", "norace"], 1], 0.35, 0.92], 5.2, 0] } }, before);
     map.addLayer({ id: "counties-line", type: "line", source: "counties", minzoom: 5, paint: { "line-color": "#ffffff", "line-width": ["interpolate", ["linear"], ["zoom"], 5, 0.2, 9, 1] } }, before);
     map.addLayer({ id: "states-line", type: "line", source: "states", paint: { "line-color": "#ffffff", "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.8, 8, 2.5] } });
     map.addLayer({ id: "race-line", type: "line", source: "states", filter: ["in", ["get", "fips"], ["literal", Object.keys(S.raceBy)]], paint: { "line-color": "#1d1f24", "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.9, 8, 2] } });
@@ -114,7 +116,7 @@ function initMap() {
 }
 
 function setValues() {
-  for (const f of S.geo.st.features) f.properties.v = stateValue(f);
+  for (const f of S.geo.st.features) { f.properties.v = stateValue(f); f.properties.norace = S.mode === "forecast" && !S.raceBy[f.properties.fips] ? 1 : 0; }
   for (const f of S.geo.co.features) f.properties.v = countyValue(f);
   for (const f of S.cellFeats) f.properties.v = cellValue(f.properties);
 }
@@ -123,7 +125,7 @@ function recolor() {
   const ramp = S.mode === "undertow" ? RAMP_U : RAMP;
   for (const l of ["states-fill", "counties-fill", "cells-fill"]) map.setPaintProperty(l, "fill-color", expr(ramp));
   const u = S.mode === "undertow";
-  map.setPaintProperty("states-fill", "fill-opacity", u ? 0 : ["interpolate", ["linear"], ["zoom"], 4.2, 0.92, 5.2, 0]);
+  map.setPaintProperty("states-fill", "fill-opacity", u ? 0 : ["interpolate", ["linear"], ["zoom"], 4.2, ["case", ["==", ["get", "norace"], 1], 0.35, 0.92], 5.2, 0]);
   map.setPaintProperty("counties-fill", "fill-opacity", u ? ["interpolate", ["linear"], ["zoom"], 3, 0.9, 7.5, 0.55, 10, 0.12] : ["interpolate", ["linear"], ["zoom"], 4.2, 0, 5.2, 0.85, 7.5, 0.55, 10, 0.12]);
   map.setPaintProperty("live-fill", "fill-color", expr(RAMP_U));
   map.getSource("states").setData(S.geo.st);
@@ -137,7 +139,7 @@ function legend() {
   const u = S.mode === "undertow", ramp = u ? RAMP_U : RAMP;
   const title = u ? "Undertow: counties whose tastes don't match their 2024 vote (relative to their state)" : S.mode === "r24" ? "2024 presidential result" : `2026 ${OFF[S.office]} forecast (states) · estimated vote (counties, cells)`;
   $("#legend").innerHTML = `<b>${esc(title)}</b><div class="ramp">${ramp.map(([, c]) => `<span style="background:${c}"></span>`).join("")}</div>
-    <div class="ends"><span>${u ? "tastes redder" : "R+30"}</span><span>${u ? "matches" : "even"}</span><span>${u ? "tastes bluer" : "D+30"}</span></div>`;
+    <div class="ends"><span>${u ? "tastes redder" : "R+30"}</span><span>${u ? "matches" : "even"}</span><span>${u ? "tastes bluer" : "D+30"}</span></div>${S.mode === "forecast" ? `<div class="note">Faded states: no ${S.office === "senate" ? "Senate" : "governor"} race this year (2024 result + typical shift)</div>` : ""}`;
 }
 
 async function onMove() {
@@ -189,7 +191,7 @@ function hover(e, layer) {
   if (layer === "states-fill") {
     if (map.getZoom() >= 5.2) return;
     const st = S.states[p.name], r = S.raceBy[p.fips]?.[0];
-    h = `<b>${esc(p.name)}</b><br>${r ? `Forecast <b>${fmtM(final(r).margin_d)}</b> · ${esc(r.candidates.find((c) => c.party === final(r).winner_party)?.name || "")} ${pct(final(r).p_win)}<br>` : `<span class='k'>No ${OFF[S.office].toLowerCase()} race in 2026</span><br>`}<span class="k">2024 president</span> ${fmtM(st?.m24)}`;
+    h = `<b>${esc(p.name)}</b><br>${r ? `Forecast <b>${fmtM(final(r).margin_d)}</b> · ${esc(r.candidates.find((c) => c.party === final(r).winner_party)?.name || "")} ${pct(final(r).p_win)}<br>` : `<span class='k'>No ${S.office === "senate" ? "Senate" : "governor"} race in 2026. Faded colour: 2024 result + the typical shift (${fmtS(natSwing())}) = ${fmtM(st ? st.m24 + natSwing() : null)}</span><br>`}<span class="k">2024 president</span> ${fmtM(st?.m24)}`;
   } else if (layer === "counties-fill") {
     const c = S.counties[p.fips]; if (!c) return;
     const dr = (c.drivers || []).slice(0, 3).map(([n, v]) => `${esc(n)} ${v > 0 ? "→D" : "→R"}`).join(", ");
@@ -346,7 +348,7 @@ let map24;
 const CMP = { r24: { l: "2026 forecast", r: "2024 president" }, qloo: { l: "Polls forecast", r: "Qloo-only forecast" } };
 function data24() {
   const q = S.cmpKind === "qloo";
-  const sv = (f) => (q ? (S.raceBy[f.properties.fips] ? qlooState(f.properties.name) : null) : S.states[f.properties.name]?.m24 ?? null);
+  const sv = (f) => (q ? qlooState(f.properties.name) : S.states[f.properties.name]?.m24 ?? null);
   const cv = (f) => (q ? qlooCounty(f.properties.fips) : S.counties[f.properties.fips]?.m24 ?? null);
   const st = { type: "FeatureCollection", features: S.geo.st.features.map((f) => ({ ...f, properties: { ...f.properties, v: sv(f) } })) };
   const co = { type: "FeatureCollection", features: S.geo.co.features.map((f) => ({ ...f, properties: { ...f.properties, v: cv(f) } })) };

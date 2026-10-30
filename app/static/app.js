@@ -112,7 +112,7 @@ function initMap() {
     map.addLayer({ id: "race-line", type: "line", source: "states", filter: ["in", ["get", "fips"], ["literal", Object.keys(S.raceBy)]], paint: { "line-color": "#1d1f24", "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.9, 8, 2] } });
     map.addLayer({ id: "sel-line", type: "line", source: "states", filter: ["==", ["get", "fips"], ""], paint: { "line-color": "#0f7b6c", "line-width": 3 } });
     recolor();
-    map.once("idle", initMap24);
+    map.once("idle", () => { initMap24(); if (!/map/.test(location.hash)) story(); });
     map.on("click", "states-fill", (e) => { const f = e.features[0]; if (map.getZoom() < 5.2 && S.raceBy[f.properties.fips]) openRace(S.raceBy[f.properties.fips][0].id, true); });
     map.on("click", "counties-fill", (e) => { if (map.getZoom() >= 5.2) { const fp = e.features[0].properties.fips.slice(0, 2); if (S.raceBy[fp] && S.sel?.stfips !== fp) openRace(S.raceBy[fp][0].id, false); } });
     for (const l of ["states-fill", "counties-fill", "cells-fill", "live-fill"]) { map.on("mousemove", l, (e) => hover(e, l)); map.on("mouseleave", l, () => ($("#tip").hidden = true)); }
@@ -481,9 +481,7 @@ function setMode(m) { const b = document.querySelector(`.mapbar .seg [data-mode=
 function compareOff() { if (S.cmp) toggleCompare(S.cmpKind); }
 function flyUS() { map.flyTo({ center: [-96.5, 38.6], zoom: 3.6, duration: 1400 }); }
 /* ---------------- welcome ---------------- */
-function welcome(force) {
-  let hide = false; try { hide = localStorage.getItem("undertow-welcome") === "hide"; } catch {}
-  if (hide && !force) return;
+function welcome() {
   const m = S.model, N = S.natbt, top = (lean) => Object.entries(m.entities).filter(([, e]) => e.lean === lean).sort((a, b) => Math.abs(b[1].partial_r) - Math.abs(a[1].partial_r)).slice(0, 4).map(([n]) => esc(n)).join(", ");
   $("#welcome-body").innerHTML = `<h2>Undertow</h2>
     <p class="lede">Polls ask people how they'll vote. <b>Qloo shows what places actually live like:</b> what they watch, read, listen to and buy. Undertow puts the two side by side, from the whole country down to a city block.</p>
@@ -499,9 +497,9 @@ function welcome(force) {
     <p>On 2020→2024, out-of-step counties tended to move the way Qloo flagged <i>inside</i> a state (${m.backtest.states_positive} of ${Object.keys(m.backtest.states).length} states). Statewide, the signal predicted nothing${N ? ` (r = ${N.state_r_controlled})` : ""}. So <b>polls decide who wins</b>. Scripts check the polls for skew and Undertow AI makes each final call. Qloo shows <i>where</i> the vote is moving.</p>
     <h3>Try it</h3>
     <ul class="try"><li>Click a state, or switch <b>Senate / Governor</b></li><li><b>2026 ↔ 2024</b> and <b>Polls ↔ Qloo</b>: drag the line across the map to compare</li><li><b>Undertow</b> layer: places out of step with their vote</li><li><b>Tools</b>: where our calls, the polls and the betting markets disagree</li><li>Scroll below the map for <b>charts</b>: polls vs taste, Qloo vs the real 2024 result, and the track record</li><li>Search a <b>ZIP code or city</b>, or zoom in anywhere, for a live block scan</li></ul>
-    <div class="wfoot"><label><input type="checkbox" id="welcome-hide"${hide ? " checked" : ""}> Don't show this again</label><span><button class="tourbtn" id="welcome-tour">Read the story</button> <button class="go" id="welcome-go">Explore the map</button></span></div>`;
-  $("#welcome-tour").onclick = () => { try { localStorage.setItem("undertow-welcome", $("#welcome-hide").checked ? "hide" : "show"); } catch {} $("#welcome").close(); const t = () => (map?.loaded() ? story() : setTimeout(t, 300)); t(); };
-  $("#welcome-go").onclick = () => { try { localStorage.setItem("undertow-welcome", $("#welcome-hide").checked ? "hide" : "show"); } catch {} $("#welcome").close(); };
+    <div class="wfoot"><span></span><span><button class="tourbtn" id="welcome-tour">Replay the story</button> <button class="go" id="welcome-go">Back to the map</button></span></div>`;
+  $("#welcome-tour").onclick = () => { $("#welcome").close(); const t = () => (map?.loaded() ? story() : setTimeout(t, 300)); t(); };
+  $("#welcome-go").onclick = () => $("#welcome").close();
   $("#welcome").showModal();
 }
 
@@ -542,14 +540,14 @@ document.querySelectorAll(".mapbar .seg button").forEach((b) => (b.onclick = () 
 
 document.querySelectorAll(".office button").forEach((b) => (b.onclick = () => setOffice(b.dataset.office)));
 $("#tools-btn").onclick = () => tools();
-$("#about-btn").onclick = () => welcome(true);
+$("#about-btn").onclick = () => welcome();
 $("#story-btn").onclick = () => map?.loaded() && story();
 document.querySelectorAll(".cmp").forEach((b) => (b.onclick = () => map && toggleCompare(b.dataset.cmp)));
 initSwipeDrag();
 initSearch();
 
 load().then(() => {
-  tally(); home(); welcome(false);
+  tally(); home();
   setTimeout(() => typeof renderCharts === "function" && renderCharts(), 0);
   try { initMap(); } catch (e) { map = null; $("#map").innerHTML = `<p class="note" style="padding:60px 20px">The map needs WebGL, which this browser has turned off. The race list and calls still work.</p>`; }
 }).catch((e) => { $("#panel-body").innerHTML = `<p>Could not load the forecast: ${esc(e.message)}</p>`; });

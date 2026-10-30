@@ -407,28 +407,61 @@ function stratDraw(pts, counties) {
   if (pts.length) { const xs = pts.map((z) => z.lon), ys = pts.map((z) => z.lat);
     map.fitBounds([[Math.min(...xs) - 0.25, Math.min(...ys) - 0.2], [Math.max(...xs) + 0.25, Math.max(...ys) + 0.2]], { padding: panelPad(), duration: 1400, maxZoom: 9.5 }); }
 }
+const STRAT_STYLES = [["", "Balanced"], ["Focus on persuasion targets first.", "Persuasion first"], ["Focus on turnout in friendly areas first.", "Turnout first"],
+  ["Prioritise ZIPs whose tastes skew younger.", "Younger-leaning areas"], ["Skip the state's largest metro county.", "Skip the big metro"]];
 function strategist(pre = {}) {
   openPanel();
-  const races = [...S.fcs.senate.races, ...S.fcs.governor.races].sort((a, b) => Math.abs(final(a).margin_d) - Math.abs(final(b).margin_d));
-  const rid = pre.race || (S.sel?.id) || races[0].id;
-  const ex = [["IA-S", "D", 500000, "Iowa Senate · Turek · $500k"], ["ME-S", "R", 1000000, "Maine Senate · Collins · $1M"], ["GA-G", "D", 750000, "Georgia governor · Democrat · $750k"]];
-  $("#panel-body").innerHTML = `<button class="back" id="back">← All races</button>
-    <h2>Campaign Strategist</h2>
-    <p class="sub">An Undertow AI agent plans where a campaign's last ad dollars should go, ZIP code by ZIP code. It reads the race, ranks counties, runs live Qloo scans, finds what each target area watches, listens to and buys, and splits the budget. No personal data: Qloo works on aggregate tastes.</p>
-    <form class="sform" id="sform">
-      <label>Race<select id="s-race">${races.map((r) => `<option value="${r.id}"${r.id === rid ? " selected" : ""}>${esc(r.state)} ${r.id.endsWith("-G") ? "governor" : "Senate"} (${fmtM(final(r).margin_d)})</option>`).join("")}</select></label>
-      <label>Candidate<select id="s-side"></select></label>
-      <label>Budget (USD)<input id="s-budget" type="number" min="1000" max="50000000" step="1000" value="${pre.budget || 500000}"></label>
-      <label>Note to the agent <small>(optional)</small><input id="s-note" maxlength="200" placeholder="e.g. focus on persuasion, skip the metro"></label>
-      <button class="go" id="s-run" type="submit">Plan my spend</button>
-    </form>
-    <div class="sex">Try: ${ex.map(([r, sd, b, t]) => `<button data-ex="${r}|${sd}|${b}">${esc(t)}</button>`).join("")}</div>
-    <ol class="ssteps" id="ssteps"></ol><div id="splan"></div>`;
-  const fillSide = () => { const r = races.find((x) => x.id === $("#s-race").value); $("#s-side").innerHTML = [r.main.d, r.main.r].map((c) => `<option value="${c.party === "R" ? "R" : c.party === "D" ? "D" : "I"}">${esc(c.name)} (${esc(c.party)})</option>`).join(""); if (pre.side) $("#s-side").value = pre.side; };
-  fillSide(); $("#s-race").onchange = () => { pre.side = null; fillSide(); };
-  $("#back").onclick = home;
-  $("#sform").onsubmit = (e) => { e.preventDefault(); runStrategist({ race_id: $("#s-race").value, side: $("#s-side").value, budget: +$("#s-budget").value, note: $("#s-note").value }); };
-  document.querySelectorAll("[data-ex]").forEach((b) => (b.onclick = () => { const [r, sd, bg] = b.dataset.ex.split("|"); strategist({ race: r, side: sd, budget: +bg }); runStrategist({ race_id: r, side: sd, budget: +bg, note: "" }); }));
+  const all = [...S.fcs.senate.races, ...S.fcs.governor.races];
+  const st = { race: pre.race || "IA-S", side: pre.side || null, budget: pre.budget || 500000, note: pre.note ?? "" };
+  if (!all.some((r) => r.id === st.race)) st.race = all[0].id;
+  let office = st.race.endsWith("-G") ? "governor" : "senate";
+  const raceOf = (id) => all.find((r) => r.id === id);
+  const sideOf = (c) => (c.party === "R" ? "R" : c.party === "D" ? "D" : "I");
+  const render = () => {
+    const r = raceOf(st.race), f = final(r);
+    if (!st.side) st.side = sideOf(r.main.d);
+    const list = (office === "senate" ? S.fcs.senate : S.fcs.governor).races.slice().sort((a, b) => Math.abs(final(a).margin_d) - Math.abs(final(b).margin_d));
+    const top = list.slice(0, 8), rest = list.slice(8);
+    const cand = [r.main.d, r.main.r].map((c) => { const sd = sideOf(c), wins = sd === f.winner_party || (sd === "I" && f.winner_party === "I");
+      return `<button type="button" class="cand ${sd}${st.side === sd ? " on" : ""}" data-side="${sd}"><b>${esc(c.name)}</b><span>${esc(pty(c.party) || c.party)}${c.incumbent ? " · incumbent" : ""}</span><small>${wins ? `Favored · ${pct(f.p_win)}` : `Underdog · ${pct(1 - f.p_win)}`}</small></button>`; }).join("");
+    $("#panel-body").innerHTML = `<button class="back" id="back">← All races</button>
+      <h2>Campaign Strategist</h2>
+      <p class="sub">An Undertow AI agent plans where a campaign's last ad dollars should go, ZIP code by ZIP code, using live Qloo taste data. No personal data.</p>
+      <form class="sform2" id="sform">
+        <div class="sstep"><span class="n">1</span>Pick a race</div>
+        <div class="seg small offsw" role="radiogroup" aria-label="Office"><button type="button" role="radio" aria-checked="${office === "senate"}" data-off="senate">Senate</button><button type="button" role="radio" aria-checked="${office === "governor"}" data-off="governor">Governor</button></div>
+        <div class="rgrid">${top.map((x) => `<button type="button" class="rc${x.id === st.race ? " on" : ""}" data-race="${x.id}"><b>${esc(x.state)}</b><span class="${final(x).winner_party}">${fmtM(final(x).margin_d)}</span></button>`).join("")}</div>
+        ${rest.length ? `<select id="s-more" aria-label="More races"><option value="">More races…</option>${rest.map((x) => `<option value="${x.id}"${x.id === st.race ? " selected" : ""}>${esc(x.state)} (${fmtM(final(x).margin_d)})</option>`).join("")}</select>` : ""}
+        <div class="sstep"><span class="n">2</span>Whose campaign?</div>
+        <div class="cands">${cand}</div>
+        <div class="sstep"><span class="n">3</span>Budget for the final days</div>
+        <div class="chips" id="s-budgets">${[100000, 250000, 500000, 1000000, 5000000].map((v) => `<button type="button" class="chip${st.budget === v ? " on" : ""}" data-b="${v}">${v >= 1e6 ? "$" + v / 1e6 + "M" : "$" + v / 1e3 + "k"}</button>`).join("")}
+          <input id="s-budget" type="number" min="1000" max="50000000" step="1000" value="${st.budget}" aria-label="Custom budget in dollars"></div>
+        <div class="sstep"><span class="n">4</span>Strategy <small>(optional)</small></div>
+        <div class="chips" id="s-styles">${STRAT_STYLES.map(([v, t]) => `<button type="button" class="chip${st.note === v ? " on" : ""}" data-n="${esc(v)}">${esc(t)}</button>`).join("")}</div>
+        <input id="s-note" maxlength="200" placeholder="…or tell the agent something specific" value="${STRAT_STYLES.some(([v]) => v === st.note) ? "" : esc(st.note)}">
+        <div class="runwrap"><button class="go" id="s-run" type="submit">Plan my spend</button>
+          <div class="coach" id="coach" hidden><b>Start here.</b> This example is ready: press <b>Plan my spend</b> and watch the agent work. Then change anything above and run your own (about a minute).</div></div>
+      </form>
+      <ol class="ssteps" id="ssteps"></ol><div id="splan"></div>`;
+    $("#back").onclick = home;
+    document.querySelectorAll(".offsw [data-off]").forEach((x) => (x.onclick = () => { office = x.dataset.off; const l = (office === "senate" ? S.fcs.senate : S.fcs.governor).races.slice().sort((a, b) => Math.abs(final(a).margin_d) - Math.abs(final(b).margin_d)); st.race = l[0].id; st.side = null; render(); }));
+    document.querySelectorAll(".rc").forEach((x) => (x.onclick = () => { st.race = x.dataset.race; st.side = null; render(); flyRace(); }));
+    $("#s-more")?.addEventListener("change", (e) => { if (e.target.value) { st.race = e.target.value; st.side = null; render(); flyRace(); } });
+    document.querySelectorAll(".cand").forEach((x) => (x.onclick = () => { st.side = x.dataset.side; render(); }));
+    document.querySelectorAll("#s-budgets .chip").forEach((x) => (x.onclick = () => { st.budget = +x.dataset.b; render(); }));
+    $("#s-budget").onchange = (e) => { st.budget = +e.target.value; document.querySelectorAll("#s-budgets .chip").forEach((c) => c.classList.toggle("on", +c.dataset.b === st.budget)); };
+    document.querySelectorAll("#s-styles .chip").forEach((x) => (x.onclick = () => { st.note = x.dataset.n; render(); }));
+    $("#s-note").oninput = (e) => { st.note = e.target.value; document.querySelectorAll("#s-styles .chip").forEach((c) => c.classList.remove("on")); };
+    $("#sform").onsubmit = (e) => { e.preventDefault(); hideCoach(); runStrategist({ race_id: st.race, side: st.side, budget: st.budget, note: st.note }); };
+    showCoach();
+  };
+  const flyRace = () => { const r = raceOf(st.race), f = S.geo.st.features.find((x) => x.properties.name === r.state); if (map && f) map.fitBounds(bbox(f.geometry), { padding: panelPad(), duration: 1000, maxZoom: 7 }); };
+  let coachSeen = false; try { coachSeen = sessionStorage.getItem("undertow-coach") === "1"; } catch {}
+  const showCoach = () => { if (!coachSeen && $("#coach")) { $("#coach").hidden = false; $("#s-run").classList.add("pulse"); } };
+  const hideCoach = () => { coachSeen = true; try { sessionStorage.setItem("undertow-coach", "1"); } catch {} $("#coach") && ($("#coach").hidden = true); $("#s-run")?.classList.remove("pulse"); };
+  render(); flyRace();
+  if (pre.run) runStrategist({ race_id: st.race, side: st.side, budget: st.budget, note: st.note });
 }
 async function runStrategist(body) {
   const ol = $("#ssteps"), out = $("#splan"); ol.innerHTML = ""; out.innerHTML = ""; $("#s-run").disabled = true;

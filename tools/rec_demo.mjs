@@ -19,15 +19,18 @@ const step = (i) => p.evaluate((i) => { const sc = document.querySelector(".stor
 const titles = await p.evaluate(() => [...document.querySelectorAll(".story-step h2")].map((h) => h.innerText));
 const idx = (re) => titles.findIndex((t) => re.test(t));
 
-const rec = await p.screencast({ path: "video/undertow-demo-v3.webm", ffmpegPath: FF });
+const rec = await p.screencast({ path: "video/undertow-demo-v4.webm", ffmpegPath: FF });
 await cap("Undertow · Powered by Qloo: the 2026 midterms, read through what America watches, reads and buys"); await W(6500);
 await cap("");
 const plan = [[/redraws the 2024 map/, 8500], [/polls missed Michigan/, 9000], [/tastes did not\.$/, 7000], [/every race through both lenses/, 8500], [/polls and the culture disagree/, 8500], [/walk through/, 7000], [/AI strategist/, 8500], [/got right/, 6000]];
 for (const [re, ms] of plan) { const i = idx(re); if (i >= 0) { await step(i); await W(ms); } }
 await p.evaluate(() => document.querySelector(".story-close").click()); await W(2200);
 await cap("The Campaign Strategist: an AI agent that plans ad spend ZIP by ZIP with live Qloo data");
-await p.click("#strat-btn"); await W(1500);
-await p.evaluate(() => document.querySelector('[data-ex^="ME-S"]').click());
+await p.click("#strat-btn"); await W(2200);
+await p.evaluate(() => document.querySelector('.rc[data-race="ME-S"]').click()); await W(1300);
+await p.evaluate(() => document.querySelector('.cand[data-side="R"]').click()); await W(900);
+await p.evaluate(() => document.querySelector('#s-budgets [data-b="1000000"]').click()); await W(900);
+await p.evaluate(() => document.querySelector("#s-run").click());
 await p.waitForSelector(".card.plan", { timeout: 300000 }); await W(2500);
 await p.evaluate(() => document.querySelector(".card.plan").scrollIntoView({ behavior: "smooth", block: "start" })); await W(5500);
 await p.evaluate(() => closePanel()); await cap(""); await W(600);

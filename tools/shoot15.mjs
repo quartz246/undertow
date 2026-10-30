@@ -1,0 +1,18 @@
+import { createRequire } from "module"; const require = createRequire("/tmp/adflank-ui/tools/package.json"); const puppeteer = require("puppeteer-core");
+const base = process.argv[2];
+const b = await puppeteer.launch({ executablePath: "/usr/bin/google-chrome", headless: "new", args: ["--no-sandbox", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"] });
+const p = await b.newPage(); await p.setViewport({ width: 1440, height: 900 });
+const errs = []; p.on("pageerror", (e) => errs.push("PAGEERR " + e.message)); p.on("console", (m) => m.type() === "error" && errs.push(m.text()));
+const W = (ms) => new Promise((r) => setTimeout(r, ms));
+await p.goto(base, { waitUntil: "networkidle2", timeout: 90000 }); await W(5000);
+const steps = await p.evaluate(() => [...document.querySelectorAll(".story-step h2")].map((h) => h.innerText));
+console.log("steps:", JSON.stringify(steps));
+const i = steps.findIndex((t) => t.includes("one county"));
+await p.evaluate((i) => { const sc = document.querySelector(".story-scroll"); sc.style.scrollBehavior = "auto"; const s = document.querySelectorAll(".story-step")[i]; sc.scrollTop = s.offsetTop - (sc.clientHeight - s.offsetHeight) / 2; }, i);
+await W(7000); await p.screenshot({ path: "shots/story-drill.png" });
+console.log("drill text:", await p.evaluate((i) => document.querySelectorAll(".story-step p")[i].innerText, i));
+await p.evaluate(() => document.querySelector(".story-close").click()); await W(1500);
+await p.evaluate(() => openRace("ME-S", true)); await W(2500);
+console.log("ME skew note:", await p.evaluate(() => [...document.querySelectorAll("#panel-body .card")].find((c) => c.innerText.includes("may be skewed")).querySelector("p.note").innerText));
+console.log("errors:", JSON.stringify(errs.slice(0, 8)));
+await b.close();

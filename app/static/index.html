@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Undertow — the current under the polls</title>
+<title>Undertow · Powered by Qloo</title>
 <meta name="description" content="A 2026 Senate forecast that maps Qloo cultural taste data from state to block level to find where the polls may be wrong.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Cpath d=%22M0 9q4-4 8 0t8 0v7H0z%22 fill=%22%230f7b6c%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +15,23 @@
 <header class="top">
   <div class="brand">
     <h1>Undertow</h1>
-    <p>The 2026 Senate forecast, with the current under the polls mapped down to the block.</p>
+    <span class="powered">Powered by <b>Qloo</b></span>
   </div>
   <div class="office" role="radiogroup" aria-label="Office">
     <button role="radio" aria-checked="true" data-office="senate">Senate</button>
     <button role="radio" aria-checked="false" data-office="governor">Governor</button>
   </div>
   <div class="tally" id="tally" aria-live="polite"></div>
-  <div class="topbtns"><button class="tbtn" id="tools-btn">Tools</button><button class="tbtn ghost" id="story-btn">Story</button><button class="tbtn ghost" id="about-btn">Help</button></div>
+  <div class="menu" id="menu">
+    <button class="tbtn" id="menu-btn" aria-haspopup="true" aria-expanded="false" aria-controls="menu-pop"><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Menu</button>
+    <div class="pop" id="menu-pop" role="menu" hidden>
+      <button role="menuitem" id="races-btn">Races <small>every call, sorted by how close</small></button>
+      <button role="menuitem" id="tools-btn">Where we disagree <small>polls, Qloo and the markets</small></button>
+      <button role="menuitem" id="story-btn">Read the story <small>the one-minute walkthrough</small></button>
+      <button role="menuitem" id="charts-btn">Predictions &amp; charts <small>every call next to polls and markets</small></button>
+      <button role="menuitem" id="about-btn">Help <small>how Undertow works</small></button>
+    </div>
+  </div>
 </header>
 
 <main class="layout">
@@ -36,26 +45,38 @@
       <span class="lab r">2024 president</span>
     </div>
     <div class="mapbar">
-      <div class="seg" role="radiogroup" aria-label="Map layer">
-        <button role="radio" aria-checked="true" data-mode="forecast">2026 forecast</button>
-        <button role="radio" aria-checked="false" data-mode="undertow">Undertow</button>
-        <button role="radio" aria-checked="false" data-mode="r24">2024 result</button>
-      </div>
       <form class="search" id="search" role="search" autocomplete="off">
-        <input id="q" type="search" placeholder="ZIP code or city" aria-label="Search a ZIP code, city or state" aria-controls="sugg" aria-autocomplete="list">
+        <input id="q" type="search" placeholder="Search a ZIP code or city" aria-label="Search a ZIP code, city or state" aria-controls="sugg" aria-autocomplete="list">
         <ul id="sugg" class="sugg" role="listbox" hidden></ul>
       </form>
-      <button class="cmp" data-cmp="r24" aria-pressed="false">2026 ↔ 2024</button>
-      <button class="cmp" data-cmp="qloo" aria-pressed="false">Polls ↔ Qloo</button>
-      <button class="cmp" data-cmp="q24" aria-pressed="false">Qloo ↔ 2024 actual</button>
-      <div class="zoomhint" id="zoomhint">States → zoom for counties → ~5 km Qloo cells → live block scan (~150 m)</div>
+      <div class="layers" id="layers">
+        <button class="layers-btn" id="layers-btn" aria-haspopup="true" aria-expanded="false" aria-controls="layers-pop">
+          <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 3 2 7l8 4 8-4-8-4Zm-8 7 8 4 8-4M2 13l8 4 8-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span id="layers-label">2026 forecast</span><svg class="chev" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="m2 4 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        </button>
+        <div class="pop" id="layers-pop" hidden>
+          <div class="pop-h">Show on the map</div>
+          <div class="seg vlist" role="radiogroup" aria-label="Map layer">
+            <button role="radio" aria-checked="true" data-mode="forecast">2026 forecast <small>the call in every race</small></button>
+            <button role="radio" aria-checked="false" data-mode="undertow">Undertow <small>places whose tastes don't match their vote</small></button>
+            <button role="radio" aria-checked="false" data-mode="r24">2024 result <small>the presidential vote</small></button>
+          </div>
+          <div class="pop-h">Compare with a slider</div>
+          <div class="vlist">
+            <button class="cmp" data-cmp="r24" aria-pressed="false">2026 forecast ↔ 2024 result</button>
+            <button class="cmp" data-cmp="qloo" aria-pressed="false">Polls forecast ↔ Qloo-only forecast</button>
+            <button class="cmp" data-cmp="q24" aria-pressed="false">Qloo's expected 2024 ↔ actual 2024</button>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="legend" id="legend"></div>
     <div class="scan" id="scan" hidden></div>
     <div class="tip" id="tip" hidden></div>
   </section>
 
-  <aside class="panel" id="panel">
+  <aside class="panel" id="panel" aria-label="Races">
+    <button class="pclose" id="pclose" aria-label="Close the panel">×</button>
     <div id="panel-body"></div>
   </aside>
 </main>
@@ -65,6 +86,15 @@
   <button class="story-close">Skip to the map <span aria-hidden="true">×</span></button>
   <div class="story-scroll"></div>
 </div>
+
+<section class="preds" id="predictions" aria-labelledby="preds-h">
+  <div class="charts-in">
+    <h2 id="preds-h">Every prediction, side by side</h2>
+    <p class="sub" id="preds-sub"></p>
+    <div class="ptable-wrap"><table class="ptable" id="ptable"></table></div>
+    <p class="note">Our prediction comes from the polls, with Undertow AI making the final call. Betting-market odds are Polymarket prices, shown only for comparison; they are never used in the forecast. Qloo-only is what each state's tastes alone predict, plus the national shift in the polls. Click a race to open it on the map; click a column heading to sort.</p>
+  </div>
+</section>
 
 <section class="charts" id="charts" aria-labelledby="charts-h">
   <div class="charts-in">

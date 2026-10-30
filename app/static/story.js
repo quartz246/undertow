@@ -89,6 +89,12 @@ function storySteps() {
     .sort((a, b) => ((b.q > 0) !== (b.f > 0)) - ((a.q > 0) !== (a.f > 0)) || Math.abs(b.q - b.f) - Math.abs(a.q - a.f))[0];
   const close = [...fc.races].sort((a, b) => Math.abs(final(a).margin_d) - Math.abs(final(b).margin_d)).slice(0, 4);
   const md = S.counties["12086"], N = S.natbt, bt = S.model.backtest;
+  const drill = (() => { // the biggest county in the closest race
+    const r = close[0]; if (!r) return null;
+    const best = Object.entries(S.counties).filter(([, c]) => c.state === r.state).sort((a, b) => b[1].votes - a[1].votes)[0];
+    if (!best) return null;
+    return { r, f: best[0], c: best[1], top: (best[1].drivers || []).slice(0, 3).map(([n]) => n) };
+  })();
   const dSeats = n.D + HOLD.D, rSeats = n.R + HOLD.R;
   return [
     { k: "The forecast", h: `${dSeats >= 51 ? "Democrats are on course to take the Senate" : "Republicans are on course to hold the Senate"}`,
@@ -107,8 +113,12 @@ function storySteps() {
         setTimeout(() => callout([-80.21, 25.77], `<b>Miami-Dade</b><span>Voted ${fmtM(md.m24)} · Tastes ${fmtM(md.pred)}</span>`, "right"), 2400); } } : null,
     dis ? { k: dis.r.state, h: `In ${dis.r.state}, the polls and the culture disagree`,
       p: `The polls put the race at ${ptag(dis.f)}${dis.r.main ? `, ${esc(dis.r.main.d.name)} against ${esc(dis.r.main.r.name)}` : ""}. The state's tastes, adjusted for the national mood, point to ${ptag(dis.q)}${(dis.q > 0) !== (dis.f > 0) ? ", a different winner" : ""}. We keep the polls' call. Left of the line is the polling forecast, right is the forecast from tastes alone.`,
-      go: () => { scene("forecast", "qloo", 6.6); openRace(dis.r.id, false); const f = stateFeat(dis.r.state); if (f) fitTo(f, storyPad(), 6.6); { const [a, b] = sweepRange(); sweep(a, b, 3000, 2800); }
-        setTimeout(() => { if (f) callout(centroid(f), `<b>${esc(dis.r.state)}</b><span>Polls ${fmtM(dis.f)} · Tastes ${fmtM(dis.q)}</span>`, "right"); }, 2600); } } : null,
+      go: () => { scene("forecast", "qloo", 4.4); openRace(dis.r.id, false); closePanel(); const f = stateFeat(dis.r.state); if (f) fitTo(f, storyPad(), 4.4); { const [a, b] = sweepRange(); sweep(a, b, 3000, 2800); }
+        setTimeout(() => { if (f) callout(centroid(f), `<b>${esc(dis.r.state)}</b><span>Polls ${fmtM(dis.f)} · Tastes ${fmtM(dis.q)}</span>`, "left"); }, 2600); } } : null,
+    drill ? { k: `Inside ${drill.r.state}`, h: `${drill.c.name}: one county in the closest race`,
+      p: `${esc(drill.r.state)} is the tightest race on the board (${ptag(final(drill.r).margin_d)}). Its biggest county, ${esc(drill.c.name)}, voted ${ptag(drill.c.m24)} in 2024; our 2026 estimate is ${ptag(countyEst(drill.f))}. Qloo reads who lives here from the audiences of the local tastes: ${esc(profile(drill.f, drill.r.state) || "about average")}, with ${drill.top.map((t) => `<i>${esc(t)}</i>`).join(", ")} pulling hardest. That profile is context, not a predictor: tested on 2020 to 2024, it did not foretell the swing.`,
+      go: () => { scene("forecast", null, 9); openRace(drill.r.id, false); closePanel(); const cf = S.geo.co.features.find((x) => x.properties.fips === drill.f); if (cf) fitTo(cf, storyPad(), 9.4);
+        setTimeout(() => callout(centroid(cf), `<b>${esc(drill.c.name)}</b><span>2024 ${fmtM(drill.c.m24)} · 2026 est. ${fmtM(countyEst(drill.f))}</span><span>${esc(profile(drill.f, drill.r.state) || "")}</span>`, "right"), 2600); } } : null,
     { k: "Down to the block", h: "A forecast you can walk through",
       p: "Zoom into a neighborhood, or search a ZIP code, and Undertow queries Qloo live for cells about 150 meters across. Each block is shaded by whether its tastes run bluer or redder than the rest of its county. This is downtown Detroit, in Michigan's Senate race.",
       go: () => { scene("forecast", null, 13); fly({ center: [-83.0458, 42.3314], zoom: 13, pitch: reduceMotion() ? 0 : 40, bearing: reduceMotion() ? 0 : -18, padding: storyPad(), duration: 3200 });
@@ -136,7 +146,7 @@ function story() {
       <div class="kicker">Election 2026 · Data</div>
       <h1>The Polls Say One Thing. America's Tastes Say Another.</h1>
       <p class="dek">We compared every 2026 Senate poll with what ${S.model.n_counties.toLocaleString()} counties watch, read and buy. Here is where the two part ways, and what history says about trusting either.</p>
-      <p class="byline">By <b>Undertow AI</b> · Data: Qloo, public polls · ${esc(d.toLocaleDateString([], { month: "long", day: "numeric", year: "numeric" }))}</p>
+      <p class="byline">By <b>Undertow AI</b> · Powered by <b>Qloo</b> · Data: Qloo, public polls · ${esc(d.toLocaleDateString([], { month: "long", day: "numeric", year: "numeric" }))}</p>
       <div class="scrollcue" aria-hidden="true">Scroll<i></i></div>
     </div></header>
     ${steps.map((s, i) => `<section class="story-step" data-i="${i}"><div class="story-card"><div class="kicker">${esc(s.k)}</div><h2>${esc(s.h)}</h2><p>${s.p}</p></div></section>`).join("")}

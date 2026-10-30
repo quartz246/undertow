@@ -36,6 +36,7 @@ async function load() {
   const [senate, governor, model, counties, states, topo] = await Promise.all(
     ["/api/forecast", "/api/forecast?office=governor", "/api/model", "/api/counties", "/api/states", "/geo/counties-10m.json"].map((u) => fetch(u).then((r) => r.json())));
   Object.assign(S, { fcs: { senate, governor }, fc: senate, model, counties, states });
+  S.demo = await fetch("/api/demographics").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.qn = await fetch("/api/qloo").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.mkt = await fetch("/api/markets").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.natbt = await fetch("/api/backtest").then((r) => (r.ok ? r.json() : null)).catch(() => null);
@@ -51,9 +52,16 @@ function setOffice(o) {
   document.querySelectorAll(".office button").forEach((x) => x.setAttribute("aria-checked", x.dataset.office === o));
   if (map?.getLayer("race-line")) { map.setFilter("race-line", ["in", ["get", "fips"], ["literal", Object.keys(S.raceBy)]]); recolor(); }
   if (S.cmp) paint24();
-  tally(); home(); if (typeof renderCharts === "function") renderCharts();
+  tally(); home(); renderPredictions(); if (typeof renderCharts === "function") renderCharts();
 }
 const final = (r) => r.verdict || r.script;
+// "who lives here", read from the audiences of a county's tastes (Qloo urn:demographics), relative to its state
+function profile(fips, st) {
+  const d = S.demo?.counties?.[fips]; if (!d) return null;
+  const age = Math.abs(d.older) < 0.35 ? "about average age" : d.older > 0 ? (d.older > 1 ? "much older" : "older") : (d.older < -1 ? "much younger" : "younger");
+  const sex = Math.abs(d.female) < 0.5 ? "" : d.female > 0 ? ", leans female" : ", leans male";
+  return `${age}${age.startsWith("about") ? "" : ` than ${st || "its state"}`}${sex}`;
+}
 // Qloo-only: expected 2024 margin from tastes alone (nationwide model) + the national shift the polls show for this office
 const natSwing = () => S.fc.national.median_poll_swing_since_2024;
 const qlooState = (name) => (S.qn?.states?.[name] != null ? S.qn.states[name] + natSwing() : null);
@@ -125,6 +133,11 @@ function initMap() {
   });
 }
 
+const MODE_LABEL = { forecast: "2026 forecast", undertow: "Undertow", r24: "2024 result", q24: "Qloo's expected 2024" };
+function updateLayersLabel() {
+  const el = $("#layers-label"); if (!el) return;
+  el.textContent = S.cmp ? `${CMP[S.cmpKind].l} ↔ ${CMP[S.cmpKind].r}` : MODE_LABEL[S.mode] || "Map";
+}
 function setValues() {
   const storyOn = typeof ST !== "undefined" && ST.on;
   for (const f of S.geo.st.features) { f.properties.norace = S.mode === "forecast" && !S.raceBy[f.properties.fips] ? 1 : 0; f.properties.v = storyOn && f.properties.norace ? null : stateValue(f); }
@@ -211,7 +224,7 @@ function hover(e, layer) {
   } else if (layer === "counties-fill") {
     const c = S.counties[p.fips]; if (!c) return;
     const dr = (c.drivers || []).slice(0, 3).map(([n, v]) => `${esc(n)} ${v > 0 ? "→D" : "→R"}`).join(", ");
-    h = `<b>${esc(c.name)}, ${esc(c.state)}</b><br><span class="k">2024</span> ${fmtM(c.m24)} · <span class="k">Qloo expects</span> ${fmtM(c.pred)}<br><span class="k">Out of step by</span> ${fmtS(c.gap)} (${c.gap > 0 ? "tastes bluer than its vote" : "tastes redder than its vote"})${S.mode === "forecast" ? `<br><span class="k">2026 estimate</span> ${fmtM(p.v)}` : ""}<br><span class="k">${dr}</span>`;
+    h = `<b>${esc(c.name)}, ${esc(c.state)}</b><br><span class="k">2024</span> ${fmtM(c.m24)} · <span class="k">Qloo expects</span> ${fmtM(c.pred)}<br><span class="k">Out of step by</span> ${fmtS(c.gap)} (${c.gap > 0 ? "tastes bluer than its vote" : "tastes redder than its vote"})${S.mode === "forecast" ? `<br><span class="k">2026 estimate</span> ${fmtM(p.v)}` : ""}${profile(p.fips, c.state) ? `<br><span class="k">Qloo profile</span> ${esc(profile(p.fips, c.state))}` : ""}<br><span class="k">${dr}</span>`;
   } else {
     const co = S.counties[p.fips];
     let top = []; try { top = JSON.parse(p.top || "[]"); } catch {}
@@ -240,6 +253,10 @@ function tally() {
       <span style="width:${(n.D / tot) * 100}%;background:var(--d)"></span><span style="width:${(n.I / tot) * 100}%;background:var(--i)"></span><span style="width:${(n.R / tot) * 100}%;background:var(--r)"></span><i class="mid"></i></div>
     <div class="nums"><span><b class="D">${n.D}</b> D${n.I ? ` · <b class="I">${n.I}</b> I` : ""}</span><span>${ctl} (51 for D; R holds 50–50 with the VP)</span><span><b class="R">${n.R}</b> R</span></div>`;
 }
+
+function openPanel() { $("#panel").classList.add("open"); }
+function closePanel() { $("#panel").classList.remove("open"); }
+const panelPad = () => (window.innerWidth > 900 && $("#panel").classList.contains("open") ? { top: 60, bottom: 40, left: 40, right: 400 } : 40);
 
 function raceLine(r) {
   const f = final(r), w = r.candidates.find((c) => c.party === f.winner_party) || {};
@@ -278,13 +295,16 @@ function meter(r) {
 function openRace(id, fly) {
   const r = S.fc.races.find((x) => x.id === id) || S.fcs.senate.races.concat(S.fcs.governor.races).find((x) => x.id === id); if (!r) return;
   const off = r.id.endsWith("-G") ? "governor" : "senate"; if (off !== S.office) setOffice(off);
+  openPanel();
   S.sel = r; if (map?.getLayer("sel-line")) map.setFilter("sel-line", ["==", ["get", "fips"], r.stfips]);
   if (fly && map?.loaded()) {
     const f = S.geo.st.features.find((x) => x.properties.fips === r.stfips);
-    if (f) map.fitBounds(bbox(f.geometry), { padding: 40, duration: 900, maxZoom: 7.2 });
+    if (f) map.fitBounds(bbox(f.geometry), { padding: panelPad(), duration: 900, maxZoom: 7.2 });
   }
   const f = final(r), v = r.verdict, q = r.qloo, w = r.candidates.find((c) => c.party === f.winner_party) || {};
-  const ood = (list, dir) => list.map(([fips, name, gap, pred, m24]) => `<tr><td><button data-fips="${fips}">${esc(name)}</button></td><td>${fmtM(m24)}</td><td class="${dir}">${fmtM(pred)}</td></tr>`).join("");
+  const ood = (list, dir) => list.map(([fips, name, gap, pred, m24]) => `<tr><td><button data-fips="${fips}">${esc(name)}</button><small class="muted prof">${esc(profile(fips, r.state) || "")}</small></td><td>${fmtM(m24)}</td><td class="${dir}">${fmtM(pred)}</td></tr>`).join("");
+  const qo = qlooState(r.state), qGap = qo != null && r.polls.avg_margin_d != null ? r.polls.avg_margin_d - qo : null;
+  const stand = qGap != null && Math.abs(qGap) >= 8 ? ` Using Qloo's tastes as a stand-in for who lives in ${esc(r.state)}, the state "should" be ${fmtM(qo)}; the polls are ${Math.abs(qGap).toFixed(1)} pts more ${qGap < 0 ? "Republican" : "Democratic"} than that. That is the size of the candidate effect${r.candidates.some((c) => c.incumbent) ? ` (incumbent ${esc(r.candidates.find((c) => c.incumbent).name)})` : ""}, or of a polling miss.` : "";
   const bt = q.backtest;
   $("#panel-body").innerHTML = `<button class="back" id="back">← All races</button>
     <h2>${esc(r.state)} ${r.id.endsWith("-G") ? "governor" : "Senate"}${r.special ? " (special)" : ""}</h2>
@@ -300,7 +320,7 @@ function openRace(id, fly) {
       <span class="k">2024 presidential in ${esc(r.state_po)}</span><b>${fmtM(r.pres24_margin_d)}</b>
       <span class="k">Shift since 2024 (typical race ${fmtS(S.fc.national.median_poll_swing_since_2024)})</span><b>${r.skew.poll_swing == null ? "—" : fmtS(r.skew.poll_swing)} pts</b>
       <span class="k">Qloo-only forecast (tastes + national shift)</span><b>${fmtM(qlooState(r.state))}</b></div>
-      <p class="note">${r.skew.flag ? `<span class="flag">${esc(r.skew.short)}</span> ` : ""}${esc(r.skew.text)}</p></div>
+      <p class="note">${r.skew.flag ? `<span class="flag">${esc(r.skew.short)}</span> ` : ""}${esc(r.skew.text)}${stand}</p></div>
     <div class="card"><h3>Inside ${esc(r.state)}: places out of step with their 2024 vote</h3>
       <table class="counties"><tr><th></th><th>Voted 2024</th><th>Qloo expects</th></tr>${ood(q.out_of_step_d.slice(0, 4), "D")}${ood(q.out_of_step_r.slice(0, 4), "R")}</table>
       ${S.qn?.state_undertow?.[r.state] != null ? `<div class="kv"><span class="k">Statewide undertow (tastes vs 2024 vote)</span><b>${fmtS(S.qn.state_undertow[r.state])} pts ${S.qn.state_undertow[r.state] > 0 ? "bluer" : "redder"}</b></div>` : ""}
@@ -318,8 +338,49 @@ function bindCountyLinks() {
   }));
 }
 
+/* ---------------- predictions table (below the map) ---------------- */
+let predSort = { k: "close", dir: 1 };
+function renderPredictions() {
+  const M = S.mkt, last = (n) => n.split(" ").slice(-1)[0];
+  const rows = S.fc.races.map((r) => {
+    const f = final(r), win = r.candidates.find((c) => c.party === f.winner_party) || (f.winner_party === "R" ? r.main.r : r.main.d);
+    const nonR = f.winner_party !== "R", m = M?.races?.[r.id];
+    const mk = m ? (nonR ? m.p_d : 1 - m.p_d) : null;            // market chance for OUR predicted winner
+    const q = qlooState(r.state), poll = r.polls.avg_margin_d;
+    const dis = [];
+    if (poll != null && (poll > 0) !== (f.margin_d > 0) && Math.abs(poll) >= 0.05) dis.push("polls");
+    if (mk != null && mk < 0.5) dis.push("markets");
+    if (q != null && (q > 0) !== (f.margin_d > 0)) dis.push("Qloo");
+    return { r, f, win, nonR, mk, murl: m?.url, q, poll, dis };
+  });
+  const key = { close: (x) => Math.abs(x.f.margin_d), state: (x) => x.r.state, ours: (x) => -x.f.p_win, poll: (x) => -(x.poll ?? -99), mkt: (x) => -(x.mk ?? -1), qloo: (x) => -(x.q ?? -99) }[predSort.k];
+  rows.sort((a, b) => { const A = key(a), B = key(b); return (A < B ? -1 : A > B ? 1 : 0) * predSort.dir; });
+  const agree = rows.filter((x) => !x.dis.length).length, mrows = rows.filter((x) => x.mk != null);
+  const mAgree = mrows.filter((x) => x.mk >= 0.5).length;
+  $("#preds-sub").innerHTML = `${rows.length} ${OFF[S.office]} races. Polls, betting markets and Qloo all point the same way in <b>${agree}</b>; the markets back our pick in <b>${mAgree} of ${mrows.length}</b> races they cover.`;
+  const th = (k, t) => `<th scope="col"><button data-sort="${k}" aria-sort="${predSort.k === k ? (predSort.dir > 0 ? "ascending" : "descending") : "none"}">${t}${predSort.k === k ? (predSort.dir > 0 ? " ▲" : " ▼") : ""}</button></th>`;
+  const chance = (p) => `<span class="pbar"><i style="width:${Math.round(p * 100)}%"></i></span>`;
+  $("#ptable").innerHTML = `<thead><tr>${th("state", "Race")}<th scope="col">Matchup</th>${th("ours", "Our prediction")}${th("poll", "Poll average")}${th("mkt", "Betting markets")}${th("qloo", "Qloo-only")}${th("close", "Agreement")}</tr></thead>
+    <tbody>${rows.map((x) => `<tr data-race="${x.r.id}" tabindex="0">
+      <th scope="row">${esc(x.r.state)}${x.r.special ? " <small>special</small>" : ""}</th>
+      <td class="mu"><span class="${x.r.main.d.party}">${esc(last(x.r.main.d.name))}</span> <span class="vs">v</span> <span class="R">${esc(last(x.r.main.r.name))}</span></td>
+      <td class="ours"><b class="${x.f.winner_party}">${esc(last(x.win.name))}</b> ${fmtM(x.f.margin_d)}<div class="pc">${pct(x.f.p_win)} ${chance(x.f.p_win)}</div></td>
+      <td>${x.poll == null ? '<span class="muted">no recent polls</span>' : `${fmtM(x.poll)} <small class="muted">${x.r.polls.n_recent} poll${x.r.polls.n_recent === 1 ? "" : "s"}</small>`}</td>
+      <td>${x.mk == null ? '<span class="muted">no market</span>' : `<a href="${esc(x.murl)}" target="_blank" rel="noopener">${esc(last(x.win.name))} ${pct(x.mk)}</a>${x.mk < 0.5 ? ' <span class="flag">favors the other side</span>' : ""}`}</td>
+      <td>${x.q == null ? '<span class="muted">—</span>' : `${fmtM(x.q)}${(x.q > 0) !== (x.f.margin_d > 0) ? ' <span class="flag">different winner</span>' : ""}`}</td>
+      <td>${x.dis.length ? `<span class="dis">${x.dis.map((d) => esc(d)).join(", ")} disagree${x.dis.length === 1 ? "s" : ""}</span>` : '<span class="ok">all agree</span>'}</td>
+    </tr>`).join("")}</tbody>`;
+  $("#ptable").querySelectorAll("[data-sort]").forEach((b) => (b.onclick = () => { predSort = { k: b.dataset.sort, dir: predSort.k === b.dataset.sort ? -predSort.dir : 1 }; renderPredictions(); }));
+  $("#ptable").querySelectorAll("tbody tr").forEach((tr) => {
+    const go = () => { openRace(tr.dataset.race, true); $(".mapwrap").scrollIntoView({ behavior: "smooth" }); };
+    tr.onclick = (e) => { if (!e.target.closest("a")) go(); };
+    tr.onkeydown = (e) => { if (e.key === "Enter") go(); };
+  });
+}
+
 /* ---------------- tools: where we disagree ---------------- */
 function tools() {
+  openPanel();
   const fc = S.fc, M = S.mkt, name = (r) => `${esc(r.state)}`;
   const last = (n) => esc(n.split(" ").slice(-1)[0]);
   // 1. vs betting markets (comparison only)
@@ -419,7 +480,8 @@ function toggleCompare(kind, startFrac) {
   if (!S.cmp) {
     m24.style.opacity = 0; sw.style.opacity = 0;
     S.cmpHideT = setTimeout(() => { if (!S.cmp) { m24.hidden = true; sw.hidden = true; } }, 520);
-    if (S.mode === "q24") document.querySelector('.seg [data-mode="forecast"]').click(); return;
+    if (S.mode === "q24") document.querySelector('.seg [data-mode="forecast"]').click();
+    updateLayersLabel(); return;
   }
   if (kind !== "q24" && S.mode === "q24") document.querySelector('.seg [data-mode="forecast"]').click();
   initMap24(); paint24();
@@ -429,6 +491,7 @@ function toggleCompare(kind, startFrac) {
   m24.style.opacity = 0; sw.style.opacity = 0; m24.hidden = false; sw.hidden = false;
   map24.resize(); syncSwipe(); setSwipe($("#map").clientWidth * (startFrac ?? 0.5));
   requestAnimationFrame(() => { m24.style.opacity = 1; sw.style.opacity = 1; });
+  updateLayersLabel();
 }
 function initSwipeDrag() {
   const sw = $("#swipe"), grip = $("#swipe .grip"); let drag = false;
@@ -494,7 +557,7 @@ function flyUS() { map.flyTo({ center: [-96.5, 38.6], zoom: 3.6, duration: 1400 
 /* ---------------- welcome ---------------- */
 function welcome() {
   const m = S.model, N = S.natbt, top = (lean) => Object.entries(m.entities).filter(([, e]) => e.lean === lean).sort((a, b) => Math.abs(b[1].partial_r) - Math.abs(a[1].partial_r)).slice(0, 4).map(([n]) => esc(n)).join(", ");
-  $("#welcome-body").innerHTML = `<h2>Undertow</h2>
+  $("#welcome-body").innerHTML = `<h2>Undertow <span class="powered">Powered by <b>Qloo</b></span></h2>
     <p class="lede">Polls ask people how they'll vote. <b>Qloo shows what places actually live like:</b> what they watch, read, listen to and buy. Undertow puts the two side by side, from the whole country down to a city block.</p>
     <h3>The theory</h3>
     <p>Taste and politics travel together. A county that loves <span class="R">${top("R")}</span> votes differently from one that loves <span class="D">${top("D")}</span>. If a place's tastes no longer match how it voted in 2024, it may be changing underneath its own history. That's the <b>undertow</b>.</p>
@@ -546,19 +609,31 @@ function how() {
 document.querySelectorAll(".mapbar .seg button").forEach((b) => (b.onclick = () => {
   if (S.cmp && S.cmpKind === "q24" && b.dataset.mode !== "forecast") toggleCompare("q24");
   document.querySelectorAll(".seg button").forEach((x) => x.setAttribute("aria-checked", x === b));
-  S.mode = b.dataset.mode; if (map) recolor();
+  S.mode = b.dataset.mode; if (map) recolor(); updateLayersLabel(); closePops();
 }));
 
 document.querySelectorAll(".office button").forEach((b) => (b.onclick = () => setOffice(b.dataset.office)));
 $("#tools-btn").onclick = () => tools();
 $("#about-btn").onclick = () => welcome();
 $("#story-btn").onclick = () => map?.loaded() && story();
-document.querySelectorAll(".cmp").forEach((b) => (b.onclick = () => map && toggleCompare(b.dataset.cmp)));
+document.querySelectorAll(".cmp").forEach((b) => (b.onclick = () => { if (map) toggleCompare(b.dataset.cmp); closePops(); }));
+// one menu + one layers dropdown
+function closePops() { document.querySelectorAll(".pop").forEach((p) => (p.hidden = true)); document.querySelectorAll("[aria-haspopup]").forEach((b) => b.setAttribute("aria-expanded", "false")); }
+function popToggle(btn, pop) {
+  btn.addEventListener("click", (e) => { e.stopPropagation(); const open = pop.hidden; closePops(); pop.hidden = !open; btn.setAttribute("aria-expanded", String(open)); });
+}
+popToggle($("#menu-btn"), $("#menu-pop")); popToggle($("#layers-btn"), $("#layers-pop"));
+document.addEventListener("click", (e) => { if (!e.target.closest(".pop")) closePops(); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closePops(); });
+$("#menu-pop").addEventListener("click", (e) => { if (e.target.closest("button")) closePops(); });
+$("#races-btn").onclick = () => { home(); openPanel(); };
+$("#charts-btn").onclick = () => $("#predictions").scrollIntoView({ behavior: "smooth" });
+$("#pclose").onclick = closePanel;
 initSwipeDrag();
 initSearch();
 
 load().then(() => {
-  tally(); home();
+  tally(); home(); renderPredictions();
   setTimeout(() => typeof renderCharts === "function" && renderCharts(), 0);
   try { initMap(); } catch (e) { map = null; $("#map").innerHTML = `<p class="note" style="padding:60px 20px">The map needs WebGL, which this browser has turned off. The race list and calls still work.</p>`; }
 }).catch((e) => { $("#panel-body").innerHTML = `<p>Could not load the forecast: ${esc(e.message)}</p>`; });

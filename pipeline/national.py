@@ -103,14 +103,21 @@ if __name__ == "__main__":
     M["pred24"] = pred24
     S24 = M.groupby("state").apply(lambda x: pd.Series({"pred": np.average(x.pred24, weights=x.total_votes),
         "m24": (x.votes_dem.sum() - x.votes_gop.sum()) / x.total_votes.sum() * 100}), include_groups=False)
-    err = (S24.pred - S24.m24).abs()
+    S24x = S24.drop(index="District of Columbia", errors="ignore")   # no race there; an outlier
+    err = (S24x.pred - S24x.m24).abs()
+    # fair baseline: the 2020 result plus the 2020->2024 national shift (Qloo's model also knew 2024's national mood)
+    shift = (M.votes_dem.sum() - M.votes_gop.sum()) / M.total_votes.sum() * 100 - (M.d20.sum() - M.g20.sum()) / M.v20.sum() * 100
+    base = (S.m20 + shift).reindex(S24x.index); bmask = base.notna()
     json.dump({"note": "Expected 2024 margin from Qloo tastes alone (leave-one-state-out, nationwide heatmaps).",
-               "state_mae_2024": round(float(err.mean()), 1), "state_winner_right_2024": round(float(np.mean(np.sign(S24.pred) == np.sign(S24.m24))), 3),
+               "state_mae_2024": round(float(err.mean()), 1), "state_winner_right_2024": round(float(np.mean(np.sign(S24x.pred) == np.sign(S24x.m24))), 3),
+               "state_n_2024": int(len(S24x)), "state_winner_right_n": int(np.sum(np.sign(S24x.pred) == np.sign(S24x.m24))),
+               "baseline_2020_plus_shift": {"winner_right_n": int(np.sum(np.sign(base[bmask]) == np.sign(S24x.m24[bmask]))), "n": int(bmask.sum()),
+                                            "mae": round(float((base[bmask] - S24x.m24[bmask]).abs().mean()), 1), "shift": round(float(shift), 1)},
                "county_r_2024": round(float(np.corrcoef(M.pred24, M.m24)[0, 1]), 3),
                "states": {s: round(float(v), 1) for s, v in S24.pred.items()},
                "counties": {f: round(float(v), 1) for f, v in zip(M.fips, M.pred24)}},
               open("data/model/qloo_national.json", "w"))
-    print("Qloo-only 2024 check: state MAE %.1f, winner right %.0f%%, county r %.2f" % (err.mean(), 100 * np.mean(np.sign(S24.pred) == np.sign(S24.m24)), np.corrcoef(M.pred24, M.m24)[0, 1]))
+    print("Qloo-only 2024 check: state MAE %.1f, winner right %d/%d, county r %.2f | 2020+shift baseline: MAE %.1f" % (err.mean(), np.sum(np.sign(S24x.pred) == np.sign(S24x.m24)), len(S24x), np.corrcoef(M.pred24, M.m24)[0, 1], (base[bmask] - S24x.m24[bmask]).abs().mean()))
     # statewide undertow: Qloo-only expected 2024 minus actual, minus what the 2024 margin alone explains (DC excluded)
     q = json.load(open("data/model/qloo_national.json"))
     S24n = S24.drop(index="District of Columbia", errors="ignore")

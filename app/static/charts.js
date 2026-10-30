@@ -82,7 +82,7 @@ function chart2024(level) {
   const right = pts.filter((d) => (d.q > 0) === (d.a > 0)).length;
   document.getElementById("ch-24-note").innerHTML = level === "counties"
     ? `${pts.length.toLocaleString()} counties, dot size = votes cast. Correlation r = ${S.qn.county_r_2024}. Each county is predicted by a model that never saw its state.`
-    : `${pts.length} states: Qloo's tastes alone picked the right 2024 winner in <b>${right} of ${pts.length}</b>, missing the margin by <b>${S.qn.state_mae_2024} pts</b> on average. Each state is predicted by a model that never saw it.`;
+    : `${pts.length} states: Qloo's tastes alone picked the right 2024 winner in <b>${right} of ${pts.length}</b>, missing the margin by <b>${S.qn.state_mae_2024} pts</b> on average. Each state is predicted by a model that never saw it.${S.qn.baseline_2020_plus_shift ? ` For comparison, the 2020 result plus that year's national shift (${S.qn.baseline_2020_plus_shift.shift > 0 ? "+" : ""}${S.qn.baseline_2020_plus_shift.shift}) gets <b>${S.qn.baseline_2020_plus_shift.winner_right_n} of ${S.qn.baseline_2020_plus_shift.n}</b>, missing by ${S.qn.baseline_2020_plus_shift.mae}. Tastes map political geography well; they don't beat history plus the national mood, which is why the polls make the calls.` : ""}`;
 }
 
 /* 3. Track record inside states: county gap bins (2020 fit) vs the real 2020→2024 swing */

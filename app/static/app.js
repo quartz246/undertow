@@ -75,7 +75,21 @@ function countyEst(fips) {
   const st = S.states[c.state], sf = stateFinal(fips.slice(0, 2));
   return (sf == null ? c.m24 + natSwing() : c.m24 + (sf - st.m24)) + (c.swing_est - st.qloo_swing);
 }
+// Qloo vs polls, disagreements only: Qloo-only minus our call; null (grey) where they agree
+function disagreeState(f) {
+  if (!S.raceBy[f.properties.fips]) return null;
+  const q = qlooState(f.properties.name), m = stateFinal(f.properties.fips); if (q == null || m == null) return null;
+  const g = q - m;
+  if ((q > 0) !== (m > 0)) return Math.sign(g) * Math.max(9, Math.abs(g));   // different winner: strong
+  return Math.abs(g) >= 8 ? Math.sign(g) * 3.5 : null;                      // same winner, far apart: light
+}
+function disagreeCounty(fips) {
+  if (!S.raceBy[fips.slice(0, 2)]) return null;
+  const q = qlooCounty(fips), m = countyEst(fips); if (q == null || m == null) return null;
+  return (q > 0) !== (m > 0) ? q - m : null;                                 // only counties the two lenses give to different sides
+}
 function countyValue(f) {
+  if (S.mode === "disagree") return disagreeCounty(f.properties.fips);
   if (S.mode === "q24") return S.qn?.counties?.[f.properties.fips] ?? null;
   const c = S.counties[f.properties.fips]; if (!c) return null;
   if (S.mode === "r24") return c.m24;
@@ -85,6 +99,7 @@ function countyValue(f) {
 function stateValue(f) {
   const name = f.properties.name, st = S.states[name];
   if (S.mode === "q24") return name === "District of Columbia" ? null : S.qn?.states?.[name] ?? null;
+  if (S.mode === "disagree") return disagreeState(f);
   if (S.mode === "r24") return st ? st.m24 : null;
   if (S.mode === "undertow") return S.qn?.state_undertow?.[name] ?? null; // statewide undertow (nationwide taste model)
   const sf = stateFinal(f.properties.fips);
@@ -94,6 +109,7 @@ function stateValue(f) {
 function cellValue(c) {
   const co = S.counties[c.fips]; if (!co) return null;
   if (S.mode === "q24") return S.qn?.counties?.[c.fips] != null ? S.qn.counties[c.fips] + (c.est - co.m24) : null;
+  if (S.mode === "disagree") return null;
   const st = S.states[co.state];
   if (S.mode === "r24") return c.est;
   if (S.mode === "undertow") return co.gap + (c.est - co.m24);
@@ -135,7 +151,7 @@ function initMap() {
   });
 }
 
-const MODE_LABEL = { forecast: "2026 forecast", undertow: "Undertow", r24: "2024 result", q24: "Qloo's expected 2024" };
+const MODE_LABEL = { forecast: "2026 forecast", undertow: "Undertow", r24: "2024 result", q24: "Qloo's expected 2024", disagree: "Qloo vs polls: disagreements" };
 function updateLayersLabel() {
   const el = $("#layers-label"); if (!el) return;
   el.textContent = S.cmp ? `${CMP[S.cmpKind].l} ↔ ${CMP[S.cmpKind].r}` : MODE_LABEL[S.mode] || "Map";
@@ -148,9 +164,10 @@ function setValues() {
 }
 function recolor() {
   setValues();
-  const ramp = S.mode === "undertow" ? RAMP_U : RAMP;
+  const ramp = S.mode === "undertow" || S.mode === "disagree" ? RAMP_U : RAMP;
   for (const l of ["states-fill", "counties-fill", "cells-fill"]) map.setPaintProperty(l, "fill-color", expr(ramp));
-  if (S.mode === "undertow") map.setPaintProperty("states-fill", "fill-color", expr(RAMP_US));
+  if (S.mode === "undertow" || S.mode === "disagree") map.setPaintProperty("states-fill", "fill-color", expr(RAMP_US));
+  if (S.mode === "disagree") map.setPaintProperty("counties-fill", "fill-color", expr(RAMP_U));
   map.setPaintProperty("live-fill", "fill-color", expr(RAMP_U));
   map.getSource("states").setData(S.geo.st);
   map.getSource("counties").setData(S.geo.co);
@@ -160,6 +177,12 @@ function recolor() {
 }
 
 function legend() {
+  if (S.mode === "disagree") {
+    $("#legend").innerHTML = `<b>Qloo vs polls: where they disagree</b><div class="ramp">${RAMP_US.map(([, c]) => `<span style="background:${c}"></span>`).join("")}</div>
+      <div class="ends"><span>Qloo more R</span><span>agree (grey)</span><span>Qloo more D</span></div>
+      <div class="note">Strong colour: a different winner. Light: same winner, 8+ pts apart. Zoom in: only counties the two give to different sides.</div>`;
+    return;
+  }
   const u = S.mode === "undertow", ramp = u ? RAMP_U : RAMP;
   const title = S.mode === "q24" ? "Qloo expected 2024: the vote each place's tastes alone predict" : u ? (map && map.getZoom() < 5 ? "Undertow, statewide: tastes vs the 2024 vote (zoom in for counties)" : "Undertow: counties whose tastes don't match their 2024 vote (relative to their state)") : S.mode === "r24" ? "2024 presidential result" : `2026 ${OFF[S.office]} forecast (states) · estimated vote (counties, cells)`;
   $("#legend").innerHTML = `<b>${esc(title)}</b><div class="ramp">${ramp.map(([, c]) => `<span style="background:${c}"></span>`).join("")}</div>
@@ -216,6 +239,12 @@ function hover(e, layer) {
   if (layer === "states-fill") {
     if (map.getZoom() >= 5.2) return;
     const st = S.states[p.name], r = S.raceBy[p.fips]?.[0];
+    if (S.mode === "disagree") {
+      const r2 = S.raceBy[p.fips]?.[0], q = qlooState(p.name), m = r2 ? final(r2).margin_d : null;
+      tip.innerHTML = `<b>${esc(p.name)}</b><br>${r2 ? `Polls (our call) <b>${fmtM(m)}</b> · Qloo-only <b>${fmtM(q)}</b><br>${(q > 0) !== (m > 0) ? "<b>Different winner</b>" : Math.abs(q - m) >= 8 ? `Same winner, ${Math.abs(q - m).toFixed(1)} pts apart` : "They agree"}` : `<span class='k'>No ${S.office === "senate" ? "Senate" : "governor"} race</span>`}`;
+      tip.hidden = false; const rr = $("#map").getBoundingClientRect();
+      tip.style.left = Math.min(e.point.x + 14, rr.width - 270) + "px"; tip.style.top = e.point.y + 14 + "px"; return;
+    }
     if (S.mode === "undertow") {
       const u = S.qn?.state_undertow?.[p.name];
       tip.innerHTML = `<b>${esc(p.name)}</b><br>${u == null ? "<span class='k'>No statewide undertow (no county-level taste data)</span>" : `Statewide undertow <b>${fmtS(u)}</b>: tastes look ${Math.abs(u).toFixed(1)} pts ${u > 0 ? "bluer" : "redder"} than its 2024 vote (${fmtM(st?.m24)})`}<br><span class="k">Exploratory: did not predict statewide swing on 2020→2024. Zoom in for counties.</span>`;
@@ -225,6 +254,12 @@ function hover(e, layer) {
     h = `<b>${esc(p.name)}</b><br>${r ? `Forecast <b>${fmtM(final(r).margin_d)}</b> · ${esc(r.candidates.find((c) => c.party === final(r).winner_party)?.name || "")} ${pct(final(r).p_win)}<br>` : `<span class='k'>No ${S.office === "senate" ? "Senate" : "governor"} race in 2026. Faded colour: 2024 result + the typical shift (${fmtS(natSwing())}) = ${fmtM(st ? st.m24 + natSwing() : null)}</span><br>`}<span class="k">2024 president</span> ${fmtM(st?.m24)}`;
   } else if (layer === "counties-fill") {
     const c = S.counties[p.fips]; if (!c) return;
+    if (S.mode === "disagree") {
+      const q = qlooCounty(p.fips), m = countyEst(p.fips);
+      tip.innerHTML = `<b>${esc(c.name)}, ${esc(c.state)}</b><br>Polls-based estimate <b>${fmtM(m)}</b> · Qloo-only <b>${fmtM(q)}</b><br>${p.v != null ? "<b>The two give it to different sides</b>" : "They agree on the winner"}`;
+      tip.hidden = false; const rr = $("#map").getBoundingClientRect();
+      tip.style.left = Math.min(e.point.x + 14, rr.width - 270) + "px"; tip.style.top = e.point.y + 14 + "px"; return;
+    }
     const dr = (c.drivers || []).slice(0, 3).map(([n, v]) => `${esc(n)} ${v > 0 ? "→D" : "→R"}`).join(", ");
     h = `<b>${esc(c.name)}, ${esc(c.state)}</b><br><span class="k">2024</span> ${fmtM(c.m24)} · <span class="k">Qloo expects</span> ${fmtM(c.pred)}<br><span class="k">Out of step by</span> ${fmtS(c.gap)} (${c.gap > 0 ? "tastes bluer than its vote" : "tastes redder than its vote"})${S.mode === "forecast" ? `<br><span class="k">2026 estimate</span> ${fmtM(p.v)}` : ""}${profile(p.fips, c.state) ? `<br><span class="k">Qloo profile</span> ${esc(profile(p.fips, c.state))}` : ""}<br><span class="k">${dr}</span>`;
   } else {

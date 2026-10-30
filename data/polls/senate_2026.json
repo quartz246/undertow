@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-30T03:23:14+00:00",
+ "fetched_at": "2026-10-30T14:04:25+00:00",
  "source_note": "English Wikipedia ('2026 United States Senate elections' for races/nominees/ratings; per-state pages' General election > Polling tables for polls), via the MediaWiki parse API. Only polls whose candidate columns are all general-election nominees are kept; hypothetical/generic/primary tables are dropped. Ids: <PO>-S regular, <PO>-S2 special (senate); <PO>-G (governor). 'pct' keys equal candidate names. 'party' is a 1-letter code for D/R/I/L/G/C (DFL->D), else the party name; 'party_full' is as printed. Rows with '<1%' or unparsable values omit that entry; LV and RV versions of one poll are separate entries. No betting/prediction markets.",
  "office": "senate",
  "races": [
@@ -775,7 +775,7 @@
     }
    ],
    "ratings": {
-    "Cook": "Solid R",
+    "Cook": "Likely R",
     "DDHQ": "Likely R",
     "Econ": "Likely R",
     "FPO": "Likely R",
@@ -2350,6 +2350,32 @@
    },
    "polls": [
     {
+     "pollster": "Emerson College",
+     "end_date": "2026-10-28",
+     "start_date": "2026-10-26",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Roger Marshall": 45.0,
+      "Adam Hamilton": 49.0,
+      "David Graham": 3.0
+     },
+     "undecided": 3.0
+    },
+    {
+     "pollster": "The Washington Post / SSPG",
+     "end_date": "2026-10-26",
+     "start_date": "2026-10-22",
+     "sample": 801,
+     "population": "LV",
+     "pct": {
+      "Roger Marshall": 43.0,
+      "Adam Hamilton": 52.0,
+      "David Graham": 4.0
+     },
+     "undecided": null
+    },
+    {
      "pollster": "SSRS",
      "end_date": "2026-10-26",
      "start_date": "2026-10-20",
@@ -2676,7 +2702,7 @@
     "IE": "Likely R",
     "NBC": "Solid R",
     "RCP": "Solid R",
-    "Sabato": "Safe R",
+    "Sabato": "Likely R",
     "Silver": "Solid R",
     "ST": "Safe R"
    },
@@ -4427,7 +4453,7 @@
     "IE": "Lean D",
     "NBC": "Likely D",
     "RCP": "Lean D",
-    "Sabato": "Lean D",
+    "Sabato": "Likely D",
     "Silver": "Likely D",
     "ST": "Likely D"
    },
@@ -6093,7 +6119,7 @@
     }
    ],
    "ratings": {
-    "Cook": "Likely R",
+    "Cook": "Lean R",
     "DDHQ": "Lean R",
     "Econ": "Likely R",
     "FPO": "Likely R",
@@ -6923,7 +6949,7 @@
     "Cook": "Tossup",
     "DDHQ": "Tossup",
     "Econ": "Tossup",
-    "FPO": "Tossup",
+    "FPO": "Lean D (flip)",
     "Fox": "Lean D (flip)",
     "IE": "Tilt D (flip)",
     "NBC": "Tossup",
@@ -8401,6 +8427,19 @@
     "ST": "Lean D (flip)"
    },
    "polls": [
+    {
+     "pollster": "Quantus Insights",
+     "end_date": "2026-10-28",
+     "start_date": "2026-10-26",
+     "sample": 1221,
+     "population": "LV",
+     "pct": {
+      "Ken Paxton": 49.0,
+      "James Talarico": 48.0,
+      "Ted Brown": 1.0
+     },
+     "undecided": 2.0
+    },
     {
      "pollster": "ActiVote",
      "end_date": "2026-10-28",

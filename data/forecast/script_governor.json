@@ -1,8 +1,8 @@
 {
  "office": "governor",
- "generated_at": "2026-10-30T04:33:30+00:00",
+ "generated_at": "2026-10-30T14:08:15+00:00",
  "polls_through": "2026-10-28",
- "polls_fetched_at": "2026-10-30T03:23:30+00:00",
+ "polls_fetched_at": "2026-10-30T14:08:14+00:00",
  "national": {
   "median_poll_swing_since_2024": 8.5
  },
@@ -2406,11 +2406,18 @@
    "polls": {
     "n": 7,
     "n_recent": 6,
-    "avg_margin_d": -4.1,
-    "latest": "2026-10-26",
+    "avg_margin_d": -3.8,
+    "latest": "2026-10-28",
     "house": {},
-    "independent_avg": -4.6,
+    "independent_avg": -4.2,
     "list": [
+     {
+      "pollster": "Emerson College",
+      "end_date": "2026-10-28",
+      "sample": 800,
+      "population": "LV",
+      "margin_d": -4.0
+     },
      {
       "pollster": "SSRS",
       "end_date": "2026-10-26",
@@ -2438,13 +2445,6 @@
       "sample": 605,
       "population": "LV",
       "margin_d": -5.0
-     },
-     {
-      "pollster": "Emerson College",
-      "end_date": "2026-09-16",
-      "sample": 750,
-      "population": "LV",
-      "margin_d": -7.0
      },
      {
       "pollster": "co/efficient (R)",
@@ -2546,15 +2546,15 @@
     }
    },
    "skew": {
-    "poll_swing": 12.0,
-    "rel_poll_swing": 3.5,
+    "poll_swing": 12.3,
+    "rel_poll_swing": 3.8,
     "flag": null,
     "short": null,
-    "text": "Polls here moved +12.0 pts since 2024, close to the typical race (+8.5); no sign of house skew."
+    "text": "Polls here moved +12.3 pts since 2024, close to the typical race (+8.5); no sign of house skew."
    },
    "script": {
-    "margin_d": -4.1,
-    "p_win": 0.794,
+    "margin_d": -3.8,
+    "p_win": 0.776,
     "winner_party": "R",
     "sigma": 5.0
    }
@@ -6204,22 +6204,29 @@
     }
    },
    "polls": {
-    "n": 52,
-    "n_recent": 26,
-    "avg_margin_d": -2.2,
-    "latest": "2026-10-27",
+    "n": 53,
+    "n_recent": 27,
+    "avg_margin_d": -2.3,
+    "latest": "2026-10-28",
     "house": {
      "D": {
       "n": 3,
       "diff": 3.8
      },
      "R": {
-      "n": 4,
-      "diff": -2.0
+      "n": 5,
+      "diff": -2.1
      }
     },
     "independent_avg": -2.5,
     "list": [
+     {
+      "pollster": "Quantus Insights (R)",
+      "end_date": "2026-10-28",
+      "sample": 1221,
+      "population": "LV",
+      "margin_d": -5.0
+     },
      {
       "pollster": "SSRS",
       "end_date": "2026-10-27",
@@ -6268,13 +6275,6 @@
       "sample": 1000,
       "population": "LV",
       "margin_d": -4.0
-     },
-     {
-      "pollster": "Beacon Research (D)/ Shaw & Co. Research (R)",
-      "end_date": "2026-10-19",
-      "sample": 2011,
-      "population": "RV",
-      "margin_d": -1.0
      }
     ]
    },
@@ -6362,15 +6362,15 @@
     }
    },
    "skew": {
-    "poll_swing": 11.5,
-    "rel_poll_swing": 3.0,
+    "poll_swing": 11.4,
+    "rel_poll_swing": 2.9,
     "flag": null,
     "short": null,
-    "text": "Polls here moved +11.5 pts since 2024, close to the typical race (+8.5); no sign of house skew."
+    "text": "Polls here moved +11.4 pts since 2024, close to the typical race (+8.5); no sign of house skew."
    },
    "script": {
-    "margin_d": -2.2,
-    "p_win": 0.67,
+    "margin_d": -2.3,
+    "p_win": 0.677,
     "winner_party": "R",
     "sigma": 5.0
    }

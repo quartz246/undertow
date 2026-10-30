@@ -1,8 +1,8 @@
 {
  "office": "senate",
- "generated_at": "2026-10-30T04:33:15+00:00",
+ "generated_at": "2026-10-30T14:08:15+00:00",
  "polls_through": "2026-10-28",
- "polls_fetched_at": "2026-10-30T03:23:14+00:00",
+ "polls_fetched_at": "2026-10-30T14:04:25+00:00",
  "national": {
   "median_poll_swing_since_2024": 13.3
  },
@@ -857,7 +857,7 @@
    "special": true,
    "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Florida",
    "ratings": {
-    "Cook": "Solid R",
+    "Cook": "Likely R",
     "DDHQ": "Likely R",
     "Econ": "Likely R",
     "FPO": "Likely R",
@@ -1926,22 +1926,36 @@
     }
    },
    "polls": {
-    "n": 14,
-    "n_recent": 10,
-    "avg_margin_d": 1.5,
-    "latest": "2026-10-26",
+    "n": 15,
+    "n_recent": 11,
+    "avg_margin_d": 3.1,
+    "latest": "2026-10-28",
     "house": {
      "D": {
       "n": 3,
-      "diff": -0.2
+      "diff": -2.0
      },
      "R": {
       "n": 3,
-      "diff": -4.2
+      "diff": -6.0
      }
     },
-    "independent_avg": 2.9,
+    "independent_avg": 4.7,
     "list": [
+     {
+      "pollster": "Emerson College",
+      "end_date": "2026-10-28",
+      "sample": 800,
+      "population": "LV",
+      "margin_d": 4.0
+     },
+     {
+      "pollster": "The Washington Post / SSPG",
+      "end_date": "2026-10-26",
+      "sample": 801,
+      "population": "LV",
+      "margin_d": 9.0
+     },
      {
       "pollster": "SSRS",
       "end_date": "2026-10-26",
@@ -1983,20 +1997,6 @@
       "sample": 1095,
       "population": "LV",
       "margin_d": 0.0
-     },
-     {
-      "pollster": "New York Times / Siena University",
-      "end_date": "2026-09-30",
-      "sample": 605,
-      "population": "LV",
-      "margin_d": 0.0
-     },
-     {
-      "pollster": "Emerson College",
-      "end_date": "2026-09-16",
-      "sample": 750,
-      "population": "LV",
-      "margin_d": 2.0
      }
     ]
    },
@@ -2084,15 +2084,15 @@
     }
    },
    "skew": {
-    "poll_swing": 17.6,
-    "rel_poll_swing": 4.3,
+    "poll_swing": 19.2,
+    "rel_poll_swing": 5.9,
     "flag": "house",
     "short": "R-sponsored polls lean Marshall",
-    "text": "3 Republican-sponsored polls show Marshall 4.2 pts better than the 4 independent polls. The average already counts them at 60%; the independent polls alone say D+2.9."
+    "text": "3 Republican-sponsored polls show Marshall 6.0 pts better than the 5 independent polls. The average already counts them at 60%; the independent polls alone say D+4.7."
    },
    "script": {
-    "margin_d": 1.5,
-    "p_win": 0.618,
+    "margin_d": 3.1,
+    "p_win": 0.732,
     "winner_party": "D",
     "sigma": 5.0
    }
@@ -2282,7 +2282,7 @@
     "IE": "Likely R",
     "NBC": "Solid R",
     "RCP": "Solid R",
-    "Sabato": "Safe R",
+    "Sabato": "Likely R",
     "Silver": "Solid R",
     "ST": "Safe R"
    },
@@ -3098,7 +3098,7 @@
     "IE": "Lean D",
     "NBC": "Likely D",
     "RCP": "Lean D",
-    "Sabato": "Lean D",
+    "Sabato": "Likely D",
     "Silver": "Likely D",
     "ST": "Likely D"
    },
@@ -3930,7 +3930,7 @@
    "special": false,
    "wiki_url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Nebraska",
    "ratings": {
-    "Cook": "Likely R",
+    "Cook": "Lean R",
     "DDHQ": "Lean R",
     "Econ": "Likely R",
     "FPO": "Likely R",
@@ -4183,13 +4183,13 @@
    },
    "polls": {
     "n": 27,
-    "n_recent": 10,
-    "avg_margin_d": 6.4,
+    "n_recent": 9,
+    "avg_margin_d": 6.6,
     "latest": "2026-10-23",
     "house": {
      "R": {
-      "n": 6,
-      "diff": -3.0
+      "n": 5,
+      "diff": -2.0
      }
     },
     "independent_avg": 7.2,
@@ -4336,15 +4336,15 @@
     }
    },
    "skew": {
-    "poll_swing": 3.6,
-    "rel_poll_swing": -9.7,
+    "poll_swing": 3.8,
+    "rel_poll_swing": -9.5,
     "flag": "shift",
     "short": "Unusual shift toward Sununu",
-    "text": "Polls have NH 9.7 pts further toward Sununu than the typical race moved since 2024 (typical: +13.3). That can be a real candidate effect or a polling miss; candidate-driven Senate races often break this way."
+    "text": "Polls have NH 9.5 pts further toward Sununu than the typical race moved since 2024 (typical: +13.3). That can be a real candidate effect or a polling miss; candidate-driven Senate races often break this way."
    },
    "script": {
-    "margin_d": 6.4,
-    "p_win": 0.9,
+    "margin_d": 6.6,
+    "p_win": 0.907,
     "winner_party": "D",
     "sigma": 5.0
    }
@@ -4690,7 +4690,7 @@
     "Cook": "Tossup",
     "DDHQ": "Tossup",
     "Econ": "Tossup",
-    "FPO": "Tossup",
+    "FPO": "Lean D (flip)",
     "Fox": "Lean D (flip)",
     "IE": "Tilt D (flip)",
     "NBC": "Tossup",
@@ -5674,15 +5674,10 @@
    },
    "polls": {
     "n": 14,
-    "n_recent": 8,
-    "avg_margin_d": -11.5,
+    "n_recent": 7,
+    "avg_margin_d": -12.0,
     "latest": "2026-10-20",
-    "house": {
-     "D": {
-      "n": 3,
-      "diff": 12.7
-     }
-    },
+    "house": {},
     "independent_avg": -10.6,
     "list": [
      {
@@ -5827,15 +5822,15 @@
     }
    },
    "skew": {
-    "poll_swing": 17.7,
-    "rel_poll_swing": 4.4,
-    "flag": "house",
-    "short": "D-sponsored polls lean Bengs",
-    "text": "3 Democratic-sponsored polls show Bengs 12.7 pts better than the 3 independent polls. The average already counts them at 60%; the independent polls alone say R+10.6."
+    "poll_swing": 17.2,
+    "rel_poll_swing": 3.9,
+    "flag": null,
+    "short": null,
+    "text": "Polls here moved +17.2 pts since 2024, close to the typical race (+13.3); no sign of house skew."
    },
    "script": {
-    "margin_d": -11.5,
-    "p_win": 0.989,
+    "margin_d": -12.0,
+    "p_win": 0.992,
     "winner_party": "R",
     "sigma": 5.0
    }
@@ -6053,20 +6048,27 @@
    "polls": {
     "n": 60,
     "n_recent": 32,
-    "avg_margin_d": 2.8,
+    "avg_margin_d": 2.6,
     "latest": "2026-10-28",
     "house": {
      "D": {
       "n": 3,
-      "diff": 1.1
+      "diff": 1.2
      },
      "R": {
       "n": 7,
-      "diff": -0.6
+      "diff": -0.5
      }
     },
-    "independent_avg": 2.7,
+    "independent_avg": 2.5,
     "list": [
+     {
+      "pollster": "Quantus Insights",
+      "end_date": "2026-10-28",
+      "sample": 1221,
+      "population": "LV",
+      "margin_d": -1.0
+     },
      {
       "pollster": "ActiVote",
       "end_date": "2026-10-28",
@@ -6115,13 +6117,6 @@
       "sample": 1000,
       "population": "RV",
       "margin_d": 5.0
-     },
-     {
-      "pollster": "Verasight /VoteHub",
-      "end_date": "2026-10-20",
-      "sample": 509,
-      "population": "LV",
-      "margin_d": 3.0
      }
     ]
    },
@@ -6209,15 +6204,15 @@
     }
    },
    "skew": {
-    "poll_swing": 16.5,
-    "rel_poll_swing": 3.2,
+    "poll_swing": 16.3,
+    "rel_poll_swing": 3.0,
     "flag": null,
     "short": null,
-    "text": "Polls here moved +16.5 pts since 2024, close to the typical race (+13.3); no sign of house skew."
+    "text": "Polls here moved +16.3 pts since 2024, close to the typical race (+13.3); no sign of house skew."
    },
    "script": {
-    "margin_d": 2.8,
-    "p_win": 0.712,
+    "margin_d": 2.6,
+    "p_win": 0.698,
     "winner_party": "D",
     "sigma": 5.0
    }

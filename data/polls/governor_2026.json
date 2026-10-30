@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-30T03:23:30+00:00",
+ "fetched_at": "2026-10-30T14:08:14+00:00",
  "source_note": "English Wikipedia ('2026 United States gubernatorial elections' for races/nominees/ratings; per-state pages' General election > Polling tables for polls), via the MediaWiki parse API. Only polls whose candidate columns are all general-election nominees are kept; hypothetical/generic/primary tables are dropped. Ids: <PO>-S regular, <PO>-S2 special (senate); <PO>-G (governor). 'pct' keys equal candidate names. 'party' is a 1-letter code for D/R/I/L/G/C (DFL->D), else the party name; 'party_full' is as printed. Rows with '<1%' or unparsable values omit that entry; LV and RV versions of one poll are separate entries. No betting/prediction markets.",
  "office": "governor",
  "races": [
@@ -2759,6 +2759,18 @@
     "Silver": "Lean R (flip)"
    },
    "polls": [
+    {
+     "pollster": "Emerson College",
+     "end_date": "2026-10-28",
+     "start_date": "2026-10-26",
+     "sample": 800,
+     "population": "LV",
+     "pct": {
+      "Cindy Holscher": 46.0,
+      "Ty Masterson": 50.0
+     },
+     "undecided": 4.0
+    },
     {
      "pollster": "SSRS",
      "end_date": "2026-10-26",
@@ -7266,6 +7278,19 @@
     "Silver": "Lean R"
    },
    "polls": [
+    {
+     "pollster": "Quantus Insights (R)",
+     "end_date": "2026-10-28",
+     "start_date": "2026-10-26",
+     "sample": 1221,
+     "population": "LV",
+     "pct": {
+      "Greg Abbott": 51.0,
+      "Gina Hinojosa": 46.0,
+      "Pat Dixon": 1.0
+     },
+     "undecided": 2.0
+    },
     {
      "pollster": "SSRS",
      "end_date": "2026-10-27",

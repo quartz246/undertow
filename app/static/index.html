@@ -47,6 +47,7 @@
       </form>
       <button class="cmp" data-cmp="r24" aria-pressed="false">2026 ↔ 2024</button>
       <button class="cmp" data-cmp="qloo" aria-pressed="false">Polls ↔ Qloo</button>
+      <button class="cmp" data-cmp="q24" aria-pressed="false">Qloo ↔ 2024 actual</button>
       <div class="zoomhint" id="zoomhint">States → zoom for counties → ~5 km Qloo cells → live block scan (~150 m)</div>
     </div>
     <div class="legend" id="legend"></div>
@@ -58,6 +59,41 @@
     <div id="panel-body"></div>
   </aside>
 </main>
+
+<section class="charts" id="charts" aria-labelledby="charts-h">
+  <div class="charts-in">
+    <h2 id="charts-h">Polls vs taste, and the track record</h2>
+    <p class="sub">The map shows where. These charts show how much: where Qloo's tastes disagree with the polls this year, how well tastes alone reproduce the real 2024 result, and how the signal did when we tested it on 2020→2024.</p>
+
+    <article class="chart">
+      <h3>This year: our call vs what tastes alone say · <span id="ch-office">Senate</span></h3>
+      <p class="note">Each row is a race. Amber is our call, made from the polls. Teal is the Qloo-only forecast: the vote each state's tastes predict, plus the national shift the polls show. Sorted by the gap; bold rows have a different winner. Click a row to open the race.</p>
+      <div id="ch-dumb" class="plot"></div>
+    </article>
+
+    <article class="chart">
+      <div class="chart-head"><h3>Qloo vs the actual 2024 result</h3>
+        <div class="seg small" id="ch-24-toggle" role="radiogroup" aria-label="Level"><button role="radio" aria-checked="true" data-level="states">States</button><button role="radio" aria-checked="false" data-level="counties">Counties</button></div></div>
+      <p class="note" id="ch-24-note"></p>
+      <div id="ch-24" class="plot"></div>
+    </article>
+
+    <div class="chart-pair">
+      <article class="chart">
+        <h3>Inside states it worked, a little</h3>
+        <p class="note">We fit the taste model to <b>2020</b>, then sorted counties by how far their tastes sat from their 2020 vote. Counties whose tastes were bluer than their vote really did swing toward Democrats in 2024, and redder ones toward Republicans: steadily, but by fractions of a point. Bars show the swing beyond what the 2020 margin and county size explain; the whiskers are 95% intervals.</p>
+        <div id="ch-bins" class="plot"></div>
+      </article>
+      <article class="chart">
+        <h3>Statewide it did not</h3>
+        <p class="note">The same test for whole states: a state's taste gap did not predict its 2020→2024 swing (the line is flat to slightly backwards). That is why Qloo never moves a statewide call here; the polls do.</p>
+        <div id="ch-states" class="plot"></div>
+      </article>
+    </div>
+    <p class="note">Caveat for every backtest: Qloo's data describes tastes today, not in 2020, so these are not clean out-of-time forecasts. All models are scored on states they never saw.</p>
+  </div>
+</section>
+<div class="tip ctip" id="ctip" hidden></div>
 
 <dialog id="welcome" class="welcome">
   <form method="dialog"><button class="x" aria-label="Close">×</button></form>
@@ -71,6 +107,8 @@
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 <script src="/app.js"></script>
+<script src="/charts.js"></script>
 </body>
 </html>

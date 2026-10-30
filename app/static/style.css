@@ -168,3 +168,29 @@ dialog.welcome { max-width: 640px; }
   #swipe .lab { font-size: 11px; padding: 4px 7px; }
   #swipe .lab.l { right: calc(50% + 27px); } #swipe .lab.r { left: calc(50% + 27px); }
 }
+
+/* charts section below the map */
+.charts { border-top: 1px solid var(--line); background: var(--bg); padding-block: 32px 48px; }
+.charts-in { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+.charts h2 { font-size: 28px; }
+.chart { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin: 16px 0; }
+.chart h3 { font-size: 17px; margin-bottom: 4px; }
+.chart-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.chart-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.chart-pair .chart { margin: 0; }
+.plot { width: 100%; overflow-x: auto; }
+.plot svg { display: block; font-family: Inter, system-ui, sans-serif; }
+.seg.small button { padding: 4px 10px; font-size: 12px; }
+.ctip { position: absolute; z-index: 20; }
+/* guided tour */
+.tour { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); width: min(460px, calc(100% - 24px)); z-index: 8;
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.22); padding: 14px 16px; }
+.tour .step { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.tour h3 { font-size: 18px; margin: 4px 0 6px; }
+.tour p { margin: 0; font-size: 14px; line-height: 1.45; }
+.tour .nav { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; gap: 8px; }
+.tour .nav button { border: 1px solid var(--line); background: var(--card); border-radius: 8px; padding: 7px 14px; font-weight: 600; font-size: 13px; }
+.tour .nav .next { background: var(--accent); color: #fff; border-color: var(--accent); }
+.tour .dots { display: flex; gap: 5px; } .tour .dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--line); } .tour .dots i.on { background: var(--accent); }
+.wfoot .tourbtn { border: 1px solid var(--accent); background: transparent; color: var(--accent); border-radius: 8px; padding: 9px 16px; font-weight: 600; font-size: 14px; }
+@media (max-width: 900px) { .chart-pair { grid-template-columns: 1fr; } }

@@ -7,5 +7,555 @@
  "state_n_extremes": 26,
  "within_state_median_r": 0.095,
  "within_state_positive": 34,
- "within_state_n": 45
+ "within_state_n": 45,
+ "county_bins": [
+  {
+   "bin": 1,
+   "gap": -14.9,
+   "swing": -0.37,
+   "se": 0.16,
+   "n": 309
+  },
+  {
+   "bin": 2,
+   "gap": -9.2,
+   "swing": -0.31,
+   "se": 0.12,
+   "n": 309
+  },
+  {
+   "bin": 3,
+   "gap": -5.9,
+   "swing": -0.3,
+   "se": 0.12,
+   "n": 310
+  },
+  {
+   "bin": 4,
+   "gap": -3.3,
+   "swing": -0.09,
+   "se": 0.11,
+   "n": 308
+  },
+  {
+   "bin": 5,
+   "gap": -1.2,
+   "swing": -0.12,
+   "se": 0.12,
+   "n": 309
+  },
+  {
+   "bin": 6,
+   "gap": 0.8,
+   "swing": 0.17,
+   "se": 0.12,
+   "n": 310
+  },
+  {
+   "bin": 7,
+   "gap": 3.0,
+   "swing": 0.19,
+   "se": 0.13,
+   "n": 308
+  },
+  {
+   "bin": 8,
+   "gap": 5.6,
+   "swing": 0.11,
+   "se": 0.12,
+   "n": 309
+  },
+  {
+   "bin": 9,
+   "gap": 8.7,
+   "swing": 0.27,
+   "se": 0.14,
+   "n": 309
+  },
+  {
+   "bin": 10,
+   "gap": 15.8,
+   "swing": 0.46,
+   "se": 0.16,
+   "n": 310
+  }
+ ],
+ "within_state_r_by_state": [
+  [
+   "New York",
+   -0.23
+  ],
+  [
+   "Utah",
+   -0.188
+  ],
+  [
+   "Idaho",
+   -0.145
+  ],
+  [
+   "Vermont",
+   -0.119
+  ],
+  [
+   "Florida",
+   -0.074
+  ],
+  [
+   "Wisconsin",
+   -0.062
+  ],
+  [
+   "Maine",
+   -0.043
+  ],
+  [
+   "Oregon",
+   -0.039
+  ],
+  [
+   "Pennsylvania",
+   -0.035
+  ],
+  [
+   "South Dakota",
+   -0.033
+  ],
+  [
+   "Illinois",
+   -0.033
+  ],
+  [
+   "Mississippi",
+   0.003
+  ],
+  [
+   "Iowa",
+   0.017
+  ],
+  [
+   "Indiana",
+   0.028
+  ],
+  [
+   "Arkansas",
+   0.032
+  ],
+  [
+   "North Dakota",
+   0.038
+  ],
+  [
+   "West Virginia",
+   0.044
+  ],
+  [
+   "Virginia",
+   0.046
+  ],
+  [
+   "Colorado",
+   0.051
+  ],
+  [
+   "Missouri",
+   0.054
+  ],
+  [
+   "New Jersey",
+   0.065
+  ],
+  [
+   "Alabama",
+   0.081
+  ],
+  [
+   "Wyoming",
+   0.095
+  ],
+  [
+   "South Carolina",
+   0.101
+  ],
+  [
+   "Kansas",
+   0.106
+  ],
+  [
+   "Tennessee",
+   0.11
+  ],
+  [
+   "Texas",
+   0.113
+  ],
+  [
+   "Kentucky",
+   0.129
+  ],
+  [
+   "Montana",
+   0.159
+  ],
+  [
+   "Arizona",
+   0.166
+  ],
+  [
+   "Michigan",
+   0.177
+  ],
+  [
+   "Nebraska",
+   0.179
+  ],
+  [
+   "Minnesota",
+   0.218
+  ],
+  [
+   "Georgia",
+   0.246
+  ],
+  [
+   "Maryland",
+   0.296
+  ],
+  [
+   "Nevada",
+   0.297
+  ],
+  [
+   "Louisiana",
+   0.318
+  ],
+  [
+   "Massachusetts",
+   0.321
+  ],
+  [
+   "North Carolina",
+   0.358
+  ],
+  [
+   "Ohio",
+   0.358
+  ],
+  [
+   "Oklahoma",
+   0.396
+  ],
+  [
+   "New Mexico",
+   0.401
+  ],
+  [
+   "New Hampshire",
+   0.414
+  ],
+  [
+   "Washington",
+   0.464
+  ],
+  [
+   "California",
+   0.509
+  ]
+ ],
+ "state_points": [
+  {
+   "state": "Alabama",
+   "gap": -1.7,
+   "swing": -1.24,
+   "m20": -25.5
+  },
+  {
+   "state": "Arizona",
+   "gap": 1.19,
+   "swing": -1.51,
+   "m20": 0.3
+  },
+  {
+   "state": "Arkansas",
+   "gap": -6.4,
+   "swing": 0.84,
+   "m20": -27.6
+  },
+  {
+   "state": "California",
+   "gap": 6.74,
+   "swing": -4.21,
+   "m20": 29.2
+  },
+  {
+   "state": "Colorado",
+   "gap": -9.48,
+   "swing": 2.04,
+   "m20": 13.5
+  },
+  {
+   "state": "Delaware",
+   "gap": -5.94,
+   "swing": 0.4,
+   "m20": 19.0
+  },
+  {
+   "state": "District of Columbia",
+   "gap": -25.7,
+   "swing": 5.12,
+   "m20": 86.8
+  },
+  {
+   "state": "Florida",
+   "gap": -7.62,
+   "swing": -5.48,
+   "m20": -3.4
+  },
+  {
+   "state": "Georgia",
+   "gap": 2.67,
+   "swing": 1.9,
+   "m20": 0.2
+  },
+  {
+   "state": "Hawaii",
+   "gap": -6.9,
+   "swing": -1.53,
+   "m20": 29.5
+  },
+  {
+   "state": "Idaho",
+   "gap": -8.56,
+   "swing": -1.94,
+   "m20": -30.8
+  },
+  {
+   "state": "Illinois",
+   "gap": 13.76,
+   "swing": -1.38,
+   "m20": 17.0
+  },
+  {
+   "state": "Indiana",
+   "gap": 2.8,
+   "swing": 1.14,
+   "m20": -16.1
+  },
+  {
+   "state": "Iowa",
+   "gap": -2.1,
+   "swing": -0.88,
+   "m20": -8.2
+  },
+  {
+   "state": "Kansas",
+   "gap": 1.51,
+   "swing": 2.73,
+   "m20": -14.8
+  },
+  {
+   "state": "Kentucky",
+   "gap": 0.9,
+   "swing": -0.74,
+   "m20": -25.9
+  },
+  {
+   "state": "Louisiana",
+   "gap": 7.49,
+   "swing": 0.61,
+   "m20": -18.6
+  },
+  {
+   "state": "Maine",
+   "gap": 3.89,
+   "swing": 2.74,
+   "m20": 8.7
+  },
+  {
+   "state": "Maryland",
+   "gap": 8.51,
+   "swing": 0.43,
+   "m20": 33.2
+  },
+  {
+   "state": "Massachusetts",
+   "gap": 9.04,
+   "swing": -3.22,
+   "m20": 33.5
+  },
+  {
+   "state": "Michigan",
+   "gap": -2.6,
+   "swing": 0.17,
+   "m20": 2.8
+  },
+  {
+   "state": "Minnesota",
+   "gap": -5.26,
+   "swing": 1.59,
+   "m20": 7.1
+  },
+  {
+   "state": "Mississippi",
+   "gap": -10.16,
+   "swing": -2.32,
+   "m20": -16.5
+  },
+  {
+   "state": "Missouri",
+   "gap": 6.94,
+   "swing": 1.03,
+   "m20": -15.4
+  },
+  {
+   "state": "Montana",
+   "gap": -13.81,
+   "swing": 0.43,
+   "m20": -16.3
+  },
+  {
+   "state": "Nebraska",
+   "gap": 2.21,
+   "swing": 2.49,
+   "m20": -19.1
+  },
+  {
+   "state": "Nevada",
+   "gap": -1.19,
+   "swing": -1.12,
+   "m20": 2.4
+  },
+  {
+   "state": "New Hampshire",
+   "gap": 8.59,
+   "swing": -0.13,
+   "m20": 7.4
+  },
+  {
+   "state": "New Jersey",
+   "gap": 9.96,
+   "swing": -5.38,
+   "m20": 15.9
+  },
+  {
+   "state": "New Mexico",
+   "gap": -13.79,
+   "swing": -0.28,
+   "m20": 10.8
+  },
+  {
+   "state": "New York",
+   "gap": 14.42,
+   "swing": -5.73,
+   "m20": 23.1
+  },
+  {
+   "state": "North Carolina",
+   "gap": -3.98,
+   "swing": 2.43,
+   "m20": -1.3
+  },
+  {
+   "state": "North Dakota",
+   "gap": -2.24,
+   "swing": 0.36,
+   "m20": -33.4
+  },
+  {
+   "state": "Ohio",
+   "gap": 7.9,
+   "swing": 1.01,
+   "m20": -8.0
+  },
+  {
+   "state": "Oklahoma",
+   "gap": 1.08,
+   "swing": 2.58,
+   "m20": -33.1
+  },
+  {
+   "state": "Oregon",
+   "gap": 11.29,
+   "swing": 2.9,
+   "m20": 16.1
+  },
+  {
+   "state": "Pennsylvania",
+   "gap": 4.87,
+   "swing": 1.46,
+   "m20": 1.2
+  },
+  {
+   "state": "Rhode Island",
+   "gap": 11.75,
+   "swing": -2.07,
+   "m20": 20.6
+  },
+  {
+   "state": "South Carolina",
+   "gap": -7.84,
+   "swing": -2.06,
+   "m20": -11.7
+  },
+  {
+   "state": "South Dakota",
+   "gap": -8.29,
+   "swing": 0.85,
+   "m20": -26.2
+  },
+  {
+   "state": "Tennessee",
+   "gap": -2.86,
+   "swing": -2.58,
+   "m20": -23.2
+  },
+  {
+   "state": "Texas",
+   "gap": 2.55,
+   "swing": -3.89,
+   "m20": -5.6
+  },
+  {
+   "state": "Utah",
+   "gap": 8.49,
+   "swing": 2.87,
+   "m20": -20.5
+  },
+  {
+   "state": "Vermont",
+   "gap": -8.32,
+   "swing": 1.29,
+   "m20": 35.4
+  },
+  {
+   "state": "Virginia",
+   "gap": -0.54,
+   "swing": 0.19,
+   "m20": 10.1
+  },
+  {
+   "state": "Washington",
+   "gap": 10.91,
+   "swing": 3.79,
+   "m20": 19.2
+  },
+  {
+   "state": "West Virginia",
+   "gap": -6.24,
+   "swing": 0.72,
+   "m20": -38.9
+  },
+  {
+   "state": "Wisconsin",
+   "gap": 1.5,
+   "swing": 2.85,
+   "m20": 0.6
+  },
+  {
+   "state": "Wyoming",
+   "gap": 0.6,
+   "swing": 0.75,
+   "m20": -43.4
+  }
+ ]
 }

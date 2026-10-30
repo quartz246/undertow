@@ -68,12 +68,12 @@ if __name__ == "__main__":
     print("direction hit on most out-of-step quartiles: %.0f%% of %d states" % (100 * np.mean(np.sign(rg[ext]) == np.sign(rs[ext])), ext.sum()))
     print("state-level pred r vs actual 2020:", round(np.corrcoef(S.pred20, S.m20)[0, 1], 2), " mean abs err", round(np.mean(np.abs(S.gap)), 1))
     # within-state county signal with national features
-    rr = []
+    rr = []; pa, pb = [], []
     for st, x in M.groupby("state"):
         if len(x) < 10: continue
         B = np.c_[np.ones(len(x)), x.m20, x.logv]; sw = x.m24 - x.m20; g = x.pred20 - x.m20
         a = g - B @ np.linalg.lstsq(B, g, rcond=None)[0]; b = sw - B @ np.linalg.lstsq(B, sw, rcond=None)[0]
-        rr.append((st, np.corrcoef(a, b)[0, 1]))
+        rr.append((st, np.corrcoef(a, b)[0, 1])); pa.extend(a); pb.extend(b)
     rr = pd.DataFrame(rr, columns=["state", "r"])
     print("within-state county r(gap,swing): median %.2f, positive in %d of %d states" % (rr.r.median(), (rr.r > 0).sum(), len(rr)))
     S.round(2).to_csv("data/raw/state_backtest.csv")
@@ -82,6 +82,18 @@ if __name__ == "__main__":
                "state_hit_extremes": round(float(np.mean(np.sign(rg[ext]) == np.sign(rs[ext]))), 3), "state_n_extremes": int(ext.sum()),
                "within_state_median_r": round(float(rr.r.median()), 3), "within_state_positive": int((rr.r > 0).sum()), "within_state_n": int(len(rr))},
               open("data/model/national_backtest.json", "w"), indent=1)
+    # chart data: county test in ten bins, per-state r, and the statewide test points
+    pa, pb = np.array(pa), np.array(pb); edges = np.quantile(pa, np.linspace(0, 1, 11)); bins = []
+    for i in range(10):
+        m_ = (pa >= edges[i]) & (pa <= edges[i + 1] if i == 9 else pa < edges[i + 1])
+        v = pb[m_]; bins.append({"bin": i + 1, "gap": round(float(np.median(pa[m_])), 1), "swing": round(float(v.mean()), 2),
+                                 "se": round(float(v.std() / np.sqrt(len(v))), 2), "n": int(len(v))})
+    nb = json.load(open("data/model/national_backtest.json"))
+    nb["county_bins"] = bins
+    nb["within_state_r_by_state"] = [[s_, round(float(r_), 3)] for s_, r_ in rr.sort_values("r").itertuples(index=False)]
+    nb["state_points"] = [{"state": s_, "gap": round(float(g_), 2), "swing": round(float(w_), 2), "m20": round(float(m_), 1)}
+                          for s_, g_, w_, m_ in zip(S.index, rg, rs, S.m20)]
+    json.dump(nb, open("data/model/national_backtest.json", "w"), indent=1)
     # Qloo-only map: out-of-state expected 2024 margin per county from nationally comparable tastes, and per state
     pred24 = pd.Series(np.nan, index=M.index); w24 = M.total_votes.values
     for st in M.state.unique():

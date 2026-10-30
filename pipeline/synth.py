@@ -10,7 +10,7 @@ URL = "https://opencode.ai/zen/go/v1/chat/completions"
 KEY = os.environ.get("OPENCODE_GO_KEY") or json.load(open(os.path.expanduser("~/.local/share/opencode/auth.json")))["opencode-go"]["key"]
 SESSION = "undertow-synth-" + uuid.uuid4().hex[:12]
 
-SYSTEM = """You are the final forecaster for a 2026 US Senate model. Election day is 2026-11-03. You get one race as JSON computed by scripts:
+SYSTEM = """You are the final forecaster for a 2026 US {office} model. Election day is 2026-11-03. You get one race as JSON computed by scripts:
 - polls: recency/sample-weighted average margin (positive = the non-Republican side ahead; partisan-sponsored polls already count 60%),
   the number of recent polls, the latest polls, "house" = how far Democratic- or Republican-sponsored polls differ from independent ones,
   and independent_avg = the average of independent polls only
@@ -25,7 +25,7 @@ Answer with JSON only:
  "confidence": "low"|"medium"|"high", "headline": "<= 12 words", "reasoning": "<= 70 words, plain English, cite the numbers you used"}"""
 
 def packet(r):
-    return {"race": f"{r['state']} Senate{' (special)' if r['special'] else ''}",
+    return {"race": f"{r['state']} {'Governor' if r['id'].endswith('-G') else 'Senate'}{' (special)' if r['special'] else ''}",
             "non_republican": f"{r['main']['d']['name']} ({r['main']['d']['party']}{', incumbent' if r['main']['d']['incumbent'] else ''})",
             "republican": f"{r['main']['r']['name']} (R{', incumbent' if r['main']['r']['incumbent'] else ''})",
             "polls": {k: r["polls"][k] for k in ("avg_margin_d", "n_recent", "n", "latest", "house", "independent_avg")} | {"latest_polls": r["polls"]["list"][:5]},
@@ -34,8 +34,9 @@ def packet(r):
             "ratings": r["ratings"], "script": r["script"]}
 
 def ask(r):
+    office = "governor" if r["id"].endswith("-G") else "Senate"
     body = {"model": MODEL, "max_tokens": 4000, "temperature": 0.2,
-            "messages": [{"role": "system", "content": SYSTEM}, {"role": "user", "content": json.dumps(packet(r))}]}
+            "messages": [{"role": "system", "content": SYSTEM.replace("{office}", office)}, {"role": "user", "content": json.dumps(packet(r))}]}
     hdr = {"Authorization": "Bearer " + KEY, "x-opencode-session": SESSION, "User-Agent": "undertow-synth/0.1"}
     for _ in range(3):
         try:
@@ -60,7 +61,8 @@ def valid(v, r):
         return False
 
 def main():
-    fc = json.load(open("data/forecast/script.json"))
+    office = "governor" if "--governor" in sys.argv else "senate"
+    fc = json.load(open(f"data/forecast/script_{office}.json"))
     with cf.ThreadPoolExecutor(4) as ex:
         verdicts = list(ex.map(ask, fc["races"]))
     n = 0
@@ -73,7 +75,7 @@ def main():
         else:
             r.pop("verdict", None)
     if "--lock" in sys.argv: fc["locked_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    json.dump(fc, open("data/forecast/senate.json", "w"), indent=1)
+    json.dump(fc, open(f"data/forecast/{office}.json", "w"), indent=1)
     print(f"verdicts {n}/{len(fc['races'])}")
     for r in fc["races"]:
         v = r.get("verdict") or {}

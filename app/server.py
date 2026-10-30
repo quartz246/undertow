@@ -99,7 +99,12 @@ def _json(path):
     return FileResponse(p, media_type="application/json", headers={"Cache-Control": "public, max-age=300"})
 
 @app.get("/api/forecast")
-def forecast(): return _json("forecast/senate.json")
+def forecast(office: str = "senate"):
+    if office not in ("senate", "governor"): raise HTTPException(400)
+    return _json(f"forecast/{office}.json")
+
+@app.get("/api/markets")
+def markets(): return _json("forecast/markets.json")
 
 @app.get("/api/model")
 def model(): return _json("model/model.json")

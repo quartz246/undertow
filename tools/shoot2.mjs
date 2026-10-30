@@ -1,0 +1,26 @@
+import { createRequire } from "module"; const require = createRequire("/tmp/adflank-ui/tools/package.json"); const puppeteer = require("puppeteer-core");
+const base = process.argv[2] || "http://127.0.0.1:8740";
+const b = await puppeteer.launch({ executablePath: "/usr/bin/google-chrome", headless: "new", args: ["--no-sandbox", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"] });
+const p = await b.newPage(); await p.setViewport({ width: 1440, height: 900 });
+const errs = []; p.on("pageerror", (e) => errs.push("PAGEERR " + e.message)); p.on("console", (m) => m.type() === "error" && errs.push(m.text()));
+const W = (ms) => new Promise((r) => setTimeout(r, ms));
+await p.goto(base, { waitUntil: "networkidle2", timeout: 90000 }); await W(3500);
+await p.screenshot({ path: "shots/a-welcome.png" });
+await p.evaluate(() => document.querySelector("#welcome-go").click()); await W(800);
+await p.evaluate(() => document.querySelector("#cmp-btn").click()); await W(6000);
+await p.screenshot({ path: "shots/b-swipe.png" });
+await p.mouse.move(720 - 300 + 0, 0); // no-op
+const g = await p.$("#swipe .grip"); const bb = await g.boundingBox();
+await p.mouse.move(bb.x + 20, bb.y + 20); await p.mouse.down(); await p.mouse.move(bb.x - 200, bb.y + 20, { steps: 8 }); await p.mouse.up(); await W(1200);
+await p.screenshot({ path: "shots/c-swipe-dragged.png" });
+await p.evaluate(() => document.querySelector("#cmp-btn").click()); await W(500);
+await p.evaluate(() => document.querySelector('[data-office="governor"]').click()); await W(2500);
+await p.screenshot({ path: "shots/d-governor.png" });
+await p.evaluate(() => document.querySelector("#tools-btn").click()); await W(1500);
+await p.screenshot({ path: "shots/e-tools.png" });
+await p.evaluate(() => document.querySelector('[data-office="senate"]').click()); await W(1000);
+await p.evaluate(() => document.querySelector("#tools-btn").click()); await W(1500);
+await p.evaluate(() => (document.querySelector("#panel").scrollTop = 0)); 
+await p.screenshot({ path: "shots/f-tools-senate.png" });
+console.log("errors:", JSON.stringify(errs.slice(0, 8)));
+await b.close();

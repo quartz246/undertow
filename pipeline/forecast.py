@@ -3,11 +3,13 @@ Writes data/forecast/script.json (synth.py adds the final-judgement layer and wr
 import json, math, re, statistics, sys
 from datetime import date, datetime, timezone
 
-TODAY = date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else date.today()
+ARGS = [a for a in sys.argv[1:] if not a.startswith("--")]
+OFFICE = "governor" if "--governor" in sys.argv else "senate"
+TODAY = date.fromisoformat(ARGS[0]) if ARGS else date.today()
 HALF_LIFE, WINDOW = 21.0, 60
 POP_W = {"LV": 1.0, "RV": 0.8, "A": 0.6}
 
-polls = json.load(open("data/polls/senate_2026.json"))
+polls = json.load(open(f"data/polls/{OFFICE}_2026.json"))
 states = json.load(open("data/model/states.json"))
 model = json.load(open("data/model/model.json"))
 stfips = {f["properties"]["name"]: str(f["id"]).zfill(2) for f in json.load(open("data/raw/states.geojson"))["features"]}
@@ -18,7 +20,10 @@ _tot = {}
 for row in csv.DictReader(open("data/raw/county24.csv")):
     t = _tot.setdefault(row["state_name"], [0, 0, 0]); t[0] += int(row["votes_dem"]); t[1] += int(row["votes_gop"]); t[2] += int(row["total_votes"])
 for name, (dv, gv, tv) in _tot.items():
-    if name in states: states[name]["m24"] = round((dv - gv) / tv * 100, 1)
+    if name not in states:   # e.g. Connecticut: results come by planning region, so the county model has no entry
+        states[name] = {"qloo_swing": 0.0, "qloo_swing_lo": 0.0, "qloo_swing_hi": 0.0, "share_moving_d": None,
+                        "out_of_step_d": [], "out_of_step_r": [], "backtest": None, "counties": 0}
+    states[name]["m24"] = round((dv - gv) / tv * 100, 1)
 
 def phi(x): return 0.5 * (1 + math.erf(x / math.sqrt(2)))
 
@@ -133,9 +138,9 @@ for x in out:
     })
 
 latest = max((r["polls"]["latest"] for r in races if r["polls"]["latest"]), default=None)
-json.dump({"generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "polls_through": latest, "polls_fetched_at": polls.get("fetched_at"),
+json.dump({"office": OFFICE, "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "polls_through": latest, "polls_fetched_at": polls.get("fetched_at"),
            "national": {"median_poll_swing_since_2024": round(nat_poll_swing, 1)},
-           "races": races}, open("data/forecast/script.json", "w"), indent=1)
+           "races": races}, open(f"data/forecast/script_{OFFICE}.json", "w"), indent=1)
 for r in sorted(races, key=lambda r: r["script"]["margin_d"]):
     print(f"{r['id']:6s} polls {str(r['polls']['avg_margin_d']):>6s} ({r['polls']['n_recent']:2d}) 24 {r['pres24_margin_d']:+6.1f} -> {r['script']['margin_d']:+6.1f} p {r['script']['p_win']:.2f} {r['script']['winner_party']}  {r['skew']['short'] or ''}")
 print("national poll swing since 2024:", round(nat_poll_swing, 1))

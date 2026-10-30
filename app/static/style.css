@@ -96,3 +96,34 @@ dialog td, dialog th { border-top: 1px solid var(--line); padding: 4px 6px 4px 0
   .tally { min-width: 0; width: 100%; max-width: none; }
   .zoomhint { display: none; }
 }
+
+/* office switch + header buttons */
+.office { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 3px; }
+.office button { border: 0; background: transparent; padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.office button[aria-checked="true"] { background: var(--accent); color: #fff; }
+.topbtns { display: flex; gap: 6px; }
+.tbtn { border: 1px solid var(--ink); background: var(--ink); color: #fff; border-radius: 8px; padding: 7px 14px; font-size: 13px; font-weight: 600; }
+.tbtn.ghost { background: transparent; color: var(--ink); }
+.cmp { pointer-events: auto; border: 1px solid var(--line); background: var(--card); border-radius: 8px; padding: 7px 12px; font-size: 13px; font-weight: 600; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.cmp[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+.lnk { background: none; border: 0; padding: 0; color: var(--ink); text-decoration: underline; font: inherit; text-align: left; }
+.polls a { color: var(--accent); }
+
+/* 2024 vs 2026 swipe */
+#map24 { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+#swipe { position: absolute; top: 0; bottom: 0; width: 0; z-index: 3; }
+#swipe::before { content: ""; position: absolute; top: 0; bottom: 0; left: -1.5px; width: 3px; background: var(--ink); }
+#swipe .grip { position: absolute; top: 50%; left: -20px; width: 40px; height: 40px; margin-top: -20px; border-radius: 50%; border: 3px solid #fff; background: var(--ink); cursor: ew-resize; touch-action: none; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+#swipe .grip::after { content: "‹ ›"; color: #fff; font-weight: 700; font-size: 15px; letter-spacing: 2px; }
+#swipe .lab { position: absolute; top: 58px; white-space: nowrap; background: var(--ink); color: #fff; font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 6px; }
+#swipe .lab.l { right: 10px; } #swipe .lab.r { left: 10px; }
+.mapbar, .legend, .scan, .tip { z-index: 4; }
+
+/* welcome */
+dialog.welcome { max-width: 640px; }
+.welcome .lede { font-size: 16px; }
+.welcome ol, .welcome ul { padding-left: 20px; }
+.welcome li { margin: 4px 0; }
+.wfoot { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 16px; border-top: 1px solid var(--line); padding-top: 12px; font-size: 13px; color: var(--muted); }
+.wfoot .go { border: 0; background: var(--accent); color: #fff; border-radius: 8px; padding: 9px 18px; font-weight: 600; font-size: 14px; }
+@media (max-width: 900px) { .office, .topbtns { order: 3; } }

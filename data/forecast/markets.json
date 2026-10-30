@@ -1,0 +1,614 @@
+{
+ "fetched_at": "2026-10-30T04:33:53+00:00",
+ "source": "Polymarket (gamma API)",
+ "races": {
+  "AK-S": {
+   "p_d": 0.698,
+   "volume": 2118713,
+   "title": "Alaska Senate Election Winner",
+   "url": "https://polymarket.com/event/alaska-senate-election-winner"
+  },
+  "AL-S": {
+   "p_d": 0.011,
+   "volume": 14621,
+   "title": "Alabama Senate Election Winner",
+   "url": "https://polymarket.com/event/alabama-senate-election-winner-154"
+  },
+  "AR-S": {
+   "p_d": 0.045,
+   "volume": 104494,
+   "title": "Arkansas Senate Election Winner",
+   "url": "https://polymarket.com/event/arkansas-senate-election-winner"
+  },
+  "CO-S": {
+   "p_d": 0.99,
+   "volume": 52418,
+   "title": "Colorado Senate Election Winner",
+   "url": "https://polymarket.com/event/colorado-senate-election-winner"
+  },
+  "DE-S": {
+   "p_d": 0.973,
+   "volume": 33528,
+   "title": "Delaware Senate Election Winner",
+   "url": "https://polymarket.com/event/delaware-senate-election-winner"
+  },
+  "FL-S2": {
+   "p_d": 0.095,
+   "volume": 436536,
+   "title": "Florida Senate Election Winner",
+   "url": "https://polymarket.com/event/florida-senate-election-winner"
+  },
+  "GA-S": {
+   "p_d": 0.967,
+   "volume": 376473,
+   "title": "Georgia Senate Election Winner",
+   "url": "https://polymarket.com/event/georgia-senate-election-winner"
+  },
+  "IA-S": {
+   "p_d": 0.455,
+   "volume": 1226126,
+   "title": "Iowa Senate Election Winner",
+   "url": "https://polymarket.com/event/iowa-senate-election-winner"
+  },
+  "ID-S": {
+   "p_d": 0.046,
+   "volume": 440511,
+   "title": "Idaho Senate Election Winner",
+   "url": "https://polymarket.com/event/idaho-senate-election-winner"
+  },
+  "IL-S": {
+   "p_d": 0.985,
+   "volume": 37704,
+   "title": "Illinois Senate Election Winner",
+   "url": "https://polymarket.com/event/illinois-senate-election-winner"
+  },
+  "KS-S": {
+   "p_d": 0.495,
+   "volume": 1543241,
+   "title": "Kansas Senate Election Winner",
+   "url": "https://polymarket.com/event/kansas-senate-election-winner"
+  },
+  "KY-S": {
+   "p_d": 0.028,
+   "volume": 38575,
+   "title": "Kentucky Senate Election Winner",
+   "url": "https://polymarket.com/event/kentucky-senate-election-winner"
+  },
+  "LA-S": {
+   "p_d": 0.095,
+   "volume": 102546,
+   "title": "Louisiana Senate Election Winner",
+   "url": "https://polymarket.com/event/louisiana-senate-election-winner"
+  },
+  "MA-S": {
+   "p_d": 0.984,
+   "volume": 53144,
+   "title": "Massachusetts Senate Election Winner",
+   "url": "https://polymarket.com/event/massachusetts-senate-election-winner"
+  },
+  "ME-S": {
+   "p_d": 0.665,
+   "volume": 2989620,
+   "title": "Maine Senate Election Winner",
+   "url": "https://polymarket.com/event/maine-senate-election-winner"
+  },
+  "MI-S": {
+   "p_d": 0.773,
+   "volume": 3497462,
+   "title": "Michigan Senate Election Winner",
+   "url": "https://polymarket.com/event/michigan-senate-election-winner"
+  },
+  "MN-S": {
+   "p_d": 0.905,
+   "volume": 530872,
+   "title": "Minnesota Senate Election Winner",
+   "url": "https://polymarket.com/event/minnesota-senate-election-winner"
+  },
+  "MS-S": {
+   "p_d": 0.135,
+   "volume": 500104,
+   "title": "Mississippi Senate Election Winner",
+   "url": "https://polymarket.com/event/mississippi-senate-election-winner"
+  },
+  "MT-S": {
+   "p_d": 0.132,
+   "volume": 302299,
+   "title": "Montana Senate Election Winner",
+   "url": "https://polymarket.com/event/montana-senate-election-winner"
+  },
+  "NC-S": {
+   "p_d": 0.978,
+   "volume": 290978,
+   "title": "North Carolina Senate Election Winner",
+   "url": "https://polymarket.com/event/north-carolina-senate-election-winner"
+  },
+  "NE-S": {
+   "p_d": 0.315,
+   "volume": 1153137,
+   "title": "Nebraska Senate Election Winner  ",
+   "url": "https://polymarket.com/event/nebraska-senate-election-winner"
+  },
+  "NH-S": {
+   "p_d": 0.92,
+   "volume": 535785,
+   "title": "New Hampshire Senate Election Winner",
+   "url": "https://polymarket.com/event/new-hampshire-senate-election-winner"
+  },
+  "NJ-S": {
+   "p_d": 0.986,
+   "volume": 30750,
+   "title": "New Jersey Senate Election Winner",
+   "url": "https://polymarket.com/event/new-jersey-senate-election-winner"
+  },
+  "NM-S": {
+   "p_d": 0.984,
+   "volume": 33030,
+   "title": "New Mexico Senate Election Winner",
+   "url": "https://polymarket.com/event/new-mexico-senate-election-winner"
+  },
+  "OH-S2": {
+   "p_d": 0.705,
+   "volume": 2088796,
+   "title": "Ohio Senate Election Winner",
+   "url": "https://polymarket.com/event/ohio-senate-election-winner"
+  },
+  "OK-S": {
+   "p_d": 0.019,
+   "volume": 28254,
+   "title": "Oklahoma Senate Election Winner",
+   "url": "https://polymarket.com/event/oklahoma-senate-election-winner"
+  },
+  "OR-S": {
+   "p_d": 0.987,
+   "volume": 10314,
+   "title": "Oregon Senate Election Winner",
+   "url": "https://polymarket.com/event/oregon-senate-election-winner"
+  },
+  "RI-S": {
+   "p_d": 0.985,
+   "volume": 26796,
+   "title": "Rhode Island Senate Election Winner",
+   "url": "https://polymarket.com/event/rhode-island-senate-election-winner"
+  },
+  "SC-S": {
+   "p_d": 0.256,
+   "volume": 1503134,
+   "title": "South Carolina Senate Election Winner",
+   "url": "https://polymarket.com/event/south-carolina-senate-election-winner"
+  },
+  "SD-S": {
+   "p_d": 0.051,
+   "volume": 76022,
+   "title": "South Dakota Senate Election Winner",
+   "url": "https://polymarket.com/event/south-dakota-senate-election-winner"
+  },
+  "TN-S": {
+   "p_d": 0.034,
+   "volume": 117399,
+   "title": "Tennessee Senate Election Winner",
+   "url": "https://polymarket.com/event/tennessee-senate-election-winner"
+  },
+  "TX-S": {
+   "p_d": 0.705,
+   "volume": 8399125,
+   "title": "Texas Senate Election Winner",
+   "url": "https://polymarket.com/event/texas-senate-election-winner"
+  },
+  "VA-S": {
+   "p_d": 0.985,
+   "volume": 23945,
+   "title": "Virginia Senate Election Winner",
+   "url": "https://polymarket.com/event/virginia-senate-election-winner"
+  },
+  "WV-S": {
+   "p_d": 0.014,
+   "volume": 20396,
+   "title": "West Virginia Senate Election Winner",
+   "url": "https://polymarket.com/event/west-virginia-senate-election-winner"
+  },
+  "WY-S": {
+   "p_d": 0.012,
+   "volume": 21450,
+   "title": "Wyoming Senate Election Winner",
+   "url": "https://polymarket.com/event/wyoming-senate-election-winner"
+  },
+  "AK-G": {
+   "p_d": 0.885,
+   "volume": 1695775,
+   "title": "Alaska Governor Election Winner  ",
+   "url": "https://polymarket.com/event/alaska-governor-election-winner"
+  },
+  "AL-G": {
+   "p_d": 0.063,
+   "volume": 54812,
+   "title": "Alabama Governor Election Winner",
+   "url": "https://polymarket.com/event/alabama-governor-winner-2026"
+  },
+  "AR-G": {
+   "p_d": 0.022,
+   "volume": 12255,
+   "title": "Arkansas Governor Election Winner",
+   "url": "https://polymarket.com/event/arkansas-governor-winner-2026"
+  },
+  "AZ-G": {
+   "p_d": 0.93,
+   "volume": 453367,
+   "title": "Arizona Governor Election Winner",
+   "url": "https://polymarket.com/event/arizona-governor-winner-2026"
+  },
+  "CA-G": {
+   "p_d": 0.973,
+   "volume": 43227079,
+   "title": "California Governor Election Winner",
+   "url": "https://polymarket.com/event/california-governor-election-2026"
+  },
+  "CO-G": {
+   "p_d": 0.969,
+   "volume": 17382,
+   "title": "Colorado Governor Election Winner",
+   "url": "https://polymarket.com/event/colorado-governor-winner-2026"
+  },
+  "CT-G": {
+   "p_d": 0.974,
+   "volume": 11222,
+   "title": "Connecticut Governor Election Winner",
+   "url": "https://polymarket.com/event/connecticut-governor-winner-2026"
+  },
+  "FL-G": {
+   "p_d": 0.288,
+   "volume": 700453,
+   "title": "Florida Governor Election Winner",
+   "url": "https://polymarket.com/event/florida-governor-winner-2026"
+  },
+  "GA-G": {
+   "p_d": 0.628,
+   "volume": 301872,
+   "title": "Georgia Governor Election Winner",
+   "url": "https://polymarket.com/event/georgia-governor-winner-2026"
+  },
+  "HI-G": {
+   "p_d": 0.987,
+   "volume": 24440,
+   "title": "Hawaii Governor Election Winner",
+   "url": "https://polymarket.com/event/hawaii-governor-winner-2026"
+  },
+  "IA-G": {
+   "p_d": 0.864,
+   "volume": 389347,
+   "title": "Iowa Governor Election Winner",
+   "url": "https://polymarket.com/event/iowa-governor-winner-2026"
+  },
+  "ID-G": {
+   "p_d": 0.016,
+   "volume": 27425,
+   "title": "Idaho Governor Election Winner",
+   "url": "https://polymarket.com/event/idaho-governor-winner-2026"
+  },
+  "IL-G": {
+   "p_d": 0.987,
+   "volume": 32850,
+   "title": "Illinois Governor Election Winner",
+   "url": "https://polymarket.com/event/illinois-governor-winner-2026"
+  },
+  "KS-G": {
+   "p_d": 0.242,
+   "volume": 129335,
+   "title": "Kansas Governor Election Winner",
+   "url": "https://polymarket.com/event/kansas-governor-winner-2026"
+  },
+  "MA-G": {
+   "p_d": 0.969,
+   "volume": 200496,
+   "title": "Massachusetts Governor Election Winner",
+   "url": "https://polymarket.com/event/massachusetts-governor-winner-2026"
+  },
+  "MD-G": {
+   "p_d": 0.986,
+   "volume": 29563,
+   "title": "Maryland Governor Election Winner",
+   "url": "https://polymarket.com/event/maryland-governor-winner-2026"
+  },
+  "ME-G": {
+   "p_d": 0.961,
+   "volume": 59531,
+   "title": "Maine Governor Election Winner",
+   "url": "https://polymarket.com/event/maine-governor-winner-2026"
+  },
+  "MI-G": {
+   "p_d": 0.94,
+   "volume": 486777,
+   "title": "Michigan Governor Election Winner",
+   "url": "https://polymarket.com/event/michigan-governor-winner-2026"
+  },
+  "MN-G": {
+   "p_d": 0.974,
+   "volume": 141832,
+   "title": "Minnesota Governor Election Winner",
+   "url": "https://polymarket.com/event/minnesota-governor-winner-2026"
+  },
+  "NE-G": {
+   "p_d": 0.157,
+   "volume": 58940,
+   "title": "Nebraska Governor Election Winner",
+   "url": "https://polymarket.com/event/nebraska-governor-winner-2026"
+  },
+  "NH-G": {
+   "p_d": 0.07,
+   "volume": 54063,
+   "title": "New Hampshire Governor Election Winner",
+   "url": "https://polymarket.com/event/new-hampshire-governor-winner-2026"
+  },
+  "NM-G": {
+   "p_d": 0.958,
+   "volume": 112425,
+   "title": "New Mexico Governor Election Winner",
+   "url": "https://polymarket.com/event/new-mexico-governor-winner-2026"
+  },
+  "NV-G": {
+   "p_d": 0.805,
+   "volume": 989299,
+   "title": "Nevada Governor Election Winner",
+   "url": "https://polymarket.com/event/nevada-governor-winner-2026"
+  },
+  "NY-G": {
+   "p_d": 0.972,
+   "volume": 393380,
+   "title": "New York Governor Election Winner",
+   "url": "https://polymarket.com/event/new-york-governor-winner-2026"
+  },
+  "OH-G": {
+   "p_d": 0.821,
+   "volume": 1289255,
+   "title": "Ohio Governor Election Winner",
+   "url": "https://polymarket.com/event/ohio-governor-winner-2026"
+  },
+  "OK-G": {
+   "p_d": 0.09,
+   "volume": 144099,
+   "title": "Oklahoma Governor Election Winner",
+   "url": "https://polymarket.com/event/oklahoma-governor-winner-2026"
+  },
+  "OR-G": {
+   "p_d": 0.81,
+   "volume": 144987,
+   "title": "Oregon Governor Election Winner",
+   "url": "https://polymarket.com/event/oregon-governor-winner-2026"
+  },
+  "PA-G": {
+   "p_d": 0.982,
+   "volume": 67348,
+   "title": "Pennsylvania Governor Election Winner",
+   "url": "https://polymarket.com/event/pennsylvania-governor-winner-2026"
+  },
+  "RI-G": {
+   "p_d": 0.987,
+   "volume": 76353,
+   "title": "Rhode Island Governor Election Winner",
+   "url": "https://polymarket.com/event/rhode-island-governor-winner-2026"
+  },
+  "SC-G": {
+   "p_d": 0.063,
+   "volume": 71625,
+   "title": "South Carolina Governor Election Winner",
+   "url": "https://polymarket.com/event/south-carolina-governor-winner-2026"
+  },
+  "SD-G": {
+   "p_d": 0.024,
+   "volume": 27520,
+   "title": "South Dakota Governor Election Winner",
+   "url": "https://polymarket.com/event/south-dakota-governor-winner-2026"
+  },
+  "TN-G": {
+   "p_d": 0.049,
+   "volume": 74672,
+   "title": "Tennessee Governor Election Winner",
+   "url": "https://polymarket.com/event/tennessee-governor-winner-2026"
+  },
+  "TX-G": {
+   "p_d": 0.374,
+   "volume": 1416299,
+   "title": "Texas Governor Election Winner",
+   "url": "https://polymarket.com/event/texas-governor-winner-2026"
+  },
+  "VT-G": {
+   "p_d": 0.228,
+   "volume": 298625,
+   "title": "Vermont Governor Election Winner",
+   "url": "https://polymarket.com/event/vermont-governor-winner-2026"
+  },
+  "WI-G": {
+   "p_d": 0.859,
+   "volume": 930607,
+   "title": "Wisconsin Governor Election Winner",
+   "url": "https://polymarket.com/event/wisconsin-governor-winner-2026"
+  },
+  "WY-G": {
+   "p_d": 0.014,
+   "volume": 12202,
+   "title": "Wyoming Governor Election Winner",
+   "url": "https://polymarket.com/event/wyoming-governor-winner-2026"
+  }
+ },
+ "counties": {
+  "FL-S2:12011": {
+   "race": "FL-S2",
+   "fips": "12011",
+   "name": "Broward County",
+   "state": "Florida",
+   "p_d": 0.973,
+   "volume": 8608,
+   "url": "https://polymarket.com/event/florida-senate-election-broward-county-winner"
+  },
+  "FL-S2:12086": {
+   "race": "FL-S2",
+   "fips": "12086",
+   "name": "Miami-Dade County",
+   "state": "Florida",
+   "p_d": 0.515,
+   "volume": 21174,
+   "url": "https://polymarket.com/event/florida-senate-election-miami-dade-county-winner"
+  },
+  "KS-S:20173": {
+   "race": "KS-S",
+   "fips": "20173",
+   "name": "Sedgwick County",
+   "state": "Kansas",
+   "p_d": 0.699,
+   "volume": 21785,
+   "url": "https://polymarket.com/event/kansas-senate-election-sedgwick-county-winner"
+  },
+  "KS-S:20103": {
+   "race": "KS-S",
+   "fips": "20103",
+   "name": "Leavenworth County",
+   "state": "Kansas",
+   "p_d": 0.167,
+   "volume": 5024,
+   "url": "https://polymarket.com/event/kansas-senate-election-leavenworth-county-winner"
+  },
+  "MI-S:26049": {
+   "race": "MI-S",
+   "fips": "26049",
+   "name": "Genesee County",
+   "state": "Michigan",
+   "p_d": 0.841,
+   "volume": 13908,
+   "url": "https://polymarket.com/event/michigan-senate-election-genesee-county-winner"
+  },
+  "MI-S:26099": {
+   "race": "MI-S",
+   "fips": "26099",
+   "name": "Macomb County",
+   "state": "Michigan",
+   "p_d": 0.164,
+   "volume": 14844,
+   "url": "https://polymarket.com/event/michigan-senate-election-macomb-county-winner"
+  },
+  "MI-S:26081": {
+   "race": "MI-S",
+   "fips": "26081",
+   "name": "Kent County",
+   "state": "Michigan",
+   "p_d": 0.92,
+   "volume": 5064,
+   "url": "https://polymarket.com/event/michigan-senate-election-kent-county-winner"
+  },
+  "MI-S:26125": {
+   "race": "MI-S",
+   "fips": "26125",
+   "name": "Oakland County",
+   "state": "Michigan",
+   "p_d": 0.951,
+   "volume": 11374,
+   "url": "https://polymarket.com/event/michigan-senate-election-oakland-county-winner"
+  },
+  "MI-S:26055": {
+   "race": "MI-S",
+   "fips": "26055",
+   "name": "Grand Traverse County",
+   "state": "Michigan",
+   "p_d": 0.728,
+   "volume": 8523,
+   "url": "https://polymarket.com/event/michigan-senate-election-grand-traverse-county-winner"
+  },
+  "OH-S2:39099": {
+   "race": "OH-S2",
+   "fips": "39099",
+   "name": "Mahoning County",
+   "state": "Ohio",
+   "p_d": 0.854,
+   "volume": 12754,
+   "url": "https://polymarket.com/event/ohio-senate-election-mahoning-county-winner"
+  },
+  "SC-S:45045": {
+   "race": "SC-S",
+   "fips": "45045",
+   "name": "Greenville County",
+   "state": "South Carolina",
+   "p_d": 0.105,
+   "volume": 19946,
+   "url": "https://polymarket.com/event/south-carolina-senate-election-greenville-county-winner"
+  },
+  "TX-S:48439": {
+   "race": "TX-S",
+   "fips": "48439",
+   "name": "Tarrant County",
+   "state": "Texas",
+   "p_d": 0.947,
+   "volume": 48435,
+   "url": "https://polymarket.com/event/texas-senate-election-tarrant-county-winner"
+  },
+  "TX-S:48121": {
+   "race": "TX-S",
+   "fips": "48121",
+   "name": "Denton County",
+   "state": "Texas",
+   "p_d": 0.515,
+   "volume": 19018,
+   "url": "https://polymarket.com/event/texas-senate-election-denton-county-winner"
+  },
+  "TX-S:48085": {
+   "race": "TX-S",
+   "fips": "48085",
+   "name": "Collin County",
+   "state": "Texas",
+   "p_d": 0.702,
+   "volume": 15386,
+   "url": "https://polymarket.com/event/texas-senate-election-collin-county-winner"
+  },
+  "TX-S:48157": {
+   "race": "TX-S",
+   "fips": "48157",
+   "name": "Fort Bend County",
+   "state": "Texas",
+   "p_d": 0.963,
+   "volume": 13655,
+   "url": "https://polymarket.com/event/texas-senate-election-fort-bend-county-winner"
+  },
+  "AZ-G:04013": {
+   "race": "AZ-G",
+   "fips": "04013",
+   "name": "Maricopa County",
+   "state": "Arizona",
+   "p_d": 0.93,
+   "volume": 16921,
+   "url": "https://polymarket.com/event/arizona-governor-election-maricopa-county-winner"
+  },
+  "CA-G:06019": {
+   "race": "CA-G",
+   "fips": "06019",
+   "name": "Fresno County",
+   "state": "California",
+   "p_d": 0.263,
+   "volume": 15455,
+   "url": "https://polymarket.com/event/california-governor-election-fresno-county-winner"
+  },
+  "NV-G:32003": {
+   "race": "NV-G",
+   "fips": "32003",
+   "name": "Clark County",
+   "state": "Nevada",
+   "p_d": 0.949,
+   "volume": 8077,
+   "url": "https://polymarket.com/event/nevada-governor-election-clark-county-winner"
+  },
+  "NV-G:32031": {
+   "race": "NV-G",
+   "fips": "32031",
+   "name": "Washoe County",
+   "state": "Nevada",
+   "p_d": 0.864,
+   "volume": 15182,
+   "url": "https://polymarket.com/event/nevada-governor-election-washoe-county-winner"
+  },
+  "NY-G:36059": {
+   "race": "NY-G",
+   "fips": "36059",
+   "name": "Nassau County",
+   "state": "New York",
+   "p_d": 0.268,
+   "volume": 33334,
+   "url": "https://polymarket.com/event/new-york-governor-election-nassau-county-winner"
+  }
+ }
+}

@@ -17,18 +17,26 @@
     <h1>Undertow</h1>
     <p>The 2026 Senate forecast, with the current under the polls mapped down to the block.</p>
   </div>
+  <div class="office" role="radiogroup" aria-label="Office">
+    <button role="radio" aria-checked="true" data-office="senate">Senate</button>
+    <button role="radio" aria-checked="false" data-office="governor">Governor</button>
+  </div>
   <div class="tally" id="tally" aria-live="polite"></div>
+  <div class="topbtns"><button class="tbtn" id="tools-btn">Tools</button><button class="tbtn ghost" id="about-btn">About</button></div>
 </header>
 
 <main class="layout">
   <section class="mapwrap">
     <div id="map" role="application" aria-label="Forecast map. Click a state to open its race; zoom in for county, cell and block level."></div>
+    <div id="map24" hidden aria-hidden="true"></div>
+    <div id="swipe" hidden><span class="lab l">2024 president</span><button class="grip" aria-label="Drag to compare the 2024 result with the 2026 forecast"></button><span class="lab r">2026 forecast</span></div>
     <div class="mapbar">
       <div class="seg" role="radiogroup" aria-label="Map layer">
         <button role="radio" aria-checked="true" data-mode="forecast">2026 forecast</button>
         <button role="radio" aria-checked="false" data-mode="undertow">Undertow</button>
         <button role="radio" aria-checked="false" data-mode="r24">2024 result</button>
       </div>
+      <button class="cmp" id="cmp-btn" aria-pressed="false">Compare 2024 ↔ 2026</button>
       <div class="zoomhint" id="zoomhint">States → zoom for counties → ~5 km Qloo cells → live block scan (~150 m)</div>
     </div>
     <div class="legend" id="legend"></div>
@@ -40,6 +48,11 @@
     <div id="panel-body"></div>
   </aside>
 </main>
+
+<dialog id="welcome" class="welcome">
+  <form method="dialog"><button class="x" aria-label="Close">×</button></form>
+  <div id="welcome-body"></div>
+</dialog>
 
 <dialog id="how">
   <form method="dialog"><button class="x" aria-label="Close">×</button></form>

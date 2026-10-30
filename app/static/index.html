@@ -29,7 +29,12 @@
   <section class="mapwrap">
     <div id="map" role="application" aria-label="Forecast map. Click a state to open its race; zoom in for county, cell and block level."></div>
     <div id="map24" hidden aria-hidden="true"></div>
-    <div id="swipe" hidden><span class="lab l">2026 forecast</span><button class="grip" aria-label="Drag to compare the two maps"></button><span class="lab r">2024 president</span></div>
+    <div id="swipe" hidden>
+      <i class="bar"></i>
+      <span class="lab l">2026 forecast</span>
+      <button class="grip" aria-label="Drag, or use the arrow keys, to compare the two maps"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 6 3 12l6 6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <span class="lab r">2024 president</span>
+    </div>
     <div class="mapbar">
       <div class="seg" role="radiogroup" aria-label="Map layer">
         <button role="radio" aria-checked="true" data-mode="forecast">2026 forecast</button>

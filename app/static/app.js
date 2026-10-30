@@ -377,9 +377,14 @@ function syncSwipe() {
   map24.jumpTo({ center: map.getCenter(), zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() });
 }
 function setSwipe(x) {
-  const w = $("#map").clientWidth; S.swipeX = Math.max(0, Math.min(w, x));
+  const w = $("#map").clientWidth, pad = 24;
+  S.swipeX = Math.max(pad, Math.min(w - pad, x));             // the handle never leaves the map
   $("#map24").style.clipPath = `inset(0 0 0 ${S.swipeX}px)`; // compare map shows to the right of the handle
   $("#swipe").style.left = S.swipeX + "px";
+  // labels ride with the handle; fade one out when there is no room for it on its side
+  const l = $("#swipe .lab.l"), r = $("#swipe .lab.r");
+  l.classList.toggle("off", S.swipeX < l.offsetWidth + 40);
+  r.classList.toggle("off", w - S.swipeX < r.offsetWidth + 40);
 }
 function toggleCompare(kind) {
   S.cmp = S.cmpKind === kind ? !S.cmp : true; S.cmpKind = kind;
@@ -405,13 +410,18 @@ function toggleCompare(kind) {
   map24.resize(); syncSwipe(); setSwipe($("#map").clientWidth / 2);
 }
 function initSwipeDrag() {
-  const h = $("#swipe .grip"); let drag = false;
-  const move = (e) => { if (!drag) return; const r = $("#map").getBoundingClientRect(); setSwipe(e.clientX - r.left); e.preventDefault(); };
-  h.addEventListener("pointerdown", (e) => { drag = true; h.setPointerCapture(e.pointerId); });
-  h.addEventListener("pointermove", move);
-  h.addEventListener("pointerup", () => (drag = false));
-  h.addEventListener("keydown", (e) => { if (e.key === "ArrowLeft" || e.key === "ArrowRight") { setSwipe(S.swipeX + (e.key === "ArrowLeft" ? -30 : 30)); e.preventDefault(); } });
-  window.addEventListener("resize", () => S.cmp && setSwipe(Math.min(S.swipeX, $("#map").clientWidth)));
+  const sw = $("#swipe"), grip = $("#swipe .grip"); let drag = false;
+  const at = (e) => setSwipe(e.clientX - $("#map").getBoundingClientRect().left);
+  sw.addEventListener("pointerdown", (e) => { drag = true; sw.classList.add("drag"); sw.setPointerCapture(e.pointerId); at(e); e.preventDefault(); });
+  sw.addEventListener("pointermove", (e) => { if (drag) { at(e); e.preventDefault(); } });
+  const end = () => { drag = false; sw.classList.remove("drag"); };
+  sw.addEventListener("pointerup", end); sw.addEventListener("pointercancel", end);
+  grip.addEventListener("keydown", (e) => {
+    const step = e.shiftKey ? 120 : 30;
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") { setSwipe(S.swipeX + (e.key === "ArrowLeft" ? -step : step)); e.preventDefault(); }
+    if (e.key === "Home" || e.key === "End") { setSwipe(e.key === "Home" ? 0 : 1e6); e.preventDefault(); }
+  });
+  window.addEventListener("resize", () => S.cmp && setSwipe(S.swipeX));
 }
 
 /* ---------------- place search (ZIP / city / state) ---------------- */

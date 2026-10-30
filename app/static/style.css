@@ -109,14 +109,20 @@ dialog td, dialog th { border-top: 1px solid var(--line); padding: 4px 6px 4px 0
 .lnk { background: none; border: 0; padding: 0; color: var(--ink); text-decoration: underline; font: inherit; text-align: left; }
 .polls a { color: var(--accent); }
 
-/* 2024 vs 2026 swipe */
+/* 2026 vs 2024 / polls vs Qloo swipe: always above every map overlay */
 #map24 { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
-#swipe { position: absolute; top: 0; bottom: 0; width: 0; z-index: 3; }
-#swipe::before { content: ""; position: absolute; top: 0; bottom: 0; left: -1.5px; width: 3px; background: var(--ink); }
-#swipe .grip { position: absolute; top: 50%; left: -20px; width: 40px; height: 40px; margin-top: -20px; border-radius: 50%; border: 3px solid #fff; background: var(--ink); cursor: ew-resize; touch-action: none; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
-#swipe .grip::after { content: "‹ ›"; color: #fff; font-weight: 700; font-size: 15px; letter-spacing: 2px; }
-#swipe .lab { position: absolute; top: 58px; white-space: nowrap; background: var(--ink); color: #fff; font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 6px; }
-#swipe .lab.l { right: 10px; } #swipe .lab.r { left: 10px; }
+#swipe { position: absolute; top: 0; bottom: 0; width: 28px; margin-left: -14px; z-index: 7; cursor: ew-resize; touch-action: none; }
+#swipe .bar { position: absolute; top: 0; bottom: 0; left: 12px; width: 4px; background: #fff; box-shadow: 0 0 0 1px rgba(29,31,36,.55), 0 0 8px rgba(0,0,0,.25); }
+#swipe .grip { position: absolute; top: 50%; left: 50%; width: 46px; height: 46px; transform: translate(-50%, -50%); border-radius: 50%;
+  border: 2px solid var(--ink); background: #fff; color: var(--ink); display: grid; place-items: center; padding: 0; cursor: ew-resize;
+  box-shadow: 0 3px 12px rgba(0,0,0,.3); transition: transform .12s; }
+#swipe .grip:hover, #swipe.drag .grip { transform: translate(-50%, -50%) scale(1.08); }
+#swipe .grip:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+#swipe .lab { position: absolute; top: 50%; transform: translateY(-50%); white-space: nowrap; background: var(--ink); color: #fff; font-size: 12px; font-weight: 600;
+  padding: 5px 9px; border-radius: 6px; pointer-events: none; transition: opacity .15s; box-shadow: 0 2px 6px rgba(0,0,0,.2); }
+#swipe .lab.l { right: calc(50% + 30px); }
+#swipe .lab.r { left: calc(50% + 30px); }
+#swipe .lab.off { opacity: 0; }
 .mapbar, .legend, .scan, .tip { z-index: 4; }
 
 /* welcome */
@@ -140,3 +146,25 @@ dialog.welcome { max-width: 640px; }
 .sugg li small { color: var(--muted); }
 .sugg li[aria-selected="true"], .sugg li:hover { background: var(--mid); }
 .pin { width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 3px solid #fff; box-shadow: 0 1px 6px rgba(0,0,0,.4); }
+
+/* phones */
+@media (max-width: 640px) {
+  .top { padding: 10px 14px; gap: 10px; }
+  .brand h1 { font-size: 26px; }
+  .brand p { font-size: 13px; }
+  .office { order: 2; }
+  .topbtns { order: 3; margin-left: auto; }
+  .tally { order: 4; flex: 1 1 100%; }
+  .tally .nums span:nth-child(2) { display: none; }
+  .mapbar { top: 8px; left: 8px; right: 56px; gap: 6px; flex-wrap: nowrap; overflow-x: auto; pointer-events: auto; scrollbar-width: none; padding-bottom: 2px; }
+  .mapbar::-webkit-scrollbar { display: none; }
+  .mapbar > * { flex: none; }
+  .seg button { padding: 5px 9px; font-size: 12px; }
+  .cmp { padding: 6px 9px; font-size: 12px; }
+  .search input { width: 150px; }
+  .legend { max-width: 220px; padding: 6px 8px; bottom: 30px; }
+  .legend .note { display: none; }
+  .scan { left: 8px; right: 8px; bottom: 30px; max-width: none; }
+  #swipe .lab { font-size: 11px; padding: 4px 7px; }
+  #swipe .lab.l { right: calc(50% + 27px); } #swipe .lab.r { left: calc(50% + 27px); }
+}

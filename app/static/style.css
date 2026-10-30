@@ -127,3 +127,6 @@ dialog.welcome { max-width: 640px; }
 .wfoot { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 16px; border-top: 1px solid var(--line); padding-top: 12px; font-size: 13px; color: var(--muted); }
 .wfoot .go { border: 0; background: var(--accent); color: #fff; border-radius: 8px; padding: 9px 18px; font-weight: 600; font-size: 14px; }
 @media (max-width: 900px) { .office, .topbtns { order: 3; } }
+
+/* keep the main map controls above the compare map */
+#map .maplibregl-ctrl-top-right, #map .maplibregl-ctrl-bottom-right { z-index: 5; }

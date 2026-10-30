@@ -29,14 +29,15 @@
   <section class="mapwrap">
     <div id="map" role="application" aria-label="Forecast map. Click a state to open its race; zoom in for county, cell and block level."></div>
     <div id="map24" hidden aria-hidden="true"></div>
-    <div id="swipe" hidden><span class="lab l">2024 president</span><button class="grip" aria-label="Drag to compare the 2024 result with the 2026 forecast"></button><span class="lab r">2026 forecast</span></div>
+    <div id="swipe" hidden><span class="lab l">2026 forecast</span><button class="grip" aria-label="Drag to compare the two maps"></button><span class="lab r">2024 president</span></div>
     <div class="mapbar">
       <div class="seg" role="radiogroup" aria-label="Map layer">
         <button role="radio" aria-checked="true" data-mode="forecast">2026 forecast</button>
         <button role="radio" aria-checked="false" data-mode="undertow">Undertow</button>
         <button role="radio" aria-checked="false" data-mode="r24">2024 result</button>
       </div>
-      <button class="cmp" id="cmp-btn" aria-pressed="false">Compare 2024 ↔ 2026</button>
+      <button class="cmp" data-cmp="r24" aria-pressed="false">2026 ↔ 2024</button>
+      <button class="cmp" data-cmp="qloo" aria-pressed="false">Polls ↔ Qloo</button>
       <div class="zoomhint" id="zoomhint">States → zoom for counties → ~5 km Qloo cells → live block scan (~150 m)</div>
     </div>
     <div class="legend" id="legend"></div>

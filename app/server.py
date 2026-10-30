@@ -103,6 +103,9 @@ def forecast(office: str = "senate"):
     if office not in ("senate", "governor"): raise HTTPException(400)
     return _json(f"forecast/{office}.json")
 
+@app.get("/api/qloo")
+def qloo_only(): return _json("model/qloo_national.json")
+
 @app.get("/api/markets")
 def markets(): return _json("forecast/markets.json")
 

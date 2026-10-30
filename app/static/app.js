@@ -35,6 +35,7 @@ async function load() {
   const [senate, governor, model, counties, states, topo] = await Promise.all(
     ["/api/forecast", "/api/forecast?office=governor", "/api/model", "/api/counties", "/api/states", "/geo/counties-10m.json"].map((u) => fetch(u).then((r) => r.json())));
   Object.assign(S, { fcs: { senate, governor }, fc: senate, model, counties, states });
+  S.qn = await fetch("/api/qloo").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.mkt = await fetch("/api/markets").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.natbt = await fetch("/api/backtest").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   indexRaces();
@@ -52,6 +53,10 @@ function setOffice(o) {
   tally(); home();
 }
 const final = (r) => r.verdict || r.script;
+// Qloo-only: expected 2024 margin from tastes alone (nationwide model) + the national shift the polls show for this office
+const natSwing = () => S.fc.national.median_poll_swing_since_2024;
+const qlooState = (name) => (S.qn?.states?.[name] != null ? S.qn.states[name] + natSwing() : null);
+const qlooCounty = (fips) => (S.qn?.counties?.[fips] != null ? S.qn.counties[fips] + natSwing() : null);
 const stateFinal = (fips) => (S.raceBy[fips] ? final(S.raceBy[fips][0]).margin_d : null);
 
 function countyEst(fips) {
@@ -275,7 +280,8 @@ function openRace(id, fly) {
       <span class="k">Independent polls only</span><b>${fmtM(r.polls.independent_avg)}</b>
       ${Object.entries(r.polls.house || {}).map(([t, h]) => `<span class="k">${t === "D" ? "Democratic" : "Republican"}-sponsored polls (${h.n}) vs independent</span><b>${fmtS(h.diff)} pts</b>`).join("")}
       <span class="k">2024 presidential in ${esc(r.state_po)}</span><b>${fmtM(r.pres24_margin_d)}</b>
-      <span class="k">Shift since 2024 (typical race ${fmtS(S.fc.national.median_poll_swing_since_2024)})</span><b>${r.skew.poll_swing == null ? "—" : fmtS(r.skew.poll_swing)} pts</b></div>
+      <span class="k">Shift since 2024 (typical race ${fmtS(S.fc.national.median_poll_swing_since_2024)})</span><b>${r.skew.poll_swing == null ? "—" : fmtS(r.skew.poll_swing)} pts</b>
+      <span class="k">Qloo-only forecast (tastes + national shift)</span><b>${fmtM(qlooState(r.state))}</b></div>
       <p class="note">${r.skew.flag ? `<span class="flag">${esc(r.skew.short)}</span> ` : ""}${esc(r.skew.text)}</p></div>
     <div class="card"><h3>Inside ${esc(r.state)}: places out of step with their 2024 vote</h3>
       <table class="counties"><tr><th></th><th>Voted 2024</th><th>Qloo expects</th></tr>${ood(q.out_of_step_d.slice(0, 4), "D")}${ood(q.out_of_step_r.slice(0, 4), "R")}</table>
@@ -316,6 +322,11 @@ function tools() {
     <div class="card"><h3>Our call vs betting markets</h3>
       ${vm.length ? `<table class="polls"><tr><th>Race</th><th>Us</th><th>Market</th><th></th></tr>${vm.map((x) => `<tr><td><button class="lnk" data-race="${x.r.id}">${name(x.r)}</button>${x.flip ? ' <span class="flag">different winner</span>' : ""}</td><td>${last(x.r.main.d.name)} ${pct(x.us)}</td><td>${pct(x.mk)}</td><td><a href="${esc(x.url)}" target="_blank" rel="noopener">odds</a></td></tr>`).join("")}</table>` : `<p class="note">No market data loaded.</p>`}
       <p class="note">Chance the non-Republican candidate wins. Polymarket prices${M ? ` fetched ${esc(new Date(M.fetched_at).toLocaleString([], { dateStyle: "medium", timeStyle: "short" }))}` : ""}. Shown for comparison only; markets never feed the forecast.</p></div>
+    <div class="card"><h3>Polls vs Qloo-only</h3>
+      <table class="polls"><tr><th>Race</th><th>Our call</th><th>Qloo-only</th><th>Gap</th></tr>${fc.races.map((r) => ({ r, f: final(r).margin_d, q: qlooState(r.state) })).filter((x) => x.q != null)
+        .map((x) => ({ ...x, flip: (x.f > 0) !== (x.q > 0) })).sort((a, b) => b.flip - a.flip || Math.abs(b.q - b.f) - Math.abs(a.q - a.f)).slice(0, 12)
+        .map((x) => `<tr><td><button class="lnk" data-race="${x.r.id}">${name(x.r)}</button>${x.flip ? ' <span class="flag">different winner</span>' : ""}</td><td>${fmtM(x.f)}</td><td>${fmtM(x.q)}</td><td>${fmtS(x.q - x.f)}</td></tr>`).join("")}</table>
+      <p class="note">Qloo-only = what each state's tastes alone predict (the 2024-style vote from the nationwide taste model, which missed 2024 states by ${S.qn?.state_mae_2024 ?? "—"} pts on average and picked the right winner in ${S.qn ? pct(S.qn.state_winner_right_2024) : "—"} of them), plus the national shift the polls show (${fmtS(natSwing())}). A gap means the polls see something the tastes don't, or the reverse. Compare the two maps with the <b>Polls ↔ Qloo</b> slider.</p></div>
     <div class="card"><h3>Final call vs the poll average</h3>
       <table class="polls"><tr><th>Race</th><th>Polls</th><th>Final</th><th>Why</th></tr>${vp.slice(0, 12).map((x) => `<tr><td><button class="lnk" data-race="${x.r.id}">${name(x.r)}</button></td><td>${x.avg == null ? "none" : fmtM(x.avg)}</td><td>${fmtM(x.f.margin_d)}</td><td class="note">${x.avg == null ? "no polls: 2024 + typical shift" : esc(x.f.headline || "")}</td></tr>`).join("")}</table>
       <p class="note">Where DeepSeek's final judgement moved away from the script's poll average, or there were no polls.</p></div>
@@ -332,25 +343,35 @@ function tools() {
 
 /* ---------------- 2024 vs 2026 swipe ---------------- */
 let map24;
+const CMP = { r24: { l: "2026 forecast", r: "2024 president" }, qloo: { l: "Polls forecast", r: "Qloo-only forecast" } };
 function data24() {
-  const st = { type: "FeatureCollection", features: S.geo.st.features.map((f) => ({ ...f, properties: { ...f.properties, v: S.states[f.properties.name]?.m24 ?? null } })) };
-  const co = { type: "FeatureCollection", features: S.geo.co.features.map((f) => ({ ...f, properties: { ...f.properties, v: S.counties[f.properties.fips]?.m24 ?? null } })) };
+  const q = S.cmpKind === "qloo";
+  const sv = (f) => (q ? (S.raceBy[f.properties.fips] ? qlooState(f.properties.name) : null) : S.states[f.properties.name]?.m24 ?? null);
+  const cv = (f) => (q ? qlooCounty(f.properties.fips) : S.counties[f.properties.fips]?.m24 ?? null);
+  const st = { type: "FeatureCollection", features: S.geo.st.features.map((f) => ({ ...f, properties: { ...f.properties, v: sv(f) } })) };
+  const co = { type: "FeatureCollection", features: S.geo.co.features.map((f) => ({ ...f, properties: { ...f.properties, v: cv(f) } })) };
   return { st, co };
 }
-function paint24() { /* 2024 side never changes with the office; kept for symmetry */ }
+function paint24() {
+  if (!map24?.getSource("states")) return;
+  const d = data24(); map24.getSource("states").setData(d.st); map24.getSource("counties").setData(d.co);
+  $("#swipe .lab.l").textContent = CMP[S.cmpKind].l; $("#swipe .lab.r").textContent = CMP[S.cmpKind].r;
+}
 function syncSwipe() {
   if (!map24) return;
   map24.jumpTo({ center: map.getCenter(), zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() });
 }
 function setSwipe(x) {
   const w = $("#map").clientWidth; S.swipeX = Math.max(0, Math.min(w, x));
-  $("#map24").style.clipPath = `inset(0 ${w - S.swipeX}px 0 0)`;
+  $("#map24").style.clipPath = `inset(0 0 0 ${S.swipeX}px)`; // compare map shows to the right of the handle
   $("#swipe").style.left = S.swipeX + "px";
 }
-function toggleCompare() {
-  S.cmp = !S.cmp; $("#cmp-btn").setAttribute("aria-pressed", S.cmp);
+function toggleCompare(kind) {
+  S.cmp = S.cmpKind === kind ? !S.cmp : true; S.cmpKind = kind;
+  document.querySelectorAll(".cmp").forEach((b) => b.setAttribute("aria-pressed", S.cmp && b.dataset.cmp === kind));
   $("#map24").hidden = !S.cmp; $("#swipe").hidden = !S.cmp;
   if (!S.cmp) return;
+  paint24();
   if (S.mode !== "forecast") document.querySelector('.seg [data-mode="forecast"]').click();
   if (!map24) {
     map24 = new maplibregl.Map({ container: "map24", style: "https://tiles.openfreemap.org/styles/positron", interactive: false, attributionControl: false,
@@ -362,7 +383,7 @@ function toggleCompare() {
       map24.addLayer({ id: "s", type: "fill", source: "states", paint: { "fill-color": expr(RAMP), "fill-opacity": ["interpolate", ["linear"], ["zoom"], 4.2, 0.92, 5.2, 0] } }, before);
       map24.addLayer({ id: "cl", type: "line", source: "counties", minzoom: 5, paint: { "line-color": "#fff", "line-width": 0.4 } }, before);
       map24.addLayer({ id: "sl", type: "line", source: "states", paint: { "line-color": "#fff", "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.8, 8, 2.5] } });
-      syncSwipe();
+      syncSwipe(); paint24();
     });
     map.on("move", syncSwipe);
   }
@@ -396,7 +417,7 @@ function welcome(force) {
     <h3>What we found, honestly</h3>
     <p>On 2020→2024, out-of-step counties tended to move the way Qloo flagged <i>inside</i> a state (${m.backtest.states_positive} of ${Object.keys(m.backtest.states).length} states). Statewide, the signal predicted nothing${N ? ` (r = ${N.state_r_controlled})` : ""}. So <b>polls decide who wins</b>. Scripts check the polls for skew and DeepSeek makes each final call. Qloo shows <i>where</i> the vote is moving.</p>
     <h3>Try it</h3>
-    <ul class="try"><li>Click a state, or switch <b>Senate / Governor</b></li><li><b>Compare 2024 ↔ 2026</b>: drag the line across the map</li><li><b>Undertow</b> layer: places out of step with their vote</li><li><b>Tools</b>: where our calls, the polls and the betting markets disagree</li><li>Zoom into a city for a live block scan</li></ul>
+    <ul class="try"><li>Click a state, or switch <b>Senate / Governor</b></li><li><b>2026 ↔ 2024</b> and <b>Polls ↔ Qloo</b>: drag the line across the map to compare</li><li><b>Undertow</b> layer: places out of step with their vote</li><li><b>Tools</b>: where our calls, the polls and the betting markets disagree</li><li>Zoom into a city for a live block scan</li></ul>
     <div class="wfoot"><label><input type="checkbox" id="welcome-hide"${hide ? " checked" : ""}> Don't show this again</label><button class="go" id="welcome-go">Explore the map</button></div>`;
   $("#welcome-go").onclick = () => { try { localStorage.setItem("undertow-welcome", $("#welcome-hide").checked ? "hide" : "show"); } catch {} $("#welcome").close(); };
   $("#welcome").showModal();
@@ -439,7 +460,7 @@ document.querySelectorAll(".seg button").forEach((b) => (b.onclick = () => {
 document.querySelectorAll(".office button").forEach((b) => (b.onclick = () => setOffice(b.dataset.office)));
 $("#tools-btn").onclick = () => tools();
 $("#about-btn").onclick = () => welcome(true);
-$("#cmp-btn").onclick = () => map && toggleCompare();
+document.querySelectorAll(".cmp").forEach((b) => (b.onclick = () => map && toggleCompare(b.dataset.cmp)));
 initSwipeDrag();
 
 load().then(() => {

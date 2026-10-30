@@ -9,10 +9,13 @@ Polls tell you who is ahead. Undertow adds the *where*: Qloo knows what people i
 
 ## What it does
 
-- **Forecasts all 35 Senate races of Nov 3, 2026.** Recent general-election polls make each call, weighted by recency and sample size, with one poll per pollster and partisan-sponsored polls counted at 60%. Races with no polls start from the 2024 result plus the typical shift seen in polled races.
+- **Forecasts all 35 Senate races and 36 governor races of Nov 3, 2026.** Recent general-election polls make each call, weighted by recency and sample size, with one poll per pollster and partisan-sponsored polls counted at 60%. Races with no polls start from the 2024 result plus the typical shift seen in polled races.
 - **Looks for skew in the polls.** A script checks two things: whether Democratic- or Republican-sponsored polls differ from independent ones by 4+ points, and whether a race's shift since 2024 is far (9+ points) from the typical race.
 - **Uses an LLM for the final judgement only.** DeepSeek (`deepseek-v4.1-flash`) reads the script's numbers and published race ratings, then makes the call with a short reason. It has no tools. Its answer is validated (party, probability range, at most 8 points from the script's call), and the script's call stands in if it fails.
 - **Maps it all on four levels.** States, then counties, then Qloo's ~5 km heat cells, then a **live block-level scan (~150 m)** that calls Qloo for whatever neighbourhood you zoom into.
+- **Two comparison sliders.** Drag a line across the map to compare the **2026 forecast with the 2024 presidential result**, or the **polls forecast with a Qloo-only forecast**. The Qloo-only map is what each place's tastes alone predict, from the nationwide taste model, plus the national shift the polls show. On 2024 that model missed states by 6.6 pts on average and picked the right winner in 94% of them.
+- **A Tools panel, "Where we disagree."** It lists races where our call differs from the poll average, the Qloo-only forecast or Polymarket's odds (shown for comparison only and never used in the forecast). It also checks our county estimates against Polymarket's county markets and lists the counties most out of step with their 2024 vote.
+- **Covers governor races too.** All 36, through the same pipeline.
 - **Shows where the "undertow" is.** These are counties whose tastes say they should vote differently from how they did in 2024, measured relative to their state.
 
 | Ohio: counties and ~5 km Qloo cells | Live block scan, downtown Columbus (~150 m) |
@@ -56,7 +59,7 @@ The repo includes the processed model outputs (`data/model/`) and the forecast (
 - **2020/2024 county presidential results:** [tonmcg/US_County_Level_Election_Results_08-24](https://github.com/tonmcg/US_County_Level_Election_Results_08-24).
 - **County shapes:** [us-atlas](https://github.com/topojson/us-atlas).
 - **Basemap:** OpenFreeMap / OpenStreetMap.
-- No betting or prediction-market data is used.
+- **Polymarket** (public gamma API) odds appear in the Tools panel for comparison only. They never feed the forecast.
 
 ## Limits
 

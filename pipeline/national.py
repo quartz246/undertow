@@ -82,3 +82,20 @@ if __name__ == "__main__":
                "state_hit_extremes": round(float(np.mean(np.sign(rg[ext]) == np.sign(rs[ext]))), 3), "state_n_extremes": int(ext.sum()),
                "within_state_median_r": round(float(rr.r.median()), 3), "within_state_positive": int((rr.r > 0).sum()), "within_state_n": int(len(rr))},
               open("data/model/national_backtest.json", "w"), indent=1)
+    # Qloo-only map: out-of-state expected 2024 margin per county from nationally comparable tastes, and per state
+    pred24 = pd.Series(np.nan, index=M.index); w24 = M.total_votes.values
+    for st in M.state.unique():
+        tr, te = M.state != st, M.state == st
+        cols = ["logv"] + sel(M[tr], "m24")
+        pred24[te] = np.c_[np.ones(te.sum()), M.loc[te, cols].values] @ ridge(M.loc[tr, cols].values, M.loc[tr, "m24"].values, w24[tr])
+    M["pred24"] = pred24
+    S24 = M.groupby("state").apply(lambda x: pd.Series({"pred": np.average(x.pred24, weights=x.total_votes),
+        "m24": (x.votes_dem.sum() - x.votes_gop.sum()) / x.total_votes.sum() * 100}), include_groups=False)
+    err = (S24.pred - S24.m24).abs()
+    json.dump({"note": "Expected 2024 margin from Qloo tastes alone (leave-one-state-out, nationwide heatmaps).",
+               "state_mae_2024": round(float(err.mean()), 1), "state_winner_right_2024": round(float(np.mean(np.sign(S24.pred) == np.sign(S24.m24))), 3),
+               "county_r_2024": round(float(np.corrcoef(M.pred24, M.m24)[0, 1]), 3),
+               "states": {s: round(float(v), 1) for s, v in S24.pred.items()},
+               "counties": {f: round(float(v), 1) for f, v in zip(M.fips, M.pred24)}},
+              open("data/model/qloo_national.json", "w"))
+    print("Qloo-only 2024 check: state MAE %.1f, winner right %.0f%%, county r %.2f" % (err.mean(), 100 * np.mean(np.sign(S24.pred) == np.sign(S24.m24)), np.corrcoef(M.pred24, M.m24)[0, 1]))

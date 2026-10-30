@@ -107,6 +107,11 @@ function initMap() {
     map.addLayer({ id: "cells-fill", type: "fill", source: "cells", minzoom: 6.3, maxzoom: 11.2, paint: { "fill-color": expr(RAMP), "fill-opacity": ["interpolate", ["linear"], ["zoom"], 6.3, 0, 7.3, 0.8, 10.6, 0.8, 11.2, 0] } }, before);
     map.addLayer({ id: "live-fill", type: "fill", source: "live", minzoom: 9.8, paint: { "fill-color": expr(RAMP), "fill-opacity": ["interpolate", ["linear"], ["zoom"], 9.8, 0, 10.6, 0.75, 15, 0.6] } }, before);
     map.addLayer({ id: "states-fill", type: "fill", source: "states", paint: { "fill-color": expr(RAMP), "fill-opacity": ["interpolate", ["linear"], ["zoom"], 4.2, ["case", ["==", ["get", "norace"], 1], 0.35, 0.92], 5.2, 0] } }, before);
+    // "previous picture" copies, used by the story to cross-fade from the old colours to the new ones
+    const empty = { type: "FeatureCollection", features: [] };
+    map.addSource("states-b", { type: "geojson", data: empty }); map.addSource("counties-b", { type: "geojson", data: empty });
+    map.addLayer({ id: "counties-fill-b", type: "fill", source: "counties-b", paint: { "fill-color": expr(RAMP), "fill-opacity": 0 } }, "cells-fill");
+    map.addLayer({ id: "states-fill-b", type: "fill", source: "states-b", paint: { "fill-color": expr(RAMP), "fill-opacity": 0 } }, before);
     map.addLayer({ id: "counties-line", type: "line", source: "counties", minzoom: 5, paint: { "line-color": "#ffffff", "line-width": ["interpolate", ["linear"], ["zoom"], 5, 0.2, 9, 1] } }, before);
     map.addLayer({ id: "states-line", type: "line", source: "states", paint: { "line-color": "#ffffff", "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.8, 8, 2.5] } });
     map.addLayer({ id: "race-line", type: "line", source: "states", filter: ["in", ["get", "fips"], ["literal", Object.keys(S.raceBy)]], paint: { "line-color": "#1d1f24", "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.9, 8, 2] } });
@@ -121,7 +126,8 @@ function initMap() {
 }
 
 function setValues() {
-  for (const f of S.geo.st.features) { f.properties.v = stateValue(f); f.properties.norace = S.mode === "forecast" && !S.raceBy[f.properties.fips] ? 1 : 0; }
+  const storyOn = typeof ST !== "undefined" && ST.on;
+  for (const f of S.geo.st.features) { f.properties.norace = S.mode === "forecast" && !S.raceBy[f.properties.fips] ? 1 : 0; f.properties.v = storyOn && f.properties.norace ? null : stateValue(f); }
   for (const f of S.geo.co.features) f.properties.v = countyValue(f);
   for (const f of S.cellFeats) f.properties.v = cellValue(f.properties);
 }
@@ -409,7 +415,12 @@ function toggleCompare(kind, startFrac) {
   S.cmp = S.cmpKind === kind ? !S.cmp : true; S.cmpKind = kind;
   document.querySelectorAll(".cmp").forEach((b) => b.setAttribute("aria-pressed", S.cmp && b.dataset.cmp === kind));
   const m24 = $("#map24"), sw = $("#swipe");
-  if (!S.cmp) { m24.hidden = true; sw.hidden = true; if (S.mode === "q24") document.querySelector('.seg [data-mode="forecast"]').click(); return; }
+  clearTimeout(S.cmpHideT);
+  if (!S.cmp) {
+    m24.style.opacity = 0; sw.style.opacity = 0;
+    S.cmpHideT = setTimeout(() => { if (!S.cmp) { m24.hidden = true; sw.hidden = true; } }, 520);
+    if (S.mode === "q24") document.querySelector('.seg [data-mode="forecast"]').click(); return;
+  }
   if (kind !== "q24" && S.mode === "q24") document.querySelector('.seg [data-mode="forecast"]').click();
   initMap24(); paint24();
   if (kind === "q24") { S.mode = "q24"; document.querySelectorAll(".mapbar .seg button").forEach((x) => x.setAttribute("aria-checked", "false")); recolor(); }

@@ -21,14 +21,33 @@ function fitTo(geom, padding, maxZoom) {
 function storyPad() { // keep scenes clear of the text column on wide screens
   const w = window.innerWidth; return w > 900 ? { top: 70, bottom: 70, left: Math.min(520, w * 0.42), right: 70 } : { top: 60, bottom: Math.round(window.innerHeight * 0.45), left: 30, right: 30 };
 }
-function crossfade(fn) { // fade the data layers out, change them, fade back in
-  const L = ["states-fill", "counties-fill", "cells-fill", "live-fill"];
-  if (reduceMotion()) return fn();
-  const saved = L.map((l) => map.getPaintProperty(l, "fill-opacity"));
-  for (const l of L) map.setPaintProperty(l, "fill-opacity", 0);
-  setTimeout(() => { fn(); recolor(); L.forEach((l, i) => map.setPaintProperty(l, "fill-opacity", saved[i])); }, 420);
+/* Cross-fades. Data-driven colours can't be animated by MapLibre, so the old picture is copied into the "-b"
+   layers, the new picture is drawn underneath at zero opacity, and constant opacities are tweened between them. */
+const FADE = 900;
+const targets = (z) => (z < 4.8 ? { "states-fill": 0.9, "counties-fill": 0 } : { "states-fill": 0, "counties-fill": z > 10 ? 0.22 : 0.82 });
+function setOp(layer, v, ms) { map.setPaintProperty(layer, "fill-opacity-transition", { duration: ms, delay: 0 }); map.setPaintProperty(layer, "fill-opacity", v); }
+function applyTargets(z, ms = 1100) { const T = targets(z); ST.op = T; for (const l in T) setOp(l, T[l], reduceMotion() ? 0 : ms); }
+const snap = (fc) => ({ type: "FeatureCollection", features: fc.features.map((f) => ({ type: "Feature", geometry: f.geometry, properties: { v: f.properties.v } })) });
+function crossfade(fn, z) {
+  const T = targets(z);
+  if (reduceMotion()) { fn(); applyTargets(z, 0); return; }
+  const old = ST.op || T;
+  map.getSource("states-b").setData(snap(S.geo.st)); map.getSource("counties-b").setData(snap(S.geo.co));
+  map.setPaintProperty("states-fill-b", "fill-color", map.getPaintProperty("states-fill", "fill-color"));
+  map.setPaintProperty("counties-fill-b", "fill-color", map.getPaintProperty("counties-fill", "fill-color"));
+  setOp("states-fill-b", old["states-fill"], 0); setOp("counties-fill-b", old["counties-fill"], 0);
+  setOp("states-fill", 0, 0); setOp("counties-fill", 0, 0);
+  fn(); // the main layers now hold the new picture, invisible
+  ST.op = T;
+  setTimeout(() => { // give the new data a moment to reach the map, then fade old out and new in together
+    setOp("states-fill", T["states-fill"], FADE); setOp("counties-fill", T["counties-fill"], FADE);
+    setOp("states-fill-b", 0, FADE); setOp("counties-fill-b", 0, FADE);
+  }, 120);
 }
-function clearCallouts() { ST.callouts.forEach((m) => m.remove()); ST.callouts = []; }
+function clearCallouts() { // fade out, then remove
+  const gone = ST.callouts; ST.callouts = [];
+  gone.forEach((m) => m.getElement().classList.add("out")); setTimeout(() => gone.forEach((m) => m.remove()), 320);
+}
 function callout(lngLat, html, side = "right", delay = 0) {
   const el = document.createElement("div"); el.className = `callout ${side}`; el.style.animationDelay = `${delay}ms`;
   el.innerHTML = `<i class="cdot"></i><i class="cline"></i><div class="clab">${html}</div>`;
@@ -47,12 +66,17 @@ function sweep(from, to, ms = 2600, delay = 0) { // auto-move the comparison han
 }
 // where an automatic sweep starts and stops: clear of the text card on wide screens
 const sweepRange = () => (window.innerWidth > 900 ? [0.93, 0.56] : [0.9, 0.3]);
-function scene(mode, cmp) { // put the map in a given layer + comparison state, with a cross-fade
+function scene(mode, cmp, z) { // move the map to a layer + comparison state; cross-fade whenever the picture changes
   const want = cmp || null;
-  if (S.cmp && S.cmpKind !== want) toggleCompare(S.cmpKind);
-  if (want === "q24") { if (!S.cmp) crossfade(() => toggleCompare("q24", sweepRange()[0])); return; }
-  if (mode !== S.mode) crossfade(() => { setMode(mode); if (want && !S.cmp) toggleCompare(want, sweepRange()[0]); });
-  else if (want && !S.cmp) toggleCompare(want, sweepRange()[0]);
+  const modeChange = want === "q24" ? S.mode !== "q24" : mode !== S.mode;
+  const cmpChange = want ? !(S.cmp && S.cmpKind === want) : !!S.cmp;
+  if (!modeChange && !cmpChange) { applyTargets(z); return; }
+  crossfade(() => {
+    if (S.cmp && S.cmpKind !== want) toggleCompare(S.cmpKind); // fades the comparison out
+    if (want === "q24") { if (!S.cmp) toggleCompare("q24", sweepRange()[0]); return; }
+    if (mode !== S.mode) setMode(mode);
+    if (want && !S.cmp) toggleCompare(want, sweepRange()[0]);
+  }, z);
 }
 
 function storySteps() {
@@ -69,29 +93,29 @@ function storySteps() {
   return [
     { k: "The forecast", h: `${dSeats >= 51 ? "Democrats are on course to take the Senate" : "Republicans are on course to hold the Senate"}`,
       p: `Our model reads every public general-election poll for the ${fc.races.length} Senate races on Nov. 3 and projects <b>${dSeats} Democratic seats to ${rSeats} Republican</b>${n.I ? ` and ${n.I} independent` : ""}. The closest contests: ${close.map((r) => `${r.state} (${fmtM(final(r).margin_d)})`).join(", ")}.`,
-      go: () => { scene("forecast"); home(); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, padding: storyPad() }); } },
+      go: () => { scene("forecast", null, 3.4); home(); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, padding: storyPad() }); } },
     { k: "Taste as a map of politics", h: "What people watch, read and buy nearly redraws the 2024 map",
       p: `Using nothing but Qloo's data on the tastes of each place, from <i>Duck Dynasty</i> and Dan Bongino to Beyoncé and <i>Succession</i>, a model that never saw a state's results picked the right 2024 winner in <b>${right} of ${q24.length} states</b>. Left of the line: the map tastes predict. Right: the real result.`,
-      go: () => { scene("q24", "q24"); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, padding: storyPad() }); const [a, b] = sweepRange(); sweep(a, b, 3400, 2200); } },
+      go: () => { scene("q24", "q24", 3.4); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, padding: storyPad() }); const [a, b] = sweepRange(); sweep(a, b, 3400, 2200); } },
     { k: "The undertow", h: "Where the culture and the vote part ways",
       p: `Some states' tastes look bluer than they voted in 2024, led by ${us.slice(0, 2).map(([s_, v]) => `${s_} (${gtag(v)})`).join(" and ")}. Others look redder, led by ${us.slice(-2).reverse().map(([s_, v]) => `${s_} (${gtag(v)})`).join(" and ")}. We call that gap the undertow. It is a clue, not a verdict: tested on 2020 to 2024, the statewide gap did not predict which way states moved.`,
-      go: () => { scene("undertow"); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, padding: storyPad() });
+      go: () => { scene("undertow", null, 3.4); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, padding: storyPad() });
         setTimeout(() => { [...us.slice(0, 1), ...us.slice(-1)].forEach(([s_, v], i) => { const f = stateFeat(s_); if (f) callout(centroid(f), `<b>${esc(s_)}</b><span>Tastes ${v > 0 ? "bluer" : "redder"} than the vote by ${Math.abs(v).toFixed(0)} pts</span>`, i ? "left" : "right", i * 350); }); }, 1800); } },
     md ? { k: "Miami-Dade", h: "The vote moved right. The tastes did not.",
       p: `Miami-Dade County voted ${ptag(md.m24)} for president in 2024, a historic swing. Its tastes still look like a place that votes ${ptag(md.pred)}. Heavily Hispanic counties in Texas's Rio Grande Valley show the same gap. Either the 2024 shift is fragile, or culture lags behind the ballot box.`,
-      go: () => { scene("undertow"); const cf = S.geo.co.features.find((x) => x.properties.fips === "12086"); if (cf) fitTo(cf, storyPad(), 8.6);
+      go: () => { scene("undertow", null, 8.6); const cf = S.geo.co.features.find((x) => x.properties.fips === "12086"); if (cf) fitTo(cf, storyPad(), 8.6);
         setTimeout(() => callout([-80.21, 25.77], `<b>Miami-Dade</b><span>Voted ${fmtM(md.m24)} · Tastes ${fmtM(md.pred)}</span>`, "right"), 2400); } } : null,
     dis ? { k: dis.r.state, h: `In ${dis.r.state}, the polls and the culture disagree`,
       p: `The polls put the race at ${ptag(dis.f)}${dis.r.main ? `, ${esc(dis.r.main.d.name)} against ${esc(dis.r.main.r.name)}` : ""}. The state's tastes, adjusted for the national mood, point to ${ptag(dis.q)}${(dis.q > 0) !== (dis.f > 0) ? ", a different winner" : ""}. We keep the polls' call. Left of the line is the polling forecast, right is the forecast from tastes alone.`,
-      go: () => { scene("forecast", "qloo"); openRace(dis.r.id, false); const f = stateFeat(dis.r.state); if (f) fitTo(f, storyPad(), 6.6); { const [a, b] = sweepRange(); sweep(a, b, 3000, 2800); }
+      go: () => { scene("forecast", "qloo", 6.6); openRace(dis.r.id, false); const f = stateFeat(dis.r.state); if (f) fitTo(f, storyPad(), 6.6); { const [a, b] = sweepRange(); sweep(a, b, 3000, 2800); }
         setTimeout(() => { if (f) callout(centroid(f), `<b>${esc(dis.r.state)}</b><span>Polls ${fmtM(dis.f)} · Tastes ${fmtM(dis.q)}</span>`, "right"); }, 2600); } } : null,
     { k: "Down to the block", h: "A forecast you can walk through",
       p: "Zoom into a neighborhood, or search a ZIP code, and Undertow queries Qloo live for cells about 150 meters across. Each block is shaded by whether its tastes run bluer or redder than the rest of its county. This is downtown Detroit, in Michigan's Senate race.",
-      go: () => { scene("forecast"); fly({ center: [-83.0458, 42.3314], zoom: 13, pitch: reduceMotion() ? 0 : 40, bearing: reduceMotion() ? 0 : -18, padding: storyPad(), duration: 3200 });
+      go: () => { scene("forecast", null, 13); fly({ center: [-83.0458, 42.3314], zoom: 13, pitch: reduceMotion() ? 0 : 40, bearing: reduceMotion() ? 0 : -18, padding: storyPad(), duration: 3200 });
         setTimeout(() => callout([-83.0458, 42.3314], `<b>Downtown Detroit</b><span>Live Qloo scan · ~150 m cells</span>`, "right"), 3400); } },
     { k: "What history says", h: "How far to trust the undertow",
       p: `We fit the taste model to 2020 and checked it against 2024. Inside states it helped: counties whose tastes ran bluer than their vote moved toward Democrats in ${N ? N.within_state_positive : bt.states_positive} of ${N ? N.within_state_n : Object.keys(bt.states).length} states, by fractions of a point. Statewide it did not (r = ${N ? N.state_r_controlled : "—"}). That is why polls make every call here, and Qloo shows where the vote is moving.`,
-      go: () => { scene("forecast"); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, pitch: 0, bearing: 0, padding: storyPad() }); } },
+      go: () => { scene("forecast", null, 3.4); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.4 : 2.6, pitch: 0, bearing: 0, padding: storyPad() }); } },
   ].filter(Boolean);
 }
 
@@ -121,9 +145,12 @@ function story() {
   document.body.classList.add("story-on"); ov.hidden = false; ST.on = true; ST.active = -1;
   ov.appendChild($("#swipe"));
   setTimeout(() => map.resize(), 50);
-  for (const l of ["states-fill", "counties-fill", "cells-fill", "live-fill"]) map.setPaintProperty(l, "fill-opacity-transition", { duration: 700, delay: 0 });
+  ST.saved = ST.saved || { "states-fill": map.getPaintProperty("states-fill", "fill-opacity"), "counties-fill": map.getPaintProperty("counties-fill", "fill-opacity") };
+  if (S.cmp) toggleCompare(S.cmpKind);
+  if (S.mode !== "forecast") setMode("forecast");
+  recolor(); applyTargets(3.6, 600);
   // the hero shows the national forecast
-  scene("forecast"); setTimeout(() => fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.6 : 2.6, padding: storyPad(), duration: 1200 }), 80);
+  setTimeout(() => fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.6 : 2.6, padding: storyPad(), duration: 1200 }), 80);
   const sc = ov.querySelector(".story-scroll"); sc.scrollTop = 0;
   ST.io?.disconnect();
   ST.io = new IntersectionObserver((ents) => { for (const e of ents) if (e.isIntersecting) activate(+e.target.dataset.i, steps); },
@@ -131,7 +158,7 @@ function story() {
   ov.querySelectorAll(".story-step").forEach((s) => ST.io.observe(s));
   const bar = ov.querySelector(".story-progress i");
   sc.onscroll = () => { bar.style.transform = `scaleX(${Math.min(1, sc.scrollTop / Math.max(1, sc.scrollHeight - sc.clientHeight))})`;
-    if (sc.scrollTop < sc.clientHeight * 0.4 && ST.active !== -1) { activate(-1, steps); scene("forecast"); } };
+    if (sc.scrollTop < sc.clientHeight * 0.4 && ST.active !== -1) { activate(-1, steps); scene("forecast", null, 3.6); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.6 : 2.6, pitch: 0, bearing: 0, padding: storyPad() }); } };
   $("#story-map").onclick = () => endStory();
   $("#story-charts").onclick = () => { endStory(); setTimeout(() => $("#charts").scrollIntoView({ behavior: "smooth" }), 300); };
   ov.querySelector(".story-close").onclick = () => endStory();
@@ -147,5 +174,6 @@ function endStory() {
   $("#story").hidden = true; document.body.classList.remove("story-on");
   if (S.cmp) toggleCompare(S.cmpKind);
   setMode("forecast"); recolor(); home();
+  for (const l in ST.saved) setOp(l, ST.saved[l], 600); setOp("states-fill-b", 0, 0); setOp("counties-fill-b", 0, 0); ST.op = null;
   setTimeout(() => { map.resize(); map.flyTo({ center: [-96.5, 38.6], zoom: 3.6, pitch: 0, bearing: 0, padding: 0, duration: 1200 }); }, 60);
 }

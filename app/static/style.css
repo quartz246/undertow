@@ -250,3 +250,4 @@ body.story-on .mapbar, body.story-on .legend, body.story-on .scan, body.story-on
 @media (prefers-reduced-motion: reduce) {
   .story-card { transition: none; } .callout * { animation: none !important; } .scrollcue i { animation: none; } .story-scroll { scroll-behavior: auto; }
 }
+.callout { transition: opacity .3s ease; } .callout.out { opacity: 0; }

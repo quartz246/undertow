@@ -5,7 +5,7 @@ const p = await b.newPage(); await p.setViewport({ width: w, height: h });
 const errs = []; p.on("pageerror", (e) => errs.push("PAGEERR " + e.message)); p.on("console", (m) => m.type() === "error" && errs.push(m.text()));
 const W = (ms) => new Promise((r) => setTimeout(r, ms));
 await p.goto(base, { waitUntil: "networkidle2", timeout: 90000 }); await W(3000);
-await p.evaluate(() => document.querySelector("#welcome-tour").click()); await W(3000);
+await W(1500);
 await p.screenshot({ path: `shots/story-${w}-0.png` });
 const n = await p.evaluate(() => document.querySelectorAll(".story-step").length);
 for (let i = 0; i < n; i++) {

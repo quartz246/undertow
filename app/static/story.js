@@ -143,6 +143,14 @@ function storySteps() {
       p: "Zoom into a neighborhood, or search a ZIP code, and Undertow queries Qloo live for cells about 150 meters across. Each block is shaded by whether its tastes run bluer or redder than the rest of its county. This is downtown Detroit, in Michigan's Senate race.",
       go: () => { scene("forecast", null, 13); fly({ center: [-83.0458, 42.3314], zoom: 13, pitch: reduceMotion() ? 0 : 40, bearing: reduceMotion() ? 0 : -18, padding: storyPad(), duration: 3200 });
         setTimeout(() => callout([-83.0458, 42.3314], `<b>Downtown Detroit</b><span>Live Qloo scan · ~150 m cells</span>`, "right"), 3400); } },
+    S.stratEx ? { k: "From map to media plan", h: "An AI strategist that spends a campaign's last dollars, ZIP by ZIP",
+      p: `Undertow's Campaign Strategist is an agent. Asked how ${esc(S.stratEx.plan.candidate)} should spend ${fmtUSD(S.stratEx.plan.budget)} in the final days, Undertow AI read the race, ranked Iowa's counties, ran live Qloo scans across ${Object.keys(S.stratEx.plan.counties || {}).length} of them, asked Qloo what each target area watches and listens to, and split the budget across ${S.stratEx.plan.rows.length} ZIP codes: <i>"${esc(S.stratEx.plan.headline)}."</i> No voter files, no personal data. Every ZIP and channel it names is checked against its own tool results.`,
+      go: () => { scene("forecast", null, 7.5); stratLayers(); const rows = S.stratEx.plan.rows;
+        map.getSource("strat").setData({ type: "FeatureCollection", features: rows.map((z) => ({ type: "Feature", properties: { zip: z.zip, place: z.place, county: z.county, budget: z.budget, goal: z.goal, segment: z.segment, lean: z.lean_toward_you }, geometry: { type: "Point", coordinates: [z.lon, z.lat] } })) });
+        map.setFilter("strat-county", ["in", ["get", "fips"], ["literal", Object.keys(S.stratEx.plan.counties || {})]]);
+        const xs = rows.map((z) => z.lon), ys = rows.map((z) => z.lat); const zero = { top: 0, bottom: 0, left: 0, right: 0 }; map.setPadding(zero);
+        const cam = map.cameraForBounds([[Math.min(...xs) - 0.4, Math.min(...ys) - 0.3], [Math.max(...xs) + 0.4, Math.max(...ys) + 0.3]], { padding: storyPad(), maxZoom: 8 }); fly({ center: cam.center, zoom: cam.zoom, padding: zero });
+        setTimeout(() => { const segs = S.stratEx.plan.segments; segs.slice(0, 2).forEach((sg, i) => { const r = rows.filter((x) => x.segment === sg.name).sort((a, b) => b.budget - a.budget)[0]; if (r) callout([r.lon, r.lat], `<b>${esc(sg.name)}</b><span>${fmtUSD(rows.filter((x) => x.segment === sg.name).reduce((a, x) => a + x.budget, 0))} · ${sg.goal === "turnout" ? "turnout" : "persuasion"}</span><span class="cr">${esc(sg.channels.slice(0, 3).join(" · "))}</span>`, i ? "left" : "right", i * 450); }); }, 2600); } } : null,
     { k: "The scorecard", h: "What the tastes got right, and what to watch on Nov. 3",
       p: `Tastes alone drew the 2024 map (${right} of ${q24.length} states), foresaw which counties would move inside ${N ? `${N.within_state_positive} of ${N.within_state_n}` : "most"} states, and caught ${caught.length ? caught.join(" and ") : "swing states"} where the polls failed. Blended half and half with the polls, they called ${C24 ? `${C24.blend.close_right} of ${C24.n_close}` : "more"} of 2024's close states. Their weak spot: on margins the polls were closer (${C24 ? `${C24.polls.avg_miss} vs ${C24.qloo.avg_miss} pts` : "smaller misses"}), so our headline call keeps the polls and shows the blend beside it. Watch ${flagged.length ? flagged.map((r) => r.state).join(", ") : "the closest races"} and counties like Miami-Dade: if they break the way their tastes point, the undertow was real.`,
       go: () => { scene("forecast", null, 3.4); usView(); } },
@@ -151,6 +159,7 @@ function storySteps() {
 
 function activate(i, steps) {
   if (i === ST.active) return; ST.active = i;
+  if (map.getSource("strat")) { map.getSource("strat").setData({ type: "FeatureCollection", features: [] }); map.setFilter("strat-county", ["in", ["get", "fips"], ["literal", []]]); }
   stopSweep(); clearCallouts();
   document.querySelectorAll(".story-step").forEach((s, k) => s.classList.toggle("on", k === i));
   if (i >= 0 && steps[i]) steps[i].go();
@@ -171,7 +180,7 @@ function story() {
     </div></header>
     ${steps.map((s, i) => `<section class="story-step" data-i="${i}"><div class="story-card"><div class="kicker">${esc(s.k)}</div><h2>${esc(s.h)}</h2><p>${s.p}</p></div></section>`).join("")}
     <footer class="story-end"><div class="story-card"><h2>Now explore it yourself</h2><p>Every race, every county, and a live block-level scan anywhere in the country.</p>
-      <div class="story-cta"><button class="go" id="story-map">Explore the map</button><button class="ghost" id="story-charts">See the charts</button></div></div></footer>`;
+      <div class="story-cta"><button class="go" id="story-strat">Try the Campaign Strategist</button><button class="ghost" id="story-map">Explore the map</button><button class="ghost" id="story-charts">See the charts</button></div></div></footer>`;
   document.body.classList.add("story-on"); ov.hidden = false; ST.on = true; ST.active = -1;
   ov.appendChild($("#swipe"));
   setTimeout(() => map.resize(), 50);
@@ -190,6 +199,7 @@ function story() {
   sc.onscroll = () => { bar.style.transform = `scaleX(${Math.min(1, sc.scrollTop / Math.max(1, sc.scrollHeight - sc.clientHeight))})`;
     if (sc.scrollTop < sc.clientHeight * 0.4 && ST.active !== -1) { activate(-1, steps); scene("forecast", null, 3.6); fly({ center: [-96.5, 38.4], zoom: window.innerWidth > 900 ? 3.6 : 2.6, pitch: 0, bearing: 0, padding: storyPad() }); } };
   $("#story-map").onclick = () => endStory();
+  $("#story-strat").onclick = () => { endStory(); setTimeout(() => strategist(), 400); };
   $("#story-charts").onclick = () => { endStory(); setTimeout(() => $("#charts").scrollIntoView({ behavior: "smooth" }), 300); };
   ov.querySelector(".story-close").onclick = () => endStory();
   document.addEventListener("keydown", storyKeys);
@@ -199,6 +209,7 @@ function storyKeys(e) { if (e.key === "Escape" && ST.on) endStory(); }
 function endStory() {
   if (!ST.on) return; ST.on = false;
   ST.io?.disconnect(); stopSweep(); clearCallouts();
+  if (map.getSource("strat")) { map.getSource("strat").setData({ type: "FeatureCollection", features: [] }); map.setFilter("strat-county", ["in", ["get", "fips"], ["literal", []]]); }
   document.removeEventListener("keydown", storyKeys);
   $(".mapwrap").insertBefore($("#swipe"), $("#map24").nextSibling);
   $("#story").hidden = true; document.body.classList.remove("story-on");

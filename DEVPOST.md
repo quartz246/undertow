@@ -4,7 +4,7 @@
 Undertow
 
 ## Elevator pitch (tagline)
-The 2026 midterms read through what America watches, reads and buys: Qloo taste maps from state down to the block, an AI that reads the culture, and an honest scorecard against the polls.
+An AI campaign strategist that tells a campaign which ZIP codes to spend on and where those voters' attention lives, built on Qloo taste maps of every county and block, with an honest scorecard against the polls.
 
 ## Links
 - Live demo: https://dream-pray-cart-metric.trycloudflare.com
@@ -20,6 +20,7 @@ qloo, qloo-insights-api, llm, python, fastapi, numpy, pandas, shapely, maplibre-
 In 2024 the polls leaned too Democratic in 28 of the 30 states we checked, by 3.2 points on average, and missed Michigan and Wisconsin outright. Polls ask people how they will vote. We wanted to ask a different question: what do places actually love, and does that tell you anything the polls can't? Qloo knows the tastes of every corner of the country, from *Duck Dynasty* and Dan Bongino to Beyoncé and *Succession*. Undertow puts that culture next to the polls for every 2026 Senate and governor race, from the whole country down to a city block.
 
 ## What it does
+- **Campaign Strategist (an agent).** Pick a race, a candidate and a budget. Undertow AI plans the last days' ad spend ZIP code by ZIP code: it reads the race, ranks counties into persuasion and turnout targets, runs **live Qloo scans** across them, asks Qloo what each target area over-indexes on (shows, podcasts, brands, artists, optionally among politically center or partisan audiences), and splits the budget. Its steps stream live; the plan lights up the map and downloads as a CSV of ZIP codes ready for ZIP targeting on ad platforms. No voter files, no personal data. Example: $500k for Josh Turek in Iowa becomes 12 ZIPs: persuasion in Warren and Dubuque counties (Colbert, Comedy Central Roasts, Pod Save America, NPR), turnout in Des Moines and Iowa City.
 - **Opens as a story.** A scroll-driven, newspaper-style walkthrough over a full-screen map: the 2024 map redrawn from tastes alone, the two swing states the tastes caught and the polls missed, counties whose culture no longer matches their vote, every 2026 race seen through both lenses, and a live block-level scan of Detroit.
 - **Forecasts 71 races** (35 Senate, 36 governor). Recent polls set the baseline; scripts check them for skew (party-sponsored vs independent polls, unusual shifts since 2024); **Undertow AI**, our LLM layer, makes each final call with a short reason.
 - **Reads the culture for every race.** Undertow AI writes a *cultural read* from Qloo's data only: which tastes the state loves more and less than the nation (and who their audiences are), which counties' tastes look bluer or redder than their 2024 vote, what tastes alone forecast, and how the signal did there in 2020→2024. Each read ends with places to watch on election night.
@@ -37,6 +38,7 @@ In 2024 the polls leaned too Democratic in 28 of the 30 states we checked, by 3.
 5. **The undertow.** The gap between what a place's tastes predict and how it voted in 2024.
 
 ## How the LLM is used (Undertow AI)
+- **Campaign Strategist agent**: a tool-calling loop (get_race, rank_counties, scan_zips, find_channels, allocate_budget). The model decides which counties to scan and where to look for channels; the tools call Qloo live. The final plan is validated: every ZIP and channel must come from its own tool results, budgets are rescaled to the total, and the rules forbid invented candidate positions, incentives to vote and deceptive content. Runs are rate-limited and cached.
 - **Final judgement** for each race: reads the script's numbers (poll averages, sponsor skew, 2024 baseline, published ratings) and makes the call with a reason. It has no tools; answers are validated (party, probability range, no more than 8 points from the script) and the script's call stands in if it fails.
 - **Cultural read** for each race: turns Qloo-derived facts into an explanation and a watch list. It can only name places that appear in its input, which is checked automatically.
 - Runs in batch when the forecast is refreshed, not on page views.
@@ -62,6 +64,7 @@ Python pipeline (pandas, numpy, shapely, ridge regression with leave-one-state-o
 - **Keeping the AI honest.** An early AI summary of Qloo trend data described a "barometer" that was really Qloo rescaling whole categories. Every number the AI sees is now checked first.
 
 ## Accomplishments that we're proud of
+- An agent that turns cultural data into a concrete, checkable media plan in about a minute, without touching anyone's personal data.
 - A forecast you can walk through, from the national map to a single block, live.
 - Calls you can check on Nov. 3, with a public record of what worked and what didn't.
 - Qloo catching the two swing states the polls missed in 2024.
@@ -70,11 +73,12 @@ Python pipeline (pandas, numpy, shapely, ridge regression with leave-one-state-o
 Culture maps politics remarkably well: what people love predicts where they live politically better than how many of them there are. It is better at "where" than "how much", and the honest answer is to show both.
 
 ## What's next
-Score every call and cultural read against the Nov. 3 results; re-fit the taste model on 2026; add House districts; let users build their own taste baskets for any place.
+Score every call, cultural read and strategist plan against the Nov. 3 results; re-fit the taste model on 2026; add House districts and state legislatures (where campaigns have the least data and the most need); export straight to ad platforms; and the same engine for brands: "where should my next store, sponsorship or campaign go, and what do people there love?"
 
 ---
 
 ## Testing instructions (for judges)
+0. **Campaign Strategist:** click **Campaign Strategist** (top right), then an example such as *Iowa Senate · Turek · $500k* (cached, instant), or pick any race, candidate and budget and press **Plan my spend** (a live run takes about a minute; up to 8 live runs per hour per visitor). Download the CSV at the end.
 1. Open the live demo. The story opens automatically; scroll through it (about a minute), or press **Skip to the map**.
 2. On the map: **Layers → Qloo vs polls: disagreements**, then click **Iowa** to see Undertow AI's call and its **cultural read**.
 3. Type a ZIP code (e.g. **48201**) in the search box: the map flies there and runs a live Qloo block scan (about 2 s).

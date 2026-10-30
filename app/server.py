@@ -151,6 +151,15 @@ _strat_hits: dict = {}
 _strat_sem = asyncio.Semaphore(2)
 _strat_cache: dict = {}
 
+@app.get("/api/strategist-example")
+def strategist_example():
+    p = DATA / "forecast/strategist_example.ndjson"
+    if not p.exists(): raise HTTPException(404)
+    ev = [json.loads(l) for l in p.read_text().splitlines() if l.strip()]
+    plan = next((e["plan"] for e in ev if e["type"] == "plan"), None)
+    if not plan: raise HTTPException(404)
+    return {"plan": plan, "steps": [e["text"] for e in ev if e["type"] == "tool" and not e.get("pending")]}
+
 @app.post("/api/strategist")
 async def strategist_run(req: Request):
     try: body = await req.json()
@@ -163,6 +172,9 @@ async def strategist_run(req: Request):
         raise HTTPException(400, "race_id, side (D/R/I) and a budget between $1,000 and $50M are required")
     if not KEY or not strategist.LLM_KEY: raise HTTPException(503, "the strategist is off on this server")
     key = (rid, side, budget, note.strip().lower())
+    cfile = DATA / "forecast/strategist_cache" / (re.sub(r"[^a-z0-9]+", "-", "|".join(map(str, key)).lower())[:120] + ".ndjson")
+    if key not in _strat_cache and cfile.exists():   # finished plans survive restarts
+        _strat_cache[key] = [json.loads(l) for l in cfile.read_text().splitlines() if l.strip()]
     if key in _strat_cache:   # replay a finished run (its steps paced so the panel still reads as a run)
         async def replay():
             for e in _strat_cache[key]:
@@ -186,7 +198,11 @@ async def strategist_run(req: Request):
             e = await q.get()
             if e is None: break
             events.append(e); yield json.dumps(e) + "\n"
-        if any(x["type"] == "plan" for x in events): _strat_cache[key] = events
+        if any(x["type"] == "plan" for x in events):
+            _strat_cache[key] = events
+            try:
+                cfile.parent.mkdir(parents=True, exist_ok=True); cfile.write_text("\n".join(json.dumps(x) for x in events))
+            except OSError: pass
     return StreamingResponse(stream(), media_type="application/x-ndjson", headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
 
 @app.get("/api/health")

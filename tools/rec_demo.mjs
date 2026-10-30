@@ -19,13 +19,20 @@ const step = (i) => p.evaluate((i) => { const sc = document.querySelector(".stor
 const titles = await p.evaluate(() => [...document.querySelectorAll(".story-step h2")].map((h) => h.innerText));
 const idx = (re) => titles.findIndex((t) => re.test(t));
 
-const rec = await p.screencast({ path: "video/undertow-demo.webm", ffmpegPath: FF });
+const rec = await p.screencast({ path: "video/undertow-demo-v3.webm", ffmpegPath: FF });
 await cap("Undertow · Powered by Qloo: the 2026 midterms, read through what America watches, reads and buys"); await W(6500);
 await cap("");
-const plan = [[/redraws the 2024 map/, 9000], [/polls missed Michigan/, 9500], [/knew which way/, 8000], [/tastes did not\.$/, 7500], [/every race through both lenses/, 9000], [/polls and the culture disagree/, 9000], [/one county in the closest race/, 7500], [/walk through/, 8000], [/got right/, 7000]];
+const plan = [[/redraws the 2024 map/, 8500], [/polls missed Michigan/, 9000], [/tastes did not\.$/, 7000], [/every race through both lenses/, 8500], [/polls and the culture disagree/, 8500], [/walk through/, 7000], [/AI strategist/, 8500], [/got right/, 6000]];
 for (const [re, ms] of plan) { const i = idx(re); if (i >= 0) { await step(i); await W(ms); } }
 await p.evaluate(() => document.querySelector(".story-close").click()); await W(2200);
-await cap("Explore it yourself: every Senate and governor race, every county"); await W(3500);
+await cap("The Campaign Strategist: an AI agent that plans ad spend ZIP by ZIP with live Qloo data");
+await p.click("#strat-btn"); await W(1500);
+await p.evaluate(() => document.querySelector('[data-ex^="ME-S"]').click());
+await p.waitForSelector(".card.plan", { timeout: 300000 }); await W(2500);
+await p.evaluate(() => document.querySelector(".card.plan").scrollIntoView({ behavior: "smooth", block: "start" })); await W(5500);
+await p.evaluate(() => closePanel()); await cap(""); await W(600);
+await p.evaluate(() => { if (__map.getSource("strat")) { __map.getSource("strat").setData({ type: "FeatureCollection", features: [] }); __map.setFilter("strat-county", ["in", ["get", "fips"], ["literal", []]]); } __map.flyTo({ center: [-96.5, 38.6], zoom: 3.7, duration: 1500 }); }); await W(1800);
+await cap("Explore it yourself: every Senate and governor race, every county"); await W(2500);
 await p.click("#layers-btn"); await W(900);
 await p.evaluate(() => document.querySelector('[data-mode="disagree"]').click()); await W(1500);
 await cap("Layers → Qloo vs polls: only the places where the culture and the polls disagree"); await W(2500);
@@ -33,10 +40,10 @@ const iowa = await p.evaluate(() => { const f = S.geo.st.features.find((x) => x.
 await p.mouse.move(iowa.x - 60, iowa.y, { steps: 10 }); await p.mouse.move(iowa.x, iowa.y, { steps: 12 }); await W(2500);
 await p.mouse.click(iowa.x, iowa.y); await W(2500);
 await cap("Undertow AI makes the call, then writes a cultural read from Qloo's taste data"); await W(3500);
-await p.evaluate(() => { const c = document.querySelector(".card.culture"); if (c) c.scrollIntoView({ behavior: "smooth", block: "start" }); }); await W(5000);
+await p.evaluate(() => { const c = document.querySelector(".card.culture"); if (c) c.scrollIntoView({ behavior: "smooth", block: "start" }); }); await W(4000);
 await p.evaluate(() => closePanel()); await cap(""); await W(800);
 await p.click("#q"); await p.keyboard.type("48201", { delay: 90 }); await W(1200); await p.keyboard.press("Enter");
-await cap("Search any ZIP code: Qloo is queried live for ~150 m blocks"); await W(9500);
+await cap("Search any ZIP code: Qloo is queried live for ~150 m blocks"); await W(8000);
 await p.evaluate(() => { closePanel(); __map.flyTo({ center: [-96.5, 38.6], zoom: 3.7, duration: 2200 }); }); await W(2600);
 await p.click("#layers-btn"); await W(700);
 await p.evaluate(() => document.querySelector('.cmp[data-cmp="qloo"]').click()); await W(1800);

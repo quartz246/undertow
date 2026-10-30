@@ -9,6 +9,8 @@ Polls tell you who is ahead. Undertow adds the *where*: Qloo knows what people i
 
 ## What it does
 
+- **Campaign Strategist (an agent).** Pick a race, a candidate and a budget: Undertow AI plans the final ad spend ZIP code by ZIP code with live Qloo scans and Qloo channel lookups (what each target area watches, listens to and buys), streams its steps, lights up the map and exports a ZIP-code CSV. Tools: `get_race`, `rank_counties`, `scan_zips`, `find_channels`, `allocate_budget` (`app/strategist.py`). No personal data.
+
 - **Forecasts all 35 Senate races and 36 governor races of Nov 3, 2026.** Recent general-election polls make each call, weighted by recency and sample size, with one poll per pollster and partisan-sponsored polls counted at 60%. Races with no polls start from the 2024 result plus the typical shift seen in polled races.
 - **Looks for skew in the polls.** A script checks two things: whether Democratic- or Republican-sponsored polls differ from independent ones by 4+ points, and whether a race's shift since 2024 is far (9+ points) from the typical race.
 - **Uses an LLM for the final judgement only.** Undertow AI (an LLM) reads the script's numbers and published race ratings, then makes the call with a short reason. It has no tools. Its answer is validated (party, probability range, at most 8 points from the script's call), and the script's call stands in if it fails.

@@ -39,6 +39,7 @@ async function load() {
   S.trendAudit = await fetch("/api/trends-audit").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.culture = {};
   for (const o of ["senate", "governor"]) S.culture[o] = await fetch(`/api/culture?office=${o}`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  S.stratEx = await fetch("/api/strategist-example").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.p24 = await fetch("/api/polls2024").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.demo = await fetch("/api/demographics").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   S.qn = await fetch("/api/qloo").then((r) => (r.ok ? r.json() : null)).catch(() => null);
@@ -711,7 +712,7 @@ function welcome() {
     <h3>What we found, honestly</h3>
     <p>On 2020→2024, out-of-step counties tended to move the way Qloo flagged <i>inside</i> a state (${m.backtest.states_positive} of ${Object.keys(m.backtest.states).length} states). Statewide, the signal predicted nothing${N ? ` (r = ${N.state_r_controlled})` : ""}. So <b>polls decide who wins</b>. Scripts check the polls for skew and Undertow AI makes each final call. Qloo shows <i>where</i> the vote is moving.</p>
     <h3>Try it</h3>
-    <ul class="try"><li>Click a state, or switch <b>Senate / Governor</b></li><li><b>2026 ↔ 2024</b> and <b>Polls ↔ Qloo</b>: drag the line across the map to compare</li><li><b>Undertow</b> layer: places out of step with their vote</li><li><b>Tools</b>: where our calls, the polls and the betting markets disagree</li><li>Scroll below the map for <b>charts</b>: polls vs taste, Qloo vs the real 2024 result, and the track record</li><li>Search a <b>ZIP code or city</b>, or zoom in anywhere, for a live block scan</li></ul>
+    <ul class="try"><li><b>Campaign Strategist</b>: an AI agent plans a campaign's ad spend ZIP code by ZIP code, with live Qloo data</li><li>Click a state, or switch <b>Senate / Governor</b></li><li><b>2026 ↔ 2024</b> and <b>Polls ↔ Qloo</b>: drag the line across the map to compare</li><li><b>Undertow</b> layer: places out of step with their vote</li><li><b>Tools</b>: where our calls, the polls and the betting markets disagree</li><li>Scroll below the map for <b>charts</b>: polls vs taste, Qloo vs the real 2024 result, and the track record</li><li>Search a <b>ZIP code or city</b>, or zoom in anywhere, for a live block scan</li></ul>
     <div class="wfoot"><span></span><span><button class="tourbtn" id="welcome-tour">Replay the story</button> <button class="go" id="welcome-go">Back to the map</button></span></div>`;
   $("#welcome-tour").onclick = () => { $("#welcome").close(); const t = () => (map?.loaded() ? story() : setTimeout(t, 300)); t(); };
   $("#welcome-go").onclick = () => $("#welcome").close();

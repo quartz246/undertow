@@ -377,7 +377,7 @@ function paint24() {
 }
 function syncSwipe() {
   if (!map24) return;
-  map24.jumpTo({ center: map.getCenter(), zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() });
+  map24.jumpTo({ center: map.getCenter(), zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch(), padding: map.getPadding() });
 }
 function setSwipe(x) {
   const w = $("#map").clientWidth, pad = 24;
@@ -471,58 +471,10 @@ function initSearch() {
   }
 }
 
-/* ---------------- guided tour ---------------- */
+/* ---------------- helpers used by the story (story.js) ---------------- */
 function setMode(m) { const b = document.querySelector(`.mapbar .seg [data-mode="${m}"]`); if (b && S.mode !== m) b.click(); }
 function compareOff() { if (S.cmp) toggleCompare(S.cmpKind); }
 function flyUS() { map.flyTo({ center: [-96.5, 38.6], zoom: 3.6, duration: 1400 }); }
-function tourSteps() {
-  if (S.office !== "senate") setOffice("senate");
-  const fc = S.fc, U = S.qn?.state_undertow || {}, us = Object.entries(U).sort((a, b) => b[1] - a[1]);
-  const blue = us.slice(0, 2), red = us.slice(-2).reverse();
-  const q24 = Object.entries(S.qn?.states || {}).filter(([n]) => n !== "District of Columbia" && S.states[n]);
-  const right = q24.filter(([n, q]) => (q > 0) === (S.states[n].m24 > 0)).length;
-  const dis = fc.races.map((r) => ({ r, f: final(r).margin_d, q: qlooState(r.state) })).filter((x) => x.q != null)
-    .sort((a, b) => ((b.q > 0) !== (b.f > 0)) - ((a.q > 0) !== (a.f > 0)) || Math.abs(b.q - b.f) - Math.abs(a.q - a.f))[0];
-  const md = S.counties["12086"], n = { D: 0, R: 0, I: 0 }; for (const r of fc.races) { const p = final(r).winner_party; n[p in n ? p : "I"]++; }
-  const stateFit = (name, z = 7) => { const f = S.geo.st.features.find((x) => x.properties.name === name); if (f) map.fitBounds(bbox(f.geometry), { padding: 60, duration: 1400, maxZoom: z }); };
-  return [
-    { t: "Polls make the call", p: `Every race is called from the polls, with Undertow AI making the final judgement. Projected Senate: ${n.D + HOLD.D} D, ${n.R + HOLD.R} R${n.I ? `, ${n.I} independent` : ""}. Qloo's job is different: to show what the places themselves are like.`,
-      go: () => { compareOff(); setMode("forecast"); home(); flyUS(); } },
-    { t: "Tastes alone redraw the 2024 map", p: `Left of the line: the 2024 vote Qloo predicts from nothing but what each place watches, reads, listens to and buys. Right: what actually happened. Tastes alone picked the right winner in ${right} of ${q24.length} states. Drag the line.`,
-      go: () => { if (!(S.cmp && S.cmpKind === "q24")) { compareOff(); toggleCompare("q24"); } flyUS(); } },
-    { t: "The statewide undertow", p: `States whose tastes look bluer or redder than their 2024 vote: ${blue.map(([s_, v]) => `${s_} ${fmtS(v)}`).join(", ")} lean bluer; ${red.map(([s_, v]) => `${s_} ${fmtS(v)}`).join(", ")} lean redder. Exploratory only: statewide, this did not predict the 2020→2024 swing.`,
-      go: () => { compareOff(); setMode("undertow"); flyUS(); } },
-    md ? { t: "Miami-Dade: the vote moved, the tastes didn't", p: `Miami-Dade voted ${fmtM(md.m24)} in 2024, yet its tastes look like ${fmtM(md.pred)}. Several heavily Hispanic counties show the same gap: either the 2024 shift could reverse, or tastes lag the vote. Inside states, gaps like this did point the right way from 2020 to 2024.`,
-      go: () => { compareOff(); setMode("undertow"); const cf = S.geo.co.features.find((x) => x.properties.fips === "12086"); if (cf) map.fitBounds(bbox(cf.geometry), { padding: 80, duration: 1600, maxZoom: 8.5 }); } } : null,
-    dis ? { t: `${dis.r.state}: polls and tastes disagree`, p: `Our call from the polls: ${fmtM(dis.f)}. Qloo-only: ${fmtM(dis.q)}${(dis.q > 0) !== (dis.f > 0) ? ", a different winner" : ""}. Left of the line is the polls forecast, right is the taste forecast. We keep the polls' call; the gap is the thing to watch on election night.`,
-      go: () => { if (!(S.cmp && S.cmpKind === "qloo")) { compareOff(); toggleCompare("qloo"); } openRace(dis.r.id, false); stateFit(dis.r.state); } } : null,
-    { t: "Down to the block", p: "Zoom into any neighbourhood, or search a ZIP code, and Qloo is queried live for ~150 m cells. Each block is coloured by whether its tastes run bluer or redder than the rest of its county. Here: Detroit.",
-      go: () => { compareOff(); setMode("forecast"); map.flyTo({ center: [-83.0458, 42.3314], zoom: 12.8, duration: 2200 }); } },
-    { t: "How it did in the past", p: "Below the map: a chart for each test. Tastes vs the real 2024 result, how out-of-step counties actually swung from 2020 to 2024, and the statewide test that failed.",
-      go: () => { compareOff(); setMode("forecast"); flyUS(); }, last: true },
-  ].filter(Boolean);
-}
-function tour() {
-  if (!map?.loaded()) return;
-  $("#welcome").open && $("#welcome").close();
-  const steps = tourSteps(); let i = 0;
-  let card = $("#tour"); if (!card) { card = document.createElement("div"); card.id = "tour"; card.className = "tour"; card.setAttribute("role", "dialog"); card.setAttribute("aria-label", "Guided tour"); $(".mapwrap").appendChild(card); }
-  const show = () => {
-    const st = steps[i]; st.go();
-    card.innerHTML = `<div class="step">Tour · ${i + 1} of ${steps.length}</div><h3>${esc(st.t)}</h3><p>${esc(st.p)}</p>
-      <div class="nav"><button class="end">Exit</button><span class="dots">${steps.map((_, k) => `<i class="${k === i ? "on" : ""}"></i>`).join("")}</span>
-      <span>${i ? '<button class="prev">Back</button> ' : ""}<button class="next">${st.last ? "See the charts" : "Next"}</button></span></div>`;
-    card.querySelector(".end").onclick = end;
-    card.querySelector(".prev") && (card.querySelector(".prev").onclick = () => { i--; show(); });
-    card.querySelector(".next").onclick = () => { if (st.last) { end(); $("#charts").scrollIntoView({ behavior: "smooth" }); } else { i++; show(); } };
-    card.querySelector(".next").focus();
-  };
-  const end = () => { card.remove(); document.removeEventListener("keydown", esc_); };
-  const esc_ = (e) => { if (e.key === "Escape") end(); };
-  document.addEventListener("keydown", esc_);
-  show();
-}
-
 /* ---------------- welcome ---------------- */
 function welcome(force) {
   let hide = false; try { hide = localStorage.getItem("undertow-welcome") === "hide"; } catch {}
@@ -542,8 +494,8 @@ function welcome(force) {
     <p>On 2020→2024, out-of-step counties tended to move the way Qloo flagged <i>inside</i> a state (${m.backtest.states_positive} of ${Object.keys(m.backtest.states).length} states). Statewide, the signal predicted nothing${N ? ` (r = ${N.state_r_controlled})` : ""}. So <b>polls decide who wins</b>. Scripts check the polls for skew and Undertow AI makes each final call. Qloo shows <i>where</i> the vote is moving.</p>
     <h3>Try it</h3>
     <ul class="try"><li>Click a state, or switch <b>Senate / Governor</b></li><li><b>2026 ↔ 2024</b> and <b>Polls ↔ Qloo</b>: drag the line across the map to compare</li><li><b>Undertow</b> layer: places out of step with their vote</li><li><b>Tools</b>: where our calls, the polls and the betting markets disagree</li><li>Scroll below the map for <b>charts</b>: polls vs taste, Qloo vs the real 2024 result, and the track record</li><li>Search a <b>ZIP code or city</b>, or zoom in anywhere, for a live block scan</li></ul>
-    <div class="wfoot"><label><input type="checkbox" id="welcome-hide"${hide ? " checked" : ""}> Don't show this again</label><span><button class="tourbtn" id="welcome-tour">Take the 1-minute tour</button> <button class="go" id="welcome-go">Explore the map</button></span></div>`;
-  $("#welcome-tour").onclick = () => { try { localStorage.setItem("undertow-welcome", $("#welcome-hide").checked ? "hide" : "show"); } catch {} $("#welcome").close(); const t = () => (map?.loaded() ? tour() : setTimeout(t, 300)); t(); };
+    <div class="wfoot"><label><input type="checkbox" id="welcome-hide"${hide ? " checked" : ""}> Don't show this again</label><span><button class="tourbtn" id="welcome-tour">Read the story</button> <button class="go" id="welcome-go">Explore the map</button></span></div>`;
+  $("#welcome-tour").onclick = () => { try { localStorage.setItem("undertow-welcome", $("#welcome-hide").checked ? "hide" : "show"); } catch {} $("#welcome").close(); const t = () => (map?.loaded() ? story() : setTimeout(t, 300)); t(); };
   $("#welcome-go").onclick = () => { try { localStorage.setItem("undertow-welcome", $("#welcome-hide").checked ? "hide" : "show"); } catch {} $("#welcome").close(); };
   $("#welcome").showModal();
 }
@@ -586,6 +538,7 @@ document.querySelectorAll(".mapbar .seg button").forEach((b) => (b.onclick = () 
 document.querySelectorAll(".office button").forEach((b) => (b.onclick = () => setOffice(b.dataset.office)));
 $("#tools-btn").onclick = () => tools();
 $("#about-btn").onclick = () => welcome(true);
+$("#story-btn").onclick = () => map?.loaded() && story();
 document.querySelectorAll(".cmp").forEach((b) => (b.onclick = () => map && toggleCompare(b.dataset.cmp)));
 initSwipeDrag();
 initSearch();

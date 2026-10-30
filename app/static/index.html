@@ -7,7 +7,7 @@
 <meta name="description" content="A 2026 Senate forecast that maps Qloo cultural taste data from state to block level to find where the polls may be wrong.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Cpath d=%22M0 9q4-4 8 0t8 0v7H0z%22 fill=%22%230f7b6c%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
 <link href="/style.css" rel="stylesheet">
 </head>
@@ -22,7 +22,7 @@
     <button role="radio" aria-checked="false" data-office="governor">Governor</button>
   </div>
   <div class="tally" id="tally" aria-live="polite"></div>
-  <div class="topbtns"><button class="tbtn" id="tools-btn">Tools</button><button class="tbtn ghost" id="about-btn">About</button></div>
+  <div class="topbtns"><button class="tbtn" id="tools-btn">Tools</button><button class="tbtn ghost" id="story-btn">Story</button><button class="tbtn ghost" id="about-btn">About</button></div>
 </header>
 
 <main class="layout">
@@ -59,6 +59,12 @@
     <div id="panel-body"></div>
   </aside>
 </main>
+
+<div id="story" class="story" hidden role="dialog" aria-label="Story: the polls and America's tastes">
+  <div class="story-progress" aria-hidden="true"><i></i></div>
+  <button class="story-close">Skip to the map <span aria-hidden="true">×</span></button>
+  <div class="story-scroll"></div>
+</div>
 
 <section class="charts" id="charts" aria-labelledby="charts-h">
   <div class="charts-in">
@@ -110,5 +116,6 @@
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 <script src="/app.js"></script>
 <script src="/charts.js"></script>
+<script src="/story.js"></script>
 </body>
 </html>
